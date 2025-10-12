@@ -8,15 +8,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:freelancer/core/di/injection_container.dart';
 import 'package:freelancer/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // adjust path if needed
 
 void main() {
   setUpAll(() async {
     // Ensure Flutter test binding is ready
     TestWidgetsFlutterBinding.ensureInitialized();
+
+    // Mock SharedPreferences for testing
+    SharedPreferences.setMockInitialValues({});
 
     // Initialize dependencies
     await initializeDependencies();
