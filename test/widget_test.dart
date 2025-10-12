@@ -15,12 +15,14 @@ import 'package:freelancer/main.dart';
 
 void main() {
   setUpAll(() async {
+    // Ensure Flutter test binding is ready
+    TestWidgetsFlutterBinding.ensureInitialized();
+
     // Initialize dependencies
     await initializeDependencies();
     await sl.allReady();
 
-    // Initialize EasyLocalization
-    TestWidgetsFlutterBinding.ensureInitialized();
+    // Initialize EasyLocalization (now safe)
     await EasyLocalization.ensureInitialized();
   });
 
@@ -40,10 +42,10 @@ void main() {
       ),
     );
 
-    // Let the first frame render
+    // Render first frame
     await tester.pump();
 
-    // Fast-forward time by 4 seconds (simulate splash or startup delay)
+    // Simulate splash or loading delay
     await tester.pump(const Duration(seconds: 4));
   });
 }
