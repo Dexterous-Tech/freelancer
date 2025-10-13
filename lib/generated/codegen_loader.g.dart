@@ -15,16 +15,52 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> _ar = {
-  "login": "تسجيل الدخول",
-  "welcome_back": "مرحبا بعودتك"
+  "on_boarding": {
+    "welcome": "مرحبا بكم",
+    "requestTechnician": "يمكنك طلب الفني بسهولة",
+    "selectLanguage": "حدد اللغة",
+    "arabicLanguage": "العربية",
+    "englishLanguage": "الإنجليزية",
+    "urduLanguage": "الأُردو",
+    "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
+  },
+  "authentication": {
+    "login": "تسجيل الدخول",
+    "welcomeBack": "مرحبا بعودتك"
+  },
+  "next": "التالي"
 };
 static const Map<String,dynamic> _en = {
-  "login": "Login",
-  "welcome_back": "Welcome back"
+  "on_boarding": {
+    "welcome": "Welcome",
+    "requestTechnician": "You can request a technician easily",
+    "selectLanguage": "Select language",
+    "arabicLanguage": "Arabic",
+    "englishLanguage": "English",
+    "urduLanguage": "Urdu",
+    "nearbyTechnicians": "You can view nearby technicians and easily choose the one that suits you"
+  },
+  "authentication": {
+    "login": "Login",
+    "welcomeBack": "Welcome back"
+  },
+  "next": "Next"
 };
 static const Map<String,dynamic> _ur = {
-  "login": "لاگ ان",
-  "welcome_back": "واپسی پر خوش آمدید"
+  "on_boarding": {
+    "welcome": "خوش آمدید",
+    "requestTechnician": "آپ آسانی سے ٹیکنیشن کی درخواست کر سکتے ہیں",
+    "selectLanguage": "زبان منتخب کریں",
+    "arabicLanguage": "عربی",
+    "englishLanguage": "انگریزی",
+    "urduLanguage": "اردو",
+    "nearbyTechnicians": "آپ اپنے قریب موجود ٹیکنیشنز کو دیکھ سکتے ہیں اور آسانی سے اپنے لیے موزوں ٹیکنیشن منتخب کر سکتے ہیں"
+  },
+  "authentication": {
+    "login": "لاگ ان",
+    "welcomeBack": "واپسی پر خوش آمدید"
+  },
+  "next": "اگلا"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

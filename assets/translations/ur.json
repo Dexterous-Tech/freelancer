@@ -1,4 +1,16 @@
 {
-  "login": "لاگ ان",
-  "welcome_back": "واپسی پر خوش آمدید"
+  "on_boarding": {
+    "welcome": "خوش آمدید",
+    "requestTechnician": "آپ آسانی سے ٹیکنیشن کی درخواست کر سکتے ہیں",
+    "selectLanguage": "زبان منتخب کریں",
+    "arabicLanguage": "عربی",
+    "englishLanguage": "انگریزی",
+    "urduLanguage": "اردو",
+    "nearbyTechnicians": "آپ اپنے قریب موجود ٹیکنیشنز کو دیکھ سکتے ہیں اور آسانی سے اپنے لیے موزوں ٹیکنیشن منتخب کر سکتے ہیں"
+  },
+  "authentication": {
+    "login": "لاگ ان",
+    "welcomeBack": "واپسی پر خوش آمدید"
+  },
+  "next": "اگلا"
 }

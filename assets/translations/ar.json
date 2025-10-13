@@ -1,4 +1,16 @@
 {
-  "login": "تسجيل الدخول",
-  "welcome_back": "مرحبا بعودتك"
+  "on_boarding": {
+    "welcome": "مرحبا بكم",
+    "requestTechnician": "يمكنك طلب الفني بسهولة",
+    "selectLanguage": "حدد اللغة",
+    "arabicLanguage": "العربية",
+    "englishLanguage": "الإنجليزية",
+    "urduLanguage": "الأُردو",
+    "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
+  },
+  "authentication": {
+    "login": "تسجيل الدخول",
+    "welcomeBack": "مرحبا بعودتك"
+  },
+  "next": "التالي"
 }

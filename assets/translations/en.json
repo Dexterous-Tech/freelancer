@@ -1,4 +1,16 @@
 {
-  "login": "Login",
-  "welcome_back": "Welcome back"
+  "on_boarding": {
+    "welcome": "Welcome",
+    "requestTechnician": "You can request a technician easily",
+    "selectLanguage": "Select language",
+    "arabicLanguage": "Arabic",
+    "englishLanguage": "English",
+    "urduLanguage": "Urdu",
+    "nearbyTechnicians": "You can view nearby technicians and easily choose the one that suits you"
+  },
+  "authentication": {
+    "login": "Login",
+    "welcomeBack": "Welcome back"
+  },
+  "next": "Next"
 }

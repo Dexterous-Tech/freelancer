@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
+import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
 class AppRouting {
@@ -8,7 +9,7 @@ class AppRouting {
       case AppRoutes.splashScreen:
         return _pageRouteBuilder(const SplashScreen());
       case AppRoutes.languageScreen:
-        return _pageRouteBuilder(const Scaffold());
+        return _pageRouteBuilder(const OnBoardingScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }

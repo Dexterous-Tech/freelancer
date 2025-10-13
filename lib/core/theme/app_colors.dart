@@ -14,4 +14,6 @@ class AppColors {
   static const Color yellow = Color(0xffFCEB80);
   static const Color independence = Color(0xff454F6C);
   static const Color red = Color(0xffE03939);
+  static const Color lightGray = Color(0xffD1D1DB);
+  static const Color chineseBlack = Color(0xff121217);
 }
