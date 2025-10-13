@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class AppColors {
+  static const Color darkBlue = Color(0xff1A2A57);
+  static const Color white = Color(0xffFFFFFF);
+  static const Color black = Color(0xff000000);
+  static const Color policeBlue = Color(0xff36456F);
+  static const Color cultured = Color(0xffF5F5F5);
+  static const Color crayola = Color(0xffFFD166);
+  static const Color outerSpace = Color(0xff454545);
+  static const Color davyGrey = Color(0xff585858);
+  static const Color philippineSilver = Color(0xffB6B6B6);
+  static const Color gray = Color(0xff818181);
+  static const Color yellow = Color(0xffFCEB80);
+  static const Color independence = Color(0xff454F6C);
+  static const Color red = Color(0xffE03939);
+}
