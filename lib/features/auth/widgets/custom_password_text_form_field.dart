@@ -14,12 +14,15 @@ class CustomPasswordTextFormField extends StatelessWidget {
     required this.obscureText,
     required this.hint,
     required this.onToggleVisibility,
+    this.compareWith, // 👈 optional controller to compare for confirm password
   });
 
   final TextEditingController passwordController;
   final bool obscureText;
   final String hint;
   final VoidCallback onToggleVisibility;
+  final TextEditingController? compareWith;
+
   @override
   Widget build(BuildContext context) {
     return Listener(
@@ -42,7 +45,7 @@ class CustomPasswordTextFormField extends StatelessWidget {
           ),
         ),
         validator: (value) {
-          if (value!.isEmpty) {
+          if (value == null || value.isEmpty) {
             return LocaleKeys.authentication_fieldRequired.tr();
           }
           if (value.length < 8) {
@@ -50,6 +53,9 @@ class CustomPasswordTextFormField extends StatelessWidget {
           }
           if (value.length > 20) {
             return LocaleKeys.authentication_passwordMaxValidation.tr();
+          }
+          if (compareWith != null && value != compareWith!.text) {
+            return LocaleKeys.authentication_passwordMismatch.tr();
           }
           return null;
         },

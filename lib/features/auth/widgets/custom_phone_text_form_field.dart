@@ -12,11 +12,11 @@ import '../../../generated/locale_keys.g.dart';
 class CustomPhoneTextFormField extends StatefulWidget {
   const CustomPhoneTextFormField({
     super.key,
-    required this.countryCode,
+    required this.countryCodeController,
     required this.phoneNumberController,
   });
 
-  final ValueNotifier<String> countryCode;
+  final TextEditingController countryCodeController;
   final TextEditingController phoneNumberController;
 
   @override
@@ -26,6 +26,14 @@ class CustomPhoneTextFormField extends StatefulWidget {
 
 class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
   String? phoneErrorMessage;
+  ValueNotifier<String> countryCode = ValueNotifier<String>('');
+  @override
+  void initState() {
+    super.initState();
+    countryCode.addListener(() {
+      widget.countryCodeController.text = countryCode.value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +45,7 @@ class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomCountryCodePicker(code: widget.countryCode),
+              CustomCountryCodePicker(code: countryCode),
               horizontalSpace(8),
               Expanded(
                 child: CustomTextFormField(

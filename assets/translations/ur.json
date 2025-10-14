@@ -24,7 +24,7 @@
     "newPasswordHint": "نیا پاس ورڈ",
     "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
     "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
-    "takeTwoSteps": "!اس میں صرف دو مراحل درکار ہیں",
+    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں !",
     "firstNameHint": "پہلا نام",
     "lastNameHint": "آخری نام",
     "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
@@ -36,7 +36,9 @@
     "passwordMinValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
     "passwordMaxValidation": "پاس ورڈ 20 حروف سے زیادہ نہیں ہونا چاہیے",
     "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
-    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے"
+    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
+    "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
   },
   "next": "اگلا",
   "save": "محفوظ کریں"

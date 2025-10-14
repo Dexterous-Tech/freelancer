@@ -24,7 +24,7 @@
     "newPasswordHint": "كلمة المرور الجديدة",
     "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
     "createNewAccountTitle": "إنشاء حساب جديد",
-    "takeTwoSteps": "!الأمر يحتاج من خطوتين فقط",
+    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط !",
     "firstNameHint": "الاسم الأول",
     "lastNameHint": "الاسم الأخير",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -36,7 +36,9 @@
     "passwordMinValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
     "passwordMaxValidation": "يجب ألا تزيد كلمة المرور عن 20 حرفًا",
     "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
-    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام"
+    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
+    "passwordAgain": "كلمة المرور مرة أخرى",
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
   },
   "next": "التالي",
   "save": "حفظ"

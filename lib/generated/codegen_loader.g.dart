@@ -40,7 +40,7 @@ class CodegenLoader extends AssetLoader{
     "newPasswordHint": "كلمة المرور الجديدة",
     "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
     "createNewAccountTitle": "إنشاء حساب جديد",
-    "takeTwoSteps": "!الأمر يحتاج من خطوتين فقط",
+    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط!",
     "firstNameHint": "الاسم الأول",
     "lastNameHint": "الاسم الأخير",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -52,7 +52,9 @@ class CodegenLoader extends AssetLoader{
     "passwordMinValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
     "passwordMaxValidation": "يجب ألا تزيد كلمة المرور عن 20 حرفًا",
     "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
-    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام"
+    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
+    "passwordAgain": "كلمة المرور مرة أخرى",
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
   },
   "next": "التالي",
   "save": "حفظ"
@@ -95,7 +97,9 @@ static const Map<String,dynamic> _en = {
     "passwordMinValidation": "The password must be at least 8 characters long",
     "passwordMaxValidation": "The password must not exceed 20 characters",
     "nameValidation": "The username must be at least 2 characters long",
-    "phoneValidation": "The phone number must be at least 9 digits long"
+    "phoneValidation": "The phone number must be at least 9 digits long",
+    "passwordAgain": "Password Again",
+    "passwordMismatch": "The passwords must match"
   },
   "next": "Next",
   "save": "Save"
@@ -126,7 +130,7 @@ static const Map<String,dynamic> _ur = {
     "newPasswordHint": "نیا پاس ورڈ",
     "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
     "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
-    "takeTwoSteps": "!اس میں صرف دو مراحل درکار ہیں",
+    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں!",
     "firstNameHint": "پہلا نام",
     "lastNameHint": "آخری نام",
     "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
@@ -138,7 +142,9 @@ static const Map<String,dynamic> _ur = {
     "passwordMinValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
     "passwordMaxValidation": "پاس ورڈ 20 حروف سے زیادہ نہیں ہونا چاہیے",
     "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
-    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے"
+    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
+    "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
   },
   "next": "اگلا",
   "save": "محفوظ کریں"

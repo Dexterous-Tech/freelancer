@@ -36,7 +36,9 @@
     "passwordMinValidation": "The password must be at least 8 characters long",
     "passwordMaxValidation": "The password must not exceed 20 characters",
     "nameValidation": "The username must be at least 2 characters long",
-    "phoneValidation": "The phone number must be at least 9 digits long"
+    "phoneValidation": "The phone number must be at least 9 digits long",
+    "passwordAgain": "Password Again",
+    "passwordMismatch": "The passwords must match"
   },
   "next": "Next",
   "save": "Save"

@@ -3,6 +3,8 @@ import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/features/auth/forget_password/presentation/view/forget_password_screen.dart';
 import 'package:freelancer/features/auth/login/presentation/view/login_screen.dart';
 import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
+import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
+import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
 import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
@@ -22,6 +24,12 @@ class AppRouting {
         );
       case AppRoutes.newPasswordScreen:
         return _pageRouteBuilder(const NewPasswordScreen());
+      case AppRoutes.signupScreen:
+        return _pageRouteBuilder(const SignupScreen());
+      case AppRoutes.verificationScreen:
+        return _pageRouteBuilder(
+          VerificationScreen(phoneNumber: arguments as String),
+        );
       default:
         return _pageRouteBuilder(const Scaffold());
     }

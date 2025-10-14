@@ -36,6 +36,7 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
           verticalSpace(8),
           CustomPasswordTextFormField(
             passwordController: cubit.confirmNewPasswordController,
+            compareWith: cubit.newPasswordController,
             obscureText: obscureTextConfirmPassword,
             hint: LocaleKeys.authentication_confirmNewPasswordHint.tr(),
             onToggleVisibility: () {

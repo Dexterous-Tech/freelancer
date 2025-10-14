@@ -15,17 +15,6 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  ValueNotifier<String> countryCode = ValueNotifier<String>('');
-  String? phoneErrorMessage;
-  @override
-  void initState() {
-    super.initState();
-    final cubit = LoginCubit.get(context);
-    countryCode.addListener(() {
-      cubit.countryCodeController.text = countryCode.value;
-    });
-  }
-
   bool obscureText = true;
 
   @override
@@ -39,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
           Form(
             key: cubit.phoneFormKey,
             child: CustomPhoneTextFormField(
-              countryCode: countryCode,
+              countryCodeController: cubit.countryCodeController,
               phoneNumberController: cubit.phoneNumberController,
             ),
           ),
