@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/features/auth/forget_password/presentation/view/forget_password_screen.dart';
 import 'package:freelancer/features/auth/login/presentation/view/login_screen.dart';
+import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
 import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
@@ -19,6 +20,8 @@ class AppRouting {
         return _pageRouteBuilder(
           ForgetPasswordScreen(phoneNumber: arguments as String),
         );
+      case AppRoutes.newPasswordScreen:
+        return _pageRouteBuilder(const NewPasswordScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }

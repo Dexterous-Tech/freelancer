@@ -32,7 +32,11 @@
     "fieldRequired": "This field is required",
     "passwordValidation": "The password must be at least 8 characters long",
     "selectCountry": "Select Country",
-    "enterNewPassword": "Enter the new password twice, then proceed to login"
+    "enterNewPassword": "Enter the new password twice, then proceed to login",
+    "passwordMinValidation": "The password must be at least 8 characters long",
+    "passwordMaxValidation": "The password must not exceed 20 characters",
+    "nameValidation": "The username must be at least 2 characters long",
+    "phoneValidation": "The phone number must be at least 9 digits long"
   },
   "next": "Next",
   "save": "Save"

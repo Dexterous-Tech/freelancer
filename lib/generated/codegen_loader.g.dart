@@ -48,7 +48,11 @@ class CodegenLoader extends AssetLoader{
     "fieldRequired": "هذا الحقل إلزامي",
     "passwordValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
     "selectCountry": "اختر الدولة",
-    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول"
+    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول",
+    "passwordMinValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "passwordMaxValidation": "يجب ألا تزيد كلمة المرور عن 20 حرفًا",
+    "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
+    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام"
   },
   "next": "التالي",
   "save": "حفظ"
@@ -87,7 +91,11 @@ static const Map<String,dynamic> _en = {
     "fieldRequired": "This field is required",
     "passwordValidation": "The password must be at least 8 characters long",
     "selectCountry": "Select Country",
-    "enterNewPassword": "Enter the new password twice, then proceed to login"
+    "enterNewPassword": "Enter the new password twice, then proceed to login",
+    "passwordMinValidation": "The password must be at least 8 characters long",
+    "passwordMaxValidation": "The password must not exceed 20 characters",
+    "nameValidation": "The username must be at least 2 characters long",
+    "phoneValidation": "The phone number must be at least 9 digits long"
   },
   "next": "Next",
   "save": "Save"
@@ -126,7 +134,11 @@ static const Map<String,dynamic> _ur = {
     "fieldRequired": "یہ خانہ لازمی ہے",
     "passwordValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
     "selectCountry": "ملک منتخب کریں",
-    "enterNewPassword": "نیا پاس ورڈ دو بار درج کریں، پھر لاگ ان کے لیے آگے بڑھیں"
+    "enterNewPassword": "نیا پاس ورڈ دو بار درج کریں، پھر لاگ ان کے لیے آگے بڑھیں",
+    "passwordMinValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "passwordMaxValidation": "پاس ورڈ 20 حروف سے زیادہ نہیں ہونا چاہیے",
+    "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
+    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے"
   },
   "next": "اگلا",
   "save": "محفوظ کریں"

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelancer/core/helper/extensions.dart';
 
 import '../../theme/app_colors.dart';
 import '../../theme/app_text_styles.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
     required this.hintText,
+    required this.validator,
     this.hintStyle,
     this.focusNode,
     this.suffixIcon,
@@ -22,7 +24,6 @@ class CustomTextFormField extends StatelessWidget {
     this.focusedErrorBorder,
     this.obscureText,
     this.controller,
-    required this.validator,
     this.keyboardType,
     this.labelStyle,
     this.labelText,
@@ -41,9 +42,7 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   final String? hintText;
-
   final TextStyle? hintStyle;
-
   final Widget? suffixIcon;
   final FocusNode? focusNode;
   final Widget? prefixIcon;
@@ -74,75 +73,112 @@ class CustomTextFormField extends StatelessWidget {
   final Widget Function(BuildContext, EditableTextState)? contextMenuBuilder;
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  late final TextEditingController _controller;
+  late bool _isNotEmpty;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = widget.controller ?? TextEditingController();
+    _isNotEmpty = _controller.text.isNotEmpty;
+
+    _controller.addListener(() {
+      final newState = _controller.text.isNotEmpty;
+      if (newState != _isNotEmpty) {
+        setState(() => _isNotEmpty = newState);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    if (widget.controller == null) {
+      _controller.dispose();
+    }
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final borderRadius = BorderRadius.circular(widget.radius ?? 8).r;
+
     return TextFormField(
-      style: style ?? AppTextStyles.font16DarkBlueRegular,
-      obscureText: obscureText ?? false,
-      controller: controller,
-      readOnly: readOnly,
-      validator: (value) {
-        return validator(value);
-      },
-      onTap: onTap,
-      focusNode: focusNode,
-      onChanged: onChanged,
+      style: widget.style ?? AppTextStyles.font16DarkBlueRegular,
+      obscureText: widget.obscureText ?? false,
+      controller: _controller,
+      readOnly: widget.readOnly,
+      validator: (value) => widget.validator(value),
+      onTap: widget.onTap,
+      focusNode: widget.focusNode,
+      onChanged: widget.onChanged,
       textInputAction: TextInputAction.done,
-      onFieldSubmitted: (_) {
-        FocusScope.of(context).unfocus();
-      },
-      keyboardType: keyboardType,
-      maxLines: maxLines ?? 1,
-      inputFormatters: inputFormatters,
-      enableInteractiveSelection: enableInteractiveSelection,
-      contextMenuBuilder: contextMenuBuilder,
+      onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+      keyboardType: widget.keyboardType,
+      maxLines: widget.maxLines ?? 1,
+      inputFormatters: widget.inputFormatters,
+      enableInteractiveSelection: widget.enableInteractiveSelection,
+      contextMenuBuilder: widget.contextMenuBuilder,
       decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: hintStyle ?? AppTextStyles.font14GrayMedium,
-        labelText: labelText,
-        labelStyle: labelStyle ?? AppTextStyles.font14GrayMedium,
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
+        hintText: widget.hintText,
+        hintStyle: widget.hintStyle ?? AppTextStyles.font14GrayMedium,
+        labelText: widget.labelText,
+        labelStyle: widget.labelStyle ?? AppTextStyles.font14GrayMedium,
+        suffixIcon: widget.suffixIcon,
+        prefixIcon: widget.prefixIcon,
         isDense: true,
         contentPadding:
-            contentPadding ??
+            widget.contentPadding ??
             EdgeInsetsDirectional.symmetric(horizontal: 16.w, vertical: 19.h),
         filled: true,
-        fillColor: fillBackgroundColor ?? AppColors.white,
+        fillColor: widget.fillBackgroundColor ?? AppColors.white,
         errorMaxLines: 3,
-        // RTL error text styling
-        errorStyle: errorStyle ?? TextStyle(fontSize: 12.sp, color: Colors.red),
-        errorText: errorText, // removes default error
+        errorStyle:
+            widget.errorStyle ?? TextStyle(fontSize: 12.sp, color: Colors.red),
+        errorText: widget.errorText,
         border:
-            border ??
+            widget.border ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8).r,
+              borderRadius: borderRadius,
               borderSide: BorderSide(
-                color: borderColor ?? AppColors.philippineSilver,
+                color: widget.borderColor ?? AppColors.philippineSilver,
               ),
             ),
         focusedBorder:
-            focusedBorder ??
+            widget.focusedBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius ?? 8).r,
-              borderSide: BorderSide(color: borderColor ?? AppColors.darkBlue),
+              borderRadius: borderRadius,
+              borderSide: BorderSide(
+                color: widget.borderColor ?? AppColors.darkBlue,
+              ),
             ),
         enabledBorder:
-            enabledBorder ??
+            widget.enabledBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius ?? 8).r,
-              borderSide: BorderSide(color: borderColor ?? AppColors.darkBlue),
+              borderRadius: borderRadius,
+              borderSide: BorderSide(
+                // 👇 dynamic border color based on text content
+                color: _isNotEmpty
+                    ? AppColors.darkBlue
+                    : AppColors.philippineSilver,
+              ),
             ),
         errorBorder:
-            errorBorder ??
+            widget.errorBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius ?? 8).r,
+              borderRadius: borderRadius,
               borderSide: const BorderSide(color: Colors.red),
             ),
         focusedErrorBorder:
-            focusedErrorBorder ??
+            widget.focusedErrorBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius ?? 16).r,
-              borderSide: BorderSide(color: borderColor ?? AppColors.darkBlue),
+              borderRadius: borderRadius,
+              borderSide: BorderSide(
+                color: widget.borderColor ?? AppColors.darkBlue,
+              ),
             ),
       ),
     );

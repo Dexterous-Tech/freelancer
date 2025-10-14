@@ -12,11 +12,13 @@ class CustomPinCodeField extends StatelessWidget {
     this.controller,
     this.obscureText,
     required this.validator,
+    this.onChanged,
   });
 
   final TextEditingController? controller;
   final bool? obscureText;
   final Function(String?) validator;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class CustomPinCodeField extends StatelessWidget {
           keyboardType: TextInputType.text,
           // Custom validator
           validator: (value) => validator(value),
-
+          onChanged: onChanged,
           // ✅ Disable text selection / copy / paste
           enabled: true,
           focusNode: FocusNode(

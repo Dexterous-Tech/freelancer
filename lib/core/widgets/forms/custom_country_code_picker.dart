@@ -26,10 +26,11 @@ class CustomCountryCodePicker extends StatefulWidget {
 }
 
 class _CustomCountryCodePickerState extends State<CustomCountryCodePicker> {
+  bool isFocused = false; // 👈 focus tracking
+
   @override
   void initState() {
     super.initState();
-    // Set initial value to provided country code or default to SA (+966)
     widget.code.value = widget.initialCountryCode ?? '+966';
   }
 
@@ -155,12 +156,12 @@ class _CustomCountryCodePickerState extends State<CustomCountryCodePicker> {
       '+1340': 'VI', // US Virgin Islands
       '+1345': 'KY', // Cayman Islands
       '+1473': 'GD', // Grenada
-      '+1649': 'TC', // Turks and Caicos Islands
+      '+1649': 'TC', // Turks and  Islands
       '+1664': 'MS', // Montserrat
       '+1670': 'MP', // Northern Mariana Islands
       '+1671': 'GU', // Guam
       '+1684': 'AS', // American Samoa
-      '+1721': 'SX', // Sint Maarten
+      '+1721': 'SX', //  Maarten
       '+1758': 'LC', // Saint Lucia
       '+1767': 'DM', // Dominica
       '+1784': 'VC', // Saint Vincent and the Grenadines
@@ -216,7 +217,7 @@ class _CustomCountryCodePickerState extends State<CustomCountryCodePicker> {
       '+252': 'SO', // Somalia
       '+232': 'SL', // Sierra Leone
       '+233': 'GH', // Ghana
-      '+225': 'CI', // Côte d'Ivoire
+      '+225': 'CI', // Côte
       '+226': 'BF', // Burkina Faso
       '+227': 'NE', // Niger
       '+228': 'TG', // Togo
@@ -263,91 +264,111 @@ class _CustomCountryCodePickerState extends State<CustomCountryCodePicker> {
         LocalizationService.isArabic(context) ||
         LocalizationService.isUrdu(context);
 
-    return Container(
-      padding: EdgeInsetsGeometry.symmetric(vertical: 8.h, horizontal: 8.w),
-      decoration: ShapeDecoration(
-        color: AppColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8).r,
-          side: BorderSide(color: AppColors.darkBlue),
-        ),
-      ),
-      child: Center(
-        child: Directionality(
-          // For RTL languages, use RTL direction to flip flag and code positions
-          textDirection: isRTL ? ui.TextDirection.rtl : ui.TextDirection.ltr,
-
-          child: CountryCodePicker(
-            flagDecoration: BoxDecoration(shape: BoxShape.circle),
-            searchDecoration: InputDecoration(
-              hintText: LocaleKeys.authentication_selectCountry.tr(),
+    return Focus(
+      onFocusChange: (focus) {
+        setState(() => isFocused = focus);
+      },
+      child: GestureDetector(
+        onTap: () {
+          setState(() => isFocused = true);
+        },
+        child: Container(
+          padding: EdgeInsetsGeometry.symmetric(vertical: 8.h, horizontal: 8.w),
+          decoration: ShapeDecoration(
+            color: AppColors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8).r,
+              side: BorderSide(
+                width: 1,
+                color: isFocused
+                    ? AppColors
+                          .darkBlue //
+                    : AppColors
+                          .philippineSilver, // 🔸 Unfocused color (light gray)
+              ),
             ),
-            headerText: LocaleKeys.authentication_selectCountry.tr(),
-            padding: EdgeInsets.zero,
+          ),
+          child: Center(
+            child: Directionality(
+              // For RTL languages, use RTL direction to flip flag and code positions
+              textDirection: isRTL
+                  ? ui.TextDirection.rtl
+                  : ui.TextDirection.ltr,
 
-            onChanged: (code) {
-              final dialCode = code.dialCode ?? '';
-              if (dialCode.isNotEmpty) {
-                // Clean the dial code and ensure it starts with +
-                String cleanedCode = dialCode.replaceAll('+', '').trim();
-                widget.code.value = '+$cleanedCode';
-              }
-            },
-            initialSelection: _getCountryCodeFromDialCode(
-              widget.initialCountryCode,
-            ),
-            favorite: ['+966', 'SA'],
-            showCountryOnly: false,
-            showOnlyCountryWhenClosed: false,
-            alignLeft: false,
-            // Force the country code text to be LTR to prevent "+966" from displaying as "966+"
-            builder: (country) {
-              if (country == null) return const SizedBox.shrink();
-
-              return Directionality(
-                textDirection: ui.TextDirection.ltr, // keep code left-to-right
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Flag image
-                    if (!isRTL) ...[
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(100.r),
-                        child: Image.asset(
-                          country.flagUri!,
-                          package: 'country_code_picker',
-                          width: 24.w,
-                          height: 24.h,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                    ],
-
-                    // Dial code text
-                    Text(
-                      country.dialCode ?? '+966',
-                      style: AppTextStyles.font16DarkBlueRegular,
-                    ),
-
-                    if (isRTL) ...[
-                      SizedBox(width: 8.w),
-
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(100.r),
-                        child: Image.asset(
-                          country.flagUri!,
-                          package: 'country_code_picker',
-                          width: 24.w,
-                          height: 24.h,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ],
-                  ],
+              child: CountryCodePicker(
+                flagDecoration: BoxDecoration(shape: BoxShape.circle),
+                searchDecoration: InputDecoration(
+                  hintText: LocaleKeys.authentication_selectCountry.tr(),
                 ),
-              );
-            },
+                headerText: LocaleKeys.authentication_selectCountry.tr(),
+                padding: EdgeInsets.zero,
+
+                onChanged: (code) {
+                  final dialCode = code.dialCode ?? '';
+                  if (dialCode.isNotEmpty) {
+                    // Clean the dial code and ensure it starts with +
+                    String cleanedCode = dialCode.replaceAll('+', '').trim();
+                    widget.code.value = '+$cleanedCode';
+                  }
+                },
+                initialSelection: _getCountryCodeFromDialCode(
+                  widget.initialCountryCode,
+                ),
+                favorite: ['+966', 'SA'],
+                showCountryOnly: false,
+                showOnlyCountryWhenClosed: false,
+                alignLeft: false,
+                // Force the country code text to be LTR to prevent "+966" from displaying as "966+"
+                builder: (country) {
+                  if (country == null) return const SizedBox.shrink();
+
+                  return Directionality(
+                    textDirection:
+                        ui.TextDirection.ltr, // keep code left-to-right
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Flag image
+                        if (!isRTL) ...[
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(100.r),
+                            child: Image.asset(
+                              country.flagUri!,
+                              package: 'country_code_picker',
+                              width: 24.w,
+                              height: 24.h,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                        ],
+
+                        // Dial code text
+                        Text(
+                          country.dialCode ?? '+966',
+                          style: AppTextStyles.font16DarkBlueRegular,
+                        ),
+
+                        if (isRTL) ...[
+                          SizedBox(width: 8.w),
+
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(100.r),
+                            child: Image.asset(
+                              country.flagUri!,
+                              package: 'country_code_picker',
+                              width: 24.w,
+                              height: 24.h,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ),
         ),
       ),
