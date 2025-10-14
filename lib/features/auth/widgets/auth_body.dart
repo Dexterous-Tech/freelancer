@@ -3,7 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/helper/localization_service.dart';
+import 'package:freelancer/core/theme/font_weight_helper.dart';
 
 import '../../../core/helper/app_images.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -16,12 +18,14 @@ class AuthBody extends StatelessWidget {
     required this.subTitle,
     required this.authBodyContent,
     this.isBack = true,
+    this.additionalText,
   });
 
   final String title;
   final String subTitle;
   final Widget authBodyContent;
   final bool isBack;
+  final String? additionalText;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,10 +37,15 @@ class AuthBody extends StatelessWidget {
             if (isBack) ...[
               Transform.rotate(
                 angle: LocalizationService.isEnglish(context) ? math.pi : 0,
-                child: SvgPicture.asset(
-                  AppImages.arrowRight,
-                  width: 24.w,
-                  height: 24.h,
+                child: GestureDetector(
+                  onTap: () {
+                    context.pop();
+                  },
+                  child: SvgPicture.asset(
+                    AppImages.arrowRight,
+                    width: 24.w,
+                    height: 24.h,
+                  ),
                 ),
               ),
               verticalSpace(24),
@@ -55,7 +64,32 @@ class AuthBody extends StatelessWidget {
             verticalSpace(32),
             Text(title, style: AppTextStyles.font30OuterSpaceRegular),
             verticalSpace(8),
-            Text(subTitle, style: AppTextStyles.font16DavyGrayRegular),
+
+            additionalText.isNullOrEmpty()
+                ? Text(subTitle, style: AppTextStyles.font16DavyGrayRegular)
+                : RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '$subTitle ',
+                          style: AppTextStyles.font16DavyGrayRegular,
+                        ),
+                        // Force LTR for phone numbers to prevent reversal in RTL languages
+                        WidgetSpan(
+                          child: Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: Text(
+                              additionalText!,
+                              style: AppTextStyles.font16DarkBlueRegular
+                                  .copyWith(
+                                    fontWeight: FontWeightHelper.medium,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
             verticalSpace(32),
             authBodyContent,
           ],

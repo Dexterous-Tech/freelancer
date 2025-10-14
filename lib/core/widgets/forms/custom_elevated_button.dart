@@ -22,7 +22,7 @@ class CustomElevatedButton extends StatelessWidget {
   });
 
   final EdgeInsetsGeometry? paddingButton;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String? textButton;
 
   final TextStyle? styleTextButton;

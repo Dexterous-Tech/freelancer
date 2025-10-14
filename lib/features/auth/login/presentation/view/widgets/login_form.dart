@@ -44,46 +44,49 @@ class _LoginFormState extends State<LoginForm> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 60.h,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomCountryCodePicker(code: countryCode),
-                    horizontalSpace(8),
-                    Expanded(
-                      child: CustomTextFormField(
-                        controller: cubit.phoneNumberController,
-                        keyboardType: TextInputType.phone,
-                        hintText: LocaleKeys.authentication_phoneNumber.tr(),
-                        inputFormatters: [
-                          FilteringTextInputFormatter
-                              .digitsOnly, // ✅ Only numbers
-                        ],
-                        errorText: null, // removes default error
-                        errorStyle: const TextStyle(height: 0),
-                        borderColor: phoneErrorMessage != null
-                            ? AppColors.red
-                            : AppColors
-                                  .darkBlue, // Change border color based on error
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
+              Form(
+                key: cubit.phoneFormKey,
+                child: SizedBox(
+                  height: 60.h,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomCountryCodePicker(code: countryCode),
+                      horizontalSpace(8),
+                      Expanded(
+                        child: CustomTextFormField(
+                          controller: cubit.phoneNumberController,
+                          keyboardType: TextInputType.phone,
+                          hintText: LocaleKeys.authentication_phoneNumber.tr(),
+                          inputFormatters: [
+                            FilteringTextInputFormatter
+                                .digitsOnly, // ✅ Only numbers
+                          ],
+                          errorText: null, // removes default error
+                          errorStyle: const TextStyle(height: 0),
+                          borderColor: phoneErrorMessage != null
+                              ? AppColors.red
+                              : AppColors
+                                    .darkBlue, // Change border color based on error
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              setState(() {
+                                phoneErrorMessage = LocaleKeys
+                                    .authentication_fieldRequired
+                                    .tr();
+                              });
+                              return null;
+                            }
+                            // ✅ No error
                             setState(() {
-                              phoneErrorMessage = LocaleKeys
-                                  .authentication_fieldRequired
-                                  .tr();
+                              phoneErrorMessage = null;
                             });
                             return null;
-                          }
-                          // ✅ No error
-                          setState(() {
-                            phoneErrorMessage = null;
-                          });
-                          return null;
-                        }, // Empty validator to prevent height changes
+                          }, // Empty validator to prevent height changes
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               // Show error message below the row
