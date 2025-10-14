@@ -9,8 +9,31 @@
     "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
   },
   "authentication": {
-    "login": "تسجيل الدخول",
-    "welcomeBack": "مرحبا بعودتك"
+    "welcomeBack": "مرحبا بعودتك",
+    "phoneNumber": "رقم الهاتف",
+    "password": "كلمة المرور",
+    "forgetPasswordQu": "نسيت كلمة المرور ؟",
+    "loginButton": "سجل الدخول",
+    "notHaveAccount": "ليس لديك حساب؟",
+    "createNewAccount": "انشئ حساب جديد",
+    "forgetPasswordTitle": "نسيت كلمة المرور",
+    "loginTitle": "تسجيل الدخول",
+    "enterDigits": "قم بإدخال الرمز المكون من 4 أرقام الذي تم إرساله على رقم هاتفك",
+    "resendAgain": "إعادة الإرسال مرة أخرى",
+    "newPasswordTitle": "كلمة السر الجديدة",
+    "newPasswordHint": "كلمة المرور الجديدة",
+    "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
+    "createNewAccountTitle": "إنشاء حساب جديد",
+    "takeTwoSteps": "!الأمر يحتاج من خطوتين فقط",
+    "firstNameHint": "الاسم الأول",
+    "lastNameHint": "الاسم الأخير",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "verifyAccountTitle": "توثيق حسابك",
+    "fieldRequired": "هذا الحقل إلزامي",
+    "passwordValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "selectCountry": "اختر الدولة",
+    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول"
   },
-  "next": "التالي"
+  "next": "التالي",
+  "save": "حفظ"
 }

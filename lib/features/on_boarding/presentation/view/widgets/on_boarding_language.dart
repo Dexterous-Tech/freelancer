@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/app_images.dart';
+import 'package:freelancer/core/helper/extensions.dart';
+import 'package:freelancer/core/helper/localization_service.dart';
+import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
@@ -102,7 +105,9 @@ class _OnBoardingLanguageState extends State<OnBoardingLanguage> {
                 verticalSpace(28),
 
                 CustomElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushReplacementNamed(AppRoutes.loginScreen);
+                  },
                   backgroundColor: AppColors.yellow,
                   buttonWidget: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +120,9 @@ class _OnBoardingLanguageState extends State<OnBoardingLanguage> {
                       ),
                       horizontalSpace(8),
                       Transform.rotate(
-                        angle: currentLocale == 'en' ? math.pi : 0,
+                        angle: LocalizationService.isEnglish(context)
+                            ? math.pi
+                            : 0,
                         child: SvgPicture.asset(
                           AppImages.arrowLeft,
                           width: 24.w,

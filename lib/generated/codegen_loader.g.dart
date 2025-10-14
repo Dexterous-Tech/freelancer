@@ -25,10 +25,33 @@ class CodegenLoader extends AssetLoader{
     "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
   },
   "authentication": {
-    "login": "تسجيل الدخول",
-    "welcomeBack": "مرحبا بعودتك"
+    "welcomeBack": "مرحبا بعودتك",
+    "phoneNumber": "رقم الهاتف",
+    "password": "كلمة المرور",
+    "forgetPasswordQu": "نسيت كلمة المرور ؟",
+    "loginButton": "سجل الدخول",
+    "notHaveAccount": "ليس لديك حساب؟",
+    "createNewAccount": "انشئ حساب جديد",
+    "forgetPasswordTitle": "نسيت كلمة المرور",
+    "loginTitle": "تسجيل الدخول",
+    "enterDigits": "قم بإدخال الرمز المكون من 4 أرقام الذي تم إرساله على رقم هاتفك",
+    "resendAgain": "إعادة الإرسال مرة أخرى",
+    "newPasswordTitle": "كلمة السر الجديدة",
+    "newPasswordHint": "كلمة المرور الجديدة",
+    "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
+    "createNewAccountTitle": "إنشاء حساب جديد",
+    "takeTwoSteps": "!الأمر يحتاج من خطوتين فقط",
+    "firstNameHint": "الاسم الأول",
+    "lastNameHint": "الاسم الأخير",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "verifyAccountTitle": "توثيق حسابك",
+    "fieldRequired": "هذا الحقل إلزامي",
+    "passwordValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "selectCountry": "اختر الدولة",
+    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول"
   },
-  "next": "التالي"
+  "next": "التالي",
+  "save": "حفظ"
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -41,10 +64,33 @@ static const Map<String,dynamic> _en = {
     "nearbyTechnicians": "You can view nearby technicians and easily choose the one that suits you"
   },
   "authentication": {
-    "login": "Login",
-    "welcomeBack": "Welcome back"
+    "welcomeBack": "Welcome back",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "forgetPasswordQu": "Forgot Password?",
+    "loginButton": "Login",
+    "notHaveAccount": "Don’t have an account?",
+    "createNewAccount": "Create a new account",
+    "forgetPasswordTitle": "Forgot Password",
+    "loginTitle": "Login",
+    "enterDigits": "Enter the 4-digit code that was sent to your phone number",
+    "resendAgain": "Resend again",
+    "newPasswordTitle": "New Password",
+    "newPasswordHint": "New Password",
+    "confirmNewPasswordHint": "New Password Again",
+    "createNewAccountTitle": "Create a new account",
+    "takeTwoSteps": "It only takes two steps!",
+    "firstNameHint": "First Name",
+    "lastNameHint": "Last Name",
+    "alreadyHaveAccount": "Already have an account?",
+    "verifyAccountTitle": "Verify your account",
+    "fieldRequired": "This field is required",
+    "passwordValidation": "The password must be at least 8 characters long",
+    "selectCountry": "Select Country",
+    "enterNewPassword": "Enter the new password twice, then proceed to login"
   },
-  "next": "Next"
+  "next": "Next",
+  "save": "Save"
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -57,10 +103,33 @@ static const Map<String,dynamic> _ur = {
     "nearbyTechnicians": "آپ اپنے قریب موجود ٹیکنیشنز کو دیکھ سکتے ہیں اور آسانی سے اپنے لیے موزوں ٹیکنیشن منتخب کر سکتے ہیں"
   },
   "authentication": {
-    "login": "لاگ ان",
-    "welcomeBack": "واپسی پر خوش آمدید"
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "phoneNumber": "فون نمبر",
+    "password": "پاس ورڈ",
+    "forgetPasswordQu": "پاس ورڈ بھول گئے؟",
+    "loginButton": "لاگ ان کریں",
+    "notHaveAccount": "کیا آپ کا اکاؤنٹ نہیں ہے؟",
+    "createNewAccount": "نیا اکاؤنٹ بنائیں",
+    "forgetPasswordTitle": "پاس ورڈ بھول گئے",
+    "loginTitle": "لاگ ان",
+    "enterDigits": "وہ 4 ہندسوں کا کوڈ درج کریں جو آپ کے فون نمبر پر بھیجا گیا ہے",
+    "resendAgain": "دوبارہ بھیجیں",
+    "newPasswordTitle": "نیا پاس ورڈ",
+    "newPasswordHint": "نیا پاس ورڈ",
+    "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
+    "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
+    "takeTwoSteps": "!اس میں صرف دو مراحل درکار ہیں",
+    "firstNameHint": "پہلا نام",
+    "lastNameHint": "آخری نام",
+    "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
+    "verifyAccountTitle": "اپنے اکاؤنٹ کی تصدیق کریں",
+    "fieldRequired": "یہ خانہ لازمی ہے",
+    "passwordValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "selectCountry": "ملک منتخب کریں",
+    "enterNewPassword": "نیا پاس ورڈ دو بار درج کریں، پھر لاگ ان کے لیے آگے بڑھیں"
   },
-  "next": "اگلا"
+  "next": "اگلا",
+  "save": "محفوظ کریں"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

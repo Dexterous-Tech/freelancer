@@ -9,8 +9,31 @@
     "nearbyTechnicians": "You can view nearby technicians and easily choose the one that suits you"
   },
   "authentication": {
-    "login": "Login",
-    "welcomeBack": "Welcome back"
+    "welcomeBack": "Welcome back",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "forgetPasswordQu": "Forgot Password?",
+    "loginButton": "Login",
+    "notHaveAccount": "Don’t have an account?",
+    "createNewAccount": "Create a new account",
+    "forgetPasswordTitle": "Forgot Password",
+    "loginTitle": "Login",
+    "enterDigits": "Enter the 4-digit code that was sent to your phone number",
+    "resendAgain": "Resend again",
+    "newPasswordTitle": "New Password",
+    "newPasswordHint": "New Password",
+    "confirmNewPasswordHint": "New Password Again",
+    "createNewAccountTitle": "Create a new account",
+    "takeTwoSteps": "It only takes two steps!",
+    "firstNameHint": "First Name",
+    "lastNameHint": "Last Name",
+    "alreadyHaveAccount": "Already have an account?",
+    "verifyAccountTitle": "Verify your account",
+    "fieldRequired": "This field is required",
+    "passwordValidation": "The password must be at least 8 characters long",
+    "selectCountry": "Select Country",
+    "enterNewPassword": "Enter the new password twice, then proceed to login"
   },
-  "next": "Next"
+  "next": "Next",
+  "save": "Save"
 }

@@ -54,4 +54,17 @@ class AppTextStyles {
     color: AppColors.white,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font30OuterSpaceRegular = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+  static TextStyle font16DavyGrayRegular = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.davyGrey,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }

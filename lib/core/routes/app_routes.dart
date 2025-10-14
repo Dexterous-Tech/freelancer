@@ -1,4 +1,9 @@
 class AppRoutes {
   static const String splashScreen = '/';
   static const String languageScreen = '/languageScreen';
+  static const String loginScreen = '/loginScreen';
+  static const String forgetScreen = '/forgetScreen';
+  static const String newPasswordScreen = '/newPasswordScreen';
+  static const String signupScreen = '/signupScreen';
+  static const String verificationScreen = '/verificationScreen';
 }

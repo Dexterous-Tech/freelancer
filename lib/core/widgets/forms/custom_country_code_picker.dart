@@ -1,6 +1,8 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelancer/generated/locale_keys.g.dart';
 
 import '../../theme/app_colors.dart';
 
@@ -256,16 +258,18 @@ class _CustomCountryCodePickerState extends State<CustomCountryCodePicker> {
     return Container(
       // padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: ShapeDecoration(
-        color: AppColors.cultured,
+        color: AppColors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16).r,
+          borderRadius: BorderRadius.circular(8).r,
           side: BorderSide(color: AppColors.darkBlue),
         ),
       ),
       child: Center(
         child: CountryCodePicker(
-          searchDecoration: InputDecoration(hintText: 'Select country'),
-          headerText: 'Select country',
+          searchDecoration: InputDecoration(
+            hintText: LocaleKeys.authentication_selectCountry.tr(),
+          ),
+          headerText: LocaleKeys.authentication_selectCountry.tr(),
           padding: EdgeInsets.zero,
           onChanged: (code) {
             widget.code.value = code.dialCode ?? '';

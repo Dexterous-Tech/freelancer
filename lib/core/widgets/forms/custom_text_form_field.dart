@@ -34,6 +34,10 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFormatters,
     this.style,
     this.readOnly = false,
+    this.errorStyle,
+    this.errorText,
+    this.enableInteractiveSelection,
+    this.contextMenuBuilder,
   });
 
   final String? hintText;
@@ -64,6 +68,10 @@ class CustomTextFormField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextStyle? style;
   final bool readOnly;
+  final TextStyle? errorStyle;
+  final String? errorText;
+  final bool? enableInteractiveSelection;
+  final Widget Function(BuildContext, EditableTextState)? contextMenuBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +93,8 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       maxLines: maxLines ?? 1,
       inputFormatters: inputFormatters,
+      enableInteractiveSelection: enableInteractiveSelection,
+      contextMenuBuilder: contextMenuBuilder,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: hintStyle ?? AppTextStyles.font14GrayMedium,
@@ -100,7 +110,8 @@ class CustomTextFormField extends StatelessWidget {
         fillColor: fillBackgroundColor ?? AppColors.white,
         errorMaxLines: 3,
         // RTL error text styling
-        errorStyle: TextStyle(fontSize: 12.sp, color: Colors.red),
+        errorStyle: errorStyle ?? TextStyle(fontSize: 12.sp, color: Colors.red),
+        errorText: errorText, // removes default error
         border:
             border ??
             OutlineInputBorder(
