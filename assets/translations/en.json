@@ -38,8 +38,48 @@
     "nameValidation": "The username must be at least 2 characters long",
     "phoneValidation": "The phone number must be at least 9 digits long",
     "passwordAgain": "Password Again",
-    "passwordMismatch": "The passwords must match"
+    "passwordMismatch": "The passwords must match",
+    "currentPassword": "Current Password"
   },
   "next": "Next",
-  "save": "Save"
+  "save": "Save",
+  "bottomNavigationBar": {
+    "home": "Home",
+    "profile": "My Account",
+    "services": "Services",
+    "more": "More"
+  },
+  "profile": {
+    "basicInformation": "Basic Information",
+    "editProfile": "Edit Profile",
+    "location": "Location",
+    "fav": "Favorites",
+    "joinService": "Join us as a service provider",
+    "exitApp": "Exit App",
+    "logout": "Log Out",
+    "deleteAccount": "Delete Account",
+    "profileTitle": "Profile",
+    "changePassword": "Change Password",
+    "editPasswordTitle": "Edit Password",
+    "completeSuccessfully": "Completed Successfully",
+    "passwordChangesSuccessfully": "Your password has been changed successfully",
+    "backToProfile": "Back to Profile",
+    "switchAccount": "Switch Account",
+    "easySwitch": "You can switch between your accounts easily",
+    "sureDelete": "Are you sure you want to delete the account?",
+    "sureLogout": "Are you sure you want to log out?",
+    "enterPasswordTitle": "Enter Password",
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+  },
+  "back": "Back",
+  "more": {
+    "shareApp": "Share App",
+    "language": "Language",
+    "aboutUS": "About Us",
+    "contactus": "Contact Us",
+    "requestSpeciality": "Request to Create a Specialty",
+    "privacyPolicy": "Privacy Policy",
+    "selectLanguageTitle": "Choose Language",
+    "chooseLanguageApp": "Choose the application language"
+  }
 }

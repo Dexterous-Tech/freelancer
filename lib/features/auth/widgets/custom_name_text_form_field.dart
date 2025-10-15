@@ -9,10 +9,12 @@ class CustomNameTextFormField extends StatelessWidget {
     super.key,
     required this.hint,
     required this.nameController,
+    this.labelText,
   });
 
   final String hint;
   final TextEditingController nameController;
+  final String? labelText;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class CustomNameTextFormField extends StatelessWidget {
       controller: nameController,
       keyboardType: TextInputType.name,
       hintText: hint,
+      labelText: labelText,
       inputFormatters: [
         // ✅ allow only printable characters (letters, digits, symbols, spaces)
         FilteringTextInputFormatter.allow(RegExp(r'[ -~]')),

@@ -38,8 +38,48 @@
     "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
     "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
     "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
-    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
+    "currentPassword": "موجودہ پاس ورڈ"
   },
   "next": "اگلا",
-  "save": "محفوظ کریں"
+  "save": "محفوظ کریں",
+  "bottomNavigationBar": {
+    "home": "مرکزی صفحہ",
+    "profile": "میرا اکاؤنٹ",
+    "services": "خدمات",
+    "more": "مزید"
+  },
+  "profile": {
+    "basicInformation": "بنیادی معلومات",
+    "editProfile": "پروفائل میں ترمیم کریں",
+    "location": "مقام",
+    "fav": "پسند",
+    "joinService": "بطور سروس فراہم کنندہ ہمارے ساتھ شامل ہوں",
+    "exitApp": "ایپ سے باہر نکلیں",
+    "logout": "لاگ آؤٹ کریں",
+    "deleteAccount": "اکاؤنٹ حذف کریں",
+    "profileTitle": "پروفائل",
+    "changePassword": "پاس ورڈ تبدیل کریں",
+    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں",
+    "completeSuccessfully": "کامیابی سے مکمل ہوا",
+    "passwordChangesSuccessfully": "آپ کا پاس ورڈ کامیابی سے تبدیل ہو گیا",
+    "backToProfile": "پروفائل پر واپس جائیں",
+    "switchAccount": "اکاؤنٹ تبدیل کریں",
+    "easySwitch": "آپ اپنے اکاؤنٹس کے درمیان آسانی سے منتقل ہو سکتے ہیں",
+    "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
+    "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
+    "enterPasswordTitle": "پاس ورڈ درج کریں",
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+  },
+  "back": "واپس جائیں",
+  "more": {
+    "shareApp": "ایپ شیئر کریں",
+    "language": "زبان",
+    "aboutUS": "ہمارے بارے میں",
+    "contactus": "ہم سے رابطہ کریں",
+    "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
+    "privacyPolicy": "رازداری کی پالیسی",
+    "selectLanguageTitle": "زبان منتخب کریں",
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+  }
 }
