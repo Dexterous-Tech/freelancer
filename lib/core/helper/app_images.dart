@@ -59,4 +59,17 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}arrow_right_black.svg';
   static const String lockIcon =
       '${AppConstants.svgIconsImagesPath}lock_icon.svg';
+  static const String correctIcon =
+      '${AppConstants.svgIconsImagesPath}correct.svg';
+  static const String badgeIcon =
+      '${AppConstants.svgIconsImagesPath}badge_icon.svg';
+  static const String correctSelectedIcon =
+      '${AppConstants.svgIconsImagesPath}correct_selected.svg';
+  static const String arrowLeftGrayIcon =
+      '${AppConstants.svgIconsImagesPath}arrow_left_gray.svg';
+
+  // images
+  static const String successImage = '${AppConstants.imagesPath}success.png';
+  static const String personImage =
+      '${AppConstants.imagesPath}person_image.png';
 }

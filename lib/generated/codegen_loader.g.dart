@@ -76,8 +76,18 @@ class CodegenLoader extends AssetLoader{
     "deleteAccount": "حذف الحساب",
     "profileTitle": "الملف الشخصي",
     "changePassword": "تغيير كلمة المرور",
-    "editPasswordTitle": "تعديل كلمة المرور"
-  }
+    "editPasswordTitle": "تعديل كلمة المرور",
+    "completeSuccessfully": "تمت بنجاح",
+    "passwordChangesSuccessfully": "تم تغيير كلمة المرور الخاصة بك بنجاح",
+    "backToProfile": "العودة للملف الشخصي",
+    "switchAccount": "تبديل الحساب",
+    "easySwitch": "يمكنك التنقل بين حساباتك بسهولة",
+    "sureDelete": "هل أنت متأكد من رغبتك في حذف الحساب؟",
+    "sureLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+    "enterPasswordTitle": "ادخل كلمة المرور",
+    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
+  },
+  "back": "العودة"
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -141,8 +151,18 @@ static const Map<String,dynamic> _en = {
     "deleteAccount": "Delete Account",
     "profileTitle": "Profile",
     "changePassword": "Change Password",
-    "editPasswordTitle": "Edit Password"
-  }
+    "editPasswordTitle": "Edit Password",
+    "completeSuccessfully": "Completed Successfully",
+    "passwordChangesSuccessfully": "Your password has been changed successfully",
+    "backToProfile": "Back to Profile",
+    "switchAccount": "Switch Account",
+    "easySwitch": "You can switch between your accounts easily",
+    "sureDelete": "Are you sure you want to delete the account?",
+    "sureLogout": "Are you sure you want to log out?",
+    "enterPasswordTitle": "Enter Password",
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+  },
+  "back": "Back"
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -206,8 +226,18 @@ static const Map<String,dynamic> _ur = {
     "deleteAccount": "اکاؤنٹ حذف کریں",
     "profileTitle": "پروفائل",
     "changePassword": "پاس ورڈ تبدیل کریں",
-    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں"
-  }
+    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں",
+    "completeSuccessfully": "کامیابی سے مکمل ہوا",
+    "passwordChangesSuccessfully": "آپ کا پاس ورڈ کامیابی سے تبدیل ہو گیا",
+    "backToProfile": "پروفائل پر واپس جائیں",
+    "switchAccount": "اکاؤنٹ تبدیل کریں",
+    "easySwitch": "آپ اپنے اکاؤنٹس کے درمیان آسانی سے منتقل ہو سکتے ہیں",
+    "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
+    "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
+    "enterPasswordTitle": "پاس ورڈ درج کریں",
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+  },
+  "back": "واپس جائیں"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

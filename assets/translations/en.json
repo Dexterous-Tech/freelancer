@@ -60,6 +60,16 @@
     "deleteAccount": "Delete Account",
     "profileTitle": "Profile",
     "changePassword": "Change Password",
-    "editPasswordTitle": "Edit Password"
-  }
+    "editPasswordTitle": "Edit Password",
+    "completeSuccessfully": "Completed Successfully",
+    "passwordChangesSuccessfully": "Your password has been changed successfully",
+    "backToProfile": "Back to Profile",
+    "switchAccount": "Switch Account",
+    "easySwitch": "You can switch between your accounts easily",
+    "sureDelete": "Are you sure you want to delete the account?",
+    "sureLogout": "Are you sure you want to log out?",
+    "enterPasswordTitle": "Enter Password",
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+  },
+  "back": "Back"
 }

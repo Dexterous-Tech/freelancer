@@ -116,4 +116,11 @@ class AppTextStyles {
     color: AppColors.darkLiver,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.white,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }

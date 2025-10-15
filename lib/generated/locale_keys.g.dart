@@ -61,6 +61,16 @@ abstract class  LocaleKeys {
   static const profile_profileTitle = 'profile.profileTitle';
   static const profile_changePassword = 'profile.changePassword';
   static const profile_editPasswordTitle = 'profile.editPasswordTitle';
+  static const profile_completeSuccessfully = 'profile.completeSuccessfully';
+  static const profile_passwordChangesSuccessfully = 'profile.passwordChangesSuccessfully';
+  static const profile_backToProfile = 'profile.backToProfile';
+  static const profile_switchAccount = 'profile.switchAccount';
+  static const profile_easySwitch = 'profile.easySwitch';
+  static const profile_sureDelete = 'profile.sureDelete';
+  static const profile_sureLogout = 'profile.sureLogout';
+  static const profile_enterPasswordTitle = 'profile.enterPasswordTitle';
+  static const profile_enterPasswordSubtitle = 'profile.enterPasswordSubtitle';
   static const profile = 'profile';
+  static const back = 'back';
 
 }

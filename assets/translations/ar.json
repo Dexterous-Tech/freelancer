@@ -60,6 +60,16 @@
     "deleteAccount": "حذف الحساب",
     "profileTitle": "الملف الشخصي",
     "changePassword": "تغيير كلمة المرور",
-    "editPasswordTitle": "تعديل كلمة المرور"
-  }
+    "editPasswordTitle": "تعديل كلمة المرور",
+    "completeSuccessfully": "تمت بنجاح",
+    "passwordChangesSuccessfully": "تم تغيير كلمة المرور الخاصة بك بنجاح",
+    "backToProfile": "العودة للملف الشخصي",
+    "switchAccount": "تبديل الحساب",
+    "easySwitch": "يمكنك التنقل بين حساباتك بسهولة",
+    "sureDelete": "هل أنت متأكد من رغبتك في حذف الحساب؟",
+    "sureLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+    "enterPasswordTitle": "ادخل كلمة المرور",
+    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
+  },
+  "back": "العودة"
 }

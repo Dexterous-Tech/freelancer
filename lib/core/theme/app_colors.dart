@@ -19,4 +19,10 @@ class AppColors {
   static const Color jet = Color(0xff353535);
   static const Color platinum = Color(0xffE4E4E4);
   static const Color darkLiver = Color(0xff4F4F4F);
+  static const Color gainsboro = Color(0xffDCDCE4);
+  static const Color charlestonGreen = Color(0xff292929);
+  static const Color antiFlashWhite = Color(0xffF2F2F2);
+  static const Color cgRed = Color(0xffE03939);
+  static const Color aliceBlue = Color(0xffECF3FA);
+  static const Color floralWhite = Color(0xffFFFCEC);
 }

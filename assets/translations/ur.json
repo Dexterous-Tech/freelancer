@@ -60,6 +60,16 @@
     "deleteAccount": "اکاؤنٹ حذف کریں",
     "profileTitle": "پروفائل",
     "changePassword": "پاس ورڈ تبدیل کریں",
-    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں"
-  }
+    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں",
+    "completeSuccessfully": "کامیابی سے مکمل ہوا",
+    "passwordChangesSuccessfully": "آپ کا پاس ورڈ کامیابی سے تبدیل ہو گیا",
+    "backToProfile": "پروفائل پر واپس جائیں",
+    "switchAccount": "اکاؤنٹ تبدیل کریں",
+    "easySwitch": "آپ اپنے اکاؤنٹس کے درمیان آسانی سے منتقل ہو سکتے ہیں",
+    "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
+    "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
+    "enterPasswordTitle": "پاس ورڈ درج کریں",
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+  },
+  "back": "واپس جائیں"
 }
