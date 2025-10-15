@@ -72,5 +72,14 @@ abstract class  LocaleKeys {
   static const profile_enterPasswordSubtitle = 'profile.enterPasswordSubtitle';
   static const profile = 'profile';
   static const back = 'back';
+  static const more_shareApp = 'more.shareApp';
+  static const more_language = 'more.language';
+  static const more_aboutUS = 'more.aboutUS';
+  static const more_contactus = 'more.contactus';
+  static const more_requestSpeciality = 'more.requestSpeciality';
+  static const more_privacyPolicy = 'more.privacyPolicy';
+  static const more_selectLanguageTitle = 'more.selectLanguageTitle';
+  static const more_chooseLanguageApp = 'more.chooseLanguageApp';
+  static const more = 'more';
 
 }

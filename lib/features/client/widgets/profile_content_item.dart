@@ -11,10 +11,12 @@ class ProfileContentItem extends StatelessWidget {
     required this.icon,
     required this.title,
     this.isDivider = true,
+    this.leading,
   });
   final String icon;
   final String title;
   final bool isDivider;
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,6 +27,7 @@ class ProfileContentItem extends StatelessWidget {
             SvgPicture.asset(icon, width: 22.w, height: 22.h),
             horizontalSpace(8),
             Text(title, style: AppTextStyles.font14OuterSpaceMedium),
+            if (leading != null) ...[Spacer(), leading ?? SizedBox.shrink()],
           ],
         ),
         if (isDivider) ...[

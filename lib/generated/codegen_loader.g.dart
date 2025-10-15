@@ -87,7 +87,17 @@ class CodegenLoader extends AssetLoader{
     "enterPasswordTitle": "ادخل كلمة المرور",
     "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
   },
-  "back": "العودة"
+  "back": "العودة",
+  "more": {
+    "shareApp": "مشاركة التطبيق",
+    "language": "اللغة",
+    "aboutUS": "من نحن",
+    "contactus": "تواصل معنا",
+    "requestSpeciality": "طلب استحداث تخصص",
+    "privacyPolicy": "سياسة الخصوصية",
+    "selectLanguageTitle": "اختيار اللغة",
+    "chooseLanguageApp": "قم باختيار لغة التطبيق"
+  }
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -162,7 +172,17 @@ static const Map<String,dynamic> _en = {
     "enterPasswordTitle": "Enter Password",
     "enterPasswordSubtitle": "Enter your password to confirm account deletion"
   },
-  "back": "Back"
+  "back": "Back",
+  "more": {
+    "shareApp": "Share App",
+    "language": "Language",
+    "aboutUS": "About Us",
+    "contactus": "Contact Us",
+    "requestSpeciality": "Request to Create a Specialty",
+    "privacyPolicy": "Privacy Policy",
+    "selectLanguageTitle": "Choose Language",
+    "chooseLanguageApp": "Choose the application language"
+  }
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -237,7 +257,17 @@ static const Map<String,dynamic> _ur = {
     "enterPasswordTitle": "پاس ورڈ درج کریں",
     "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
   },
-  "back": "واپس جائیں"
+  "back": "واپس جائیں",
+  "more": {
+    "shareApp": "ایپ شیئر کریں",
+    "language": "زبان",
+    "aboutUS": "ہمارے بارے میں",
+    "contactus": "ہم سے رابطہ کریں",
+    "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
+    "privacyPolicy": "رازداری کی پالیسی",
+    "selectLanguageTitle": "زبان منتخب کریں",
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

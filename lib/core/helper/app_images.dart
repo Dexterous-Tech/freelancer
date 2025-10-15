@@ -67,6 +67,18 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}correct_selected.svg';
   static const String arrowLeftGrayIcon =
       '${AppConstants.svgIconsImagesPath}arrow_left_gray.svg';
+  static const String aboutUsIcon =
+      '${AppConstants.svgIconsImagesPath}about_us.svg';
+  static const String contactUsIcon =
+      '${AppConstants.svgIconsImagesPath}contact_us.svg';
+  static const String languageIcon =
+      '${AppConstants.svgIconsImagesPath}language.svg';
+  static const String privacyPolicyIcon =
+      '${AppConstants.svgIconsImagesPath}privacy_policy.svg';
+  static const String requestSpecialityIcon =
+      '${AppConstants.svgIconsImagesPath}request_speciality.svg';
+  static const String shareAppIcon =
+      '${AppConstants.svgIconsImagesPath}share_app.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

@@ -10,4 +10,6 @@ class AppRoutes {
   static const String clientEditProfileScreen = '/clientEditProfileScreen';
   static const String clientChangePasswordScreen =
       '/clientChangePasswordScreen';
+  static const String aboutUsScreen = '/aboutUsScreen';
+  static const String privacyPolicyScreen = '/privacyPolicyScreen';
 }

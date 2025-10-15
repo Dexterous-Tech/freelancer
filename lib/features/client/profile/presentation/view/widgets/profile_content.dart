@@ -10,7 +10,7 @@ import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import 'bottom_sheets/delete_account_bottom_sheet.dart';
 import 'bottom_sheets/logout_bottom_sheet.dart';
 import 'profile_account_logo.dart';
-import 'profile_content_item.dart';
+import '../../../../widgets/profile_content_item.dart';
 import '../../../../../../generated/locale_keys.g.dart';
 
 class ProfileContent extends StatelessWidget {

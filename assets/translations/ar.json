@@ -71,5 +71,15 @@
     "enterPasswordTitle": "ادخل كلمة المرور",
     "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
   },
-  "back": "العودة"
+  "back": "العودة",
+  "more": {
+    "shareApp": "مشاركة التطبيق",
+    "language": "اللغة",
+    "aboutUS": "من نحن",
+    "contactus": "تواصل معنا",
+    "requestSpeciality": "طلب استحداث تخصص",
+    "privacyPolicy": "سياسة الخصوصية",
+    "selectLanguageTitle": "اختيار اللغة",
+    "chooseLanguageApp": "قم باختيار لغة التطبيق"
+  }
 }

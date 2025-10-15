@@ -10,7 +10,9 @@ import 'package:freelancer/features/home/main_home/presentation/view/main_home_s
 import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
+import '../../features/about_us/presentation/view/about_us_screen.dart';
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
+import '../../features/privacy_policy/presentation/view/privacy_policy_screen.dart';
 
 class AppRouting {
   Route onGenerateRouting(RouteSettings settings) {
@@ -40,6 +42,10 @@ class AppRouting {
         return _pageRouteBuilder(const ClientEditProfileScreen());
       case AppRoutes.clientChangePasswordScreen:
         return _pageRouteBuilder(const ClientChangePasswordScreen());
+      case AppRoutes.aboutUsScreen:
+        return _pageRouteBuilder(const AboutUsScreen());
+      case AppRoutes.privacyPolicyScreen:
+        return _pageRouteBuilder(const PrivacyPolicyScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }

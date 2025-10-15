@@ -71,5 +71,15 @@
     "enterPasswordTitle": "Enter Password",
     "enterPasswordSubtitle": "Enter your password to confirm account deletion"
   },
-  "back": "Back"
+  "back": "Back",
+  "more": {
+    "shareApp": "Share App",
+    "language": "Language",
+    "aboutUS": "About Us",
+    "contactus": "Contact Us",
+    "requestSpeciality": "Request to Create a Specialty",
+    "privacyPolicy": "Privacy Policy",
+    "selectLanguageTitle": "Choose Language",
+    "chooseLanguageApp": "Choose the application language"
+  }
 }

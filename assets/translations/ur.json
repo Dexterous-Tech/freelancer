@@ -71,5 +71,15 @@
     "enterPasswordTitle": "پاس ورڈ درج کریں",
     "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
   },
-  "back": "واپس جائیں"
+  "back": "واپس جائیں",
+  "more": {
+    "shareApp": "ایپ شیئر کریں",
+    "language": "زبان",
+    "aboutUS": "ہمارے بارے میں",
+    "contactus": "ہم سے رابطہ کریں",
+    "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
+    "privacyPolicy": "رازداری کی پالیسی",
+    "selectLanguageTitle": "زبان منتخب کریں",
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+  }
 }
