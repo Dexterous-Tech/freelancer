@@ -1,14 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
+import 'package:freelancer/features/auth/forget_password/presentation/view/forget_password_screen.dart';
+import 'package:freelancer/features/auth/login/presentation/view/login_screen.dart';
+import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
+import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
+import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
+import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
+import 'package:freelancer/features/home/main_home/presentation/view/main_home_screen.dart';
+import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
+
+import '../../features/about_us/presentation/view/about_us_screen.dart';
+import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
+import '../../features/privacy_policy/presentation/view/privacy_policy_screen.dart';
 
 class AppRouting {
   Route onGenerateRouting(RouteSettings settings) {
+    var arguments = settings.arguments;
     switch (settings.name) {
       case AppRoutes.splashScreen:
         return _pageRouteBuilder(const SplashScreen());
       case AppRoutes.languageScreen:
-        return _pageRouteBuilder(const Scaffold());
+        return _pageRouteBuilder(const OnBoardingScreen());
+      case AppRoutes.loginScreen:
+        return _pageRouteBuilder(const LoginScreen());
+      case AppRoutes.forgetScreen:
+        return _pageRouteBuilder(
+          ForgetPasswordScreen(phoneNumber: arguments as String),
+        );
+      case AppRoutes.newPasswordScreen:
+        return _pageRouteBuilder(const NewPasswordScreen());
+      case AppRoutes.signupScreen:
+        return _pageRouteBuilder(const SignupScreen());
+      case AppRoutes.mainHomeScreen:
+        return _pageRouteBuilder(const MainHomeScreen());
+      case AppRoutes.verificationScreen:
+        return _pageRouteBuilder(
+          VerificationScreen(phoneNumber: arguments as String),
+        );
+      case AppRoutes.clientEditProfileScreen:
+        return _pageRouteBuilder(const ClientEditProfileScreen());
+      case AppRoutes.clientChangePasswordScreen:
+        return _pageRouteBuilder(const ClientChangePasswordScreen());
+      case AppRoutes.aboutUsScreen:
+        return _pageRouteBuilder(const AboutUsScreen());
+      case AppRoutes.privacyPolicyScreen:
+        return _pageRouteBuilder(const PrivacyPolicyScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }
