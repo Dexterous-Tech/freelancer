@@ -8,4 +8,6 @@ class AppRoutes {
   static const String verificationScreen = '/verificationScreen';
   static const String mainHomeScreen = '/mainHomeScreen';
   static const String clientEditProfileScreen = '/clientEditProfileScreen';
+  static const String clientChangePasswordScreen =
+      '/clientChangePasswordScreen';
 }

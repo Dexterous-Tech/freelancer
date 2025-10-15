@@ -59,6 +59,7 @@
     "logout": "تسجيل الخروج",
     "deleteAccount": "حذف الحساب",
     "profileTitle": "الملف الشخصي",
-    "changePassword": "تغيير كلمة المرور"
+    "changePassword": "تغيير كلمة المرور",
+    "editPasswordTitle": "تعديل كلمة المرور"
   }
 }

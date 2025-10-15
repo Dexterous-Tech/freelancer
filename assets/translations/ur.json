@@ -59,6 +59,7 @@
     "logout": "لاگ آؤٹ کریں",
     "deleteAccount": "اکاؤنٹ حذف کریں",
     "profileTitle": "پروفائل",
-    "changePassword": "پاس ورڈ تبدیل کریں"
+    "changePassword": "پاس ورڈ تبدیل کریں",
+    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں"
   }
 }

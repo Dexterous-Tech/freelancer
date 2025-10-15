@@ -59,6 +59,7 @@
     "logout": "Log Out",
     "deleteAccount": "Delete Account",
     "profileTitle": "Profile",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "editPasswordTitle": "Edit Password"
   }
 }

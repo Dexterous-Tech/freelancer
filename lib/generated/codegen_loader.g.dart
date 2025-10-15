@@ -75,7 +75,8 @@ class CodegenLoader extends AssetLoader{
     "logout": "تسجيل الخروج",
     "deleteAccount": "حذف الحساب",
     "profileTitle": "الملف الشخصي",
-    "changePassword": "تغيير كلمة المرور"
+    "changePassword": "تغيير كلمة المرور",
+    "editPasswordTitle": "تعديل كلمة المرور"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -139,7 +140,8 @@ static const Map<String,dynamic> _en = {
     "logout": "Log Out",
     "deleteAccount": "Delete Account",
     "profileTitle": "Profile",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "editPasswordTitle": "Edit Password"
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -203,7 +205,8 @@ static const Map<String,dynamic> _ur = {
     "logout": "لاگ آؤٹ کریں",
     "deleteAccount": "اکاؤنٹ حذف کریں",
     "profileTitle": "پروفائل",
-    "changePassword": "پاس ورڈ تبدیل کریں"
+    "changePassword": "پاس ورڈ تبدیل کریں",
+    "editPasswordTitle": "پاس ورڈ میں ترمیم کریں"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

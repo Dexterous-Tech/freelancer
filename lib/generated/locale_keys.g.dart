@@ -60,6 +60,7 @@ abstract class  LocaleKeys {
   static const profile_deleteAccount = 'profile.deleteAccount';
   static const profile_profileTitle = 'profile.profileTitle';
   static const profile_changePassword = 'profile.changePassword';
+  static const profile_editPasswordTitle = 'profile.editPasswordTitle';
   static const profile = 'profile';
 
 }

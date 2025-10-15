@@ -39,9 +39,9 @@ class ClientEditProfileBody extends StatelessWidget {
         verticalSpace(8),
         Center(child: Text(name, style: AppTextStyles.font24JetRegular)),
         verticalSpace(32),
-        ClientEditProfileForm(),
-        // Expanded(child: verticalSpace(100)),
-        Spacer(),
+        Expanded(child: ClientEditProfileForm()),
+        Expanded(child: verticalSpace(50)),
+        // Spacer(),
         CustomBottomButton(textButton: LocaleKeys.save.tr()),
       ],
     );

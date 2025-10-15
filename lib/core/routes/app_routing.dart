@@ -5,6 +5,7 @@ import 'package:freelancer/features/auth/login/presentation/view/login_screen.da
 import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
 import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
 import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
+import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
 import 'package:freelancer/features/home/main_home/presentation/view/main_home_screen.dart';
 import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
@@ -37,6 +38,8 @@ class AppRouting {
         );
       case AppRoutes.clientEditProfileScreen:
         return _pageRouteBuilder(const ClientEditProfileScreen());
+      case AppRoutes.clientChangePasswordScreen:
+        return _pageRouteBuilder(const ClientChangePasswordScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }
