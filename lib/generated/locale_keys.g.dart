@@ -49,5 +49,14 @@ abstract class  LocaleKeys {
   static const bottomNavigationBar_services = 'bottomNavigationBar.services';
   static const bottomNavigationBar_more = 'bottomNavigationBar.more';
   static const bottomNavigationBar = 'bottomNavigationBar';
+  static const profile_basicInformation = 'profile.basicInformation';
+  static const profile_editProfile = 'profile.editProfile';
+  static const profile_location = 'profile.location';
+  static const profile_fav = 'profile.fav';
+  static const profile_joinService = 'profile.joinService';
+  static const profile_exitApp = 'profile.exitApp';
+  static const profile_logout = 'profile.logout';
+  static const profile_deleteAccount = 'profile.deleteAccount';
+  static const profile = 'profile';
 
 }

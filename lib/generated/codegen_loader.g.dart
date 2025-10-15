@@ -63,6 +63,16 @@ class CodegenLoader extends AssetLoader{
     "profile": "حسابي",
     "services": "الخدمات",
     "more": "المزيد"
+  },
+  "profile": {
+    "basicInformation": "البيانات الأساسية",
+    "editProfile": "تعديل الملف الشخصي",
+    "location": "الموقع",
+    "fav": "المفضلة",
+    "joinService": "انضم إلينا كمقدم خدمة",
+    "exitApp": "الخروج من التطبيق",
+    "logout": "تسجيل الخروج",
+    "deleteAccount": "حذف الحساب"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -114,6 +124,16 @@ static const Map<String,dynamic> _en = {
     "profile": "My Account",
     "services": "Services",
     "more": "More"
+  },
+  "profile": {
+    "basicInformation": "Basic Information",
+    "editProfile": "Edit Profile",
+    "location": "Location",
+    "fav": "Favorites",
+    "joinService": "Join us as a service provider",
+    "exitApp": "Exit App",
+    "logout": "Log Out",
+    "deleteAccount": "Delete Account"
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -165,6 +185,16 @@ static const Map<String,dynamic> _ur = {
     "profile": "میرا اکاؤنٹ",
     "services": "خدمات",
     "more": "مزید"
+  },
+  "profile": {
+    "basicInformation": "بنیادی معلومات",
+    "editProfile": "پروفائل میں ترمیم کریں",
+    "location": "مقام",
+    "fav": "پسند",
+    "joinService": "بطور سروس فراہم کنندہ ہمارے ساتھ شامل ہوں",
+    "exitApp": "ایپ سے باہر نکلیں",
+    "logout": "لاگ آؤٹ کریں",
+    "deleteAccount": "اکاؤنٹ حذف کریں"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

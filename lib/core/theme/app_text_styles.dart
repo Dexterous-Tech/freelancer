@@ -74,4 +74,25 @@ class AppTextStyles {
     color: AppColors.darkBlue,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font16JetMedium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.jet,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font12OuterSpaceSemiBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font14OuterSpaceMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freelancer/features/client/profile/presentation/view/client_profile_screen.dart';
 import 'widgets/main_home_bottom_navigation_bar.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -67,7 +68,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       case 0:
         return Center(key: const ValueKey('home'), child: Text('Home'));
       case 1:
-        return Center(key: const ValueKey('profile'), child: Text('Profile'));
+        return ClientProfileScreen(key: const ValueKey('profile'));
       case 2:
         return Center(key: const ValueKey('services'), child: Text('Services'));
 

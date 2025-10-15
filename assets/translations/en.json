@@ -47,5 +47,15 @@
     "profile": "My Account",
     "services": "Services",
     "more": "More"
+  },
+  "profile": {
+    "basicInformation": "Basic Information",
+    "editProfile": "Edit Profile",
+    "location": "Location",
+    "fav": "Favorites",
+    "joinService": "Join us as a service provider",
+    "exitApp": "Exit App",
+    "logout": "Log Out",
+    "deleteAccount": "Delete Account"
   }
 }

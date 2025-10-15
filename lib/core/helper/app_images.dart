@@ -41,4 +41,20 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}more_gray.svg';
   static const String moreBlueIcon =
       '${AppConstants.svgIconsImagesPath}more_blue.svg';
+  static const String arrowDownIcon =
+      '${AppConstants.svgIconsImagesPath}arrow_down.svg';
+  static const String deleteIcon =
+      '${AppConstants.svgIconsImagesPath}delete_icon.svg';
+  static const String heartIcon =
+      '${AppConstants.svgIconsImagesPath}heart_icon.svg';
+  static const String joinServiceIcon =
+      '${AppConstants.svgIconsImagesPath}join_service_icon.svg';
+  static const String locationIcon =
+      '${AppConstants.svgIconsImagesPath}location_icon.svg';
+  static const String logoutIcon =
+      '${AppConstants.svgIconsImagesPath}logout_icon.svg';
+  static const String profileIcon =
+      '${AppConstants.svgIconsImagesPath}profile_icon.svg';
+  static const String arrowRightBlackIcon =
+      '${AppConstants.svgIconsImagesPath}arrow_right_black.svg';
 }

@@ -47,5 +47,15 @@
     "profile": "حسابي",
     "services": "الخدمات",
     "more": "المزيد"
+  },
+  "profile": {
+    "basicInformation": "البيانات الأساسية",
+    "editProfile": "تعديل الملف الشخصي",
+    "location": "الموقع",
+    "fav": "المفضلة",
+    "joinService": "انضم إلينا كمقدم خدمة",
+    "exitApp": "الخروج من التطبيق",
+    "logout": "تسجيل الخروج",
+    "deleteAccount": "حذف الحساب"
   }
 }

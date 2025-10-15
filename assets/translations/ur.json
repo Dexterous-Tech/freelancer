@@ -47,5 +47,15 @@
     "profile": "میرا اکاؤنٹ",
     "services": "خدمات",
     "more": "مزید"
+  },
+  "profile": {
+    "basicInformation": "بنیادی معلومات",
+    "editProfile": "پروفائل میں ترمیم کریں",
+    "location": "مقام",
+    "fav": "پسند",
+    "joinService": "بطور سروس فراہم کنندہ ہمارے ساتھ شامل ہوں",
+    "exitApp": "ایپ سے باہر نکلیں",
+    "logout": "لاگ آؤٹ کریں",
+    "deleteAccount": "اکاؤنٹ حذف کریں"
   }
 }
