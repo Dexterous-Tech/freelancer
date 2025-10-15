@@ -38,7 +38,8 @@
     "nameValidation": "The username must be at least 2 characters long",
     "phoneValidation": "The phone number must be at least 9 digits long",
     "passwordAgain": "Password Again",
-    "passwordMismatch": "The passwords must match"
+    "passwordMismatch": "The passwords must match",
+    "currentPassword": "Current Password"
   },
   "next": "Next",
   "save": "Save",
@@ -56,6 +57,8 @@
     "joinService": "Join us as a service provider",
     "exitApp": "Exit App",
     "logout": "Log Out",
-    "deleteAccount": "Delete Account"
+    "deleteAccount": "Delete Account",
+    "profileTitle": "Profile",
+    "changePassword": "Change Password"
   }
 }

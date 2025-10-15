@@ -9,6 +9,8 @@ import 'package:freelancer/features/home/main_home/presentation/view/main_home_s
 import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
+import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
+
 class AppRouting {
   Route onGenerateRouting(RouteSettings settings) {
     var arguments = settings.arguments;
@@ -33,6 +35,8 @@ class AppRouting {
         return _pageRouteBuilder(
           VerificationScreen(phoneNumber: arguments as String),
         );
+      case AppRoutes.clientEditProfileScreen:
+        return _pageRouteBuilder(const ClientEditProfileScreen());
       default:
         return _pageRouteBuilder(const Scaffold());
     }

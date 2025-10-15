@@ -125,7 +125,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintText: widget.hintText,
         hintStyle: widget.hintStyle ?? AppTextStyles.font14GrayMedium,
         labelText: widget.labelText,
-        labelStyle: widget.labelStyle ?? AppTextStyles.font14GrayMedium,
+        labelStyle: widget.labelStyle ?? AppTextStyles.font14DarkLiverMedium,
         suffixIcon: widget.suffixIcon,
         prefixIcon: widget.prefixIcon,
         isDense: true,

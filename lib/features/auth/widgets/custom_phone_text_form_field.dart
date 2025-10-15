@@ -14,10 +14,12 @@ class CustomPhoneTextFormField extends StatefulWidget {
     super.key,
     required this.countryCodeController,
     required this.phoneNumberController,
+    this.labelText,
   });
 
   final TextEditingController countryCodeController;
   final TextEditingController phoneNumberController;
+  final String? labelText;
 
   @override
   State<CustomPhoneTextFormField> createState() =>
@@ -52,6 +54,7 @@ class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
                   controller: widget.phoneNumberController,
                   keyboardType: TextInputType.phone,
                   hintText: LocaleKeys.authentication_phoneNumber.tr(),
+                  labelText: widget.labelText,
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly, // ✅ Only numbers
                   ],

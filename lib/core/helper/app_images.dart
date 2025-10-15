@@ -57,4 +57,6 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}profile_icon.svg';
   static const String arrowRightBlackIcon =
       '${AppConstants.svgIconsImagesPath}arrow_right_black.svg';
+  static const String lockIcon =
+      '${AppConstants.svgIconsImagesPath}lock_icon.svg';
 }

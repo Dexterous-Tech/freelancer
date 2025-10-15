@@ -54,7 +54,8 @@ class CodegenLoader extends AssetLoader{
     "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
     "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
     "passwordAgain": "كلمة المرور مرة أخرى",
-    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
+    "currentPassword": "كلمة المرور الحالية"
   },
   "next": "التالي",
   "save": "حفظ",
@@ -72,7 +73,9 @@ class CodegenLoader extends AssetLoader{
     "joinService": "انضم إلينا كمقدم خدمة",
     "exitApp": "الخروج من التطبيق",
     "logout": "تسجيل الخروج",
-    "deleteAccount": "حذف الحساب"
+    "deleteAccount": "حذف الحساب",
+    "profileTitle": "الملف الشخصي",
+    "changePassword": "تغيير كلمة المرور"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -115,7 +118,8 @@ static const Map<String,dynamic> _en = {
     "nameValidation": "The username must be at least 2 characters long",
     "phoneValidation": "The phone number must be at least 9 digits long",
     "passwordAgain": "Password Again",
-    "passwordMismatch": "The passwords must match"
+    "passwordMismatch": "The passwords must match",
+    "currentPassword": "Current Password"
   },
   "next": "Next",
   "save": "Save",
@@ -133,7 +137,9 @@ static const Map<String,dynamic> _en = {
     "joinService": "Join us as a service provider",
     "exitApp": "Exit App",
     "logout": "Log Out",
-    "deleteAccount": "Delete Account"
+    "deleteAccount": "Delete Account",
+    "profileTitle": "Profile",
+    "changePassword": "Change Password"
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -176,7 +182,8 @@ static const Map<String,dynamic> _ur = {
     "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
     "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
     "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
-    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
+    "currentPassword": "موجودہ پاس ورڈ"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -194,7 +201,9 @@ static const Map<String,dynamic> _ur = {
     "joinService": "بطور سروس فراہم کنندہ ہمارے ساتھ شامل ہوں",
     "exitApp": "ایپ سے باہر نکلیں",
     "logout": "لاگ آؤٹ کریں",
-    "deleteAccount": "اکاؤنٹ حذف کریں"
+    "deleteAccount": "اکاؤنٹ حذف کریں",
+    "profileTitle": "پروفائل",
+    "changePassword": "پاس ورڈ تبدیل کریں"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

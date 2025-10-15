@@ -41,6 +41,7 @@ abstract class  LocaleKeys {
   static const authentication_phoneValidation = 'authentication.phoneValidation';
   static const authentication_passwordAgain = 'authentication.passwordAgain';
   static const authentication_passwordMismatch = 'authentication.passwordMismatch';
+  static const authentication_currentPassword = 'authentication.currentPassword';
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';
@@ -57,6 +58,8 @@ abstract class  LocaleKeys {
   static const profile_exitApp = 'profile.exitApp';
   static const profile_logout = 'profile.logout';
   static const profile_deleteAccount = 'profile.deleteAccount';
+  static const profile_profileTitle = 'profile.profileTitle';
+  static const profile_changePassword = 'profile.changePassword';
   static const profile = 'profile';
 
 }

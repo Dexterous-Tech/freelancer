@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/app_images.dart';
+import 'package:freelancer/core/helper/extensions.dart';
+import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/font_weight_helper.dart';
@@ -65,9 +67,14 @@ class ProfileContent extends StatelessWidget {
               style: AppTextStyles.font12OuterSpaceSemiBold,
             ),
             verticalSpace(28),
-            ProfileContentItem(
-              icon: AppImages.profileIcon,
-              title: LocaleKeys.profile_editProfile.tr(),
+            GestureDetector(
+              onTap: () {
+                context.pushNamed(AppRoutes.clientEditProfileScreen);
+              },
+              child: ProfileContentItem(
+                icon: AppImages.profileIcon,
+                title: LocaleKeys.profile_editProfile.tr(),
+              ),
             ),
             ProfileContentItem(
               icon: AppImages.locationIcon,
