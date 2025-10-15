@@ -19,4 +19,10 @@ class AppImages {
   // svg icons
   static const String arrowLeft =
       '${AppConstants.svgIconsImagesPath}arrow_left.svg';
+  static const String arrowRight =
+      '${AppConstants.svgIconsImagesPath}arrow_right.svg';
+  static const String visibleEyeIcon =
+      '${AppConstants.svgIconsImagesPath}visible_eye.svg';
+  static const String invisibleEyeIcon =
+      '${AppConstants.svgIconsImagesPath}invisible_eye.svg';
 }

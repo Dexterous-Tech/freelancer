@@ -15,16 +15,139 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> _ar = {
-  "login": "تسجيل الدخول",
-  "welcome_back": "مرحبا بعودتك"
+  "on_boarding": {
+    "welcome": "مرحبا بكم",
+    "requestTechnician": "يمكنك طلب الفني بسهولة",
+    "selectLanguage": "حدد اللغة",
+    "arabicLanguage": "العربية",
+    "englishLanguage": "الإنجليزية",
+    "urduLanguage": "الأُردو",
+    "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
+  },
+  "authentication": {
+    "welcomeBack": "مرحبا بعودتك",
+    "phoneNumber": "رقم الهاتف",
+    "password": "كلمة المرور",
+    "forgetPasswordQu": "نسيت كلمة المرور ؟",
+    "loginButton": "سجل الدخول",
+    "notHaveAccount": "ليس لديك حساب؟",
+    "createNewAccount": "انشئ حساب جديد",
+    "forgetPasswordTitle": "نسيت كلمة المرور",
+    "loginTitle": "تسجيل الدخول",
+    "enterDigits": "قم بإدخال الرمز المكون من 4 أرقام الذي تم إرساله على رقم هاتفك",
+    "resendAgain": "إعادة الإرسال مرة أخرى",
+    "newPasswordTitle": "كلمة السر الجديدة",
+    "newPasswordHint": "كلمة المرور الجديدة",
+    "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
+    "createNewAccountTitle": "إنشاء حساب جديد",
+    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط!",
+    "firstNameHint": "الاسم الأول",
+    "lastNameHint": "الاسم الأخير",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "verifyAccountTitle": "توثيق حسابك",
+    "fieldRequired": "هذا الحقل إلزامي",
+    "passwordValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "selectCountry": "اختر الدولة",
+    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول",
+    "passwordMinValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "passwordMaxValidation": "يجب ألا تزيد كلمة المرور عن 20 حرفًا",
+    "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
+    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
+    "passwordAgain": "كلمة المرور مرة أخرى",
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
+  },
+  "next": "التالي",
+  "save": "حفظ"
 };
 static const Map<String,dynamic> _en = {
-  "login": "Login",
-  "welcome_back": "Welcome back"
+  "on_boarding": {
+    "welcome": "Welcome",
+    "requestTechnician": "You can request a technician easily",
+    "selectLanguage": "Select language",
+    "arabicLanguage": "Arabic",
+    "englishLanguage": "English",
+    "urduLanguage": "Urdu",
+    "nearbyTechnicians": "You can view nearby technicians and easily choose the one that suits you"
+  },
+  "authentication": {
+    "welcomeBack": "Welcome back",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "forgetPasswordQu": "Forgot Password?",
+    "loginButton": "Login",
+    "notHaveAccount": "Don’t have an account?",
+    "createNewAccount": "Create a new account",
+    "forgetPasswordTitle": "Forgot Password",
+    "loginTitle": "Login",
+    "enterDigits": "Enter the 4-digit code that was sent to your phone number",
+    "resendAgain": "Resend again",
+    "newPasswordTitle": "New Password",
+    "newPasswordHint": "New Password",
+    "confirmNewPasswordHint": "New Password Again",
+    "createNewAccountTitle": "Create a new account",
+    "takeTwoSteps": "It only takes two steps!",
+    "firstNameHint": "First Name",
+    "lastNameHint": "Last Name",
+    "alreadyHaveAccount": "Already have an account?",
+    "verifyAccountTitle": "Verify your account",
+    "fieldRequired": "This field is required",
+    "passwordValidation": "The password must be at least 8 characters long",
+    "selectCountry": "Select Country",
+    "enterNewPassword": "Enter the new password twice, then proceed to login",
+    "passwordMinValidation": "The password must be at least 8 characters long",
+    "passwordMaxValidation": "The password must not exceed 20 characters",
+    "nameValidation": "The username must be at least 2 characters long",
+    "phoneValidation": "The phone number must be at least 9 digits long",
+    "passwordAgain": "Password Again",
+    "passwordMismatch": "The passwords must match"
+  },
+  "next": "Next",
+  "save": "Save"
 };
 static const Map<String,dynamic> _ur = {
-  "login": "لاگ ان",
-  "welcome_back": "واپسی پر خوش آمدید"
+  "on_boarding": {
+    "welcome": "خوش آمدید",
+    "requestTechnician": "آپ آسانی سے ٹیکنیشن کی درخواست کر سکتے ہیں",
+    "selectLanguage": "زبان منتخب کریں",
+    "arabicLanguage": "عربی",
+    "englishLanguage": "انگریزی",
+    "urduLanguage": "اردو",
+    "nearbyTechnicians": "آپ اپنے قریب موجود ٹیکنیشنز کو دیکھ سکتے ہیں اور آسانی سے اپنے لیے موزوں ٹیکنیشن منتخب کر سکتے ہیں"
+  },
+  "authentication": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "phoneNumber": "فون نمبر",
+    "password": "پاس ورڈ",
+    "forgetPasswordQu": "پاس ورڈ بھول گئے؟",
+    "loginButton": "لاگ ان کریں",
+    "notHaveAccount": "کیا آپ کا اکاؤنٹ نہیں ہے؟",
+    "createNewAccount": "نیا اکاؤنٹ بنائیں",
+    "forgetPasswordTitle": "پاس ورڈ بھول گئے",
+    "loginTitle": "لاگ ان",
+    "enterDigits": "وہ 4 ہندسوں کا کوڈ درج کریں جو آپ کے فون نمبر پر بھیجا گیا ہے",
+    "resendAgain": "دوبارہ بھیجیں",
+    "newPasswordTitle": "نیا پاس ورڈ",
+    "newPasswordHint": "نیا پاس ورڈ",
+    "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
+    "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
+    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں!",
+    "firstNameHint": "پہلا نام",
+    "lastNameHint": "آخری نام",
+    "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
+    "verifyAccountTitle": "اپنے اکاؤنٹ کی تصدیق کریں",
+    "fieldRequired": "یہ خانہ لازمی ہے",
+    "passwordValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "selectCountry": "ملک منتخب کریں",
+    "enterNewPassword": "نیا پاس ورڈ دو بار درج کریں، پھر لاگ ان کے لیے آگے بڑھیں",
+    "passwordMinValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "passwordMaxValidation": "پاس ورڈ 20 حروف سے زیادہ نہیں ہونا چاہیے",
+    "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
+    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
+    "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
+  },
+  "next": "اگلا",
+  "save": "محفوظ کریں"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

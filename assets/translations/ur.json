@@ -1,4 +1,45 @@
 {
-  "login": "لاگ ان",
-  "welcome_back": "واپسی پر خوش آمدید"
+  "on_boarding": {
+    "welcome": "خوش آمدید",
+    "requestTechnician": "آپ آسانی سے ٹیکنیشن کی درخواست کر سکتے ہیں",
+    "selectLanguage": "زبان منتخب کریں",
+    "arabicLanguage": "عربی",
+    "englishLanguage": "انگریزی",
+    "urduLanguage": "اردو",
+    "nearbyTechnicians": "آپ اپنے قریب موجود ٹیکنیشنز کو دیکھ سکتے ہیں اور آسانی سے اپنے لیے موزوں ٹیکنیشن منتخب کر سکتے ہیں"
+  },
+  "authentication": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "phoneNumber": "فون نمبر",
+    "password": "پاس ورڈ",
+    "forgetPasswordQu": "پاس ورڈ بھول گئے؟",
+    "loginButton": "لاگ ان کریں",
+    "notHaveAccount": "کیا آپ کا اکاؤنٹ نہیں ہے؟",
+    "createNewAccount": "نیا اکاؤنٹ بنائیں",
+    "forgetPasswordTitle": "پاس ورڈ بھول گئے",
+    "loginTitle": "لاگ ان",
+    "enterDigits": "وہ 4 ہندسوں کا کوڈ درج کریں جو آپ کے فون نمبر پر بھیجا گیا ہے",
+    "resendAgain": "دوبارہ بھیجیں",
+    "newPasswordTitle": "نیا پاس ورڈ",
+    "newPasswordHint": "نیا پاس ورڈ",
+    "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
+    "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
+    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں !",
+    "firstNameHint": "پہلا نام",
+    "lastNameHint": "آخری نام",
+    "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
+    "verifyAccountTitle": "اپنے اکاؤنٹ کی تصدیق کریں",
+    "fieldRequired": "یہ خانہ لازمی ہے",
+    "passwordValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "selectCountry": "ملک منتخب کریں",
+    "enterNewPassword": "نیا پاس ورڈ دو بار درج کریں، پھر لاگ ان کے لیے آگے بڑھیں",
+    "passwordMinValidation": "پاس ورڈ کم از کم 8 حروف پر مشتمل ہونا چاہیے",
+    "passwordMaxValidation": "پاس ورڈ 20 حروف سے زیادہ نہیں ہونا چاہیے",
+    "nameValidation": "صارف کا نام کم از کم 2 حروف پر مشتمل ہونا چاہیے",
+    "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
+    "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
+    "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
+  },
+  "next": "اگلا",
+  "save": "محفوظ کریں"
 }

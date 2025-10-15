@@ -5,5 +5,5 @@ class AppConstants {
   static const String logoImagesPath = 'assets/images/logo/';
   static const String lottieImagesPath = 'assets/images/lottie/';
   static const String svgImagesPath = 'assets/images/svg/';
-  static const String svgIconsImagesPath = 'assets/images/svg/icons';
+  static const String svgIconsImagesPath = 'assets/images/svg/icons/';
 }

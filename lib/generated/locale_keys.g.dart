@@ -3,7 +3,46 @@
 // ignore_for_file: constant_identifier_names
 
 abstract class  LocaleKeys {
-  static const login = 'login';
-  static const welcome_back = 'welcome_back';
+  static const on_boarding_welcome = 'on_boarding.welcome';
+  static const on_boarding_requestTechnician = 'on_boarding.requestTechnician';
+  static const on_boarding_selectLanguage = 'on_boarding.selectLanguage';
+  static const on_boarding_arabicLanguage = 'on_boarding.arabicLanguage';
+  static const on_boarding_englishLanguage = 'on_boarding.englishLanguage';
+  static const on_boarding_urduLanguage = 'on_boarding.urduLanguage';
+  static const on_boarding_nearbyTechnicians = 'on_boarding.nearbyTechnicians';
+  static const on_boarding = 'on_boarding';
+  static const authentication_welcomeBack = 'authentication.welcomeBack';
+  static const authentication_phoneNumber = 'authentication.phoneNumber';
+  static const authentication_password = 'authentication.password';
+  static const authentication_forgetPasswordQu = 'authentication.forgetPasswordQu';
+  static const authentication_loginButton = 'authentication.loginButton';
+  static const authentication_notHaveAccount = 'authentication.notHaveAccount';
+  static const authentication_createNewAccount = 'authentication.createNewAccount';
+  static const authentication_forgetPasswordTitle = 'authentication.forgetPasswordTitle';
+  static const authentication_loginTitle = 'authentication.loginTitle';
+  static const authentication_enterDigits = 'authentication.enterDigits';
+  static const authentication_resendAgain = 'authentication.resendAgain';
+  static const authentication_newPasswordTitle = 'authentication.newPasswordTitle';
+  static const authentication_newPasswordHint = 'authentication.newPasswordHint';
+  static const authentication_confirmNewPasswordHint = 'authentication.confirmNewPasswordHint';
+  static const authentication_createNewAccountTitle = 'authentication.createNewAccountTitle';
+  static const authentication_takeTwoSteps = 'authentication.takeTwoSteps';
+  static const authentication_firstNameHint = 'authentication.firstNameHint';
+  static const authentication_lastNameHint = 'authentication.lastNameHint';
+  static const authentication_alreadyHaveAccount = 'authentication.alreadyHaveAccount';
+  static const authentication_verifyAccountTitle = 'authentication.verifyAccountTitle';
+  static const authentication_fieldRequired = 'authentication.fieldRequired';
+  static const authentication_passwordValidation = 'authentication.passwordValidation';
+  static const authentication_selectCountry = 'authentication.selectCountry';
+  static const authentication_enterNewPassword = 'authentication.enterNewPassword';
+  static const authentication_passwordMinValidation = 'authentication.passwordMinValidation';
+  static const authentication_passwordMaxValidation = 'authentication.passwordMaxValidation';
+  static const authentication_nameValidation = 'authentication.nameValidation';
+  static const authentication_phoneValidation = 'authentication.phoneValidation';
+  static const authentication_passwordAgain = 'authentication.passwordAgain';
+  static const authentication_passwordMismatch = 'authentication.passwordMismatch';
+  static const authentication = 'authentication';
+  static const next = 'next';
+  static const save = 'save';
 
 }

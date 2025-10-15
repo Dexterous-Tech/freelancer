@@ -1,4 +1,45 @@
 {
-  "login": "تسجيل الدخول",
-  "welcome_back": "مرحبا بعودتك"
+  "on_boarding": {
+    "welcome": "مرحبا بكم",
+    "requestTechnician": "يمكنك طلب الفني بسهولة",
+    "selectLanguage": "حدد اللغة",
+    "arabicLanguage": "العربية",
+    "englishLanguage": "الإنجليزية",
+    "urduLanguage": "الأُردو",
+    "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
+  },
+  "authentication": {
+    "welcomeBack": "مرحبا بعودتك",
+    "phoneNumber": "رقم الهاتف",
+    "password": "كلمة المرور",
+    "forgetPasswordQu": "نسيت كلمة المرور ؟",
+    "loginButton": "سجل الدخول",
+    "notHaveAccount": "ليس لديك حساب؟",
+    "createNewAccount": "انشئ حساب جديد",
+    "forgetPasswordTitle": "نسيت كلمة المرور",
+    "loginTitle": "تسجيل الدخول",
+    "enterDigits": "قم بإدخال الرمز المكون من 4 أرقام الذي تم إرساله على رقم هاتفك",
+    "resendAgain": "إعادة الإرسال مرة أخرى",
+    "newPasswordTitle": "كلمة السر الجديدة",
+    "newPasswordHint": "كلمة المرور الجديدة",
+    "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
+    "createNewAccountTitle": "إنشاء حساب جديد",
+    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط !",
+    "firstNameHint": "الاسم الأول",
+    "lastNameHint": "الاسم الأخير",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "verifyAccountTitle": "توثيق حسابك",
+    "fieldRequired": "هذا الحقل إلزامي",
+    "passwordValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "selectCountry": "اختر الدولة",
+    "enterNewPassword": "قم بإدخال كلمة المرور الجديدة مرتين ثم الذهاب لتسجيل الدخول",
+    "passwordMinValidation": "يجب ألا تقل كلمة المرور عن 8 حروف",
+    "passwordMaxValidation": "يجب ألا تزيد كلمة المرور عن 20 حرفًا",
+    "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
+    "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
+    "passwordAgain": "كلمة المرور مرة أخرى",
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
+  },
+  "next": "التالي",
+  "save": "حفظ"
 }
