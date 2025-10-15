@@ -44,5 +44,10 @@ abstract class  LocaleKeys {
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';
+  static const bottomNavigationBar_home = 'bottomNavigationBar.home';
+  static const bottomNavigationBar_profile = 'bottomNavigationBar.profile';
+  static const bottomNavigationBar_services = 'bottomNavigationBar.services';
+  static const bottomNavigationBar_more = 'bottomNavigationBar.more';
+  static const bottomNavigationBar = 'bottomNavigationBar';
 
 }

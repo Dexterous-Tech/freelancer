@@ -25,4 +25,20 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}visible_eye.svg';
   static const String invisibleEyeIcon =
       '${AppConstants.svgIconsImagesPath}invisible_eye.svg';
+  static const String homeGrayIcon =
+      '${AppConstants.svgIconsImagesPath}home_gray.svg';
+  static const String homeBlueIcon =
+      '${AppConstants.svgIconsImagesPath}home_blue.svg';
+  static const String profileGrayIcon =
+      '${AppConstants.svgIconsImagesPath}profile_gray.svg';
+  static const String profileBlueIcon =
+      '${AppConstants.svgIconsImagesPath}profile_blue.svg';
+  static const String servicesGrayIcon =
+      '${AppConstants.svgIconsImagesPath}services_gray.svg';
+  static const String servicesBlueIcon =
+      '${AppConstants.svgIconsImagesPath}services_blue.svg';
+  static const String moreGrayIcon =
+      '${AppConstants.svgIconsImagesPath}more_gray.svg';
+  static const String moreBlueIcon =
+      '${AppConstants.svgIconsImagesPath}more_blue.svg';
 }

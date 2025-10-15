@@ -41,5 +41,11 @@
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
   },
   "next": "اگلا",
-  "save": "محفوظ کریں"
+  "save": "محفوظ کریں",
+  "bottomNavigationBar": {
+    "home": "مرکزی صفحہ",
+    "profile": "میرا اکاؤنٹ",
+    "services": "خدمات",
+    "more": "مزید"
+  }
 }

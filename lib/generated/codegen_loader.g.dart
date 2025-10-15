@@ -40,7 +40,7 @@ class CodegenLoader extends AssetLoader{
     "newPasswordHint": "كلمة المرور الجديدة",
     "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
     "createNewAccountTitle": "إنشاء حساب جديد",
-    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط!",
+    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط !",
     "firstNameHint": "الاسم الأول",
     "lastNameHint": "الاسم الأخير",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -57,7 +57,13 @@ class CodegenLoader extends AssetLoader{
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
   },
   "next": "التالي",
-  "save": "حفظ"
+  "save": "حفظ",
+  "bottomNavigationBar": {
+    "home": "الرئيسية",
+    "profile": "حسابي",
+    "services": "الخدمات",
+    "more": "المزيد"
+  }
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -102,7 +108,13 @@ static const Map<String,dynamic> _en = {
     "passwordMismatch": "The passwords must match"
   },
   "next": "Next",
-  "save": "Save"
+  "save": "Save",
+  "bottomNavigationBar": {
+    "home": "Home",
+    "profile": "My Account",
+    "services": "Services",
+    "more": "More"
+  }
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -130,7 +142,7 @@ static const Map<String,dynamic> _ur = {
     "newPasswordHint": "نیا پاس ورڈ",
     "confirmNewPasswordHint": "نیا پاس ورڈ دوبارہ درج کریں",
     "createNewAccountTitle": "نیا اکاؤنٹ بنائیں",
-    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں!",
+    "takeTwoSteps": "اس میں صرف دو مراحل درکار ہیں !",
     "firstNameHint": "پہلا نام",
     "lastNameHint": "آخری نام",
     "alreadyHaveAccount": "کیا آپ کا پہلے سے اکاؤنٹ ہے؟",
@@ -147,7 +159,13 @@ static const Map<String,dynamic> _ur = {
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں"
   },
   "next": "اگلا",
-  "save": "محفوظ کریں"
+  "save": "محفوظ کریں",
+  "bottomNavigationBar": {
+    "home": "مرکزی صفحہ",
+    "profile": "میرا اکاؤنٹ",
+    "services": "خدمات",
+    "more": "مزید"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

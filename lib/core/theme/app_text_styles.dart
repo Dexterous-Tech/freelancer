@@ -67,4 +67,11 @@ class AppTextStyles {
     color: AppColors.davyGrey,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font12DarkBlueRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.darkBlue,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }

@@ -41,5 +41,11 @@
     "passwordMismatch": "The passwords must match"
   },
   "next": "Next",
-  "save": "Save"
+  "save": "Save",
+  "bottomNavigationBar": {
+    "home": "Home",
+    "profile": "My Account",
+    "services": "Services",
+    "more": "More"
+  }
 }

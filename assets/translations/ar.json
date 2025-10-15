@@ -41,5 +41,11 @@
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
   },
   "next": "التالي",
-  "save": "حفظ"
+  "save": "حفظ",
+  "bottomNavigationBar": {
+    "home": "الرئيسية",
+    "profile": "حسابي",
+    "services": "الخدمات",
+    "more": "المزيد"
+  }
 }
