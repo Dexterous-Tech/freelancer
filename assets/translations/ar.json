@@ -38,8 +38,48 @@
     "nameValidation": "يجب ألا يقل اسم المستخدم عن حرفين",
     "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
     "passwordAgain": "كلمة المرور مرة أخرى",
-    "passwordMismatch": "يجب أن تتطابق كلمتا المرور"
+    "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
+    "currentPassword": "كلمة المرور الحالية"
   },
   "next": "التالي",
-  "save": "حفظ"
+  "save": "حفظ",
+  "bottomNavigationBar": {
+    "home": "الرئيسية",
+    "profile": "حسابي",
+    "services": "الخدمات",
+    "more": "المزيد"
+  },
+  "profile": {
+    "basicInformation": "البيانات الأساسية",
+    "editProfile": "تعديل الملف الشخصي",
+    "location": "الموقع",
+    "fav": "المفضلة",
+    "joinService": "انضم إلينا كمقدم خدمة",
+    "exitApp": "الخروج من التطبيق",
+    "logout": "تسجيل الخروج",
+    "deleteAccount": "حذف الحساب",
+    "profileTitle": "الملف الشخصي",
+    "changePassword": "تغيير كلمة المرور",
+    "editPasswordTitle": "تعديل كلمة المرور",
+    "completeSuccessfully": "تمت بنجاح",
+    "passwordChangesSuccessfully": "تم تغيير كلمة المرور الخاصة بك بنجاح",
+    "backToProfile": "العودة للملف الشخصي",
+    "switchAccount": "تبديل الحساب",
+    "easySwitch": "يمكنك التنقل بين حساباتك بسهولة",
+    "sureDelete": "هل أنت متأكد من رغبتك في حذف الحساب؟",
+    "sureLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+    "enterPasswordTitle": "ادخل كلمة المرور",
+    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
+  },
+  "back": "العودة",
+  "more": {
+    "shareApp": "مشاركة التطبيق",
+    "language": "اللغة",
+    "aboutUS": "من نحن",
+    "contactus": "تواصل معنا",
+    "requestSpeciality": "طلب استحداث تخصص",
+    "privacyPolicy": "سياسة الخصوصية",
+    "selectLanguageTitle": "اختيار اللغة",
+    "chooseLanguageApp": "قم باختيار لغة التطبيق"
+  }
 }

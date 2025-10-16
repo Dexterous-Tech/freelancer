@@ -67,4 +67,60 @@ class AppTextStyles {
     color: AppColors.davyGrey,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font12DarkBlueRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.darkBlue,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font16JetMedium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.jet,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font12OuterSpaceSemiBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font14OuterSpaceMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font20YellowMedium = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.yellow,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font24JetRegular = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.jet,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font14DarkLiverMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.darkLiver,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.white,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }
