@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/
+    - assets/images/images/
     - assets/images/logo/
     - assets/images/language/
     - assets/images/svg/
