@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:freelancer/features/auth/forget_password/presentation/manager/forget_password_cubit.dart';
 import 'package:freelancer/features/auth/login/presentation/manager/login_cubit.dart';
+import 'package:freelancer/features/auth/new_password_screen/data/repo/new_password_repo.dart';
+import 'package:freelancer/features/auth/new_password_screen/presentation/manager/new_password_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/auth/forget_password/data/repo/verify_forget_repo.dart';
@@ -33,4 +35,8 @@ Future<void> initializeDependencies() async {
   // resend code
   sl.registerLazySingleton<ResendCodeRepo>(() => ResendCodeRepo(sl()));
   sl.registerFactory<ResendCodeCubit>(() => ResendCodeCubit(sl()));
+
+  // reset password
+  sl.registerLazySingleton<NewPasswordRepo>(() => NewPasswordRepo(sl()));
+  sl.registerFactory<NewPasswordCubit>(() => NewPasswordCubit(sl()));
 }

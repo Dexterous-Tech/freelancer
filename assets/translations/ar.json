@@ -82,5 +82,6 @@
     "selectLanguageTitle": "اختيار اللغة",
     "chooseLanguageApp": "قم باختيار لغة التطبيق"
   },
-  "tryAgain": "إعادة المحاولة مرة أخرى"
+  "tryAgain": "إعادة المحاولة مرة أخرى",
+  "continueButton": "استمر"
 }

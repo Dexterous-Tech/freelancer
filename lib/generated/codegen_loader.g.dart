@@ -98,7 +98,8 @@ class CodegenLoader extends AssetLoader{
     "selectLanguageTitle": "اختيار اللغة",
     "chooseLanguageApp": "قم باختيار لغة التطبيق"
   },
-  "tryAgain": "إعادة المحاولة مرة أخرى"
+  "tryAgain": "إعادة المحاولة مرة أخرى",
+  "continueButton": "استمر"
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -184,7 +185,8 @@ static const Map<String,dynamic> _en = {
     "selectLanguageTitle": "Choose Language",
     "chooseLanguageApp": "Choose the application language"
   },
-  "tryAgain": "Try Again"
+  "tryAgain": "Try Again",
+  "continueButton": "Continue"
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -270,7 +272,8 @@ static const Map<String,dynamic> _ur = {
     "selectLanguageTitle": "زبان منتخب کریں",
     "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
   },
-  "tryAgain": "دوبارہ کوشش کریں"
+  "tryAgain": "دوبارہ کوشش کریں",
+  "continueButton": "جاری رکھیں"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

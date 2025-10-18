@@ -36,7 +36,10 @@ class ForgetPasswordForm extends StatelessWidget {
           );
         }
         if (state is VerifyForgetSuccess) {
-          context.pushNamed(AppRoutes.newPasswordScreen);
+          context.pushNamed(
+            AppRoutes.newPasswordScreen,
+            arguments: forgetPasswordRequestBodyModel,
+          );
         }
       },
       builder: (context, state) {

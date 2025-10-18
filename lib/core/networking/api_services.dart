@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:freelancer/features/auth/forget_password/data/models/verify_forget_model.dart';
 import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
+import 'package:freelancer/features/auth/new_password_screen/data/models/new_password_model.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../features/auth/data/models/auth_action_response_model.dart';
 import '../../features/auth/login/data/models/login_models.dart';
@@ -28,5 +29,10 @@ abstract class ApiServices {
   @POST(ApiConstants.resendOtp)
   Future<AuthActionResponseModel> resendOtp(
     @Body() ForgetPasswordRequestBodyModel body,
+  );
+
+  @POST(ApiConstants.resetPassword)
+  Future<AuthActionResponseModel> resetPassword(
+    @Body() NewPasswordRequestBodyModel body,
   );
 }

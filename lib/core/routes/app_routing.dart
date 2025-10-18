@@ -32,7 +32,12 @@ class AppRouting {
           ),
         );
       case AppRoutes.newPasswordScreen:
-        return _pageRouteBuilder(const NewPasswordScreen());
+        return _pageRouteBuilder(
+          NewPasswordScreen(
+            forgetPasswordRequestBodyModel:
+                arguments as ForgetPasswordRequestBodyModel,
+          ),
+        );
       case AppRoutes.signupScreen:
         return _pageRouteBuilder(const SignupScreen());
       case AppRoutes.mainHomeScreen:
