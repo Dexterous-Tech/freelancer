@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/features/auth/data/models/auth_action_response_model.dart';
-import 'package:freelancer/features/auth/forget_password/data/models/verify_forget_model.dart';
+import 'package:freelancer/features/auth/data/models/verify_model.dart';
 import 'package:freelancer/features/auth/forget_password/data/repo/verify_forget_repo.dart';
 
 part 'forget_password_state.dart';
@@ -21,7 +21,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
   }) async {
     emit(VerifyForgetLoading());
     final response = await _verifyForgetRepo.verifyForget(
-      VerifyForgetRequestBodModel(
+      VerifyRequestBodModel(
         countryCode: countryCode,
         phone: phone,
         otpCode: otpCodeController.text,

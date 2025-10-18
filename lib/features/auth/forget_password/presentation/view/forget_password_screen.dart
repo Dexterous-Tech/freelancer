@@ -15,7 +15,7 @@ class ForgetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<ForgetPasswordCubit>(),
-      child: Scaffold(body: ForgetPasswordBody(phoneNumber: phoneNumber)),
+      child: Scaffold(body: ForgetPasswordBody(phoneNumberModel: phoneNumber)),
     );
   }
 }

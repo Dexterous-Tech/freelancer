@@ -3,6 +3,10 @@ import 'package:freelancer/features/auth/forget_password/presentation/manager/fo
 import 'package:freelancer/features/auth/login/presentation/manager/login_cubit.dart';
 import 'package:freelancer/features/auth/new_password_screen/data/repo/new_password_repo.dart';
 import 'package:freelancer/features/auth/new_password_screen/presentation/manager/new_password_cubit.dart';
+import 'package:freelancer/features/auth/signup/data/repo/signup_repo.dart';
+import 'package:freelancer/features/auth/signup/presentation/manager/signup_cubit.dart';
+import 'package:freelancer/features/auth/verification/data/repo/verification_repo.dart';
+import 'package:freelancer/features/auth/verification/presentation/manager/verification_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/auth/forget_password/data/repo/verify_forget_repo.dart';
@@ -39,4 +43,12 @@ Future<void> initializeDependencies() async {
   // reset password
   sl.registerLazySingleton<NewPasswordRepo>(() => NewPasswordRepo(sl()));
   sl.registerFactory<NewPasswordCubit>(() => NewPasswordCubit(sl()));
+
+  // register
+  sl.registerLazySingleton<SignupRepo>(() => SignupRepo(sl()));
+  sl.registerFactory<SignupCubit>(() => SignupCubit(sl()));
+
+  // verification
+  sl.registerLazySingleton<VerificationRepo>(() => VerificationRepo(sl()));
+  sl.registerFactory<VerificationCubit>(() => VerificationCubit(sl()));
 }

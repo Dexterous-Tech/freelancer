@@ -44,7 +44,9 @@ class AppRouting {
         return _pageRouteBuilder(const MainHomeScreen());
       case AppRoutes.verificationScreen:
         return _pageRouteBuilder(
-          VerificationScreen(phoneNumber: arguments as String),
+          VerificationScreen(
+            phoneNumberModel: arguments as ForgetPasswordRequestBodyModel,
+          ),
         );
       case AppRoutes.clientEditProfileScreen:
         return _pageRouteBuilder(const ClientEditProfileScreen());

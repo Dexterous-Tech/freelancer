@@ -2,45 +2,43 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freelancer/features/auth/verification/data/repo/verification_repo.dart';
+
+import '../../../data/models/auth_action_response_model.dart';
+import '../../../data/models/verify_model.dart';
 
 part 'verification_state.dart';
 
 class VerificationCubit extends Cubit<VerificationState> {
-  VerificationCubit() : super(VerificationInitial());
+  VerificationCubit(this.verificationRepo) : super(VerificationInitial());
 
+  final VerificationRepo verificationRepo;
   static VerificationCubit get(context) => BlocProvider.of(context);
 
   TextEditingController phoneController = TextEditingController();
   TextEditingController codeController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
 
-  Timer? _timer;
-  int remainingSeconds = 0;
+  void verifyRegister({
+    required String countryCode,
+    required String phone,
+  }) async {
+    emit(VerificationLoading());
+    final response = await verificationRepo.verifyForget(
+      VerifyRequestBodModel(
+        countryCode: countryCode,
+        phone: phone,
+        otpCode: codeController.text,
+      ),
+    );
 
-  void startTimer() {
-    remainingSeconds = 60;
-    emit(VerificationTimerUpdated());
-
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (remainingSeconds > 0) {
-        remainingSeconds--;
-        emit(VerificationTimerUpdated());
-      } else {
-        timer.cancel();
-        emit(VerificationTimerFinished());
-      }
-    });
-  }
-
-  void resendCode() {
-    // your resend logic here
-    startTimer();
-  }
-
-  @override
-  Future<void> close() {
-    _timer?.cancel();
-    return super.close();
+    response.fold(
+      (error) {
+        emit(VerificationFailure(error.displayMessage));
+      },
+      (success) {
+        emit(VerificationSuccess(success));
+      },
+    );
   }
 }

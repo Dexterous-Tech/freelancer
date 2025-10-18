@@ -1,27 +1,27 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:freelancer/core/networking/api_services.dart';
 
 import '../../../../../core/networking/api_error_handler.dart';
 import '../../../../../core/networking/api_error_model.dart';
+import '../../../../../core/networking/api_services.dart';
 import '../../../data/models/auth_action_response_model.dart';
 import '../../../data/models/verify_model.dart';
 
-class VerifyForgetRepo {
+class VerificationRepo {
   final ApiServices _apiServices;
 
-  VerifyForgetRepo(this._apiServices);
+  VerificationRepo(this._apiServices);
 
   Future<Either<ApiErrorModel, AuthActionResponseModel>> verifyForget(
     VerifyRequestBodModel body,
   ) async {
     try {
-      final response = await _apiServices.verifyForget(body, '1');
+      final response = await _apiServices.verifyRegister(body);
 
       return Right(response);
     } catch (e) {
-      log("error in verifyForget $e");
+      log("error in verification $e");
       if (e is ApiErrorModel) {
         return Left(e);
       }

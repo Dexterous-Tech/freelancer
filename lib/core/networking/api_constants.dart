@@ -7,4 +7,5 @@ class ApiConstants {
   static const String verifyOtp = '/verify-otp';
   static const String resendOtp = '/resend-otp';
   static const String resetPassword = '/reset-password';
+  static const String register = '/register';
 }
