@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:math' as math;
 import 'dart:ui';
 
@@ -9,11 +10,15 @@ import 'package:freelancer/core/helper/app_images.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/helper/localization_service.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
+import 'package:freelancer/core/shared/shared_preferences_helper.dart';
+import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/forms/custom_elevated_button.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
+
+import '../../../../../core/networking/dio_factory.dart';
 
 class OnBoardingLanguage extends StatefulWidget {
   final VoidCallback? onLanguageChanged;
@@ -106,7 +111,7 @@ class _OnBoardingLanguageState extends State<OnBoardingLanguage> {
 
                 CustomElevatedButton(
                   onPressed: () {
-                    context.pushReplacementNamed(AppRoutes.mainHomeScreen);
+                    context.pushReplacementNamed(AppRoutes.loginScreen);
                   },
                   backgroundColor: AppColors.yellow,
                   buttonWidget: Row(
@@ -150,6 +155,12 @@ class _OnBoardingLanguageState extends State<OnBoardingLanguage> {
     return GestureDetector(
       onTap: () async {
         await context.setLocale(Locale(code));
+        await SharedPreferencesHelper.setSecuredString(
+          SharedPreferencesKey.currentCodeKey,
+          code,
+        );
+        log("save language code $code");
+        await DioFactory.updateLanguageHeader(code);
         setState(() {}); // Trigger rebuild of this widget
         widget.onLanguageChanged?.call(); // Notify parent to rebuild
       },

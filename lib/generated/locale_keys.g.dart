@@ -81,5 +81,7 @@ abstract class  LocaleKeys {
   static const more_selectLanguageTitle = 'more.selectLanguageTitle';
   static const more_chooseLanguageApp = 'more.chooseLanguageApp';
   static const more = 'more';
+  static const tryAgain = 'tryAgain';
+  static const continueButton = 'continueButton';
 
 }

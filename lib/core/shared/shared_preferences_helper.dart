@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesHelper {
@@ -21,6 +22,11 @@ class SharedPreferencesHelper {
     return await flutterSecureStorage.read(key: key) ?? '';
   }
 
+  static Future<void> deleteSecuredString(String key) async {
+    debugPrint('FlutterSecureStorage : getSecuredString with key : $key');
+    await flutterSecureStorage.delete(key: key);
+  }
+
   static Future<String?> getString(String key) async {
     final prefs = await SharedPreferences.getInstance();
     final value = prefs.getString(key);
@@ -30,6 +36,12 @@ class SharedPreferencesHelper {
 
   static Future<void> setString(String key, String value) async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString(key, value);
+    await prefs.setString(key, value);
+  }
+
+  static Future<void> clearAllKeys() async {
+    // final prefs = await SharedPreferences.getInstance();
+    await flutterSecureStorage.delete(key: SharedPreferencesKey.apiTokenKey);
+    await flutterSecureStorage.delete(key: SharedPreferencesKey.currentCodeKey);
   }
 }

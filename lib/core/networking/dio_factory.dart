@@ -2,10 +2,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../di/injection_container.dart';
 import '../shared/shared_preferences_helper.dart';
 import '../shared/shared_preferences_key.dart';
-import 'api_services.dart';
 
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
@@ -28,10 +26,14 @@ class DioFactory {
   }
 
   static Future<void> addDioHeaders({bool includeAuth = true}) async {
+    final String currentLang = await SharedPreferencesHelper.getSecuredString(
+      SharedPreferencesKey.currentCodeKey,
+    );
+
     final headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // 'lang': LocalizationService.instance.currentLanguageCode,
+      'lang': currentLang,
     };
     if (includeAuth) {
       final String token = await SharedPreferencesHelper.getSecuredString(
@@ -50,53 +52,29 @@ class DioFactory {
   }
 
   static Future<void> setTokenIntoHeaderAfterLogin(String token) async {
+    final String currentLang = await SharedPreferencesHelper.getSecuredString(
+      SharedPreferencesKey.currentCodeKey,
+    );
+
     _dio?.options.headers = {
       'Authorization': 'Bearer $token',
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // 'lang': LocalizationService.instance.currentLanguageCode,
+      'lang': currentLang,
     };
     // Force recreation of Dio instance
     log("🔑 Headers set after login: ${_dio?.options.headers}");
   }
 
   /// Update headers when language changes
-  static Future<void> updateLanguageHeader() async {
+  static Future<void> updateLanguageHeader(String currentLang) async {
     if (_dio != null) {
-      // _dio!.options.headers['lang'] =
-      //     LocalizationService.instance.currentLanguageCode;
+      // final String currentLang = await SharedPreferencesHelper.getSecuredString(
+      //   SharedPreferencesKey.currentCodeKey,
+      // );
+      _dio!.options.headers['lang'] = currentLang;
       log("🔑 Language header updated: ${_dio?.options.headers['lang']}");
     }
-  }
-
-  /*
-  * to stop det it of dio and api services
-  * then restart again
-  * use to call in logout
-  * */
-  static Future<void> resetDio() async {
-    // Optional: Dispose Dio if needed
-    if (_dio != null) {
-      _dio!.options.headers.clear();
-      _dio!.close(force: true); // Fully close the Dio instance
-      _dio = null;
-    }
-
-    // Unregister Dio and related services if already registered
-    if (sl.isRegistered<Dio>()) {
-      sl.unregister<Dio>();
-    }
-
-    // Unregister any dependent services if needed
-    if (sl.isRegistered<ApiServices>()) {
-      sl.unregister<ApiServices>();
-    }
-
-    // Re-register everything
-    await initializeDependencies(); // Assuming this sets up Dio, ApiService, etc.
-
-    // Wait for everything to be ready again
-    await sl.allReady();
   }
 
   static void addDioInterceptor() {

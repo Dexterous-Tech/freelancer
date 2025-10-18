@@ -1,123 +1,47 @@
 import 'package:dio/dio.dart';
-
+import 'package:freelancer/features/auth/data/models/verify_model.dart';
+import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
+import 'package:freelancer/features/auth/new_password_screen/data/models/new_password_model.dart';
+import 'package:freelancer/features/auth/signup/data/models/signup_models.dart';
+import 'package:retrofit/retrofit.dart';
+import '../../features/auth/data/models/auth_action_response_model.dart';
+import '../../features/auth/login/data/models/login_models.dart';
 import 'api_constants.dart';
-import 'api_error_handler.dart';
-import 'dio_factory.dart';
+part 'api_services.g.dart';
 
-class ApiServices {
-  final Dio _dio;
+@RestApi(baseUrl: ApiConstants.baseUrl)
+abstract class ApiServices {
+  factory ApiServices(Dio dio, {String? baseUrl}) = _ApiServices;
 
-  ApiServices.internal(this._dio);
-  // static ApiServices get to get the instance of the ApiServices
-  static Future<ApiServices> init() async {
-    final dio = await DioFactory.getDio();
-    return ApiServices.internal(dio);
-  }
+  @POST(ApiConstants.login)
+  Future<LoginResponseModel> login(@Body() LoginRequestBodyModel body);
 
-  /// Reusable POST method
-  Future<Response<T>> post<T>({
-    required String endpoint,
-    required dynamic requestBody,
-    bool requiresAuth = true,
-  }) async {
-    try {
-      // Update headers based on whether authentication is required
-      await DioFactory.addDioHeaders(includeAuth: requiresAuth);
-      // Perform the POST request
-      final response = await _dio.post<T>(
-        '${ApiConstants.baseUrl}$endpoint', // Combine base URL and endpoint
-        data: requestBody,
-      );
+  @POST(ApiConstants.forgetPassword)
+  Future<AuthActionResponseModel> forgetPassword(
+    @Body() ForgetPasswordRequestBodyModel body,
+  );
 
-      return response;
-    } catch (e) {
-      throw ApiErrorHandler.handle(e);
-    }
-  }
+  @POST(ApiConstants.verifyOtp)
+  Future<AuthActionResponseModel> verifyForget(
+    @Body() VerifyRequestBodModel body,
+    @Query('for_reset_password') String forResetPassword,
+  );
 
-  /// Reusable GET method
-  Future<Response<T>> get<T>({
-    required String endpoint,
-    Map<String, dynamic>? queryParameters,
-    bool requiresAuth = true,
-  }) async {
-    try {
-      await DioFactory.addDioHeaders(includeAuth: requiresAuth);
+  @POST(ApiConstants.resendOtp)
+  Future<AuthActionResponseModel> resendOtp(
+    @Body() ForgetPasswordRequestBodyModel body,
+  );
 
-      final response = await _dio.get<T>(
-        '${ApiConstants.baseUrl}$endpoint', // Combine base URL and endpoint
-        queryParameters: queryParameters,
-      );
+  @POST(ApiConstants.resetPassword)
+  Future<AuthActionResponseModel> resetPassword(
+    @Body() NewPasswordRequestBodyModel body,
+  );
 
-      return response;
-    } catch (e) {
-      throw ApiErrorHandler.handle(e);
-    }
-  }
+  @POST(ApiConstants.register)
+  Future<AuthActionResponseModel> register(@Body() SignupRequestBodyModel body);
 
-  // Reusable PATCH method
-  Future<Response<T>> patch<T>({
-    required String endpoint,
-    required dynamic requestBody,
-    bool requiresAuth = true,
-  }) async {
-    try {
-      // Update headers based on whether authentication is required
-      await DioFactory.addDioHeaders(includeAuth: requiresAuth);
-
-      // Perform the PATCH request
-      final response = await _dio.patch<T>(
-        '${ApiConstants.baseUrl}$endpoint', // Combine base URL and endpoint
-        data: requestBody,
-      );
-
-      return response;
-    } catch (e) {
-      throw ApiErrorHandler.handle(e);
-    }
-  }
-
-  // Reusable PUT method
-  Future<Response<T>> put<T>({
-    required String endpoint,
-    required dynamic requestBody,
-    bool requiresAuth = true,
-  }) async {
-    try {
-      // Update headers based on whether authentication is required
-      await DioFactory.addDioHeaders(includeAuth: requiresAuth);
-
-      // Perform the PUT request
-      final response = await _dio.put<T>(
-        '${ApiConstants.baseUrl}$endpoint', // Combine base URL and endpoint
-        data: requestBody,
-      );
-
-      return response;
-    } catch (e) {
-      throw ApiErrorHandler.handle(e);
-    }
-  }
-
-  // Reusable DELETE method
-  Future<Response<T>> delete<T>({
-    required String endpoint,
-    dynamic requestBody,
-    bool requiresAuth = true,
-  }) async {
-    try {
-      // Update headers based on whether authentication is required
-      await DioFactory.addDioHeaders(includeAuth: requiresAuth);
-
-      // Perform the DELETE request
-      final response = await _dio.delete<T>(
-        '${ApiConstants.baseUrl}$endpoint', // Combine base URL and endpoint
-        data: requestBody, // Optional request body for DELETE
-      );
-
-      return response;
-    } catch (e) {
-      throw ApiErrorHandler.handle(e);
-    }
-  }
+  @POST(ApiConstants.verifyOtp)
+  Future<AuthActionResponseModel> verifyRegister(
+    @Body() VerifyRequestBodModel body,
+  );
 }

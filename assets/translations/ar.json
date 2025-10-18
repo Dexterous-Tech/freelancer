@@ -81,5 +81,7 @@
     "privacyPolicy": "سياسة الخصوصية",
     "selectLanguageTitle": "اختيار اللغة",
     "chooseLanguageApp": "قم باختيار لغة التطبيق"
-  }
+  },
+  "tryAgain": "إعادة المحاولة مرة أخرى",
+  "continueButton": "استمر"
 }

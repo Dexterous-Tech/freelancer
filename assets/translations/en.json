@@ -81,5 +81,7 @@
     "privacyPolicy": "Privacy Policy",
     "selectLanguageTitle": "Choose Language",
     "chooseLanguageApp": "Choose the application language"
-  }
+  },
+  "tryAgain": "Try Again",
+  "continueButton": "Continue"
 }

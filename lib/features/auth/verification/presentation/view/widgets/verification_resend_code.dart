@@ -1,67 +1,27 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freelancer/core/theme/app_colors.dart';
-import 'package:freelancer/core/theme/app_text_styles.dart';
-import 'package:freelancer/core/theme/spacing.dart';
-import 'package:freelancer/core/widgets/forms/custom_elevated_button.dart';
-import 'package:freelancer/generated/locale_keys.g.dart';
 
-import '../../manager/verification_cubit.dart';
+import '../../../../../../core/di/injection_container.dart';
+import '../../../../login/data/models/forget_password_model.dart';
+import '../../../../widgets/resend_code/manager/resend_code_cubit.dart';
+import '../../../../widgets/resend_code/widget/custom_resend_code.dart';
 
 class VerificationResendCode extends StatelessWidget {
-  const VerificationResendCode({super.key});
+  const VerificationResendCode({
+    super.key,
+    required this.forgetPasswordRequestBodyModel,
+  });
 
-  String _formatTime(int seconds) {
-    final minutes = (seconds ~/ 60).toString().padLeft(2, '0');
-    final secs = (seconds % 60).toString().padLeft(2, '0');
-    return '$minutes:$secs';
-  }
+  final ForgetPasswordRequestBodyModel forgetPasswordRequestBodyModel;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<VerificationCubit, VerificationState>(
-      builder: (context, state) {
-        final cubit = VerificationCubit.get(context);
-        final bool isTimerActive = cubit.remainingSeconds > 0;
-        final String formattedTime = _formatTime(cubit.remainingSeconds);
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // ===== TIMER TEXT =====
-            Center(
-              child: Text(
-                formattedTime,
-                style: AppTextStyles.font18YellowRegular.copyWith(
-                  color: isTimerActive
-                      ? AppColors.darkBlue
-                      : AppColors.philippineSilver,
-                ),
-              ),
-            ),
-
-            verticalSpace(16),
-
-            // ===== RESEND BUTTON =====
-            CustomElevatedButton(
-              onPressed: isTimerActive
-                  ? () {} // 🔸 disable when timer is active
-                  : () {
-                      cubit.resendCode();
-                    }, // disable while counting down
-              textButton: LocaleKeys.authentication_resendAgain.tr(),
-              styleTextButton: AppTextStyles.font18YellowRegular.copyWith(
-                color: !isTimerActive
-                    ? AppColors.yellow
-                    : AppColors.philippineSilver,
-              ),
-              backgroundColor: !isTimerActive
-                  ? AppColors.darkBlue
-                  : AppColors.independence,
-            ),
-          ],
-        );
-      },
+    return BlocProvider(
+      create: (context) => sl<ResendCodeCubit>(),
+      child: CustomResendCode(
+        countryCode: forgetPasswordRequestBodyModel.countryCode,
+        phone: forgetPasswordRequestBodyModel.phone,
+      ),
     );
   }
 }

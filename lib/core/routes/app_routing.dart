@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/features/auth/forget_password/presentation/view/forget_password_screen.dart';
+import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
 import 'package:freelancer/features/auth/login/presentation/view/login_screen.dart';
 import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
 import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
@@ -26,17 +27,26 @@ class AppRouting {
         return _pageRouteBuilder(const LoginScreen());
       case AppRoutes.forgetScreen:
         return _pageRouteBuilder(
-          ForgetPasswordScreen(phoneNumber: arguments as String),
+          ForgetPasswordScreen(
+            phoneNumber: arguments as ForgetPasswordRequestBodyModel,
+          ),
         );
       case AppRoutes.newPasswordScreen:
-        return _pageRouteBuilder(const NewPasswordScreen());
+        return _pageRouteBuilder(
+          NewPasswordScreen(
+            forgetPasswordRequestBodyModel:
+                arguments as ForgetPasswordRequestBodyModel,
+          ),
+        );
       case AppRoutes.signupScreen:
         return _pageRouteBuilder(const SignupScreen());
       case AppRoutes.mainHomeScreen:
         return _pageRouteBuilder(const MainHomeScreen());
       case AppRoutes.verificationScreen:
         return _pageRouteBuilder(
-          VerificationScreen(phoneNumber: arguments as String),
+          VerificationScreen(
+            phoneNumberModel: arguments as ForgetPasswordRequestBodyModel,
+          ),
         );
       case AppRoutes.clientEditProfileScreen:
         return _pageRouteBuilder(const ClientEditProfileScreen());

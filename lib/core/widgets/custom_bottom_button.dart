@@ -17,6 +17,8 @@ class CustomBottomButton extends StatelessWidget {
     this.secondButtonText,
     this.firstButtonTextStyle,
     this.secondButtonTextStyle,
+    this.buttonColor,
+    this.buttonTextStyle,
   });
 
   final String? textButton;
@@ -30,6 +32,8 @@ class CustomBottomButton extends StatelessWidget {
   final TextStyle? firstButtonTextStyle;
   final TextStyle? secondButtonTextStyle;
   final bool isMore;
+  final Color? buttonColor;
+  final TextStyle? buttonTextStyle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -76,6 +80,8 @@ class CustomBottomButton extends StatelessWidget {
               child: CustomElevatedButton(
                 onPressed: onPressed ?? () {},
                 textButton: textButton,
+                backgroundColor: buttonColor,
+                styleTextButton: buttonTextStyle,
               ),
             ),
     );

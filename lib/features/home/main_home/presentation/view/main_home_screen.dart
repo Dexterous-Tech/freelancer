@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:freelancer/features/client/more/presentation/view/client_more_screen.dart';
 import 'package:freelancer/features/client/profile/presentation/view/client_profile_screen.dart';
+import '../../../../more/presentation/view/more_screen.dart';
 import 'widgets/main_home_bottom_navigation_bar.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -74,7 +74,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         return Center(key: const ValueKey('services'), child: Text('Services'));
 
       case 3:
-        return ClientMoreScreen(key: const ValueKey('more'));
+        return MoreScreen(key: const ValueKey('more'));
       default:
         return Center(key: const ValueKey('home'), child: Text('Home'));
     }
