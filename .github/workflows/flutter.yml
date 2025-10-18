@@ -34,6 +34,7 @@ jobs:
       # Step 5: Run tests
       - name: Run tests
         run: |
+          dart run build_runner build --delete-conflicting-outputs
           flutter test
 
       # Step 6 (Optional): Build the app (Uncomment if needed)

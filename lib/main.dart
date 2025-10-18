@@ -9,7 +9,12 @@ import 'generated/codegen_loader.g.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+  // final systemLang = PlatformDispatcher.instance.locale.languageCode;
+  //
+  // await SharedPreferencesHelper.setString(
+  //   SharedPreferencesKey.currentCodeKey,
+  //   systemLang,
+  // );
   // Register all GetIt dependencies
   await initializeDependencies();
   await sl.allReady();

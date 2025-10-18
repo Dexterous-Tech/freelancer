@@ -97,7 +97,8 @@ class CodegenLoader extends AssetLoader{
     "privacyPolicy": "سياسة الخصوصية",
     "selectLanguageTitle": "اختيار اللغة",
     "chooseLanguageApp": "قم باختيار لغة التطبيق"
-  }
+  },
+  "tryAgain": "إعادة المحاولة مرة أخرى"
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -182,7 +183,8 @@ static const Map<String,dynamic> _en = {
     "privacyPolicy": "Privacy Policy",
     "selectLanguageTitle": "Choose Language",
     "chooseLanguageApp": "Choose the application language"
-  }
+  },
+  "tryAgain": "Try Again"
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -267,7 +269,8 @@ static const Map<String,dynamic> _ur = {
     "privacyPolicy": "رازداری کی پالیسی",
     "selectLanguageTitle": "زبان منتخب کریں",
     "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
-  }
+  },
+  "tryAgain": "دوبارہ کوشش کریں"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

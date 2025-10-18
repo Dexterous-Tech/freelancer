@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:freelancer/features/auth/login/presentation/manager/login_cubit.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/login/data/repo/login_repo.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
 
@@ -14,5 +16,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<Dio>(dio);
 
   // Register ApiServices as a singleton
-  sl.registerSingleton<ApiServices>(ApiServices.internal(dio));
+  sl.registerLazySingleton<ApiServices>(() => ApiServices(dio));
+
+  // login
+  sl.registerLazySingleton<LoginRepo>(() => LoginRepo(sl()));
+  sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
 }

@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/helper/app_images.dart';
+import '../../../../../../../core/networking/dio_factory.dart';
 import '../../../../../../../core/theme/app_colors.dart';
 import '../../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../../core/theme/spacing.dart';
 import '../../../../../../../core/widgets/custom_bottom_button.dart';
 import '../../../../../../../generated/locale_keys.g.dart';
+import '../../../../../../core/shared/shared_preferences_helper.dart';
+import '../../../../../../core/shared/shared_preferences_key.dart';
 
 class ChangeLanguageBottomSheet extends StatefulWidget {
   const ChangeLanguageBottomSheet({super.key});
@@ -91,21 +94,16 @@ class _ChangeLanguageBottomSheetState extends State<ChangeLanguageBottomSheet> {
                 selectedCode != context.locale.languageCode) {
               // Set the new locale
               await context.setLocale(Locale(selectedCode!));
+              await SharedPreferencesHelper.setSecuredString(
+                SharedPreferencesKey.currentCodeKey,
+                selectedCode!,
+              );
+              await DioFactory.updateLanguageHeader(selectedCode!);
 
               // Pop the bottom sheet
               if (context.mounted && Navigator.canPop(context)) {
                 Navigator.pop(context);
               }
-
-              // Force rebuild of the entire app by navigating back to main home
-              // This ensures all screens reflect the new language
-              // if (mounted) {
-              //   Navigator.pushNamedAndRemoveUntil(
-              //     context,
-              //     AppRoutes.mainHomeScreen,
-              //     (route) => false,
-              //   );
-              // }
             } else {
               // If no change, just close the bottom sheet
               if (mounted && Navigator.canPop(context)) {
