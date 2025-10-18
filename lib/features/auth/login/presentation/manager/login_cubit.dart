@@ -3,10 +3,12 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
+import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
 import 'package:freelancer/features/auth/login/data/repo/login_repo.dart';
 
 import '../../../../../core/networking/dio_factory.dart';
 import '../../../../../core/shared/shared_preferences_helper.dart';
+import '../../../data/models/auth_action_response_model.dart';
 import '../../data/models/login_models.dart';
 
 part 'login_state.dart';
@@ -51,6 +53,25 @@ class LoginCubit extends Cubit<LoginState> {
         // }
 
         emit(LoginSuccess(loginResponseModel));
+      },
+    );
+  }
+
+  void forgetPassword() async {
+    emit(ForgetPasswordLoading());
+    var response = await loginRepo.forgetPassword(
+      ForgetPasswordRequestBodyModel(
+        countryCode: countryCodeController.text,
+        phone: phoneNumberController.text,
+      ),
+    );
+
+    response.fold(
+      (error) {
+        emit(ForgetPasswordFailure(error.displayMessage));
+      },
+      (forgetResponseModel) async {
+        emit(ForgetPasswordSuccess(forgetResponseModel));
       },
     );
   }

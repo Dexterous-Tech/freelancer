@@ -71,12 +71,12 @@ class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
               if (value == null || value.isEmpty) {
                 final msg = LocaleKeys.authentication_fieldRequired.tr();
                 setState(() => phoneErrorMessage = msg);
-                return ''; // ❗ return non-null to block form submit
+                return msg; // ❗ return non-null to block form submit
               }
               if (value.length < 9) {
                 final msg = LocaleKeys.authentication_phoneValidation.tr();
                 setState(() => phoneErrorMessage = msg);
-                return ''; // ❗ also block submit
+                return msg; // ❗ also block submit
               }
 
               setState(() => phoneErrorMessage = null);

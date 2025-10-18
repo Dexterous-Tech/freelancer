@@ -1,8 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:freelancer/features/auth/forget_password/presentation/manager/forget_password_cubit.dart';
 import 'package:freelancer/features/auth/login/presentation/manager/login_cubit.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/forget_password/data/repo/verify_forget_repo.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
+import '../../features/auth/widgets/resend_code/data/repo/resend_code_repo.dart';
+import '../../features/auth/widgets/resend_code/manager/resend_code_cubit.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
 
@@ -21,4 +25,12 @@ Future<void> initializeDependencies() async {
   // login
   sl.registerLazySingleton<LoginRepo>(() => LoginRepo(sl()));
   sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
+
+  // forget password
+  sl.registerLazySingleton<VerifyForgetRepo>(() => VerifyForgetRepo(sl()));
+  sl.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(sl()));
+
+  // resend code
+  sl.registerLazySingleton<ResendCodeRepo>(() => ResendCodeRepo(sl()));
+  sl.registerFactory<ResendCodeCubit>(() => ResendCodeCubit(sl()));
 }

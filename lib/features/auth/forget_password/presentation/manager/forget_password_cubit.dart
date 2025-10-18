@@ -1,46 +1,40 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freelancer/features/auth/data/models/auth_action_response_model.dart';
+import 'package:freelancer/features/auth/forget_password/data/models/verify_forget_model.dart';
+import 'package:freelancer/features/auth/forget_password/data/repo/verify_forget_repo.dart';
 
 part 'forget_password_state.dart';
 
 class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
-  ForgetPasswordCubit() : super(ForgetPasswordInitial());
+  ForgetPasswordCubit(this._verifyForgetRepo) : super(ForgetPasswordInitial());
 
+  final VerifyForgetRepo _verifyForgetRepo;
   static ForgetPasswordCubit get(context) => BlocProvider.of(context);
 
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController codeController = TextEditingController();
+  TextEditingController otpCodeController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
 
-  Timer? _timer;
-  int remainingSeconds = 0;
+  void verifyForget({
+    required String countryCode,
+    required String phone,
+  }) async {
+    emit(VerifyForgetLoading());
+    final response = await _verifyForgetRepo.verifyForget(
+      VerifyForgetRequestBodModel(
+        countryCode: countryCode,
+        phone: phone,
+        otpCode: otpCodeController.text,
+      ),
+    );
 
-  void startTimer() {
-    remainingSeconds = 60;
-    emit(ForgetPasswordTimerUpdated());
-
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (remainingSeconds > 0) {
-        remainingSeconds--;
-        emit(ForgetPasswordTimerUpdated());
-      } else {
-        timer.cancel();
-        emit(ForgetPasswordTimerFinished());
-      }
-    });
-  }
-
-  void resendCode() {
-    // your resend logic here
-    startTimer();
-  }
-
-  @override
-  Future<void> close() {
-    _timer?.cancel();
-    return super.close();
+    response.fold(
+      (error) {
+        emit(VerifyForgetFailure(error.displayMessage));
+      },
+      (success) {
+        emit(VerifyForgetSuccess(success));
+      },
+    );
   }
 }

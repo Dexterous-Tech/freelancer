@@ -5,6 +5,16 @@ sealed class ForgetPasswordState {}
 
 final class ForgetPasswordInitial extends ForgetPasswordState {}
 
-class ForgetPasswordTimerUpdated extends ForgetPasswordState {}
+class VerifyForgetLoading extends ForgetPasswordState {}
 
-class ForgetPasswordTimerFinished extends ForgetPasswordState {}
+class VerifyForgetFailure extends ForgetPasswordState {
+  final String error;
+
+  VerifyForgetFailure(this.error);
+}
+
+class VerifyForgetSuccess extends ForgetPasswordState {
+  final AuthActionResponseModel forgetPasswordResponseModel;
+
+  VerifyForgetSuccess(this.forgetPasswordResponseModel);
+}

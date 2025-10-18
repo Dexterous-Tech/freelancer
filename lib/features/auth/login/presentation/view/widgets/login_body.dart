@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
-import 'package:freelancer/core/theme/app_colors.dart';
-import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import '../../manager/login_cubit.dart';
 import 'login_button.dart';
 import '../../../../widgets/auth_question.dart';
+import 'login_forget_password.dart';
 import 'login_form.dart';
 import '../../../../widgets/auth_body.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
@@ -46,31 +45,7 @@ class LoginBody extends StatelessWidget {
             children: [
               LoginForm(),
               verticalSpace(8),
-              GestureDetector(
-                onTap: () {
-                  final cubit = LoginCubit.get(context);
-                  if (cubit.phoneFormKey.currentState!.validate() &&
-                      !cubit.phoneNumberController.text.isNullOrEmpty()) {
-                    // Ensure country code format is +XXX (not XXX+)
-                    String countryCode = cubit.countryCodeController.text
-                        .trim();
-                    // Remove any + signs and add one at the start
-                    countryCode = '+${countryCode.replaceAll('+', '')}';
-
-                    context.pushNamed(
-                      AppRoutes.forgetScreen,
-                      arguments:
-                          '$countryCode ${cubit.phoneNumberController.text}',
-                    );
-                  }
-                },
-                child: Text(
-                  LocaleKeys.authentication_forgetPasswordQu.tr(),
-                  style: AppTextStyles.font14BlackRegular.copyWith(
-                    color: AppColors.darkBlue,
-                  ),
-                ),
-              ),
+              LoginForgetPassword(),
               verticalSpace(16),
               LoginButton(),
               verticalSpace(16),

@@ -18,3 +18,17 @@ final class LoginSuccess extends LoginState {
 
   LoginSuccess(this.loginResponseModel);
 }
+
+final class ForgetPasswordLoading extends LoginState {}
+
+final class ForgetPasswordFailure extends LoginState {
+  final String error;
+
+  ForgetPasswordFailure(this.error);
+}
+
+final class ForgetPasswordSuccess extends LoginState {
+  final AuthActionResponseModel forgetPasswordResponseModel;
+
+  ForgetPasswordSuccess(this.forgetPasswordResponseModel);
+}

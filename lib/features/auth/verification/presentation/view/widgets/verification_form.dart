@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import '../../../../widgets/custom_verification_text_form_field.dart';
 
@@ -19,7 +18,7 @@ class VerificationForm extends StatelessWidget {
         children: [
           CustomVerificationTextFormField(
             codeController: cubit.codeController,
-            route: AppRoutes.mainHomeScreen,
+            onChange: () {},
           ),
           verticalSpace(16),
         ],
