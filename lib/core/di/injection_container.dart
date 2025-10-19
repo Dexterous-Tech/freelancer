@@ -7,6 +7,8 @@ import 'package:freelancer/features/auth/signup/data/repo/signup_repo.dart';
 import 'package:freelancer/features/auth/signup/presentation/manager/signup_cubit.dart';
 import 'package:freelancer/features/auth/verification/data/repo/verification_repo.dart';
 import 'package:freelancer/features/auth/verification/presentation/manager/verification_cubit.dart';
+import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
+import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/auth/forget_password/data/repo/verify_forget_repo.dart';
@@ -51,4 +53,8 @@ Future<void> initializeDependencies() async {
   // verification
   sl.registerLazySingleton<VerificationRepo>(() => VerificationRepo(sl()));
   sl.registerFactory<VerificationCubit>(() => VerificationCubit(sl()));
+
+  // profile
+  sl.registerLazySingleton<ProfileRepo>(() => ProfileRepo(sl()));
+  sl.registerFactory<ProfileCubit>(() => ProfileCubit(sl()));
 }

@@ -49,6 +49,7 @@ dependencies:
   retrofit: ^4.7.3
   json_annotation: ^4.9.0
   dartz: ^0.10.1
+  skeletonizer: ^2.1.0+1
 
 
 

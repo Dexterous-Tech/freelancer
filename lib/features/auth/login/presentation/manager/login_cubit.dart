@@ -43,7 +43,7 @@ class LoginCubit extends Cubit<LoginState> {
         // Check if user is blocked
 
         await saveUserToken(loginResponseModel.data!.token);
-        log("save token ");
+        log("save token  ");
 
         // if (loginResponseModel.data?.redirectToAttribute != true) {
         //   // After successful login, save FCM token silently
@@ -87,6 +87,10 @@ class LoginCubit extends Cubit<LoginState> {
       SharedPreferencesKey.apiTokenKey,
       token,
     );
-    await DioFactory.setTokenIntoHeaderAfterLogin(token);
+
+    final secureToken = await SharedPreferencesHelper.getSecuredString(
+      SharedPreferencesKey.apiTokenKey,
+    );
+    await DioFactory.setTokenIntoHeaderAfterLogin(secureToken);
   }
 }

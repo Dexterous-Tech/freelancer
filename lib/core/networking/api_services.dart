@@ -44,4 +44,7 @@ abstract class ApiServices {
   Future<AuthActionResponseModel> verifyRegister(
     @Body() VerifyRequestBodModel body,
   );
+
+  @POST(ApiConstants.logout)
+  Future<AuthActionResponseModel> logout();
 }

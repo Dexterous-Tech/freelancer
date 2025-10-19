@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/forms/custom_elevated_button.dart';
 
@@ -19,6 +20,7 @@ class CustomBottomButton extends StatelessWidget {
     this.secondButtonTextStyle,
     this.buttonColor,
     this.buttonTextStyle,
+    this.isLoading = false,
   });
 
   final String? textButton;
@@ -34,6 +36,7 @@ class CustomBottomButton extends StatelessWidget {
   final bool isMore;
   final Color? buttonColor;
   final TextStyle? buttonTextStyle;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +57,11 @@ class CustomBottomButton extends StatelessWidget {
           ),
         ],
       ),
-      child: isMore
+      child: isLoading
+          ? const Center(
+              child: CircularProgressIndicator(color: AppColors.darkBlue),
+            )
+          : isMore
           ? Row(
               children: [
                 Expanded(

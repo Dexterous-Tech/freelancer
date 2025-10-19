@@ -19,23 +19,17 @@ class CustomHeader extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
       decoration: BoxDecoration(
-        color: AppColors.white,
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment(0, -3),
+          end: Alignment(0, 0),
           colors: [AppColors.yellow, AppColors.white],
+          stops: [0.0, 1.0],
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 6,
             spreadRadius: 2,
-            offset: Offset(0, 2),
-          ),
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 4,
-            spreadRadius: 0,
             offset: Offset(0, 2),
           ),
         ],
