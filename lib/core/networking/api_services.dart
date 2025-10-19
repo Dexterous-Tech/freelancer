@@ -6,6 +6,7 @@ import 'package:freelancer/features/auth/signup/data/models/signup_models.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../features/auth/data/models/auth_action_response_model.dart';
 import '../../features/auth/login/data/models/login_models.dart';
+import '../../features/client/profile/data/models/profile_models.dart';
 import 'api_constants.dart';
 part 'api_services.g.dart';
 
@@ -47,4 +48,9 @@ abstract class ApiServices {
 
   @POST(ApiConstants.logout)
   Future<AuthActionResponseModel> logout();
+
+  @DELETE(ApiConstants.deleteAccount)
+  Future<AuthActionResponseModel> deleteAccount(
+    @Body() DeleteAccountBodyModel body,
+  );
 }

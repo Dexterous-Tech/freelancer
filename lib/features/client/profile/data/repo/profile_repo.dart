@@ -6,6 +6,8 @@ import 'package:freelancer/core/networking/api_error_model.dart';
 import 'package:freelancer/core/networking/api_services.dart';
 import 'package:freelancer/features/auth/data/models/auth_action_response_model.dart';
 
+import '../models/profile_models.dart';
+
 class ProfileRepo {
   final ApiServices _apiServices;
 
@@ -17,6 +19,21 @@ class ProfileRepo {
       return Right(response);
     } catch (e) {
       log("error in logout $e");
+      if (e is ApiErrorModel) {
+        return Left(e);
+      }
+      return Left(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<Either<ApiErrorModel, AuthActionResponseModel>> deleteAccount(
+    DeleteAccountBodyModel body,
+  ) async {
+    try {
+      final response = await _apiServices.deleteAccount(body);
+      return Right(response);
+    } catch (e) {
+      log("error in delete account $e");
       if (e is ApiErrorModel) {
         return Left(e);
       }

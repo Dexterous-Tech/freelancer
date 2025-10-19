@@ -43,7 +43,6 @@ class SharedPreferencesHelper {
     // final prefs = await SharedPreferences.getInstance();
     Future.wait([
       flutterSecureStorage.delete(key: SharedPreferencesKey.apiTokenKey),
-      flutterSecureStorage.delete(key: SharedPreferencesKey.currentCodeKey),
     ]);
   }
 }

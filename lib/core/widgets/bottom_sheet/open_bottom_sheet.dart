@@ -11,6 +11,8 @@ void openBottomSheet({
     context: context,
     barrierLabel: "BottomSheet",
     backgroundColor: Colors.transparent,
+    isScrollControlled: true, // 👈 very important
+    useSafeArea: true, // 👈 prevents overlap with system insets
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32).r),
     ),

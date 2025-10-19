@@ -9,14 +9,20 @@ class ClientProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomHeader(
-          title: LocaleKeys.bottomNavigationBar_profile.tr(),
-          isBack: false,
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomHeader(
+                title: LocaleKeys.bottomNavigationBar_profile.tr(),
+                isBack: false,
+              ),
+              ProfileContent(),
+            ],
+          ),
         ),
-        ProfileContent(),
       ],
     );
   }

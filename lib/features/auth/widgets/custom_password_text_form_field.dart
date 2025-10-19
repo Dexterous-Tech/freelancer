@@ -25,41 +25,37 @@ class CustomPasswordTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerDown: (_) {
-        FocusScope.of(context).requestFocus(FocusNode());
-      },
-      child: CustomTextFormField(
-        controller: passwordController,
-        hintText: hint,
-        obscureText: obscureText,
-        enableInteractiveSelection: false,
-        contextMenuBuilder: (context, editableTextState) => const SizedBox(),
-        suffixIcon: GestureDetector(
-          onTap: onToggleVisibility,
-          child: SvgPicture.asset(
-            obscureText ? AppImages.visibleEyeIcon : AppImages.invisibleEyeIcon,
-            width: 22.w,
-            height: 22.h,
-            fit: BoxFit.scaleDown,
-          ),
+    return CustomTextFormField(
+      controller: passwordController,
+      hintText: hint,
+      obscureText: obscureText,
+      enableInteractiveSelection: false,
+      contextMenuBuilder: (context, editableTextState) => const SizedBox(),
+      suffixIcon: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: onToggleVisibility,
+        child: SvgPicture.asset(
+          obscureText ? AppImages.visibleEyeIcon : AppImages.invisibleEyeIcon,
+          width: 22.w,
+          height: 22.h,
+          fit: BoxFit.scaleDown,
         ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.authentication_fieldRequired.tr();
-          }
-          if (value.length < 8) {
-            return LocaleKeys.authentication_passwordMinValidation.tr();
-          }
-          if (value.length > 20) {
-            return LocaleKeys.authentication_passwordMaxValidation.tr();
-          }
-          if (compareWith != null && value != compareWith!.text) {
-            return LocaleKeys.authentication_passwordMismatch.tr();
-          }
-          return null;
-        },
       ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return LocaleKeys.authentication_fieldRequired.tr();
+        }
+        if (value.length < 8) {
+          return LocaleKeys.authentication_passwordMinValidation.tr();
+        }
+        if (value.length > 20) {
+          return LocaleKeys.authentication_passwordMaxValidation.tr();
+        }
+        if (compareWith != null && value != compareWith!.text) {
+          return LocaleKeys.authentication_passwordMismatch.tr();
+        }
+        return null;
+      },
     );
   }
 }

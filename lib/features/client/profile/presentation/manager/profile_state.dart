@@ -18,3 +18,17 @@ final class ProfileLogoutSuccess extends ProfileState {
 
   ProfileLogoutSuccess(this.authActionResponseModel);
 }
+
+final class ProfileDeleteAccountLoading extends ProfileState {}
+
+final class ProfileDeleteAccountFailure extends ProfileState {
+  final String error;
+
+  ProfileDeleteAccountFailure(this.error);
+}
+
+final class ProfileDeleteAccountSuccess extends ProfileState {
+  final AuthActionResponseModel authActionResponseModel;
+
+  ProfileDeleteAccountSuccess(this.authActionResponseModel);
+}

@@ -9,4 +9,5 @@ class ApiConstants {
   static const String resetPassword = '/reset-password';
   static const String register = '/register';
   static const String logout = '/logout';
+  static const String deleteAccount = '/delete-account';
 }
