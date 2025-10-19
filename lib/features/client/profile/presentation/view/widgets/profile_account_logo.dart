@@ -32,55 +32,64 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
   Widget build(BuildContext context) {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
-        String name = '';
-        String initials = '';
         if (state is ProfileGetProfileSuccess) {
-          name =
+          String name =
               '${state.profileResponseModel.data?.firstName ?? ''} ${state.profileResponseModel.data?.lastName ?? ''}';
-          initials = getInitials(name);
-        }
-        return GestureDetector(
-          onTap: () {
-            openBottomSheet(
-              context: context,
-              bottomSheetContent: SwitchAccountBottomSheet(),
-            );
-          },
-          child: Skeletonizer(
-            enabled: state is ProfileGetProfileLoading,
-            child: Row(
-              children: [
-                Container(
-                  width: 48.w,
-                  height: 48.h,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.darkBlue,
-                  ),
-                  child: Center(
-                    child: Text(
-                      initials,
-                      style: AppTextStyles.font18YellowRegular.copyWith(
-                        fontWeight: FontWeightHelper.medium,
+          String initials = getInitials(name);
+          return GestureDetector(
+            onTap: () {
+              openBottomSheet(
+                context: context,
+                bottomSheetContent: SwitchAccountBottomSheet(),
+              );
+            },
+            child: Skeletonizer(
+              enabled: state is ProfileGetProfileLoading,
+              child: Row(
+                children: [
+                  Container(
+                    width: 48.w,
+                    height: 48.h,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.darkBlue,
+                    ),
+                    child: Center(
+                      child: Text(
+                        initials,
+                        style: AppTextStyles.font18YellowRegular.copyWith(
+                          fontWeight: FontWeightHelper.medium,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                horizontalSpace(8),
-                Text(
-                  name,
-                  style: AppTextStyles.font18YellowRegular.copyWith(
-                    color: AppColors.jet,
+                  horizontalSpace(8),
+                  Text(
+                    name,
+                    style: AppTextStyles.font18YellowRegular.copyWith(
+                      color: AppColors.jet,
+                    ),
                   ),
-                ),
-                Spacer(),
-                SvgPicture.asset(
-                  AppImages.arrowDownIcon,
-                  width: 24.w,
-                  height: 24.h,
-                ),
-              ],
+                  Spacer(),
+                  SvgPicture.asset(
+                    AppImages.arrowDownIcon,
+                    width: 24.w,
+                    height: 24.h,
+                  ),
+                ],
+              ),
             ),
+          );
+        }
+        return Skeletonizer.zone(
+          child: Row(
+            children: [
+              Bone.circle(size: 48),
+              horizontalSpace(8),
+              Bone.text(),
+              Spacer(),
+              Bone.icon(),
+            ],
           ),
         );
       },
