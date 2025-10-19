@@ -32,3 +32,17 @@ final class ProfileDeleteAccountSuccess extends ProfileState {
 
   ProfileDeleteAccountSuccess(this.authActionResponseModel);
 }
+
+final class ProfileGetProfileLoading extends ProfileState {}
+
+final class ProfileGetProfileFailure extends ProfileState {
+  final String error;
+
+  ProfileGetProfileFailure(this.error);
+}
+
+final class ProfileGetProfileSuccess extends ProfileState {
+  final ProfileResponseModel profileResponseModel;
+
+  ProfileGetProfileSuccess(this.profileResponseModel);
+}

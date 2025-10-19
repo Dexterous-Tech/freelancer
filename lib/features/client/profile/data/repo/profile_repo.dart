@@ -40,4 +40,17 @@ class ProfileRepo {
       return Left(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<Either<ApiErrorModel, ProfileResponseModel>> getProfile() async {
+    try {
+      final response = await _apiServices.getProfile();
+      return Right(response);
+    } catch (e) {
+      log("error in get profile $e");
+      if (e is ApiErrorModel) {
+        return Left(e);
+      }
+      return Left(ApiErrorHandler.handle(e));
+    }
+  }
 }

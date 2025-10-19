@@ -79,3 +79,16 @@ class LoginResponseUserData {
 
   Map<String, dynamic> toJson() => _$LoginResponseUserDataToJson(this);
 }
+
+@JsonSerializable()
+class UpdateFcmTokenRequestBodyModel {
+  @JsonKey(name: 'fcm_token')
+  final String token;
+
+  UpdateFcmTokenRequestBodyModel({required this.token});
+
+  factory UpdateFcmTokenRequestBodyModel.fromJson(Map<String, dynamic> json) =>
+      _$UpdateFcmTokenRequestBodyModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UpdateFcmTokenRequestBodyModelToJson(this);
+}

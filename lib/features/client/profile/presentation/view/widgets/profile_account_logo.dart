@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../../core/helper/app_images.dart';
 import '../../../../../../core/helper/functions.dart';
@@ -11,49 +14,76 @@ import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import 'bottom_sheets/switch_account_bottom_sheet.dart';
 
-class ProfileAccountLogo extends StatelessWidget {
+class ProfileAccountLogo extends StatefulWidget {
   const ProfileAccountLogo({super.key});
 
   @override
+  State<ProfileAccountLogo> createState() => _ProfileAccountLogoState();
+}
+
+class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
+  @override
+  void initState() {
+    ProfileCubit.get(context).getProfile();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final name = 'Esraa Mohamed';
-    final initials = getInitials(name);
-    return GestureDetector(
-      onTap: () {
-        openBottomSheet(
-          context: context,
-          bottomSheetContent: SwitchAccountBottomSheet(),
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder: (context, state) {
+        String name = '';
+        String initials = '';
+        if (state is ProfileGetProfileSuccess) {
+          name =
+              '${state.profileResponseModel.data?.firstName ?? ''} ${state.profileResponseModel.data?.lastName ?? ''}';
+          initials = getInitials(name);
+        }
+        return GestureDetector(
+          onTap: () {
+            openBottomSheet(
+              context: context,
+              bottomSheetContent: SwitchAccountBottomSheet(),
+            );
+          },
+          child: Skeletonizer(
+            enabled: state is ProfileGetProfileLoading,
+            child: Row(
+              children: [
+                Container(
+                  width: 48.w,
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.darkBlue,
+                  ),
+                  child: Center(
+                    child: Text(
+                      initials,
+                      style: AppTextStyles.font18YellowRegular.copyWith(
+                        fontWeight: FontWeightHelper.medium,
+                      ),
+                    ),
+                  ),
+                ),
+                horizontalSpace(8),
+                Text(
+                  name,
+                  style: AppTextStyles.font18YellowRegular.copyWith(
+                    color: AppColors.jet,
+                  ),
+                ),
+                Spacer(),
+                SvgPicture.asset(
+                  AppImages.arrowDownIcon,
+                  width: 24.w,
+                  height: 24.h,
+                ),
+              ],
+            ),
+          ),
         );
       },
-      child: Row(
-        children: [
-          Container(
-            width: 48.w,
-            height: 48.h,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.darkBlue,
-            ),
-            child: Center(
-              child: Text(
-                initials,
-                style: AppTextStyles.font18YellowRegular.copyWith(
-                  fontWeight: FontWeightHelper.medium,
-                ),
-              ),
-            ),
-          ),
-          horizontalSpace(8),
-          Text(
-            name,
-            style: AppTextStyles.font18YellowRegular.copyWith(
-              color: AppColors.jet,
-            ),
-          ),
-          Spacer(),
-          SvgPicture.asset(AppImages.arrowDownIcon, width: 24.w, height: 24.h),
-        ],
-      ),
     );
   }
 }

@@ -41,4 +41,14 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(ProfileDeleteAccountSuccess(r));
     });
   }
+
+  void getProfile() async {
+    emit(ProfileGetProfileLoading());
+    final response = await profileRepo.getProfile();
+
+    response.fold(
+      (l) => emit(ProfileGetProfileFailure(l.displayMessage)),
+      (r) => emit(ProfileGetProfileSuccess(r)),
+    );
+  }
 }

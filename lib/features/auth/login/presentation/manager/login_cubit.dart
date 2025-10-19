@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
@@ -40,17 +41,9 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginFailure(error.displayMessage));
       },
       (loginResponseModel) async {
-        // Check if user is blocked
-
         await saveUserToken(loginResponseModel.data!.token);
         log("save token  ");
-
-        // if (loginResponseModel.data?.redirectToAttribute != true) {
-        //   // After successful login, save FCM token silently
-        //   await saveFcmTokenSilently();
-        //   // Mark user as logged in when redirectToAttribute is null, false, or any other value except true
-        //   await SharedPreferencesHelper.setIsLoggedIn(true);
-        // }
+        await saveFcmTokenSilently();
 
         emit(LoginSuccess(loginResponseModel));
       },
@@ -92,5 +85,43 @@ class LoginCubit extends Cubit<LoginState> {
       SharedPreferencesKey.apiTokenKey,
     );
     await DioFactory.setTokenIntoHeaderAfterLogin(secureToken);
+  }
+
+  Future<void> saveFcmTokenSilently() async {
+    try {
+      await saveTokeFromFirebase();
+      String token = await SharedPreferencesHelper.getSecuredString(
+        SharedPreferencesKey.deviceToken,
+      );
+      var response = await loginRepo.updateFcmToken(
+        UpdateFcmTokenRequestBodyModel(token: token),
+      );
+
+      response.fold(
+        (error) {
+          log("FCM token save failed: ${error.displayMessage}");
+          // Don't emit error state to avoid showing error to user
+        },
+        (fcmResponseModel) async {
+          log("FCM token saved successfully");
+          // Don't emit success state to avoid showing success to user
+        },
+      );
+    } catch (e) {
+      log("Error saving FCM token: $e");
+      // Don't emit error state to avoid showing error to user
+    }
+  }
+
+  Future<void> saveTokeFromFirebase() async {
+    await SharedPreferencesHelper.deleteSecuredString(
+      SharedPreferencesKey.deviceToken,
+    );
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+    String? token = await messaging.getToken();
+    await SharedPreferencesHelper.setSecuredString(
+      SharedPreferencesKey.deviceToken,
+      token!,
+    );
   }
 }

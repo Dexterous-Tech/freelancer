@@ -53,4 +53,12 @@ abstract class ApiServices {
   Future<AuthActionResponseModel> deleteAccount(
     @Body() DeleteAccountBodyModel body,
   );
+
+  @GET(ApiConstants.getProfile)
+  Future<ProfileResponseModel> getProfile();
+
+  @POST(ApiConstants.updateFcmToken)
+  Future<AuthActionResponseModel> updateFcmToken(
+    @Body() UpdateFcmTokenRequestBodyModel body,
+  );
 }
