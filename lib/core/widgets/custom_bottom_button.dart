@@ -57,38 +57,45 @@ class CustomBottomButton extends StatelessWidget {
           ),
         ],
       ),
-      child: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: AppColors.darkBlue),
-            )
-          : isMore
-          ? Row(
-              children: [
-                Expanded(
-                  child: CustomElevatedButton(
-                    onPressed: firstButtonOnPressed ?? () {},
-                    textButton: firstButtonText,
-                    backgroundColor: firstButtonColor,
-                    styleTextButton: firstButtonTextStyle,
-                  ),
-                ),
-                horizontalSpace(10),
-                Expanded(
-                  child: CustomElevatedButton(
-                    onPressed: secondButtonOnPressed ?? () {},
-                    textButton: secondButtonText,
-                    backgroundColor: secondButtonColor,
-                    styleTextButton: secondButtonTextStyle,
-                  ),
-                ),
-              ],
-            )
+      child: isMore
+          ? isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(color: AppColors.darkBlue),
+                  )
+                : Row(
+                    children: [
+                      Expanded(
+                        child: CustomElevatedButton(
+                          onPressed: firstButtonOnPressed ?? () {},
+                          textButton: firstButtonText,
+                          backgroundColor: firstButtonColor,
+                          styleTextButton: firstButtonTextStyle,
+                        ),
+                      ),
+                      horizontalSpace(10),
+                      Expanded(
+                        child: CustomElevatedButton(
+                          onPressed: secondButtonOnPressed ?? () {},
+                          textButton: secondButtonText,
+                          backgroundColor: secondButtonColor,
+                          styleTextButton: secondButtonTextStyle,
+                        ),
+                      ),
+                    ],
+                  )
           : Center(
               child: CustomElevatedButton(
                 onPressed: onPressed ?? () {},
                 textButton: textButton,
                 backgroundColor: buttonColor,
                 styleTextButton: buttonTextStyle,
+                buttonWidget: isLoading
+                    ? Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.yellow,
+                        ),
+                      )
+                    : null,
               ),
             ),
     );

@@ -11,6 +11,7 @@ import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/font_weight_helper.dart';
 import '../../../../../../core/theme/spacing.dart';
+import '../../../../../../core/widgets/animated_switcher_wrapper.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import 'bottom_sheets/switch_account_bottom_sheet.dart';
 
@@ -24,73 +25,87 @@ class ProfileAccountLogo extends StatefulWidget {
 class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
   @override
   void initState() {
-    ProfileCubit.get(context).getProfile();
     super.initState();
+    ProfileCubit.get(context).getProfile();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
+        final isLoading = state is ProfileGetProfileLoading;
+
+        final loadingSkeleton = Skeletonizer.zone(
+          child: Row(
+            children: [
+              Bone.circle(size: 48),
+              horizontalSpace(8),
+              Bone.text(width: 100),
+              const Spacer(),
+              Bone.icon(),
+            ],
+          ),
+        );
+
         if (state is ProfileGetProfileSuccess) {
-          String name =
+          final name =
               '${state.profileResponseModel.data?.firstName ?? ''} ${state.profileResponseModel.data?.lastName ?? ''}';
-          String initials = getInitials(name);
-          return GestureDetector(
+          final initials = getInitials(name);
+
+          final content = GestureDetector(
             onTap: () {
               openBottomSheet(
                 context: context,
                 bottomSheetContent: SwitchAccountBottomSheet(),
               );
             },
-            child: Skeletonizer(
-              enabled: state is ProfileGetProfileLoading,
-              child: Row(
-                children: [
-                  Container(
-                    width: 48.w,
-                    height: 48.h,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.darkBlue,
-                    ),
-                    child: Center(
-                      child: Text(
-                        initials,
-                        style: AppTextStyles.font18YellowRegular.copyWith(
-                          fontWeight: FontWeightHelper.medium,
-                        ),
+            child: Row(
+              children: [
+                Container(
+                  width: 48.w,
+                  height: 48.h,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.darkBlue,
+                  ),
+                  child: Center(
+                    child: Text(
+                      initials,
+                      style: AppTextStyles.font18YellowRegular.copyWith(
+                        fontWeight: FontWeightHelper.medium,
                       ),
                     ),
                   ),
-                  horizontalSpace(8),
-                  Text(
-                    name,
-                    style: AppTextStyles.font18YellowRegular.copyWith(
-                      color: AppColors.jet,
-                    ),
+                ),
+                horizontalSpace(8),
+                Text(
+                  name,
+                  style: AppTextStyles.font18YellowRegular.copyWith(
+                    color: AppColors.jet,
                   ),
-                  Spacer(),
-                  SvgPicture.asset(
-                    AppImages.arrowDownIcon,
-                    width: 24.w,
-                    height: 24.h,
-                  ),
-                ],
-              ),
+                ),
+                const Spacer(),
+                SvgPicture.asset(
+                  AppImages.arrowDownIcon,
+                  width: 24.w,
+                  height: 24.h,
+                ),
+              ],
             ),
           );
+
+          return AnimatedSwitcherWrapper(
+            isLoading: isLoading,
+            loadingWidget: loadingSkeleton,
+            child: content,
+          );
         }
-        return Skeletonizer.zone(
-          child: Row(
-            children: [
-              Bone.circle(size: 48),
-              horizontalSpace(8),
-              Bone.text(),
-              Spacer(),
-              Bone.icon(),
-            ],
-          ),
+
+        // Default to skeleton if not loaded yet
+        return AnimatedSwitcherWrapper(
+          isLoading: true,
+          loadingWidget: loadingSkeleton,
+          child: const SizedBox.shrink(),
         );
       },
     );

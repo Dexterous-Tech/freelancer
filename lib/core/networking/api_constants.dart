@@ -12,6 +12,8 @@ class ApiConstants {
   static const String deleteAccount = '/delete-account';
   static const String getProfile = '/profile';
   static const String updateFcmToken = '/update/fcm-token';
+  static const String changePassword = '/change-password';
+  static const String updateProfile = '/update-profile';
 
   // settings
   static const String aboutUs = '/aboutUs';

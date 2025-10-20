@@ -7,6 +7,10 @@ import 'package:freelancer/features/auth/signup/data/repo/signup_repo.dart';
 import 'package:freelancer/features/auth/signup/presentation/manager/signup_cubit.dart';
 import 'package:freelancer/features/auth/verification/data/repo/verification_repo.dart';
 import 'package:freelancer/features/auth/verification/presentation/manager/verification_cubit.dart';
+import 'package:freelancer/features/client/change_password/data/repo/change_password_repo.dart';
+import 'package:freelancer/features/client/change_password/presentation/manager/client_change_password_cubit.dart';
+import 'package:freelancer/features/client/edit_profile/data/repo/update_profile_repo.dart';
+import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -69,4 +73,16 @@ Future<void> initializeDependencies() async {
   // privacy policy
   sl.registerLazySingleton<PrivacyPolicyRepo>(() => PrivacyPolicyRepo(sl()));
   sl.registerFactory<PrivacyPolicyCubit>(() => PrivacyPolicyCubit(sl()));
+
+  // change password
+  sl.registerLazySingleton<ChangePasswordRepo>(() => ChangePasswordRepo(sl()));
+  sl.registerFactory<ClientChangePasswordCubit>(
+    () => ClientChangePasswordCubit(sl()),
+  );
+
+  // update profile
+  sl.registerLazySingleton<UpdateProfileRepo>(() => UpdateProfileRepo(sl()));
+  sl.registerFactory<ClientEditProfileCubit>(
+    () => ClientEditProfileCubit(sl()),
+  );
 }

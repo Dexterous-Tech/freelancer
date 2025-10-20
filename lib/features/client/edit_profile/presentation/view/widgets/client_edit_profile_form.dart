@@ -13,8 +13,28 @@ import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.da
 import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
-class ClientEditProfileForm extends StatelessWidget {
-  const ClientEditProfileForm({super.key});
+import '../../../../profile/data/models/profile_models.dart';
+
+class ClientEditProfileForm extends StatefulWidget {
+  const ClientEditProfileForm({super.key, required this.profileDataModel});
+
+  final ProfileDataModel profileDataModel;
+  @override
+  State<ClientEditProfileForm> createState() => _ClientEditProfileFormState();
+}
+
+class _ClientEditProfileFormState extends State<ClientEditProfileForm> {
+  late ProfileDataModel currentProfile;
+  @override
+  void initState() {
+    super.initState();
+    currentProfile = widget.profileDataModel;
+    final cubit = ClientEditProfileCubit.get(context);
+    cubit.firstNameController.text = currentProfile.firstName;
+    cubit.lastNameController.text = currentProfile.lastName;
+    cubit.countryCodeController.text = currentProfile.countryCode;
+    cubit.phoneNumberController.text = currentProfile.phone;
+  }
 
   @override
   Widget build(BuildContext context) {

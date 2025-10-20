@@ -4,6 +4,8 @@ import 'package:freelancer/features/auth/data/models/verify_model.dart';
 import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
 import 'package:freelancer/features/auth/new_password_screen/data/models/new_password_model.dart';
 import 'package:freelancer/features/auth/signup/data/models/signup_models.dart';
+import 'package:freelancer/features/client/change_password/data/models/change_password_model.dart';
+import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../features/auth/data/models/auth_action_response_model.dart';
 import '../../features/auth/login/data/models/login_models.dart';
@@ -61,6 +63,16 @@ abstract class ApiServices {
   @POST(ApiConstants.updateFcmToken)
   Future<AuthActionResponseModel> updateFcmToken(
     @Body() UpdateFcmTokenRequestBodyModel body,
+  );
+
+  @POST(ApiConstants.changePassword)
+  Future<AuthActionResponseModel> changePassword(
+    @Body() ChangePasswordRequestBodyModel body,
+  );
+
+  @PATCH(ApiConstants.updateProfile)
+  Future<ProfileResponseModel> updateProfile(
+    @Body() UpdateProfileRequestBodyModel body,
   );
 
   // settings
