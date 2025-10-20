@@ -2,6 +2,7 @@
 ///
 /// This file contains helper functions to mock platform-specific plugins
 /// that don't have implementations in the test environment.
+library;
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
