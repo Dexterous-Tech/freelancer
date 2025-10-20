@@ -11,14 +11,14 @@ import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/about_us/data/about_us_repo.dart';
-import '../../features/about_us/presentation/manager/about_us_cubit.dart';
+import '../../features/common/about_us/data/about_us_repo.dart';
+import '../../features/common/about_us/presentation/manager/about_us_cubit.dart';
 import '../../features/auth/forget_password/data/repo/verify_forget_repo.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
 import '../../features/auth/widgets/resend_code/data/repo/resend_code_repo.dart';
 import '../../features/auth/widgets/resend_code/manager/resend_code_cubit.dart';
-import '../../features/privacy_policy/data/privacy_policy_repo.dart';
-import '../../features/privacy_policy/presentation/manager/privacy_policy_cubit.dart';
+import '../../features/common/privacy_policy/data/privacy_policy_repo.dart';
+import '../../features/common/privacy_policy/presentation/manager/privacy_policy_cubit.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
 

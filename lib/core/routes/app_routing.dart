@@ -7,13 +7,13 @@ import 'package:freelancer/features/auth/new_password_screen/presentation/view/n
 import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
 import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
 import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
-import 'package:freelancer/features/home/main_home/presentation/view/main_home_screen.dart';
-import 'package:freelancer/features/on_boarding/presentation/view/on_boarding_screen.dart';
-import 'package:freelancer/features/splash/splash/presentation/view/splash_screen.dart';
 
-import '../../features/about_us/presentation/view/about_us_screen.dart';
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
-import '../../features/privacy_policy/presentation/view/privacy_policy_screen.dart';
+import '../../features/common/about_us/presentation/view/about_us_screen.dart';
+import '../../features/common/on_boarding/presentation/view/on_boarding_screen.dart';
+import '../../features/common/privacy_policy/presentation/view/privacy_policy_screen.dart';
+import '../../features/common/splash/splash/presentation/view/splash_screen.dart';
+import '../../features/home/presentation/view/main_home_screen.dart';
 
 class AppRouting {
   Route onGenerateRouting(RouteSettings settings) {
