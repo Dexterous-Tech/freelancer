@@ -8,4 +8,14 @@ class ApiConstants {
   static const String resendOtp = '/resend-otp';
   static const String resetPassword = '/reset-password';
   static const String register = '/register';
+  static const String logout = '/logout';
+  static const String deleteAccount = '/delete-account';
+  static const String getProfile = '/profile';
+  static const String updateFcmToken = '/update/fcm-token';
+  static const String changePassword = '/change-password';
+  static const String updateProfile = '/update-profile';
+
+  // settings
+  static const String aboutUs = '/aboutUs';
+  static const String termsConditions = '/terms-conditions';
 }

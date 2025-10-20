@@ -10,8 +10,9 @@ import 'package:freelancer/core/widgets/custom_bottom_button.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 class SuccessBottomSheet extends StatelessWidget {
-  const SuccessBottomSheet({super.key});
+  const SuccessBottomSheet({super.key, this.onPressed});
 
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,7 +58,10 @@ class SuccessBottomSheet extends StatelessWidget {
             ],
           ),
         ),
-        CustomBottomButton(textButton: LocaleKeys.save.tr()),
+        CustomBottomButton(
+          textButton: LocaleKeys.save.tr(),
+          onPressed: onPressed,
+        ),
       ],
     );
   }

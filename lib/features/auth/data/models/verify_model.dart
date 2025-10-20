@@ -16,7 +16,7 @@ class VerifyRequestBodModel {
   });
 
   factory VerifyRequestBodModel.fromJson(Map<String, dynamic> json) =>
-      _$VerifyForgetRequestBodModelFromJson(json);
+      _$VerifyRequestBodModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$VerifyForgetRequestBodModelToJson(this);
+  Map<String, dynamic> toJson() => _$VerifyRequestBodModelToJson(this);
 }

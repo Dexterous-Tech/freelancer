@@ -41,7 +41,9 @@ class SharedPreferencesHelper {
 
   static Future<void> clearAllKeys() async {
     // final prefs = await SharedPreferences.getInstance();
-    await flutterSecureStorage.delete(key: SharedPreferencesKey.apiTokenKey);
-    await flutterSecureStorage.delete(key: SharedPreferencesKey.currentCodeKey);
+    Future.wait([
+      flutterSecureStorage.delete(key: SharedPreferencesKey.apiTokenKey),
+      flutterSecureStorage.delete(key: SharedPreferencesKey.deviceToken),
+    ]);
   }
 }

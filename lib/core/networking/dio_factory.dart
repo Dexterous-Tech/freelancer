@@ -18,7 +18,7 @@ class DioFactory {
       _dio = Dio()
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
-      await addDioHeaders(includeAuth: false);
+      await addDioHeaders(includeAuth: true);
       addDioInterceptor();
     }
 
@@ -69,9 +69,6 @@ class DioFactory {
   /// Update headers when language changes
   static Future<void> updateLanguageHeader(String currentLang) async {
     if (_dio != null) {
-      // final String currentLang = await SharedPreferencesHelper.getSecuredString(
-      //   SharedPreferencesKey.currentCodeKey,
-      // );
       _dio!.options.headers['lang'] = currentLang;
       log("🔑 Language header updated: ${_dio?.options.headers['lang']}");
     }

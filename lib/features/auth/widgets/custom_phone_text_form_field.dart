@@ -56,7 +56,10 @@ class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
         SizedBox(
           height: 60
               .h, // Match the height of CustomTextFormField (19.h * 2 + text height)
-          child: CustomCountryCodePicker(code: countryCode),
+          child: CustomCountryCodePicker(
+            code: countryCode,
+            initialCountryCode: widget.countryCodeController.text,
+          ),
         ),
         horizontalSpace(8),
         Expanded(

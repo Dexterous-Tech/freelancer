@@ -45,4 +45,20 @@ class LoginRepo {
       return Left(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<Either<ApiErrorModel, AuthActionResponseModel>> updateFcmToken(
+    UpdateFcmTokenRequestBodyModel body,
+  ) async {
+    try {
+      final response = await _apiServices.updateFcmToken(body);
+
+      return Right(response);
+    } catch (e) {
+      log("error in updateFcmToken $e");
+      if (e is ApiErrorModel) {
+        return Left(e);
+      }
+      return Left(ApiErrorHandler.handle(e));
+    }
+  }
 }
