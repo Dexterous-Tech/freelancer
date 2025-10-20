@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/di/injection_container.dart';
+import '../manager/privacy_policy_cubit.dart';
 import 'widgets/privacy_policy_body.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
@@ -6,6 +9,9 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: PrivacyPolicyBody());
+    return BlocProvider(
+      create: (context) => sl<PrivacyPolicyCubit>(),
+      child: Scaffold(body: PrivacyPolicyBody()),
+    );
   }
 }

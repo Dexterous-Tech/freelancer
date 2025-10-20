@@ -12,4 +12,8 @@ class ApiConstants {
   static const String deleteAccount = '/delete-account';
   static const String getProfile = '/profile';
   static const String updateFcmToken = '/update/fcm-token';
+
+  // settings
+  static const String aboutUs = '/aboutUs';
+  static const String termsConditions = '/terms-conditions';
 }

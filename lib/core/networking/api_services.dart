@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:freelancer/core/widgets/data/models/settings_model.dart';
 import 'package:freelancer/features/auth/data/models/verify_model.dart';
 import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
 import 'package:freelancer/features/auth/new_password_screen/data/models/new_password_model.dart';
@@ -61,4 +62,11 @@ abstract class ApiServices {
   Future<AuthActionResponseModel> updateFcmToken(
     @Body() UpdateFcmTokenRequestBodyModel body,
   );
+
+  // settings
+  @GET(ApiConstants.aboutUs)
+  Future<SettingsResponseModel> aboutUs();
+
+  @GET(ApiConstants.termsConditions)
+  Future<SettingsResponseModel> termsConditions();
 }
