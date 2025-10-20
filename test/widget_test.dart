@@ -10,28 +10,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:freelancer/core/di/injection_container.dart';
 import 'package:freelancer/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-// adjust path if needed
+
+import 'test_helpers.dart';
 
 void main() {
   setUpAll(() async {
     // Ensure Flutter test binding is ready
     TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Mock SharedPreferences for testing
-    SharedPreferences.setMockInitialValues({});
+    // Setup all platform plugin mocks
+    setupPlatformPluginMocks();
+
+    // Initialize EasyLocalization
+    await EasyLocalization.ensureInitialized();
 
     // Initialize dependencies
     await initializeDependencies();
     await sl.allReady();
-
-    // Initialize EasyLocalization (now safe)
-    await EasyLocalization.ensureInitialized();
   });
 
   tearDownAll(() async {
     // Clean up dependencies
     await sl.reset();
+
+    // Clear all mock handlers
+    clearAllMockMethodCallHandlers();
   });
 
   testWidgets('Test Freelancer main', (WidgetTester tester) async {
