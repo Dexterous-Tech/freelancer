@@ -71,7 +71,18 @@ class ClientEditProfileBody extends StatelessWidget {
             ),
           ),
           verticalSpace(8),
-          Center(child: Text(name, style: AppTextStyles.font24JetRegular)),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Center(
+              child: Text(
+                name,
+                style: AppTextStyles.font24JetRegular,
+                textAlign: TextAlign.center,
+                maxLines: 4,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
           verticalSpace(32),
           Expanded(
             child: ClientEditProfileForm(profileDataModel: profileDataModel),

@@ -11,6 +11,7 @@ part 'profile_state.dart';
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(this.profileRepo) : super(ProfileInitial());
   final ProfileRepo profileRepo;
+
   static ProfileCubit get(context) => BlocProvider.of(context);
 
   void logout() async {
@@ -25,6 +26,14 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   // delete account
+
+  bool obscureText = true;
+
+  void togglePasswordVisibility() {
+    obscureText = !obscureText;
+    emit(ProfileChangeVisiblePassword()); // or use your existing state
+  }
+
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -42,6 +51,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     });
   }
 
+  // get profile
   void getProfile() async {
     emit(ProfileGetProfileLoading());
     final response = await profileRepo.getProfile();

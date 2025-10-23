@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
+import 'package:freelancer/core/widgets/dialog/show_custom_snack_bar.dart';
 import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
 
 import '../../../../../../../core/di/injection_container.dart';
@@ -36,19 +37,24 @@ class _PasswordDeleteAccountBottomSheetState
         listenWhen: (context, state) =>
             state is ProfileDeleteAccountLoading ||
             state is ProfileDeleteAccountFailure ||
-            state is ProfileDeleteAccountSuccess,
+            state is ProfileDeleteAccountSuccess ||
+            state is ProfileChangeVisiblePassword,
         buildWhen: (context, state) =>
             state is ProfileDeleteAccountLoading ||
             state is ProfileDeleteAccountFailure ||
-            state is ProfileDeleteAccountFailure,
+            state is ProfileDeleteAccountSuccess ||
+            state is ProfileChangeVisiblePassword,
+
         listener: (context, state) {
           if (state is ProfileDeleteAccountFailure) {
             openBottomSheet(
+              barrierColor: Colors.transparent,
               context: context,
               bottomSheetContent: ErrorBottomSheet(error: state.error),
             );
           }
-          if (state is ProfileDeleteAccountFailure) {
+          if (state is ProfileDeleteAccountSuccess) {
+            showCustomSnackBar(context, state.authActionResponseModel.message);
             context.pushNamedAndRemoveUntil(AppRoutes.loginScreen);
           }
         },
@@ -84,10 +90,10 @@ class _PasswordDeleteAccountBottomSheetState
                         verticalSpace(24),
                         CustomPasswordTextFormField(
                           passwordController: cubit.passwordController,
-                          obscureText: obscureText,
+                          obscureText: cubit.obscureText,
                           hint: LocaleKeys.authentication_currentPassword.tr(),
                           onToggleVisibility: () {
-                            setState(() => obscureText = !obscureText);
+                            cubit.togglePasswordVisibility();
                           },
                         ),
                         verticalSpace(16),

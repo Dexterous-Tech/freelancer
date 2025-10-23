@@ -79,6 +79,8 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}request_speciality.svg';
   static const String shareAppIcon =
       '${AppConstants.svgIconsImagesPath}share_app.svg';
+  static const String dropDownArrowIcon =
+      '${AppConstants.svgIconsImagesPath}drop_down_arrow.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

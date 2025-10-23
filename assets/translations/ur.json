@@ -39,7 +39,9 @@
     "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
     "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
-    "currentPassword": "موجودہ پاس ورڈ"
+    "currentPassword": "موجودہ پاس ورڈ",
+    "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
+    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -80,7 +82,8 @@
     "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
     "privacyPolicy": "رازداری کی پالیسی",
     "selectLanguageTitle": "زبان منتخب کریں",
-    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں",
+    "noAvilableData": "کوئی ڈیٹا دستیاب نہیں ہے"
   },
   "tryAgain": "دوبارہ کوشش کریں",
   "continueButton": "جاری رکھیں"

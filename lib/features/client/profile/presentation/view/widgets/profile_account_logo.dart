@@ -78,13 +78,18 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
                   ),
                 ),
                 horizontalSpace(8),
-                Text(
-                  name,
-                  style: AppTextStyles.font18YellowRegular.copyWith(
-                    color: AppColors.jet,
+                Expanded(
+                  child: Text(
+                    name,
+                    style: AppTextStyles.font18YellowRegular.copyWith(
+                      color: AppColors.jet,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const Spacer(),
+                // Expanded(child: horizontalSpace(10)),
+                horizontalSpace(12),
                 SvgPicture.asset(
                   AppImages.arrowDownIcon,
                   width: 24.w,

@@ -5,7 +5,7 @@
     "selectLanguage": "حدد اللغة",
     "arabicLanguage": "العربية",
     "englishLanguage": "الإنجليزية",
-    "urduLanguage": "الأُردو",
+    "urduLanguage": "الأوردو",
     "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
   },
   "authentication": {
@@ -24,7 +24,7 @@
     "newPasswordHint": "كلمة المرور الجديدة",
     "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
     "createNewAccountTitle": "إنشاء حساب جديد",
-    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط !",
+    "takeTwoSteps": "الأمر يحتاج إلي خطوتين فقط!",
     "firstNameHint": "الاسم الأول",
     "lastNameHint": "الاسم الأخير",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -39,7 +39,9 @@
     "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
     "passwordAgain": "كلمة المرور مرة أخرى",
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
-    "currentPassword": "كلمة المرور الحالية"
+    "currentPassword": "كلمة المرور الحالية",
+    "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
+    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا"
   },
   "next": "التالي",
   "save": "حفظ",
@@ -80,7 +82,8 @@
     "requestSpeciality": "طلب استحداث تخصص",
     "privacyPolicy": "سياسة الخصوصية",
     "selectLanguageTitle": "اختيار اللغة",
-    "chooseLanguageApp": "قم باختيار لغة التطبيق"
+    "chooseLanguageApp": "قم باختيار لغة التطبيق",
+    "noAvilableData": "لا توجد بيانات متاحة"
   },
   "tryAgain": "إعادة المحاولة مرة أخرى",
   "continueButton": "استمر"

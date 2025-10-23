@@ -6,6 +6,7 @@ import 'package:freelancer/core/widgets/bottom_sheet/custom_bottom_sheet.dart';
 void openBottomSheet({
   required BuildContext context,
   required Widget bottomSheetContent,
+  Color? barrierColor,
 }) {
   showModalBottomSheet(
     context: context,
@@ -16,7 +17,7 @@ void openBottomSheet({
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32).r),
     ),
-    barrierColor: AppColors.black.withValues(alpha: 0.6),
+    barrierColor: barrierColor ?? AppColors.black.withValues(alpha: 0.6),
     builder: (context) {
       return CustomBottomSheet(bottomSheetContent: bottomSheetContent);
     },

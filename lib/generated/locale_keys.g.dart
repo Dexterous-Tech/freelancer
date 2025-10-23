@@ -42,6 +42,8 @@ abstract class  LocaleKeys {
   static const authentication_passwordAgain = 'authentication.passwordAgain';
   static const authentication_passwordMismatch = 'authentication.passwordMismatch';
   static const authentication_currentPassword = 'authentication.currentPassword';
+  static const authentication_passwordCriteriaValidation = 'authentication.passwordCriteriaValidation';
+  static const authentication_nameMaxValidation = 'authentication.nameMaxValidation';
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';
@@ -80,6 +82,7 @@ abstract class  LocaleKeys {
   static const more_privacyPolicy = 'more.privacyPolicy';
   static const more_selectLanguageTitle = 'more.selectLanguageTitle';
   static const more_chooseLanguageApp = 'more.chooseLanguageApp';
+  static const more_noAvilableData = 'more.noAvilableData';
   static const more = 'more';
   static const tryAgain = 'tryAgain';
   static const continueButton = 'continueButton';

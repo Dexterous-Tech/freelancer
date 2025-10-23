@@ -8,11 +8,11 @@ import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
-import 'package:freelancer/features/auth/widgets/custom_name_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';
 import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
+import '../../../../../auth/widgets/custom_first_last_name_text_form_field.dart';
 import '../../../../profile/data/models/profile_models.dart';
 
 class ClientEditProfileForm extends StatefulWidget {
@@ -49,26 +49,10 @@ class _ClientEditProfileFormState extends State<ClientEditProfileForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CustomNameTextFormField(
-                          hint: LocaleKeys.authentication_firstNameHint.tr(),
-                          labelText: LocaleKeys.authentication_firstNameHint
-                              .tr(),
-                          nameController: cubit.firstNameController,
-                        ),
-                      ),
-                      horizontalSpace(8),
-                      Expanded(
-                        child: CustomNameTextFormField(
-                          hint: LocaleKeys.authentication_lastNameHint.tr(),
-                          labelText: LocaleKeys.authentication_lastNameHint
-                              .tr(),
-                          nameController: cubit.lastNameController,
-                        ),
-                      ),
-                    ],
+                  //
+                  CustomFirstLastNameTextFormField(
+                    firstNameController: cubit.firstNameController,
+                    secondNameController: cubit.lastNameController,
                   ),
                   verticalSpace(8),
                   CustomPhoneTextFormField(

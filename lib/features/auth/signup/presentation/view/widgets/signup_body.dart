@@ -30,7 +30,7 @@ class SignupBody extends StatelessWidget {
         }
         if (state is SignupSuccess) {
           final cubit = SignupCubit.get(context);
-          context.pushNamedAndRemoveUntil(
+          context.pushNamed(
             AppRoutes.verificationScreen,
             arguments: ForgetPasswordRequestBodyModel(
               countryCode: cubit.countryCodeController.text,

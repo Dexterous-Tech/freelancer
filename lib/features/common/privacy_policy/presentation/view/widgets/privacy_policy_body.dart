@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
@@ -53,21 +54,28 @@ class _PrivacyPolicyBodyState extends State<PrivacyPolicyBody> {
                           height: constraints.maxHeight,
                           child: SingleChildScrollView(
                             physics: const BouncingScrollPhysics(),
-                            child: Html(
-                              data:
-                                  state
-                                      .settingsResponseModel
-                                      .data
-                                      ?.description ??
-                                  '',
-                              style: {
-                                "body": Style(
-                                  fontSize: FontSize(14.sp),
-                                  color: AppColors.jet,
-                                  fontWeight: FontWeightHelper.regular,
-                                ),
-                              },
-                            ),
+                            child:
+                                state.settingsResponseModel.data!.description
+                                    .isNullOrEmpty()
+                                ? Text(
+                                    LocaleKeys.more_noAvilableData.tr(),
+                                    style: AppTextStyles.font16JetMedium,
+                                  )
+                                : Html(
+                                    data:
+                                        state
+                                            .settingsResponseModel
+                                            .data
+                                            ?.description ??
+                                        '',
+                                    style: {
+                                      "body": Style(
+                                        fontSize: FontSize(14.sp),
+                                        color: AppColors.jet,
+                                        fontWeight: FontWeightHelper.regular,
+                                      ),
+                                    },
+                                  ),
                           ),
                         );
                       },

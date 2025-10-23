@@ -46,3 +46,5 @@ final class ProfileGetProfileSuccess extends ProfileState {
 
   ProfileGetProfileSuccess(this.profileResponseModel);
 }
+
+final class ProfileChangeVisiblePassword extends ProfileState {}

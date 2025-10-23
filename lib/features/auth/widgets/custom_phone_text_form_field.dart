@@ -38,6 +38,9 @@ class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
   void _syncCountryCode() {
     if (!mounted) return;
     widget.countryCodeController.text = countryCode.value;
+    debugPrint(
+      'countryCodeController updated: ${widget.countryCodeController.text}',
+    );
   }
 
   @override

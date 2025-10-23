@@ -21,7 +21,7 @@ class CodegenLoader extends AssetLoader{
     "selectLanguage": "حدد اللغة",
     "arabicLanguage": "العربية",
     "englishLanguage": "الإنجليزية",
-    "urduLanguage": "الأُردو",
+    "urduLanguage": "الأوردو",
     "nearbyTechnicians": "يمكنك مشاهدة الفنيين القريبين منك و اختيار ما يناسبك منهم بسهولة"
   },
   "authentication": {
@@ -40,7 +40,7 @@ class CodegenLoader extends AssetLoader{
     "newPasswordHint": "كلمة المرور الجديدة",
     "confirmNewPasswordHint": "كلمة المرور الجديدة مجدداً",
     "createNewAccountTitle": "إنشاء حساب جديد",
-    "takeTwoSteps": "الأمر يحتاج من خطوتين فقط !",
+    "takeTwoSteps": "الأمر يحتاج إلي خطوتين فقط!",
     "firstNameHint": "الاسم الأول",
     "lastNameHint": "الاسم الأخير",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -55,7 +55,9 @@ class CodegenLoader extends AssetLoader{
     "phoneValidation": "يجب ألا يقل رقم الهاتف عن 9 أرقام",
     "passwordAgain": "كلمة المرور مرة أخرى",
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
-    "currentPassword": "كلمة المرور الحالية"
+    "currentPassword": "كلمة المرور الحالية",
+    "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
+    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا"
   },
   "next": "التالي",
   "save": "حفظ",
@@ -96,7 +98,8 @@ class CodegenLoader extends AssetLoader{
     "requestSpeciality": "طلب استحداث تخصص",
     "privacyPolicy": "سياسة الخصوصية",
     "selectLanguageTitle": "اختيار اللغة",
-    "chooseLanguageApp": "قم باختيار لغة التطبيق"
+    "chooseLanguageApp": "قم باختيار لغة التطبيق",
+    "noAvilableData": "لا توجد بيانات متاحة"
   },
   "tryAgain": "إعادة المحاولة مرة أخرى",
   "continueButton": "استمر"
@@ -142,7 +145,9 @@ static const Map<String,dynamic> _en = {
     "phoneValidation": "The phone number must be at least 9 digits long",
     "passwordAgain": "Password Again",
     "passwordMismatch": "The passwords must match",
-    "currentPassword": "Current Password"
+    "currentPassword": "Current Password",
+    "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
+    "nameMaxValidation": "The username must not exceed 50 characters"
   },
   "next": "Next",
   "save": "Save",
@@ -183,7 +188,8 @@ static const Map<String,dynamic> _en = {
     "requestSpeciality": "Request to Create a Specialty",
     "privacyPolicy": "Privacy Policy",
     "selectLanguageTitle": "Choose Language",
-    "chooseLanguageApp": "Choose the application language"
+    "chooseLanguageApp": "Choose the application language",
+    "noAvilableData": "No data available"
   },
   "tryAgain": "Try Again",
   "continueButton": "Continue"
@@ -229,7 +235,9 @@ static const Map<String,dynamic> _ur = {
     "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
     "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
-    "currentPassword": "موجودہ پاس ورڈ"
+    "currentPassword": "موجودہ پاس ورڈ",
+    "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
+    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -270,7 +278,8 @@ static const Map<String,dynamic> _ur = {
     "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
     "privacyPolicy": "رازداری کی پالیسی",
     "selectLanguageTitle": "زبان منتخب کریں",
-    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں",
+    "noAvilableData": "کوئی ڈیٹا دستیاب نہیں ہے"
   },
   "tryAgain": "دوبارہ کوشش کریں",
   "continueButton": "جاری رکھیں"
