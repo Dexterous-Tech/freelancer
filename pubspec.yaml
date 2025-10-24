@@ -54,7 +54,8 @@ dependencies:
   firebase_auth: ^6.1.1
   firebase_messaging: ^16.0.3
   flutter_html: ^3.0.0
-
+  connectivity_plus: ^6.1.5
+  internet_connection_checker: ^3.0.1
 
 
 

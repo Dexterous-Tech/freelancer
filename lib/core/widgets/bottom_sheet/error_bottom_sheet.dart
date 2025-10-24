@@ -11,9 +11,16 @@ import 'package:freelancer/generated/locale_keys.g.dart';
 import 'package:lottie/lottie.dart';
 
 class ErrorBottomSheet extends StatelessWidget {
-  const ErrorBottomSheet({super.key, required this.error});
+  const ErrorBottomSheet({
+    super.key,
+    required this.error,
+    this.onPressed,
+    this.textButton,
+  });
 
   final String error;
+  final void Function()? onPressed;
+  final String? textButton;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,12 +46,14 @@ class ErrorBottomSheet extends StatelessWidget {
         ),
         verticalSpace(16),
         CustomBottomButton(
-          onPressed: () {
-            context.pop();
-          },
+          onPressed:
+              onPressed ??
+              () {
+                context.pop();
+              },
           buttonColor: AppColors.red,
           buttonTextStyle: AppTextStyles.font18WhiteMedium,
-          textButton: LocaleKeys.tryAgain.tr(),
+          textButton: textButton ?? LocaleKeys.tryAgain.tr(),
         ),
       ],
     );

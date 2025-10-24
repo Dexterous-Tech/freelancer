@@ -86,5 +86,14 @@
     "noAvilableData": "No data available"
   },
   "tryAgain": "Try Again",
-  "continueButton": "Continue"
+  "continueButton": "Continue",
+  "dioException": {
+    "requestCancelled": "Request to the server was cancelled",
+    "connectionTimeout": "Connection timeout with the server",
+    "connectionInternet": "Internet connection failed",
+    "connectionUnknown": "Connection to the server failed due to internet connection",
+    "recivedTimeout": "Receive timeout in connection with the server",
+    "sendTimeout": "Send timeout in connection with the server",
+    "unknownError": "Something went wrong"
+  }
 }

@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/app_images.dart';
 import 'package:freelancer/core/helper/extensions.dart';
-import 'package:freelancer/core/helper/localization_service.dart';
+import 'package:freelancer/core/services/localization_service.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/shared/shared_preferences_helper.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';

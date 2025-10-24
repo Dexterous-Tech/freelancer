@@ -8,7 +8,7 @@ final class LoginInitial extends LoginState {}
 final class LoginLoading extends LoginState {}
 
 final class LoginFailure extends LoginState {
-  final String error;
+  final ApiErrorModel error;
 
   LoginFailure(this.error);
 }
@@ -22,7 +22,7 @@ final class LoginSuccess extends LoginState {
 final class ForgetPasswordLoading extends LoginState {}
 
 final class ForgetPasswordFailure extends LoginState {
-  final String error;
+  final ApiErrorModel error;
 
   ForgetPasswordFailure(this.error);
 }

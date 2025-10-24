@@ -6,6 +6,7 @@ import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
+import '../../../data/models/forget_password_model.dart';
 import '../../manager/login_cubit.dart';
 import 'login_button.dart';
 import '../../../../widgets/auth_question.dart';
@@ -26,10 +27,32 @@ class LoginBody extends StatelessWidget {
           state is LoginSuccess,
       listener: (context, state) {
         if (state is LoginFailure) {
-          openBottomSheet(
-            context: context,
-            bottomSheetContent: ErrorBottomSheet(error: state.error),
-          );
+          if (state.error.data?['phone_is_verified'] == false) {
+            final cubit = LoginCubit.get(context);
+            openBottomSheet(
+              context: context,
+              bottomSheetContent: ErrorBottomSheet(
+                error: state.error.displayMessage,
+                onPressed: () {
+                  context.pushReplacementNamed(
+                    AppRoutes.verificationScreen,
+                    arguments: ForgetPasswordRequestBodyModel(
+                      countryCode: cubit.countryCodeController.text,
+                      phone: cubit.phoneNumberController.text,
+                    ),
+                  );
+                },
+                textButton: LocaleKeys.authentication_verifyAccountTitle.tr(),
+              ),
+            );
+          } else {
+            openBottomSheet(
+              context: context,
+              bottomSheetContent: ErrorBottomSheet(
+                error: state.error.displayMessage,
+              ),
+            );
+          }
         }
         if (state is LoginSuccess) {
           context.pushNamedAndRemoveUntil(AppRoutes.mainHomeScreen);

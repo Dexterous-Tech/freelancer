@@ -86,5 +86,14 @@
     "noAvilableData": "کوئی ڈیٹا دستیاب نہیں ہے"
   },
   "tryAgain": "دوبارہ کوشش کریں",
-  "continueButton": "جاری رکھیں"
+  "continueButton": "جاری رکھیں",
+  "dioException": {
+    "requestCancelled": "سرور کو بھیجی گئی درخواست منسوخ کر دی گئی",
+    "connectionTimeout": "سرور کے ساتھ کنکشن کی مہلت ختم ہو گئی",
+    "connectionInternet": "انٹرنیٹ کنکشن ناکام ہو گیا",
+    "connectionUnknown": "انٹرنیٹ کنکشن کی وجہ سے سرور سے رابطہ ناکام ہو گیا",
+    "recivedTimeout": "سرور سے ڈیٹا وصول کرنے کی مہلت ختم ہو گئی",
+    "sendTimeout": "سرور کو ڈیٹا بھیجنے کی مہلت ختم ہو گئی",
+    "unknownError": "کچھ غلط ہو گیا"
+  }
 }

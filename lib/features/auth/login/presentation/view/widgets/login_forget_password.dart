@@ -30,7 +30,9 @@ class LoginForgetPassword extends StatelessWidget {
         if (state is ForgetPasswordFailure) {
           openBottomSheet(
             context: context,
-            bottomSheetContent: ErrorBottomSheet(error: state.error),
+            bottomSheetContent: ErrorBottomSheet(
+              error: state.error.displayMessage,
+            ),
           );
         }
         if (state is ForgetPasswordSuccess) {

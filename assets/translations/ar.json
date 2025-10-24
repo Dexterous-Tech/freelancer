@@ -86,5 +86,14 @@
     "noAvilableData": "لا توجد بيانات متاحة"
   },
   "tryAgain": "إعادة المحاولة مرة أخرى",
-  "continueButton": "استمر"
+  "continueButton": "استمر",
+  "dioException": {
+    "requestCancelled": "تم إلغاء الطلب إلى الخادم",
+    "connectionTimeout": "انتهت مهلة الاتصال بالخادم",
+    "connectionInternet": "فشل الاتصال بالإنترنت",
+    "connectionUnknown": "فشل الاتصال بالخادم بسبب انقطاع الإنترنت",
+    "recivedTimeout": "انتهت مهلة الاستلام من الخادم",
+    "sendTimeout": "انتهت مهلة الإرسال إلى الخادم",
+    "unknownError": "حدث خطأ ما"
+  }
 }

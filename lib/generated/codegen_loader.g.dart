@@ -102,7 +102,16 @@ class CodegenLoader extends AssetLoader{
     "noAvilableData": "لا توجد بيانات متاحة"
   },
   "tryAgain": "إعادة المحاولة مرة أخرى",
-  "continueButton": "استمر"
+  "continueButton": "استمر",
+  "dioException": {
+    "requestCancelled": "تم إلغاء الطلب إلى الخادم",
+    "connectionTimeout": "انتهت مهلة الاتصال بالخادم",
+    "connectionInternet": "فشل الاتصال بالإنترنت",
+    "connectionUnknown": "فشل الاتصال بالخادم بسبب انقطاع الإنترنت",
+    "recivedTimeout": "انتهت مهلة الاستلام من الخادم",
+    "sendTimeout": "انتهت مهلة الإرسال إلى الخادم",
+    "unknownError": "حدث خطأ ما"
+  }
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -192,7 +201,16 @@ static const Map<String,dynamic> _en = {
     "noAvilableData": "No data available"
   },
   "tryAgain": "Try Again",
-  "continueButton": "Continue"
+  "continueButton": "Continue",
+  "dioException": {
+    "requestCancelled": "Request to the server was cancelled",
+    "connectionTimeout": "Connection timeout with the server",
+    "connectionInternet": "Internet connection failed",
+    "connectionUnknown": "Connection to the server failed due to internet connection",
+    "recivedTimeout": "Receive timeout in connection with the server",
+    "sendTimeout": "Send timeout in connection with the server",
+    "unknownError": "Something went wrong"
+  }
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -282,7 +300,16 @@ static const Map<String,dynamic> _ur = {
     "noAvilableData": "کوئی ڈیٹا دستیاب نہیں ہے"
   },
   "tryAgain": "دوبارہ کوشش کریں",
-  "continueButton": "جاری رکھیں"
+  "continueButton": "جاری رکھیں",
+  "dioException": {
+    "requestCancelled": "سرور کو بھیجی گئی درخواست منسوخ کر دی گئی",
+    "connectionTimeout": "سرور کے ساتھ کنکشن کی مہلت ختم ہو گئی",
+    "connectionInternet": "انٹرنیٹ کنکشن ناکام ہو گیا",
+    "connectionUnknown": "انٹرنیٹ کنکشن کی وجہ سے سرور سے رابطہ ناکام ہو گیا",
+    "recivedTimeout": "سرور سے ڈیٹا وصول کرنے کی مہلت ختم ہو گئی",
+    "sendTimeout": "سرور کو ڈیٹا بھیجنے کی مہلت ختم ہو گئی",
+    "unknownError": "کچھ غلط ہو گیا"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

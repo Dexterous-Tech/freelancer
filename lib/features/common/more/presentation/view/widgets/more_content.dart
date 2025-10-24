@@ -5,7 +5,7 @@ import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
 
 import '../../../../../../core/helper/app_images.dart';
-import '../../../../../../core/helper/localization_service.dart';
+import '../../../../../../core/services/localization_service.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/font_weight_helper.dart';

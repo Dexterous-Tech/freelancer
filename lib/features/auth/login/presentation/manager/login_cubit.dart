@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freelancer/core/networking/api_error_model.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:freelancer/features/auth/login/data/models/forget_password_model.dart';
 import 'package:freelancer/features/auth/login/data/repo/login_repo.dart';
@@ -38,7 +39,7 @@ class LoginCubit extends Cubit<LoginState> {
 
     response.fold(
       (error) {
-        emit(LoginFailure(error.displayMessage));
+        emit(LoginFailure(error));
       },
       (loginResponseModel) async {
         await saveUserToken(loginResponseModel.data!.token);
@@ -61,7 +62,7 @@ class LoginCubit extends Cubit<LoginState> {
 
     response.fold(
       (error) {
-        emit(ForgetPasswordFailure(error.displayMessage));
+        emit(ForgetPasswordFailure(error));
       },
       (forgetResponseModel) async {
         emit(ForgetPasswordSuccess(forgetResponseModel));

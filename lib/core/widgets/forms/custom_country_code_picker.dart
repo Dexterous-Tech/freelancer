@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/app_images.dart';
-import 'package:freelancer/core/helper/localization_service.dart';
+import 'package:freelancer/core/services/localization_service.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 import '../../helper/functions.dart';

@@ -86,5 +86,13 @@ abstract class  LocaleKeys {
   static const more = 'more';
   static const tryAgain = 'tryAgain';
   static const continueButton = 'continueButton';
+  static const dioException_requestCancelled = 'dioException.requestCancelled';
+  static const dioException_connectionTimeout = 'dioException.connectionTimeout';
+  static const dioException_connectionInternet = 'dioException.connectionInternet';
+  static const dioException_connectionUnknown = 'dioException.connectionUnknown';
+  static const dioException_recivedTimeout = 'dioException.recivedTimeout';
+  static const dioException_sendTimeout = 'dioException.sendTimeout';
+  static const dioException_unknownError = 'dioException.unknownError';
+  static const dioException = 'dioException';
 
 }
