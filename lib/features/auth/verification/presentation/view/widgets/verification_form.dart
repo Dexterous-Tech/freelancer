@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/spacing.dart';
+import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/widgets/bottom_sheet/correct_bottom_sheet.dart';
@@ -14,10 +15,12 @@ import '../../manager/verification_cubit.dart';
 class VerificationForm extends StatelessWidget {
   const VerificationForm({
     super.key,
-    required this.forgetPasswordRequestBodyModel,
+    this.forgetPasswordRequestBodyModel,
+    this.verificationUpdateProfile,
   });
 
-  final ForgetPasswordRequestBodyModel forgetPasswordRequestBodyModel;
+  final ForgetPasswordRequestBodyModel? forgetPasswordRequestBodyModel;
+  final VerificationUpdateProfile? verificationUpdateProfile;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VerificationCubit, VerificationState>(
@@ -41,10 +44,17 @@ class VerificationForm extends StatelessWidget {
             context: context,
             bottomSheetContent: CorrectBottomSheet(
               message: state.success.message,
-              onPressed: () {
-                context.pop();
-                context.pushReplacementNamed(AppRoutes.loginScreen);
-              },
+              onPressed: verificationUpdateProfile?.needVerification == 1
+                  ? () {
+                      context.pop();
+                      context.pop();
+                      context.pop();
+                      Navigator.pop(context, true);
+                    }
+                  : () {
+                      context.pop();
+                      context.pushReplacementNamed(AppRoutes.loginScreen);
+                    },
             ),
           );
         }
@@ -61,10 +71,23 @@ class VerificationForm extends StatelessWidget {
                 codeController: cubit.codeController,
                 onChange: () {
                   if (cubit.formKey.currentState!.validate()) {
-                    cubit.verifyRegister(
-                      countryCode: forgetPasswordRequestBodyModel.countryCode,
-                      phone: forgetPasswordRequestBodyModel.phone,
-                    );
+                    verificationUpdateProfile?.needVerification == 1
+                        ? cubit.verifyOtp(
+                            countryCode:
+                                verificationUpdateProfile?.oldCountryCode ?? '',
+                            phone:
+                                verificationUpdateProfile?.oldPhoneNumber ?? '',
+                            newPassword: verificationUpdateProfile?.phoneNumber,
+                            newCountryCode:
+                                verificationUpdateProfile?.countryCode,
+                            isUpdateProfile: true,
+                          )
+                        : cubit.verifyOtp(
+                            countryCode:
+                                forgetPasswordRequestBodyModel?.countryCode ??
+                                '',
+                            phone: forgetPasswordRequestBodyModel?.phone ?? '',
+                          );
                   }
                 },
               ),

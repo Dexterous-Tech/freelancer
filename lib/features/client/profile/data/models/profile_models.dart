@@ -23,6 +23,8 @@ class ProfileDataModel {
   @JsonKey(name: 'country_code')
   final String countryCode;
   final String phone;
+  @JsonKey(name: 'need_verify')
+  final int? needVerification;
 
   ProfileDataModel({
     required this.id,
@@ -30,6 +32,7 @@ class ProfileDataModel {
     required this.lastName,
     required this.countryCode,
     required this.phone,
+    this.needVerification,
   });
 
   factory ProfileDataModel.fromJson(Map<String, dynamic> json) =>

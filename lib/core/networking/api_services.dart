@@ -81,4 +81,10 @@ abstract class ApiServices {
 
   @GET(ApiConstants.termsConditions)
   Future<SettingsResponseModel> termsConditions();
+
+  @POST(ApiConstants.verifyOtp)
+  Future<AuthActionResponseModel> verifyUpdateProfile(
+    @Body() VerifyRequestBodModel body,
+    @Query('for_change_password') String forChanePassword,
+  );
 }

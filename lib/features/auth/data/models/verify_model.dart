@@ -8,11 +8,17 @@ class VerifyRequestBodModel {
   final String phone;
   @JsonKey(name: 'otp_code')
   final String otpCode;
+  @JsonKey(name: 'new_phone')
+  final String? newPassword;
+  @JsonKey(name: 'new_country_code')
+  final String? newCountryCode;
 
   VerifyRequestBodModel({
     required this.countryCode,
     required this.phone,
     required this.otpCode,
+    this.newPassword,
+    this.newCountryCode,
   });
 
   factory VerifyRequestBodModel.fromJson(Map<String, dynamic> json) =>

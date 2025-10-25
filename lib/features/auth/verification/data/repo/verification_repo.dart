@@ -28,4 +28,20 @@ class VerificationRepo {
       return Left(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<Either<ApiErrorModel, AuthActionResponseModel>> verifyUpdateProfile(
+    VerifyRequestBodModel body,
+  ) async {
+    try {
+      final response = await _apiServices.verifyUpdateProfile(body, '1');
+
+      return Right(response);
+    } catch (e) {
+      log("error in verification update profile $e");
+      if (e is ApiErrorModel) {
+        return Left(e);
+      }
+      return Left(ApiErrorHandler.handle(e));
+    }
+  }
 }

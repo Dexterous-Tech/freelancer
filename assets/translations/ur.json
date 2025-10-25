@@ -41,7 +41,8 @@
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
     "currentPassword": "موجودہ پاس ورڈ",
     "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
-    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے"
+    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے",
+    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",

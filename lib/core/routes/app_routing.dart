@@ -7,6 +7,7 @@ import 'package:freelancer/features/auth/new_password_screen/presentation/view/n
 import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
 import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
 import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
+import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
 
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
@@ -44,11 +45,17 @@ class AppRouting {
       case AppRoutes.mainHomeScreen:
         return _pageRouteBuilder(const MainHomeScreen());
       case AppRoutes.verificationScreen:
-        return _pageRouteBuilder(
-          VerificationScreen(
-            phoneNumberModel: arguments as ForgetPasswordRequestBodyModel,
-          ),
-        );
+        if (arguments is VerificationUpdateProfile) {
+          return _pageRouteBuilder(
+            VerificationScreen(verificationUpdateProfile: arguments),
+          );
+        } else if (arguments is ForgetPasswordRequestBodyModel) {
+          return _pageRouteBuilder(
+            VerificationScreen(phoneNumberModel: arguments),
+          );
+        } else {
+          return _pageRouteBuilder(VerificationScreen());
+        }
       case AppRoutes.clientEditProfileScreen:
         return _pageRouteBuilder(
           ClientEditProfileScreen(

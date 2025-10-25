@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/spacing.dart';
+import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/widgets/bottom_sheet/correct_bottom_sheet.dart';
 import 'package:freelancer/core/widgets/custom_header.dart';
 import 'client_edit_profile_button.dart';
@@ -40,16 +42,44 @@ class ClientEditProfileBody extends StatelessWidget {
           );
         }
         if (state is ClientEditProfileSuccess) {
-          openBottomSheet(
-            context: context,
-            bottomSheetContent: CorrectBottomSheet(
-              message: state.profileResponseModel.message,
-              onPressed: () {
-                context.pop();
-                Navigator.pop(context, true);
-              },
-            ),
-          );
+          final cubit = ClientEditProfileCubit.get(context);
+          if (state.profileResponseModel.data?.needVerification == 1) {
+            openBottomSheet(
+              context: context,
+              bottomSheetContent: CorrectBottomSheet(
+                message: state.profileResponseModel.message,
+                textButton: LocaleKeys.authentication_verificationPhoneNumber
+                    .tr(),
+                onPressed: () {
+                  context.pushNamed(
+                    AppRoutes.verificationScreen,
+                    arguments: VerificationUpdateProfile(
+                      oldPhoneNumber:
+                          state.profileResponseModel.data?.phone ?? '',
+                      oldCountryCode:
+                          state.profileResponseModel.data?.countryCode ?? '',
+                      countryCode: cubit.countryCodeController.text,
+                      phoneNumber: cubit.phoneNumberController.text,
+                      needVerification:
+                          state.profileResponseModel.data?.needVerification ??
+                          0,
+                    ),
+                  );
+                },
+              ),
+            );
+          } else {
+            openBottomSheet(
+              context: context,
+              bottomSheetContent: CorrectBottomSheet(
+                message: state.profileResponseModel.message,
+                onPressed: () {
+                  context.pop();
+                  Navigator.pop(context, true);
+                },
+              ),
+            );
+          }
         }
       },
       child: Column(

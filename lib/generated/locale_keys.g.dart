@@ -44,6 +44,7 @@ abstract class  LocaleKeys {
   static const authentication_currentPassword = 'authentication.currentPassword';
   static const authentication_passwordCriteriaValidation = 'authentication.passwordCriteriaValidation';
   static const authentication_nameMaxValidation = 'authentication.nameMaxValidation';
+  static const authentication_verificationPhoneNumber = 'authentication.verificationPhoneNumber';
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 
 import '../../../../../../core/di/injection_container.dart';
 import '../../../../login/data/models/forget_password_model.dart';
@@ -9,18 +10,25 @@ import '../../../../widgets/resend_code/widget/custom_resend_code.dart';
 class VerificationResendCode extends StatelessWidget {
   const VerificationResendCode({
     super.key,
-    required this.forgetPasswordRequestBodyModel,
+    this.forgetPasswordRequestBodyModel,
+    this.verificationUpdateProfile,
   });
 
-  final ForgetPasswordRequestBodyModel forgetPasswordRequestBodyModel;
-
+  final ForgetPasswordRequestBodyModel? forgetPasswordRequestBodyModel;
+  final VerificationUpdateProfile? verificationUpdateProfile;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<ResendCodeCubit>(),
       child: CustomResendCode(
-        countryCode: forgetPasswordRequestBodyModel.countryCode,
-        phone: forgetPasswordRequestBodyModel.phone,
+        countryCode:
+            forgetPasswordRequestBodyModel?.countryCode ??
+            verificationUpdateProfile?.countryCode ??
+            '',
+        phone:
+            forgetPasswordRequestBodyModel?.phone ??
+            verificationUpdateProfile?.phoneNumber ??
+            '',
       ),
     );
   }

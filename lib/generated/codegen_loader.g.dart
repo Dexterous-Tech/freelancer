@@ -57,7 +57,8 @@ class CodegenLoader extends AssetLoader{
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
     "currentPassword": "كلمة المرور الحالية",
     "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
-    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا"
+    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا",
+    "verificationPhoneNumber": "توثيق رقم الهاتف"
   },
   "next": "التالي",
   "save": "حفظ",
@@ -156,7 +157,8 @@ static const Map<String,dynamic> _en = {
     "passwordMismatch": "The passwords must match",
     "currentPassword": "Current Password",
     "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
-    "nameMaxValidation": "The username must not exceed 50 characters"
+    "nameMaxValidation": "The username must not exceed 50 characters",
+    "verificationPhoneNumber": "Verify phone number"
   },
   "next": "Next",
   "save": "Save",
@@ -255,7 +257,8 @@ static const Map<String,dynamic> _ur = {
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
     "currentPassword": "موجودہ پاس ورڈ",
     "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
-    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے"
+    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے",
+    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",

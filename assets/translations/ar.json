@@ -41,7 +41,8 @@
     "passwordMismatch": "يجب أن تتطابق كلمتا المرور",
     "currentPassword": "كلمة المرور الحالية",
     "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
-    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا"
+    "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا",
+    "verificationPhoneNumber": "توثيق رقم الهاتف"
   },
   "next": "التالي",
   "save": "حفظ",

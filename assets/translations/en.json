@@ -41,7 +41,8 @@
     "passwordMismatch": "The passwords must match",
     "currentPassword": "Current Password",
     "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
-    "nameMaxValidation": "The username must not exceed 50 characters"
+    "nameMaxValidation": "The username must not exceed 50 characters",
+    "verificationPhoneNumber": "Verify phone number"
   },
   "next": "Next",
   "save": "Save",

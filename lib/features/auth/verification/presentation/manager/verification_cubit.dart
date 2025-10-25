@@ -17,18 +17,31 @@ class VerificationCubit extends Cubit<VerificationState> {
   TextEditingController codeController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
 
-  void verifyRegister({
+  void verifyOtp({
     required String countryCode,
     required String phone,
+    bool isUpdateProfile = false,
+    String? newPassword,
+    String? newCountryCode,
   }) async {
     emit(VerificationLoading());
-    final response = await verificationRepo.verifyForget(
-      VerifyRequestBodModel(
-        countryCode: countryCode,
-        phone: phone,
-        otpCode: codeController.text,
-      ),
-    );
+    final response = isUpdateProfile
+        ? await verificationRepo.verifyUpdateProfile(
+            VerifyRequestBodModel(
+              countryCode: countryCode,
+              phone: phone,
+              newCountryCode: newCountryCode,
+              newPassword: newPassword,
+              otpCode: codeController.text,
+            ),
+          )
+        : await verificationRepo.verifyForget(
+            VerifyRequestBodModel(
+              countryCode: countryCode,
+              phone: phone,
+              otpCode: codeController.text,
+            ),
+          );
 
     response.fold(
       (error) {

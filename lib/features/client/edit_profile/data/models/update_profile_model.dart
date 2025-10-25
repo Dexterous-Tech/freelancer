@@ -23,3 +23,19 @@ class UpdateProfileRequestBodyModel {
 
   Map<String, dynamic> toJson() => _$UpdateProfileRequestBodyModelToJson(this);
 }
+
+class VerificationUpdateProfile {
+  final String phoneNumber;
+  final String countryCode;
+  final String oldPhoneNumber;
+  final String oldCountryCode;
+  final int needVerification;
+
+  VerificationUpdateProfile({
+    required this.phoneNumber,
+    required this.countryCode,
+    required this.needVerification,
+    required this.oldCountryCode,
+    required this.oldPhoneNumber,
+  });
+}

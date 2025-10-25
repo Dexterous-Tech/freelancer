@@ -11,10 +11,16 @@ import '../../theme/spacing.dart';
 import '../custom_bottom_button.dart';
 
 class CorrectBottomSheet extends StatelessWidget {
-  const CorrectBottomSheet({super.key, required this.message, this.onPressed});
+  const CorrectBottomSheet({
+    super.key,
+    required this.message,
+    this.onPressed,
+    this.textButton,
+  });
 
   final String message;
   final void Function()? onPressed;
+  final String? textButton;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +47,7 @@ class CorrectBottomSheet extends StatelessWidget {
         verticalSpace(16),
         CustomBottomButton(
           onPressed: onPressed,
-          textButton: LocaleKeys.continueButton.tr(),
+          textButton: textButton ?? LocaleKeys.continueButton.tr(),
         ),
       ],
     );
