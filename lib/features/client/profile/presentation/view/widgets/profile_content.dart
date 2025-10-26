@@ -9,7 +9,6 @@ import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import '../../manager/profile_cubit.dart';
-import 'bottom_sheets/delete_account_bottom_sheet.dart';
 import 'bottom_sheets/logout_bottom_sheet.dart';
 import 'profile_account_logo.dart';
 import '../../../../widgets/profile_content_item.dart';
@@ -89,21 +88,9 @@ class ProfileContent extends StatelessWidget {
                 );
               },
               child: ProfileContentItem(
+                isDivider: false,
                 icon: AppImages.logoutIcon,
                 title: LocaleKeys.profile_logout.tr(),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                openBottomSheet(
-                  context: context,
-                  bottomSheetContent: DeleteAccountBottomSheet(),
-                );
-              },
-              child: ProfileContentItem(
-                icon: AppImages.deleteIcon,
-                title: LocaleKeys.profile_deleteAccount.tr(),
-                isDivider: false,
               ),
             ),
           ],

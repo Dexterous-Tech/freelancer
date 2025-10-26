@@ -25,32 +25,6 @@ class ProfileCubit extends Cubit<ProfileState> {
     });
   }
 
-  // delete account
-
-  bool obscureText = true;
-
-  void togglePasswordVisibility() {
-    obscureText = !obscureText;
-    emit(ProfileChangeVisiblePassword()); // or use your existing state
-  }
-
-  TextEditingController passwordController = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  void deleteAccount() async {
-    emit(ProfileDeleteAccountLoading());
-    final response = await profileRepo.deleteAccount(
-      DeleteAccountBodyModel(password: passwordController.text),
-    );
-    response.fold((l) => emit(ProfileDeleteAccountFailure(l.displayMessage)), (
-      r,
-    ) async {
-      await SharedPreferencesHelper.clearAllKeys();
-
-      emit(ProfileDeleteAccountSuccess(r));
-    });
-  }
-
   // get profile
   void getProfile() async {
     emit(ProfileGetProfileLoading());

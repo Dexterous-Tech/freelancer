@@ -26,21 +26,6 @@ class ProfileRepo {
     }
   }
 
-  Future<Either<ApiErrorModel, AuthActionResponseModel>> deleteAccount(
-    DeleteAccountBodyModel body,
-  ) async {
-    try {
-      final response = await _apiServices.deleteAccount(body);
-      return Right(response);
-    } catch (e) {
-      log("error in delete account $e");
-      if (e is ApiErrorModel) {
-        return Left(e);
-      }
-      return Left(ApiErrorHandler.handle(e));
-    }
-  }
-
   Future<Either<ApiErrorModel, ProfileResponseModel>> getProfile() async {
     try {
       final response = await _apiServices.getProfile();

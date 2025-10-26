@@ -19,20 +19,6 @@ final class ProfileLogoutSuccess extends ProfileState {
   ProfileLogoutSuccess(this.authActionResponseModel);
 }
 
-final class ProfileDeleteAccountLoading extends ProfileState {}
-
-final class ProfileDeleteAccountFailure extends ProfileState {
-  final String error;
-
-  ProfileDeleteAccountFailure(this.error);
-}
-
-final class ProfileDeleteAccountSuccess extends ProfileState {
-  final AuthActionResponseModel authActionResponseModel;
-
-  ProfileDeleteAccountSuccess(this.authActionResponseModel);
-}
-
 final class ProfileGetProfileLoading extends ProfileState {}
 
 final class ProfileGetProfileFailure extends ProfileState {
@@ -46,5 +32,3 @@ final class ProfileGetProfileSuccess extends ProfileState {
 
   ProfileGetProfileSuccess(this.profileResponseModel);
 }
-
-final class ProfileChangeVisiblePassword extends ProfileState {}

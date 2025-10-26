@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/widgets/dialog/show_custom_snack_bar.dart';
-import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
-
+import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import '../../../../../../../core/di/injection_container.dart';
 import '../../../../../../../core/routes/app_routes.dart';
 import '../../../../../../../core/theme/app_colors.dart';
@@ -32,8 +31,8 @@ class _PasswordDeleteAccountBottomSheetState
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: sl<ProfileCubit>(),
-      child: BlocConsumer<ProfileCubit, ProfileState>(
+      value: sl<ClientEditProfileCubit>(),
+      child: BlocConsumer<ClientEditProfileCubit, ClientEditProfileState>(
         listenWhen: (context, state) =>
             state is ProfileDeleteAccountLoading ||
             state is ProfileDeleteAccountFailure ||
@@ -59,11 +58,11 @@ class _PasswordDeleteAccountBottomSheetState
           }
         },
         builder: (context, state) {
-          final cubit = ProfileCubit.get(context);
+          final cubit = ClientEditProfileCubit.get(context);
           return SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Form(
-              key: cubit.formKey,
+              key: cubit.formDeleteKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -111,7 +110,7 @@ class _PasswordDeleteAccountBottomSheetState
                     secondButtonTextStyle: AppTextStyles.font18WhiteMedium
                         .copyWith(color: AppColors.darkBlue),
                     firstButtonOnPressed: () {
-                      if (cubit.formKey.currentState!.validate()) {
+                      if (cubit.formDeleteKey.currentState!.validate()) {
                         cubit.deleteAccount();
                       }
                     },

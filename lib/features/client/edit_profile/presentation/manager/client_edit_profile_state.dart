@@ -18,3 +18,19 @@ final class ClientEditProfileSuccess extends ClientEditProfileState {
 
   ClientEditProfileSuccess(this.profileResponseModel);
 }
+
+final class ProfileChangeVisiblePassword extends ClientEditProfileState {}
+
+final class ProfileDeleteAccountLoading extends ClientEditProfileState {}
+
+final class ProfileDeleteAccountFailure extends ClientEditProfileState {
+  final String error;
+
+  ProfileDeleteAccountFailure(this.error);
+}
+
+final class ProfileDeleteAccountSuccess extends ClientEditProfileState {
+  final AuthActionResponseModel authActionResponseModel;
+
+  ProfileDeleteAccountSuccess(this.authActionResponseModel);
+}
