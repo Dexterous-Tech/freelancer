@@ -23,12 +23,14 @@ class VerificationResendCode extends StatelessWidget {
       child: CustomResendCode(
         countryCode:
             forgetPasswordRequestBodyModel?.countryCode ??
-            verificationUpdateProfile?.countryCode ??
+            verificationUpdateProfile?.oldCountryCode ??
             '',
         phone:
             forgetPasswordRequestBodyModel?.phone ??
-            verificationUpdateProfile?.phoneNumber ??
+            verificationUpdateProfile?.oldPhoneNumber ??
             '',
+        newPhone: verificationUpdateProfile?.phoneNumber ?? '',
+        newCountryCode: verificationUpdateProfile?.countryCode ?? '',
       ),
     );
   }

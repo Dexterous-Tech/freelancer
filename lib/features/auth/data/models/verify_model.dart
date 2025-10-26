@@ -9,7 +9,7 @@ class VerifyRequestBodModel {
   @JsonKey(name: 'otp_code')
   final String otpCode;
   @JsonKey(name: 'new_phone')
-  final String? newPassword;
+  final String? newPhone;
   @JsonKey(name: 'new_country_code')
   final String? newCountryCode;
 
@@ -17,7 +17,7 @@ class VerifyRequestBodModel {
     required this.countryCode,
     required this.phone,
     required this.otpCode,
-    this.newPassword,
+    this.newPhone,
     this.newCountryCode,
   });
 

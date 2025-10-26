@@ -33,10 +33,14 @@ class VerificationBody extends StatelessWidget {
     String phoneNumber = '$countryCode $phone';
     return SingleChildScrollView(
       child: AuthBody(
-        onTap: () {
-          context.pop();
-          context.pop();
-        },
+        onTap: verificationUpdateProfile?.needVerification == 1
+            ? () {
+                context.pop();
+                context.pop();
+              }
+            : () {
+                context.pop();
+              },
         title: LocaleKeys.authentication_verifyAccountTitle.tr(),
         subTitle: LocaleKeys.authentication_enterDigits.tr(),
         additionalText: phoneNumber,

@@ -34,10 +34,10 @@ class ResendCodeCubit extends Cubit<ResendCodeState> {
     });
   }
 
-  void resendCode({required String countryCode, required String phone}) async {
+  void resendCode({required String countryCode, required String phone , String ? newPhone  , String ? newCountryCode}) async {
     emit(ResendCodeLoading());
     final response = await _resendCodeRepo.resendOtp(
-      ForgetPasswordRequestBodyModel(countryCode: countryCode, phone: phone),
+      ForgetPasswordRequestBodyModel(countryCode: countryCode, phone: phone ,newCountryCode: newCountryCode  , newPhone: newPhone),
     );
 
     response.fold(

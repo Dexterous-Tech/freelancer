@@ -31,7 +31,7 @@ class VerificationCubit extends Cubit<VerificationState> {
               countryCode: countryCode,
               phone: phone,
               newCountryCode: newCountryCode,
-              newPassword: newPassword,
+              newPhone: newPassword,
               otpCode: codeController.text,
             ),
           )

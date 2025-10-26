@@ -15,10 +15,15 @@ class CustomResendCode extends StatefulWidget {
     super.key,
     required this.countryCode,
     required this.phone,
+    this.newCountryCode,
+    this.newPhone,
   });
 
   final String countryCode;
   final String phone;
+
+  final String? newCountryCode;
+  final String? newPhone;
 
   @override
   State<CustomResendCode> createState() => _CustomResendCodeState();
@@ -93,6 +98,8 @@ class _CustomResendCodeState extends State<CustomResendCode> {
                         cubit.resendCode(
                           countryCode: widget.countryCode,
                           phone: widget.phone,
+                          newCountryCode: widget.newCountryCode,
+                          newPhone: widget.newPhone,
                         );
                       }, // disable while counting down
                 textButton: LocaleKeys.authentication_resendAgain.tr(),
