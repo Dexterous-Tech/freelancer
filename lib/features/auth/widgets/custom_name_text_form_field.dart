@@ -27,8 +27,9 @@ class CustomNameTextFormField extends StatelessWidget {
       errorText: null,
       inputFormatters: [
         // ✅ Allow only English letters and spaces
-        FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]')),
-        // ✅ Limit length
+        FilteringTextInputFormatter.allow(
+          RegExp(r'[a-zA-Zء-ي\s]'),
+        ), // ✅ Limit length
         LengthLimitingTextInputFormatter(50),
       ],
       validator: validator,

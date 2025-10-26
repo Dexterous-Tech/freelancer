@@ -29,6 +29,7 @@ class ClientEditProfileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final name = '${profileDataModel.firstName} ${profileDataModel.lastName}';
     final initials = getInitials(name);
+
     return BlocListener<ClientEditProfileCubit, ClientEditProfileState>(
       listenWhen: (context, state) =>
           state is ClientEditProfileLoading ||
@@ -83,43 +84,69 @@ class ClientEditProfileBody extends StatelessWidget {
         }
       },
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // ✅ Header (outside scroll)
           CustomHeader(title: LocaleKeys.profile_profileTitle.tr()),
-          verticalSpace(24),
-          Center(
-            child: Container(
-              width: 56.w,
-              height: 56.h,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.darkBlue,
-              ),
-              child: Center(
-                child: Text(initials, style: AppTextStyles.font20YellowMedium),
-              ),
-            ),
-          ),
-          verticalSpace(8),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Center(
-              child: Text(
-                name,
-                style: AppTextStyles.font24JetRegular,
-                textAlign: TextAlign.center,
-                maxLines: 4,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ),
-          verticalSpace(32),
+
+          // ✅ Scrollable content
           Expanded(
-            child: ClientEditProfileForm(profileDataModel: profileDataModel),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight:
+                          constraints.maxHeight, // 👈 ensures full height
+                    ),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          verticalSpace(24),
+                          Center(
+                            child: Container(
+                              width: 56.w,
+                              height: 56.h,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.darkBlue,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  initials,
+                                  style: AppTextStyles.font20YellowMedium,
+                                ),
+                              ),
+                            ),
+                          ),
+                          verticalSpace(8),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Center(
+                              child: Text(
+                                name,
+                                style: AppTextStyles.font24JetRegular,
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ),
+                          verticalSpace(32),
+                          ClientEditProfileForm(
+                            profileDataModel: profileDataModel,
+                          ),
+                          Expanded(child: verticalSpace(50)),
+                          ClientEditProfileButton(),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
-          Expanded(child: verticalSpace(50)),
-          ClientEditProfileButton(),
-          // Spacer(),
         ],
       ),
     );

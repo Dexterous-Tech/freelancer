@@ -39,55 +39,49 @@ class _ClientEditProfileFormState extends State<ClientEditProfileForm> {
   @override
   Widget build(BuildContext context) {
     final cubit = ClientEditProfileCubit.get(context);
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Form(
-              key: cubit.formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Form(
+        key: cubit.formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //
+            CustomFirstLastNameTextFormField(
+              firstNameController: cubit.firstNameController,
+              secondNameController: cubit.lastNameController,
+            ),
+            verticalSpace(8),
+            CustomPhoneTextFormField(
+              labelText: LocaleKeys.authentication_phoneNumber.tr(),
+              countryCodeController: cubit.countryCodeController,
+              phoneNumberController: cubit.phoneNumberController,
+            ),
+            verticalSpace(24),
+            GestureDetector(
+              onTap: () {
+                context.pushNamed(AppRoutes.clientChangePasswordScreen);
+              },
+              child: Row(
                 children: [
-                  //
-                  CustomFirstLastNameTextFormField(
-                    firstNameController: cubit.firstNameController,
-                    secondNameController: cubit.lastNameController,
+                  SvgPicture.asset(
+                    AppImages.lockIcon,
+                    width: 24.w,
+                    height: 24.h,
                   ),
-                  verticalSpace(8),
-                  CustomPhoneTextFormField(
-                    labelText: LocaleKeys.authentication_phoneNumber.tr(),
-                    countryCodeController: cubit.countryCodeController,
-                    phoneNumberController: cubit.phoneNumberController,
-                  ),
-                  verticalSpace(24),
-                  GestureDetector(
-                    onTap: () {
-                      context.pushNamed(AppRoutes.clientChangePasswordScreen);
-                    },
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          AppImages.lockIcon,
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        horizontalSpace(4),
-                        Text(
-                          LocaleKeys.profile_changePassword.tr(),
-                          style: AppTextStyles.font18YellowRegular.copyWith(
-                            color: AppColors.darkBlue,
-                          ),
-                        ),
-                      ],
+                  horizontalSpace(4),
+                  Text(
+                    LocaleKeys.profile_changePassword.tr(),
+                    style: AppTextStyles.font18YellowRegular.copyWith(
+                      color: AppColors.darkBlue,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
