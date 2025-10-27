@@ -39,7 +39,10 @@
     "phoneValidation": "The phone number must be at least 9 digits long",
     "passwordAgain": "Password Again",
     "passwordMismatch": "The passwords must match",
-    "currentPassword": "Current Password"
+    "currentPassword": "Current Password",
+    "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
+    "nameMaxValidation": "The username must not exceed 50 characters",
+    "verificationPhoneNumber": "Verify phone number"
   },
   "next": "Next",
   "save": "Save",
@@ -80,6 +83,18 @@
     "requestSpeciality": "Request to Create a Specialty",
     "privacyPolicy": "Privacy Policy",
     "selectLanguageTitle": "Choose Language",
-    "chooseLanguageApp": "Choose the application language"
+    "chooseLanguageApp": "Choose the application language",
+    "noAvilableData": "No data available"
+  },
+  "tryAgain": "Try Again",
+  "continueButton": "Continue",
+  "dioException": {
+    "requestCancelled": "Request to the server was cancelled",
+    "connectionTimeout": "Connection timeout with the server",
+    "connectionInternet": "Internet connection failed",
+    "connectionUnknown": "Connection to the server failed due to internet connection",
+    "recivedTimeout": "Receive timeout in connection with the server",
+    "sendTimeout": "Send timeout in connection with the server",
+    "unknownError": "Something went wrong"
   }
 }

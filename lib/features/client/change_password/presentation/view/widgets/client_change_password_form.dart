@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../manager/client_change_password_cubit.dart';
+import '../../manager/client_change_password_cubit.dart';
 
 import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../generated/locale_keys.g.dart';

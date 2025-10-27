@@ -9,24 +9,29 @@ class ApiErrorModel {
   final bool? showToast;
   final dynamic rawData;
 
+  /// This new map holds the raw "data" field directly,
+  /// so you can access values like data['phone_is_verified'].
+  final Map<String, dynamic>? data;
+
   ApiErrorModel({
     this.message,
     this.fieldErrors,
     this.statusCode,
     this.showToast,
     this.rawData,
+    this.data,
   });
 
   factory ApiErrorModel.fromJson(Map<String, dynamic> json, {int? statusCode}) {
     String? message;
 
-    // Known keys for generic messages
+    // Extract message
     final possibleMessageKeys = [
       'message',
       'detail',
       'error',
       'msg',
-      'description'
+      'description',
     ];
     for (var key in possibleMessageKeys) {
       if (json.containsKey(key) && json[key] is String) {
@@ -35,12 +40,19 @@ class ApiErrorModel {
       }
     }
 
-    // Extract field-specific errors from "data" or "errors"
+    // Extract "data" (could be a map or something else)
+    Map<String, dynamic>? data;
+    if (json['data'] is Map<String, dynamic>) {
+      data = Map<String, dynamic>.from(json['data']);
+    }
+
+    // Extract field-specific errors (if available)
     Map<String, dynamic>? fieldErrors;
-    if (json['data'] is Map) {
-      fieldErrors = Map<String, dynamic>.from(json['data']);
-    } else if (json['errors'] is Map) {
+    if (json['errors'] is Map<String, dynamic>) {
       fieldErrors = Map<String, dynamic>.from(json['errors']);
+    } else if (data != null) {
+      // Treat "data" as field errors only if it looks like that
+      fieldErrors = Map<String, dynamic>.from(data);
     }
 
     return ApiErrorModel(
@@ -49,15 +61,14 @@ class ApiErrorModel {
       statusCode: statusCode ?? json['status'] as int?,
       showToast: json['showToast'] as bool?,
       rawData: json,
+      data: data,
     );
   }
 
-  /// Returns the best user-friendly message
+  /// Returns a user-friendly message
   String get displayMessage {
-    // 1. If there are field-specific errors, return all of them
     if (fieldErrors != null && fieldErrors!.isNotEmpty) {
       final messages = <String>[];
-
       fieldErrors!.forEach((key, value) {
         if (value is List && value.isNotEmpty) {
           messages.addAll(value.map((e) => e.toString()));
@@ -65,23 +76,15 @@ class ApiErrorModel {
           messages.add(value);
         }
       });
-
-      if (messages.isNotEmpty) {
-        return messages.join('\n'); // Join with newlines
-      }
+      if (messages.isNotEmpty) return messages.join('\n');
     }
 
-    // 2. Otherwise return the general message
-    if (message != null && message!.isNotEmpty) {
-      return message!;
-    }
+    if (message != null && message!.isNotEmpty) return message!;
 
-    // 3. Fallback to HTTP status default
     if (statusCode != null) {
       return _getDefaultMessageForStatusCode(statusCode!);
     }
 
-    // 4. Last resort
     return 'Unknown error occurred';
   }
 
@@ -106,5 +109,5 @@ class ApiErrorModel {
 
   @override
   String toString() =>
-      'ApiErrorModel(message: $message, fieldErrors: $fieldErrors, statusCode: $statusCode, showToast: $showToast, rawData: $rawData)';
+      'ApiErrorModel(message: $message, fieldErrors: $fieldErrors, data: $data, statusCode: $statusCode, showToast: $showToast, rawData: $rawData)';
 }

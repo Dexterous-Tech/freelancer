@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/extensions.dart';
-import 'package:freelancer/core/helper/localization_service.dart';
+import 'package:freelancer/core/services/localization_service.dart';
 import 'package:freelancer/core/theme/font_weight_helper.dart';
 
 import '../../../core/helper/app_images.dart';
@@ -19,6 +19,7 @@ class AuthBody extends StatelessWidget {
     required this.authBodyContent,
     this.isBack = true,
     this.additionalText,
+    this.onTap,
   });
 
   final String title;
@@ -26,6 +27,7 @@ class AuthBody extends StatelessWidget {
   final Widget authBodyContent;
   final bool isBack;
   final String? additionalText;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,9 +40,11 @@ class AuthBody extends StatelessWidget {
               Transform.rotate(
                 angle: LocalizationService.isEnglish(context) ? math.pi : 0,
                 child: GestureDetector(
-                  onTap: () {
-                    context.pop();
-                  },
+                  onTap:
+                      onTap ??
+                      () {
+                        context.pop();
+                      },
                   child: SvgPicture.asset(
                     AppImages.arrowRight,
                     width: 24.w,

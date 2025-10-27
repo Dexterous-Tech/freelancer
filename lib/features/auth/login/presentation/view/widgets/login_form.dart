@@ -18,6 +18,13 @@ class _LoginFormState extends State<LoginForm> {
   bool obscureText = true;
 
   @override
+  void initState() {
+    super.initState();
+    final cubit = LoginCubit.get(context);
+    cubit.countryCodeController.text = '+966'; // then assign
+  }
+
+  @override
   Widget build(BuildContext context) {
     final cubit = LoginCubit.get(context);
     return Form(

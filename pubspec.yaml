@@ -46,6 +46,16 @@ dependencies:
   easy_localization: ^3.0.8
   flutter_bloc: ^9.1.1
   shared_preferences: ^2.3.4
+  retrofit: ^4.7.3
+  json_annotation: ^4.9.0
+  dartz: ^0.10.1
+  skeletonizer: ^2.1.0+1
+  firebase_core: ^4.2.0
+  firebase_auth: ^6.1.1
+  firebase_messaging: ^16.0.3
+  flutter_html: ^3.0.0
+  connectivity_plus: ^6.1.5
+  internet_connection_checker: ^3.0.1
 
 
 
@@ -59,6 +69,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  retrofit_generator: ^8.1.2
+  build_runner: ^2.4.9
+  json_serializable: ^6.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -80,6 +93,7 @@ flutter:
     - assets/images/language/
     - assets/images/svg/
     - assets/images/svg/icons/
+    - assets/images/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
