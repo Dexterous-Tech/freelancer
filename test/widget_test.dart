@@ -52,6 +52,6 @@ void main() {
     await tester.pump();
 
     // Simulate splash or loading delay
-    await tester.pump(const Duration(seconds: 4));
+    await tester.pumpAndSettle(const Duration(seconds: 5));
   });
 }
