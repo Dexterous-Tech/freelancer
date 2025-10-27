@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
@@ -25,66 +26,64 @@ class _SplashScreenState extends State<SplashScreen>
   late Animation<double> _secondLogoHeight;
   late Animation<double> _secondLogoOpacity;
 
+  Timer? _delayTimer;
+  Timer? _navigationTimer;
+
   @override
   void initState() {
     super.initState();
 
-    // Main logo animation
+    // Step 1 controller: shrink animation
     _mainController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500),
+      duration: const Duration(milliseconds: 1200),
     );
 
     _shrinkWidth = Tween<double>(begin: 219, end: 126).animate(
-      CurvedAnimation(
-        parent: _mainController,
-        curve: const Interval(0.0, 0.5, curve: Curves.easeInOut),
-      ),
-    );
-    _shrinkHeight = Tween<double>(begin: 139, end: 80).animate(
-      CurvedAnimation(
-        parent: _mainController,
-        curve: const Interval(0.0, 0.5, curve: Curves.easeInOut),
-      ),
-    );
-    _growWidth = Tween<double>(begin: 126, end: 140).animate(
-      CurvedAnimation(
-        parent: _mainController,
-        curve: const Interval(0.5, 1.0, curve: Curves.easeInOut),
-      ),
-    );
-    _growHeight = Tween<double>(begin: 80, end: 88).animate(
-      CurvedAnimation(
-        parent: _mainController,
-        curve: const Interval(0.5, 1.0, curve: Curves.easeInOut),
-      ),
+      CurvedAnimation(parent: _mainController, curve: Curves.easeInOut),
     );
 
-    // Second logo animation
+    _shrinkHeight = Tween<double>(begin: 139, end: 80).animate(
+      CurvedAnimation(parent: _mainController, curve: Curves.easeInOut),
+    );
+
+    // Step 2+3 controllers (run together)
     _secondLogoController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 900),
+    );
+
+    _growWidth = Tween<double>(begin: 126, end: 140).animate(
+      CurvedAnimation(parent: _secondLogoController, curve: Curves.easeOutBack),
+    );
+    _growHeight = Tween<double>(begin: 80, end: 88).animate(
+      CurvedAnimation(parent: _secondLogoController, curve: Curves.easeOutBack),
     );
 
     _secondLogoHeight = Tween<double>(begin: 0, end: 33).animate(
       CurvedAnimation(parent: _secondLogoController, curve: Curves.easeOut),
     );
 
-    _secondLogoOpacity = Tween<double>(begin: 1, end: 1).animate(
+    _secondLogoOpacity = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _secondLogoController, curve: Curves.easeIn),
     );
 
-    // Start first animation
+    // Start step 1 (shrink)
     _mainController.forward();
 
-    // After main animation, start second logo
+    // After step 1 ends → small pause → then start both grow + logo
     _mainController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        _secondLogoController.forward();
+        _delayTimer?.cancel();
+        _delayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) {
+            _secondLogoController.forward();
+          }
+        });
       }
     });
 
-    // After second logo finishes, navigate
+    // After step 2+3 end → navigate
     _secondLogoController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         _navigateToNextScreen();
@@ -93,13 +92,11 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void _navigateToNextScreen() {
-    // Small delay so the animation fully settles before navigating
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (!mounted) return;
-
-      context.pushNamedAndRemoveUntil(AppRoutes.languageScreen);
-      // OR if you use your custom page route:
-      // Navigator.of(context).pushReplacement(CustomPageRoute.pageRouteBuilder(const LanguageScreen()));
+    _navigationTimer?.cancel();
+    _navigationTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        context.pushNamedAndRemoveUntil(AppRoutes.languageScreen);
+      }
     });
   }
 
@@ -111,17 +108,21 @@ class _SplashScreenState extends State<SplashScreen>
         child: AnimatedBuilder(
           animation: Listenable.merge([_mainController, _secondLogoController]),
           builder: (context, child) {
-            final currentWidth = _mainController.value < 0.5
-                ? _shrinkWidth.value
-                : _growWidth.value;
-            final currentHeight = _mainController.value < 0.5
-                ? _shrinkHeight.value
-                : _growHeight.value;
+            final double currentWidth =
+                _secondLogoController.isAnimating ||
+                    _secondLogoController.isCompleted
+                ? _growWidth.value
+                : _shrinkWidth.value;
+            final double currentHeight =
+                _secondLogoController.isAnimating ||
+                    _secondLogoController.isCompleted
+                ? _growHeight.value
+                : _shrinkHeight.value;
 
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // First logo
+                // App main logo
                 Image.asset(
                   AppImages.appLogo,
                   width: currentWidth.w,
@@ -129,7 +130,7 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
                 verticalSpace(14.h),
 
-                // Second logo (smooth reveal)
+                // Freelancer logo (reveals smoothly)
                 Opacity(
                   opacity: _secondLogoOpacity.value,
                   child: ClipRect(
@@ -155,6 +156,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
+    _delayTimer?.cancel();
+    _navigationTimer?.cancel();
     _mainController.dispose();
     _secondLogoController.dispose();
     super.dispose();

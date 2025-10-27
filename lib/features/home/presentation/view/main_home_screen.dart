@@ -119,11 +119,18 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       case 0:
         return Container(
           key: const ValueKey('home'),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppImages.fakeMapImage),
-              fit: BoxFit.cover,
-            ),
+          decoration: BoxDecoration(),
+          child: Column(
+            children: [
+              Image.asset(AppImages.fakeMapHeaderImage),
+              Expanded(
+                child: Image.asset(
+                  AppImages.fakeMapImage,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
           ),
         );
       case 1:

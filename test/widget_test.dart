@@ -51,7 +51,16 @@ void main() {
     // Render first frame
     await tester.pump();
 
-    // Simulate splash or loading delay
-    await tester.pump(const Duration(seconds: 4));
+    // Wait for splash screen animations to complete
+    // The splash screen has multiple timers: 300ms delay + 300ms navigation delay
+    // Plus animation durations: 1200ms + 900ms = 2100ms total
+    // So we need at least 2100ms + 300ms + 300ms = 2700ms
+    await tester.pumpAndSettle(const Duration(seconds: 3));
+
+    // Verify the app loaded successfully
+    expect(find.byType(MaterialApp), findsOneWidget);
+
+    // Ensure all timers are cleared before test ends
+    await tester.pumpAndSettle();
   });
 }
