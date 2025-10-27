@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/features/auth/signup/presentation/manager/signup_cubit.dart';
-import 'package:freelancer/features/auth/widgets/custom_name_text_form_field.dart';
+import 'package:freelancer/features/auth/widgets/custom_first_last_name_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
@@ -18,6 +18,14 @@ class SignupForm extends StatefulWidget {
 class _SignupFormState extends State<SignupForm> {
   bool passwordObscureText = true;
   bool confirmPasswordObscureText = true;
+
+  @override
+  void initState() {
+    super.initState();
+    final cubit = SignupCubit.get(context);
+    cubit.countryCodeController.text = '+966'; // then assign
+  }
+
   @override
   Widget build(BuildContext context) {
     final cubit = SignupCubit.get(context);
@@ -26,24 +34,27 @@ class _SignupFormState extends State<SignupForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: CustomNameTextFormField(
-                  hint: LocaleKeys.authentication_firstNameHint.tr(),
-                  nameController: cubit.firstNameController,
-                ),
-              ),
-              horizontalSpace(8),
-              Expanded(
-                child: CustomNameTextFormField(
-                  hint: LocaleKeys.authentication_lastNameHint.tr(),
-                  nameController: cubit.secondNameController,
-                ),
-              ),
-            ],
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: CustomNameTextFormField(
+          //         hint: LocaleKeys.authentication_firstNameHint.tr(),
+          //         nameController: cubit.firstNameController,
+          //       ),
+          //     ),
+          //     horizontalSpace(8),
+          //     Expanded(
+          //       child: CustomNameTextFormField(
+          //         hint: LocaleKeys.authentication_lastNameHint.tr(),
+          //         nameController: cubit.secondNameController,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          CustomFirstLastNameTextFormField(
+            firstNameController: cubit.firstNameController,
+            secondNameController: cubit.secondNameController,
           ),
-
           verticalSpace(8),
           CustomPhoneTextFormField(
             countryCodeController: cubit.countryCodeController,

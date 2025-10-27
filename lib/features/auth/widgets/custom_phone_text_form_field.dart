@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/spacing.dart';
 import '../../../core/widgets/forms/custom_country_code_picker.dart';
 import '../../../core/widgets/forms/custom_text_form_field.dart';
@@ -28,79 +27,68 @@ class CustomPhoneTextFormField extends StatefulWidget {
 
 class _CustomPhoneTextFormFieldState extends State<CustomPhoneTextFormField> {
   String? phoneErrorMessage;
-  ValueNotifier<String> countryCode = ValueNotifier<String>('');
+  final ValueNotifier<String> countryCode = ValueNotifier<String>('');
+
   @override
   void initState() {
     super.initState();
-    countryCode.addListener(() {
-      widget.countryCodeController.text = countryCode.value;
-    });
+    countryCode.addListener(_syncCountryCode);
+  }
+
+  void _syncCountryCode() {
+    if (!mounted) return;
+    widget.countryCodeController.text = countryCode.value;
+    debugPrint(
+      'countryCodeController updated: ${widget.countryCodeController.text}',
+    );
+  }
+
+  @override
+  void dispose() {
+    countryCode.removeListener(_syncCountryCode);
+    countryCode.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Country code picker with same height as text field
         SizedBox(
-          height: 60.h,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomCountryCodePicker(code: countryCode),
-              horizontalSpace(8),
-              Expanded(
-                child: CustomTextFormField(
-                  controller: widget.phoneNumberController,
-                  keyboardType: TextInputType.phone,
-                  hintText: LocaleKeys.authentication_phoneNumber.tr(),
-                  labelText: widget.labelText,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly, // ✅ Only numbers
-                  ],
-                  errorText: null, // removes default error
-                  errorStyle: const TextStyle(height: 0),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      setState(() {
-                        phoneErrorMessage = LocaleKeys
-                            .authentication_fieldRequired
-                            .tr();
-                      });
-                      return null;
-                    }
-                    if (value.length < 9) {
-                      setState(() {
-                        phoneErrorMessage = LocaleKeys
-                            .authentication_phoneValidation
-                            .tr();
-                      });
-                      return null;
-                    }
-                    // ✅ No error
-                    setState(() {
-                      phoneErrorMessage = null;
-                    });
-                    return null;
-                  }, // Empty validator to prevent height changes
-                ),
-              ),
-            ],
+          height: 60
+              .h, // Match the height of CustomTextFormField (19.h * 2 + text height)
+          child: CustomCountryCodePicker(
+            code: countryCode,
+            initialCountryCode: widget.countryCodeController.text,
           ),
         ),
-        // Show error message below the row
-        AnimatedSwitcher(
-          duration: const Duration(milliseconds: 200),
-          child: phoneErrorMessage != null
-              ? Padding(
-                  key: const ValueKey('errorText'),
-                  padding: EdgeInsets.only(top: 6.h, right: 4.w),
-                  child: Text(
-                    phoneErrorMessage!,
-                    style: TextStyle(color: AppColors.red, fontSize: 12.sp),
-                  ),
-                )
-              : const SizedBox(key: ValueKey('noError')),
+        horizontalSpace(8),
+        Expanded(
+          child: CustomTextFormField(
+            controller: widget.phoneNumberController,
+            keyboardType: TextInputType.phone,
+            hintText: LocaleKeys.authentication_phoneNumber.tr(),
+            labelText: widget.labelText,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            errorText: phoneErrorMessage, // Show error within the text field
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                final msg = LocaleKeys.authentication_fieldRequired.tr();
+                setState(() => phoneErrorMessage = msg);
+                return msg; // ❗ return non-null to block form submit
+              }
+              if (value.length < 9) {
+                final msg = LocaleKeys.authentication_phoneValidation.tr();
+                setState(() => phoneErrorMessage = msg);
+                return msg; // ❗ also block submit
+              }
+
+              setState(() => phoneErrorMessage = null);
+              return null; // ✅ valid
+            },
+          ),
         ),
       ],
     );

@@ -5,6 +5,16 @@ sealed class VerificationState {}
 
 final class VerificationInitial extends VerificationState {}
 
-class VerificationTimerUpdated extends VerificationState {}
+class VerificationLoading extends VerificationState {}
 
-class VerificationTimerFinished extends VerificationState {}
+class VerificationFailure extends VerificationState {
+  final String error;
+
+  VerificationFailure(this.error);
+}
+
+class VerificationSuccess extends VerificationState {
+  final AuthActionResponseModel success;
+
+  VerificationSuccess(this.success);
+}

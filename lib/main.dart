@@ -5,12 +5,13 @@ import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/routes/app_routing.dart';
 import 'core/di/injection_container.dart';
 import 'generated/codegen_loader.g.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
-  // Register all GetIt dependencies
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await initializeDependencies();
   await sl.allReady();
 

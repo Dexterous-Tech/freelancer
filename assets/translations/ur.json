@@ -39,7 +39,10 @@
     "phoneValidation": "فون نمبر کم از کم 9 ہندسوں پر مشتمل ہونا چاہیے",
     "passwordAgain": "پاس ورڈ دوبارہ درج کریں",
     "passwordMismatch": "پاس ورڈز ایک جیسے ہونے چاہئیں",
-    "currentPassword": "موجودہ پاس ورڈ"
+    "currentPassword": "موجودہ پاس ورڈ",
+    "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
+    "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے",
+    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -80,6 +83,18 @@
     "requestSpeciality": "نیا شعبہ بنانے کی درخواست",
     "privacyPolicy": "رازداری کی پالیسی",
     "selectLanguageTitle": "زبان منتخب کریں",
-    "chooseLanguageApp": "ایپ کی زبان منتخب کریں"
+    "chooseLanguageApp": "ایپ کی زبان منتخب کریں",
+    "noAvilableData": "کوئی ڈیٹا دستیاب نہیں ہے"
+  },
+  "tryAgain": "دوبارہ کوشش کریں",
+  "continueButton": "جاری رکھیں",
+  "dioException": {
+    "requestCancelled": "سرور کو بھیجی گئی درخواست منسوخ کر دی گئی",
+    "connectionTimeout": "سرور کے ساتھ کنکشن کی مہلت ختم ہو گئی",
+    "connectionInternet": "انٹرنیٹ کنکشن ناکام ہو گیا",
+    "connectionUnknown": "انٹرنیٹ کنکشن کی وجہ سے سرور سے رابطہ ناکام ہو گیا",
+    "recivedTimeout": "سرور سے ڈیٹا وصول کرنے کی مہلت ختم ہو گئی",
+    "sendTimeout": "سرور کو ڈیٹا بھیجنے کی مہلت ختم ہو گئی",
+    "unknownError": "کچھ غلط ہو گیا"
   }
 }

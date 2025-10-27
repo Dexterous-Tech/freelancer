@@ -21,7 +21,7 @@ class CustomTextFormField extends StatefulWidget {
     this.errorBorder,
     this.focusedErrorBorder,
     this.obscureText,
-    this.controller,
+    required this.controller,
     this.keyboardType,
     this.labelStyle,
     this.labelText,
@@ -52,7 +52,7 @@ class CustomTextFormField extends StatefulWidget {
   final InputBorder? errorBorder;
   final InputBorder? focusedErrorBorder;
   final bool? obscureText;
-  final TextEditingController? controller;
+  final TextEditingController controller;
   final Function(String?) validator;
   final TextInputType? keyboardType;
   final TextStyle? labelStyle;
@@ -75,17 +75,15 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  late final TextEditingController _controller;
   late bool _isNotEmpty;
 
   @override
   void initState() {
     super.initState();
-    _controller = widget.controller ?? TextEditingController();
-    _isNotEmpty = _controller.text.isNotEmpty;
+    _isNotEmpty = widget.controller.text.isNotEmpty;
 
-    _controller.addListener(() {
-      final newState = _controller.text.isNotEmpty;
+    widget.controller.addListener(() {
+      final newState = widget.controller.text.isNotEmpty;
       if (newState != _isNotEmpty) {
         setState(() => _isNotEmpty = newState);
       }
@@ -94,9 +92,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   void dispose() {
-    if (widget.controller == null) {
-      _controller.dispose();
-    }
     super.dispose();
   }
 
@@ -107,7 +102,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return TextFormField(
       style: widget.style ?? AppTextStyles.font16DarkBlueRegular,
       obscureText: widget.obscureText ?? false,
-      controller: _controller,
+      controller: widget.controller,
       readOnly: widget.readOnly,
       validator: (value) => widget.validator(value),
       onTap: widget.onTap,

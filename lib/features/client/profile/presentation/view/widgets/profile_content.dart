@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/helper/app_images.dart';
 import '../../../../../../core/helper/extensions.dart';
@@ -7,7 +8,7 @@ import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
-import 'bottom_sheets/delete_account_bottom_sheet.dart';
+import '../../manager/profile_cubit.dart';
 import 'bottom_sheets/logout_bottom_sheet.dart';
 import 'profile_account_logo.dart';
 import '../../../../widgets/profile_content_item.dart';
@@ -31,14 +32,33 @@ class ProfileContent extends StatelessWidget {
               style: AppTextStyles.font12OuterSpaceSemiBold,
             ),
             verticalSpace(28),
-            GestureDetector(
-              onTap: () {
-                context.pushNamed(AppRoutes.clientEditProfileScreen);
+            BlocBuilder<ProfileCubit, ProfileState>(
+              buildWhen: (context, state) =>
+                  state is ProfileGetProfileSuccess ||
+                  state is ProfileGetProfileFailure ||
+                  state is ProfileGetProfileLoading,
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () async {
+                    if (state is ProfileGetProfileSuccess) {
+                      final result = await context.pushNamed(
+                        AppRoutes.clientEditProfileScreen,
+                        arguments: state.profileResponseModel.data,
+                      );
+
+                      // 🔁 Check if edit was successful and reload profile
+                      if (result == true && context.mounted) {
+                        ProfileCubit.get(context).getProfile();
+                      }
+                    }
+                  },
+
+                  child: ProfileContentItem(
+                    icon: AppImages.profileIcon,
+                    title: LocaleKeys.profile_editProfile.tr(),
+                  ),
+                );
               },
-              child: ProfileContentItem(
-                icon: AppImages.profileIcon,
-                title: LocaleKeys.profile_editProfile.tr(),
-              ),
             ),
             ProfileContentItem(
               icon: AppImages.locationIcon,
@@ -68,21 +88,9 @@ class ProfileContent extends StatelessWidget {
                 );
               },
               child: ProfileContentItem(
+                isDivider: false,
                 icon: AppImages.logoutIcon,
                 title: LocaleKeys.profile_logout.tr(),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                openBottomSheet(
-                  context: context,
-                  bottomSheetContent: DeleteAccountBottomSheet(),
-                );
-              },
-              child: ProfileContentItem(
-                icon: AppImages.deleteIcon,
-                title: LocaleKeys.profile_deleteAccount.tr(),
-                isDivider: false,
               ),
             ),
           ],

@@ -1,8 +1,11 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freelancer/core/helper/app_images.dart';
 import 'package:freelancer/core/helper/extensions.dart';
+import 'package:freelancer/core/services/localization_service.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -19,23 +22,17 @@ class CustomHeader extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
       decoration: BoxDecoration(
-        color: AppColors.white,
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment(0, -3),
+          end: Alignment(0, 0),
           colors: [AppColors.yellow, AppColors.white],
+          stops: [0.0, 1.0],
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 6,
             spreadRadius: 2,
-            offset: Offset(0, 2),
-          ),
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 4,
-            spreadRadius: 0,
             offset: Offset(0, 2),
           ),
         ],
@@ -55,10 +52,13 @@ class CustomHeader extends StatelessWidget {
                   onTap: () {
                     context.pop();
                   },
-                  child: SvgPicture.asset(
-                    AppImages.arrowRightBlackIcon,
-                    width: 24.w,
-                    height: 24.h,
+                  child: Transform.rotate(
+                    angle: LocalizationService.isEnglish(context) ? math.pi : 0,
+                    child: SvgPicture.asset(
+                      AppImages.arrowRightBlackIcon,
+                      width: 24.w,
+                      height: 24.h,
+                    ),
                   ),
                 ),
                 horizontalSpace(16),
