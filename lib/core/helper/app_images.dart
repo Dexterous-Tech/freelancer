@@ -87,4 +87,6 @@ class AppImages {
   static const String personImage =
       '${AppConstants.imagesPath}person_image.png';
   static const String fakeMapImage = '${AppConstants.imagesPath}map.jpg';
+  static const String fakeMapHeaderImage =
+      '${AppConstants.imagesPath}map_header.jpg';
 }
