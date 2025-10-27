@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
@@ -24,6 +25,9 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController _secondLogoController;
   late Animation<double> _secondLogoHeight;
   late Animation<double> _secondLogoOpacity;
+
+  Timer? _delayTimer;
+  Timer? _navigationTimer;
 
   @override
   void initState() {
@@ -68,10 +72,14 @@ class _SplashScreenState extends State<SplashScreen>
     _mainController.forward();
 
     // After step 1 ends → small pause → then start both grow + logo
-    _mainController.addStatusListener((status) async {
+    _mainController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        await Future.delayed(const Duration(milliseconds: 300));
-        _secondLogoController.forward();
+        _delayTimer?.cancel();
+        _delayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) {
+            _secondLogoController.forward();
+          }
+        });
       }
     });
 
@@ -84,9 +92,11 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void _navigateToNextScreen() {
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (!mounted) return;
-      context.pushNamedAndRemoveUntil(AppRoutes.languageScreen);
+    _navigationTimer?.cancel();
+    _navigationTimer = Timer(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        context.pushNamedAndRemoveUntil(AppRoutes.languageScreen);
+      }
     });
   }
 
@@ -146,6 +156,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
+    _delayTimer?.cancel();
+    _navigationTimer?.cancel();
     _mainController.dispose();
     _secondLogoController.dispose();
     super.dispose();
