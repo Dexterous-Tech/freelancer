@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
+import 'package:freelancer/core/shared/shared_preferences_helper.dart';
+import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
@@ -17,7 +19,6 @@ import 'package:freelancer/generated/locale_keys.g.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
@@ -25,7 +26,7 @@ class LoginBody extends StatelessWidget {
           state is LoginLoading ||
           state is LoginFailure ||
           state is LoginSuccess,
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is LoginFailure) {
           if (state.error.data?['phone_is_verified'] == false) {
             final cubit = LoginCubit.get(context);
@@ -55,7 +56,15 @@ class LoginBody extends StatelessWidget {
           }
         }
         if (state is LoginSuccess) {
-          context.pushNamedAndRemoveUntil(AppRoutes.mainHomeScreen);
+          final route = await SharedPreferencesHelper.getString(
+            SharedPreferencesKey.routeAfterLogin,
+          );
+          if (route == AppRoutes.mainHomeScreen && context.mounted) {
+            await context.pushNamedAndRemoveUntil(route ?? '', arguments: 1);
+            await SharedPreferencesHelper.remove(
+              SharedPreferencesKey.routeAfterLogin,
+            );
+          }
         }
       },
       child: SingleChildScrollView(

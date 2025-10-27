@@ -36,10 +36,17 @@ class _MainHomeBottomNavigationBarState
 
   void onTabChanged(int index) {
     HapticFeedback.lightImpact();
-    setState(() {
-      currentSelectedIndex = index;
-    });
-    widget.onTabChanged(index); // 👈 notify parent
+    widget.onTabChanged(index); // 👈 only notify parent
+  }
+
+  @override
+  void didUpdateWidget(covariant MainHomeBottomNavigationBar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.selectedIndex != widget.selectedIndex) {
+      setState(() {
+        currentSelectedIndex = widget.selectedIndex;
+      });
+    }
   }
 
   @override

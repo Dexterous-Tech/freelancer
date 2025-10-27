@@ -56,7 +56,9 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
             onTap: () {
               openBottomSheet(
                 context: context,
-                bottomSheetContent: SwitchAccountBottomSheet(),
+                bottomSheetContent: SwitchAccountBottomSheet(
+                  profileDataModel: state.profileResponseModel.data!,
+                ),
               );
             },
             child: Row(

@@ -2,6 +2,18 @@ import 'package:json_annotation/json_annotation.dart';
 part 'update_profile_model.g.dart';
 
 @JsonSerializable()
+class DeleteAccountBodyModel {
+  final String password;
+
+  DeleteAccountBodyModel({required this.password});
+
+  factory DeleteAccountBodyModel.fromJson(Map<String, dynamic> json) =>
+      _$DeleteAccountBodyModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DeleteAccountBodyModelToJson(this);
+}
+
+@JsonSerializable()
 class UpdateProfileRequestBodyModel {
   @JsonKey(name: 'first_name')
   final String firstName;

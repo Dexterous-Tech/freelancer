@@ -10,10 +10,12 @@ import '../../../../../../../core/theme/app_colors.dart';
 import '../../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../../core/theme/spacing.dart';
 import '../../../../../../../generated/locale_keys.g.dart';
+import '../../../../data/models/profile_models.dart';
 
 class SwitchAccountBottomSheet extends StatelessWidget {
-  const SwitchAccountBottomSheet({super.key});
+  const SwitchAccountBottomSheet({super.key, required this.profileDataModel});
 
+  final ProfileDataModel profileDataModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,12 +38,15 @@ class SwitchAccountBottomSheet extends StatelessWidget {
             ),
           ),
           verticalSpace(30),
-          accountItem(isSelected: true, name: 'Esraa Mohamed'),
           accountItem(
-            isSelected: false,
-            name: 'El-sayed Ramadan',
-            image: AppImages.personImage,
+            isSelected: true,
+            name: '${profileDataModel.firstName} ${profileDataModel.lastName}',
           ),
+          // accountItem(
+          //   isSelected: false,
+          //   name: 'El-sayed Ramadan',
+          //   image: AppImages.personImage,
+          // ),
         ],
       ),
     );

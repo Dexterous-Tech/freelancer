@@ -111,7 +111,7 @@ class _OnBoardingLanguageState extends State<OnBoardingLanguage> {
 
                 CustomElevatedButton(
                   onPressed: () {
-                    context.pushReplacementNamed(AppRoutes.loginScreen);
+                    context.pushReplacementNamed(AppRoutes.mainHomeScreen);
                   },
                   backgroundColor: AppColors.yellow,
                   buttonWidget: Row(

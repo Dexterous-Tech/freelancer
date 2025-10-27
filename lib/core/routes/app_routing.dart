@@ -22,83 +22,110 @@ class AppRouting {
     var arguments = settings.arguments;
     switch (settings.name) {
       case AppRoutes.splashScreen:
-        return _pageRouteBuilder(const SplashScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const SplashScreen(),
+        );
       case AppRoutes.languageScreen:
-        return _pageRouteBuilder(const OnBoardingScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const OnBoardingScreen(),
+        );
       case AppRoutes.loginScreen:
-        return _pageRouteBuilder(const LoginScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => LoginScreen(),
+        );
       case AppRoutes.forgetScreen:
-        return _pageRouteBuilder(
-          ForgetPasswordScreen(
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ForgetPasswordScreen(
             phoneNumber: arguments as ForgetPasswordRequestBodyModel,
           ),
         );
       case AppRoutes.newPasswordScreen:
-        return _pageRouteBuilder(
-          NewPasswordScreen(
+        return MaterialPageRoute(
+          builder: (BuildContext context) => NewPasswordScreen(
             forgetPasswordRequestBodyModel:
                 arguments as ForgetPasswordRequestBodyModel,
           ),
         );
       case AppRoutes.signupScreen:
-        return _pageRouteBuilder(const SignupScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const SignupScreen(),
+        );
       case AppRoutes.mainHomeScreen:
-        return _pageRouteBuilder(const MainHomeScreen());
+        if (arguments is int) {
+          return MaterialPageRoute(
+            builder: (BuildContext context) => MainHomeScreen(index: arguments),
+          );
+        }
+        return MaterialPageRoute(
+          builder: (BuildContext context) => MainHomeScreen(),
+        );
       case AppRoutes.verificationScreen:
         if (arguments is VerificationUpdateProfile) {
-          return _pageRouteBuilder(
-            VerificationScreen(verificationUpdateProfile: arguments),
+          return MaterialPageRoute(
+            builder: (BuildContext context) =>
+                VerificationScreen(verificationUpdateProfile: arguments),
           );
         } else if (arguments is ForgetPasswordRequestBodyModel) {
-          return _pageRouteBuilder(
-            VerificationScreen(phoneNumberModel: arguments),
+          return MaterialPageRoute(
+            builder: (BuildContext context) =>
+                VerificationScreen(phoneNumberModel: arguments),
           );
         } else {
-          return _pageRouteBuilder(VerificationScreen());
+          return MaterialPageRoute(
+            builder: (BuildContext context) => VerificationScreen(),
+          );
         }
       case AppRoutes.clientEditProfileScreen:
-        return _pageRouteBuilder(
-          ClientEditProfileScreen(
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ClientEditProfileScreen(
             profileDataModel: arguments as ProfileDataModel,
           ),
         );
       case AppRoutes.clientChangePasswordScreen:
-        return _pageRouteBuilder(const ClientChangePasswordScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ClientChangePasswordScreen(),
+        );
       case AppRoutes.aboutUsScreen:
-        return _pageRouteBuilder(const AboutUsScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const AboutUsScreen(),
+        );
       case AppRoutes.privacyPolicyScreen:
-        return _pageRouteBuilder(const PrivacyPolicyScreen());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const PrivacyPolicyScreen(),
+        );
       default:
-        return _pageRouteBuilder(const Scaffold());
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const Scaffold(),
+        );
     }
   }
 
   /// Custom PageRouteBuilder using slide + fade transition
-  PageRouteBuilder _pageRouteBuilder(Widget screen) {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => screen,
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return _slideAndFade(context, animation, secondaryAnimation, child);
-      },
-      transitionDuration: const Duration(milliseconds: 800),
-    );
-  }
-
-  /// Slide from right (0.3 offset) and fade in smoothly
-  static Widget _slideAndFade(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    final slideAnimation = Tween<Offset>(
-      begin: const Offset(0.3, 0.0),
-      end: Offset.zero,
-    ).animate(CurveTween(curve: Curves.easeOutCubic).animate(animation));
-
-    return SlideTransition(
-      position: slideAnimation,
-      child: FadeTransition(opacity: animation, child: child),
-    );
-  }
+  // PageRouteBuilder _pageRouteBuilder(Widget screen) {
+  //   return PageRouteBuilder(
+  //     pageBuilder: (context, animation, secondaryAnimation) => screen,
+  //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //       return _slideAndFade(context, animation, secondaryAnimation, child);
+  //     },
+  //     transitionDuration: const Duration(milliseconds: 800),
+  //   );
+  // }
+  //
+  // /// Slide from right (0.3 offset) and fade in smoothly
+  // static Widget _slideAndFade(
+  //   BuildContext context,
+  //   Animation<double> animation,
+  //   Animation<double> secondaryAnimation,
+  //   Widget child,
+  // ) {
+  //   final slideAnimation = Tween<Offset>(
+  //     begin: const Offset(0.3, 0.0),
+  //     end: Offset.zero,
+  //   ).animate(CurveTween(curve: Curves.easeOutCubic).animate(animation));
+  //
+  //   return SlideTransition(
+  //     position: slideAnimation,
+  //     child: FadeTransition(opacity: animation, child: child),
+  //   );
+  // }
 }

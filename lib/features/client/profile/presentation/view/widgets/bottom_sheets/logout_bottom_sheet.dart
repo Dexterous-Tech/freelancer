@@ -64,7 +64,7 @@ class LogoutBottomSheet extends StatelessWidget {
                 );
               }
               if (state is ProfileLogoutSuccess) {
-                context.pushNamedAndRemoveUntil(AppRoutes.loginScreen);
+                context.pushNamedAndRemoveUntil(AppRoutes.mainHomeScreen);
               }
             },
             builder: (context, state) {

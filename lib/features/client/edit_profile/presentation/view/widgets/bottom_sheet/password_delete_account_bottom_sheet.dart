@@ -54,7 +54,7 @@ class _PasswordDeleteAccountBottomSheetState
           }
           if (state is ProfileDeleteAccountSuccess) {
             showCustomSnackBar(context, state.authActionResponseModel.message);
-            context.pushNamedAndRemoveUntil(AppRoutes.loginScreen);
+            context.pushNamedAndRemoveUntil(AppRoutes.languageScreen);
           }
         },
         builder: (context, state) {

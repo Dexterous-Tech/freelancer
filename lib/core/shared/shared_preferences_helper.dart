@@ -39,11 +39,32 @@ class SharedPreferencesHelper {
     await prefs.setString(key, value);
   }
 
+  static Future<void> setBool(String key, bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(key, value);
+  }
+
+  static Future<bool?> getBool(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(key);
+
+    return value;
+  }
+
+  static Future<bool?> remove(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.remove(key);
+
+    return value;
+  }
+
   static Future<void> clearAllKeys() async {
-    // final prefs = await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences.getInstance();
     Future.wait([
       flutterSecureStorage.delete(key: SharedPreferencesKey.apiTokenKey),
       flutterSecureStorage.delete(key: SharedPreferencesKey.deviceToken),
+      prefs.remove(SharedPreferencesKey.isLogging),
+      prefs.remove(SharedPreferencesKey.routeAfterLogin),
     ]);
   }
 }

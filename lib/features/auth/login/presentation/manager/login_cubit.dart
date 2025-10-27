@@ -45,7 +45,10 @@ class LoginCubit extends Cubit<LoginState> {
         await saveUserToken(loginResponseModel.data!.token);
         log("save token  ");
         await saveFcmTokenSilently();
-
+        await SharedPreferencesHelper.setBool(
+          SharedPreferencesKey.isLogging,
+          true,
+        );
         emit(LoginSuccess(loginResponseModel));
       },
     );
