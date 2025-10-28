@@ -12,4 +12,5 @@ class AppRoutes {
       '/clientChangePasswordScreen';
   static const String aboutUsScreen = '/aboutUsScreen';
   static const String privacyPolicyScreen = '/privacyPolicyScreen';
+  static const String serviceProviderScreen = '/serviceProviderScreen';
 }

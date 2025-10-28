@@ -26,4 +26,5 @@ class AppColors {
   static const Color aliceBlue = Color(0xffECF3FA);
   static const Color floralWhite = Color(0xffFFFCEC);
   static const Color graniteGray = Color(0xff616161);
+  static const Color vividGamboge = Color(0xffFF9500);
 }

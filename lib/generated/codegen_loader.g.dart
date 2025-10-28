@@ -114,7 +114,8 @@ class CodegenLoader extends AssetLoader{
     "unknownError": "حدث خطأ ما"
   },
   "services": {
-    "searchService": "ابحث باسم الخدمه ..."
+    "searchService": "ابحث باسم الخدمه ...",
+    "serviceProviders": "مقدمي الخدمة"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -217,7 +218,8 @@ static const Map<String,dynamic> _en = {
     "unknownError": "Something went wrong"
   },
   "services": {
-    "searchService": "Search by service name ..."
+    "searchService": "Search by service name ...",
+    "serviceProviders": "Service providers"
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -320,7 +322,8 @@ static const Map<String,dynamic> _ur = {
     "unknownError": "کچھ غلط ہو گیا"
   },
   "services": {
-    "searchService": "سروس کے نام سے تلاش کریں ..."
+    "searchService": "سروس کے نام سے تلاش کریں ...",
+    "serviceProviders": "سروس فراہم کرنے والے"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

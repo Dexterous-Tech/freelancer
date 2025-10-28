@@ -9,6 +9,7 @@ import 'package:freelancer/features/auth/verification/presentation/view/verifica
 import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
 import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
+import 'package:freelancer/features/client/service_provider/presentation/view/service_provider_screen.dart';
 
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
@@ -86,6 +87,10 @@ class AppRouting {
       case AppRoutes.privacyPolicyScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const PrivacyPolicyScreen(),
+        );
+      case AppRoutes.serviceProviderScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ServiceProviderScreen(),
         );
       default:
         return MaterialPageRoute(

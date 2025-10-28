@@ -98,6 +98,7 @@
     "unknownError": "حدث خطأ ما"
   },
   "services": {
-    "searchService": "ابحث باسم الخدمه ..."
+    "searchService": "ابحث باسم الخدمه ...",
+    "serviceProviders": "مقدمي الخدمة"
   }
 }

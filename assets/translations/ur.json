@@ -98,6 +98,7 @@
     "unknownError": "کچھ غلط ہو گیا"
   },
   "services": {
-    "searchService": "سروس کے نام سے تلاش کریں ..."
+    "searchService": "سروس کے نام سے تلاش کریں ...",
+    "serviceProviders": "سروس فراہم کرنے والے"
   }
 }
