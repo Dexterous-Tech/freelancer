@@ -26,9 +26,7 @@ class AppRouting {
           builder: (BuildContext context) => const SplashScreen(),
         );
       case AppRoutes.languageScreen:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => const OnBoardingScreen(),
-        );
+        return _animatedRoute(const OnBoardingScreen());
       case AppRoutes.loginScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => LoginScreen(),
@@ -52,13 +50,9 @@ class AppRouting {
         );
       case AppRoutes.mainHomeScreen:
         if (arguments is int) {
-          return MaterialPageRoute(
-            builder: (BuildContext context) => MainHomeScreen(index: arguments),
-          );
+          return _animatedRoute(MainHomeScreen(index: arguments));
         }
-        return MaterialPageRoute(
-          builder: (BuildContext context) => MainHomeScreen(),
-        );
+        return _animatedRoute(MainHomeScreen());
       case AppRoutes.verificationScreen:
         if (arguments is VerificationUpdateProfile) {
           return MaterialPageRoute(
@@ -98,6 +92,34 @@ class AppRouting {
           builder: (BuildContext context) => const Scaffold(),
         );
     }
+  }
+
+  PageRouteBuilder _animatedRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionDuration: const Duration(milliseconds: 800),
+      reverseTransitionDuration: const Duration(milliseconds: 800),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        // Smooth EaseOut fade (starts slow, ends fast — like Figma)
+        final curvedAnimation = CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOut, // smoother than easeOut
+        );
+
+        // Use Tween to control fade range (start from 0.0 opacity)
+        final opacityTween = Tween<double>(begin: 1.0, end: 1.0);
+
+        return AnimatedBuilder(
+          animation: curvedAnimation,
+          builder: (context, _) {
+            return Opacity(
+              opacity: opacityTween.evaluate(curvedAnimation),
+              child: child,
+            );
+          },
+        );
+      },
+    );
   }
 
   /// Custom PageRouteBuilder using slide + fade transition

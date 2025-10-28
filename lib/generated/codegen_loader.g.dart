@@ -112,6 +112,9 @@ class CodegenLoader extends AssetLoader{
     "recivedTimeout": "انتهت مهلة الاستلام من الخادم",
     "sendTimeout": "انتهت مهلة الإرسال إلى الخادم",
     "unknownError": "حدث خطأ ما"
+  },
+  "services": {
+    "searchService": "ابحث باسم الخدمه ..."
   }
 };
 static const Map<String,dynamic> _en = {
@@ -212,6 +215,9 @@ static const Map<String,dynamic> _en = {
     "recivedTimeout": "Receive timeout in connection with the server",
     "sendTimeout": "Send timeout in connection with the server",
     "unknownError": "Something went wrong"
+  },
+  "services": {
+    "searchService": "Search by service name ..."
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -312,6 +318,9 @@ static const Map<String,dynamic> _ur = {
     "recivedTimeout": "سرور سے ڈیٹا وصول کرنے کی مہلت ختم ہو گئی",
     "sendTimeout": "سرور کو ڈیٹا بھیجنے کی مہلت ختم ہو گئی",
     "unknownError": "کچھ غلط ہو گیا"
+  },
+  "services": {
+    "searchService": "سروس کے نام سے تلاش کریں ..."
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

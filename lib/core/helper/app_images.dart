@@ -81,6 +81,12 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}share_app.svg';
   static const String dropDownArrowIcon =
       '${AppConstants.svgIconsImagesPath}drop_down_arrow.svg';
+  static const String searchIcon =
+      '${AppConstants.svgIconsImagesPath}search.svg';
+  static const String categoryItemIcon =
+      '${AppConstants.svgIconsImagesPath}category_icon.svg';
+  static const String subCategoryItemIcon =
+      '${AppConstants.svgIconsImagesPath}sub_category_icon.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
