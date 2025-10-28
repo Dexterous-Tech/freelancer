@@ -102,26 +102,19 @@ class AppRouting {
   PageRouteBuilder _animatedRoute(Widget page) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => page,
-      transitionDuration: const Duration(milliseconds: 800),
-      reverseTransitionDuration: const Duration(milliseconds: 800),
+      transitionDuration: const Duration(milliseconds: 1000),
+      reverseTransitionDuration: const Duration(milliseconds: 700),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        // Smooth EaseOut fade (starts slow, ends fast — like Figma)
-        final curvedAnimation = CurvedAnimation(
+        // Soft cubic ease (starts slow, ends smooth)
+        final curved = CurvedAnimation(
           parent: animation,
-          curve: Curves.easeOut, // smoother than easeOut
+          curve: Curves.easeOut,
         );
 
-        // Use Tween to control fade range (start from 0.0 opacity)
-        final opacityTween = Tween<double>(begin: 1.0, end: 1.0);
-
-        return AnimatedBuilder(
-          animation: curvedAnimation,
-          builder: (context, _) {
-            return Opacity(
-              opacity: opacityTween.evaluate(curvedAnimation),
-              child: child,
-            );
-          },
+        // Fade from 0 → 1 softly
+        return FadeTransition(
+          opacity: Tween<double>(begin: 0.0, end: 1.0).animate(curved),
+          child: child,
         );
       },
     );

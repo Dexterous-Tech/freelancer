@@ -25,12 +25,6 @@ class ServicesSubCategoryItem extends StatelessWidget {
             BoxShadow(
               color: AppColors.black.withValues(alpha: 0.15),
               blurRadius: 3,
-              spreadRadius: 1,
-              offset: Offset(0, 1),
-            ),
-            BoxShadow(
-              color: AppColors.black.withValues(alpha: 0.15),
-              blurRadius: 3,
               spreadRadius: 0,
               offset: Offset(0, 1),
             ),

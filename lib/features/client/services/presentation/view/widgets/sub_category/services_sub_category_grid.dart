@@ -8,17 +8,21 @@ class ServicesSubCategoryGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       child: GridView.builder(
+        padding: EdgeInsets.zero,
         itemCount: 18,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1,
-          mainAxisSpacing: 8.h,
-          crossAxisSpacing: 8.w,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
+          childAspectRatio: 168 / 108,
         ),
         itemBuilder: (context, index) {
-          return ServicesSubCategoryItem();
+          return Padding(
+            padding: const EdgeInsets.all(2),
+            child: const ServicesSubCategoryItem(),
+          );
         },
       ),
     );
