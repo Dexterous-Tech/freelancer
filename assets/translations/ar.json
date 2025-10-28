@@ -99,6 +99,7 @@
   },
   "services": {
     "searchService": "ابحث باسم الخدمه ...",
-    "serviceProviders": "مقدمي الخدمة"
+    "serviceProviders": "مقدمي الخدمة",
+    "serviceFavourite": "المفضلة"
   }
 }

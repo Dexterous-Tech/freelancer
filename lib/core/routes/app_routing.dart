@@ -10,6 +10,7 @@ import 'package:freelancer/features/client/change_password/presentation/view/cli
 import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
 import 'package:freelancer/features/client/service_provider/presentation/view/service_provider_screen.dart';
+import 'package:freelancer/features/client/services_favourite/presentation/view/services_favourite_screen.dart';
 
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
@@ -91,6 +92,10 @@ class AppRouting {
       case AppRoutes.serviceProviderScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const ServiceProviderScreen(),
+        );
+      case AppRoutes.serviceFavouriteScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ServicesFavouriteScreen(),
         );
       default:
         return MaterialPageRoute(

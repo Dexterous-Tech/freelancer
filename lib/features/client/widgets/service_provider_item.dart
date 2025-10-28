@@ -12,10 +12,12 @@ class ServiceProviderItem extends StatelessWidget {
     super.key,
     this.isSpecial = false,
     this.isRead = false,
+    this.isFav = false,
   });
 
   final bool isSpecial;
   final bool isRead;
+  final bool isFav;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +45,9 @@ class ServiceProviderItem extends StatelessWidget {
                   : SizedBox(width: 36.w, height: 36.h),
               customIconContainer(
                 color: AppColors.black.withValues(alpha: 0.6),
-                assetName: AppImages.favBorderIcon,
+                assetName: isFav
+                    ? AppImages.favFilledIcon
+                    : AppImages.favBorderIcon,
               ),
             ],
           ),

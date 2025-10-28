@@ -99,6 +99,7 @@
   },
   "services": {
     "searchService": "Search by service name ...",
-    "serviceProviders": "Service providers"
+    "serviceProviders": "Service providers",
+    "serviceFavourite": "Favorites"
   }
 }

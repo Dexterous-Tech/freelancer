@@ -3,14 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/features/client/widgets/services_category_item.dart';
 
-class ServicesCategoriesList extends StatefulWidget {
-  const ServicesCategoriesList({super.key});
+class ServicesFavouriteCategoriesList extends StatefulWidget {
+  const ServicesFavouriteCategoriesList({super.key});
 
   @override
-  State<ServicesCategoriesList> createState() => _ServicesCategoriesListState();
+  State<ServicesFavouriteCategoriesList> createState() =>
+      _ServicesFavouriteCategoriesList();
 }
 
-class _ServicesCategoriesListState extends State<ServicesCategoriesList> {
+class _ServicesFavouriteCategoriesList
+    extends State<ServicesFavouriteCategoriesList> {
   late int selectedIndex;
 
   @override
@@ -29,6 +31,7 @@ class _ServicesCategoriesListState extends State<ServicesCategoriesList> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return ServicesCategoryItem(
+              isIcon: false,
               isActive: selectedIndex == index,
               onTap: () {
                 setState(() {

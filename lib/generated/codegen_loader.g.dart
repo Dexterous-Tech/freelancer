@@ -115,7 +115,8 @@ class CodegenLoader extends AssetLoader{
   },
   "services": {
     "searchService": "ابحث باسم الخدمه ...",
-    "serviceProviders": "مقدمي الخدمة"
+    "serviceProviders": "مقدمي الخدمة",
+    "serviceFavourite": "المفضلة"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -219,7 +220,8 @@ static const Map<String,dynamic> _en = {
   },
   "services": {
     "searchService": "Search by service name ...",
-    "serviceProviders": "Service providers"
+    "serviceProviders": "Service providers",
+    "serviceFavourite": "Favorites"
   }
 };
 static const Map<String,dynamic> _ur = {
@@ -323,7 +325,8 @@ static const Map<String,dynamic> _ur = {
   },
   "services": {
     "searchService": "سروس کے نام سے تلاش کریں ...",
-    "serviceProviders": "سروس فراہم کرنے والے"
+    "serviceProviders": "سروس فراہم کرنے والے",
+    "serviceFavourite": "پسندیدہ"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};

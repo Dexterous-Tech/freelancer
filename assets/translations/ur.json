@@ -99,6 +99,7 @@
   },
   "services": {
     "searchService": "سروس کے نام سے تلاش کریں ...",
-    "serviceProviders": "سروس فراہم کرنے والے"
+    "serviceProviders": "سروس فراہم کرنے والے",
+    "serviceFavourite": "پسندیدہ"
   }
 }

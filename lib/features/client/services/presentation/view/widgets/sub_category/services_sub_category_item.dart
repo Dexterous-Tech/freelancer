@@ -15,7 +15,7 @@ class ServicesSubCategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(AppRoutes.serviceProviderScreen);
+        context.pushNamed(AppRoutes.serviceFavouriteScreen);
       },
       child: Container(
         decoration: BoxDecoration(

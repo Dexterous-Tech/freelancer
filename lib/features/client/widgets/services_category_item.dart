@@ -7,9 +7,15 @@ import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 
 class ServicesCategoryItem extends StatelessWidget {
-  const ServicesCategoryItem({super.key, required this.isActive, this.onTap});
+  const ServicesCategoryItem({
+    super.key,
+    required this.isActive,
+    this.onTap,
+    this.isIcon = true,
+  });
   final bool isActive;
   final void Function()? onTap;
+  final bool isIcon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,18 +29,20 @@ class ServicesCategoryItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset(
-              AppImages.categoryItemIcon,
-              width: 20.w,
-              height: 18.h,
-              colorFilter: ColorFilter.mode(
-                isActive
-                    ? AppColors.darkBlue
-                    : AppColors.graniteGray, // desired color
-                BlendMode.srcIn, // replaces original color
+            if (isIcon) ...[
+              SvgPicture.asset(
+                AppImages.categoryItemIcon,
+                width: 20.w,
+                height: 18.h,
+                colorFilter: ColorFilter.mode(
+                  isActive
+                      ? AppColors.darkBlue
+                      : AppColors.graniteGray, // desired color
+                  BlendMode.srcIn, // replaces original color
+                ),
               ),
-            ),
-            horizontalSpace(4),
+              horizontalSpace(4),
+            ],
             Text(
               'Category Name',
               style: AppTextStyles.font12DarkBlueMedium.copyWith(
