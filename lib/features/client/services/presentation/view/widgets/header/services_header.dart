@@ -17,7 +17,6 @@ class ServicesHeader extends StatelessWidget {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          verticalSpace(16),
           ServiceHeaderSearch(),
           verticalSpace(16),
           ServicesCategoriesList(),

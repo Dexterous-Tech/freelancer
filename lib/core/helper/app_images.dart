@@ -99,6 +99,10 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}location_white_icon.svg';
   static const String starBorderIcon =
       '${AppConstants.svgIconsImagesPath}star_border.svg';
+  static const String arrowDownGrayIcon =
+      '${AppConstants.svgIconsImagesPath}arrow_down_gray.svg';
+  static const String uploadImageIcon =
+      '${AppConstants.svgIconsImagesPath}upload_photo.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

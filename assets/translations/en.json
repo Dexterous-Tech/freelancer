@@ -42,7 +42,29 @@
     "currentPassword": "Current Password",
     "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
     "nameMaxValidation": "The username must not exceed 50 characters",
-    "verificationPhoneNumber": "Verify phone number"
+    "verificationPhoneNumber": "Verify phone number",
+    "gender": "Gender",
+    "uploadPersonalPhoto": "Upload your profile picture",
+    "selectProfessionalCategory": "Select the main professional category",
+    "selectProfession": "Select the profession",
+    "selectCountryService": "Select the country where you can provide the service",
+    "selectCityService": "Select the city where you can provide the service",
+    "nationality": "Nationality",
+    "speakingLanguage": "Languages you speak",
+    "writeService": "Enter your specialty and its details if you can’t find it in the list of specialties...",
+    "email": "Email",
+    "invalidEmail": "Invalid email address",
+    "maleTitle": "Male",
+    "femaleTitle": "Female",
+    "takePhotoCamera": "Capture photo from camera",
+    "yourPhoto": "Your profile picture",
+    "addProfilePicture": "Please add a profile picture",
+    "chooseFromGallery": "Choose image from gallery",
+    "permessionCamera": "Please grant camera access permission in the app settings",
+    "errorInCamera": "Failed to open the camera. Please make sure the camera is working properly",
+    "errorTakePhoto": "Failed to capture the photo from the camera:",
+    "galleryPermession": "Please grant gallery access permission in the app settings",
+    "errorGallery": "Failed to select the photo from the gallery:"
   },
   "next": "Next",
   "save": "Save",
@@ -101,5 +123,12 @@
     "searchService": "Search by service name ...",
     "serviceProviders": "Service providers",
     "serviceFavourite": "Favorites"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "Join us",
+    "personalInformation": "Personal information",
+    "professionalInformation": "Professional information"
+  },
+  "send": "Send",
+  "sendSuccessfully": "Sent successfully"
 }

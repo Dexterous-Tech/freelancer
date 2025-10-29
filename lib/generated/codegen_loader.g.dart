@@ -58,7 +58,29 @@ class CodegenLoader extends AssetLoader{
     "currentPassword": "كلمة المرور الحالية",
     "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
     "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا",
-    "verificationPhoneNumber": "توثيق رقم الهاتف"
+    "verificationPhoneNumber": "توثيق رقم الهاتف",
+    "gender": "الجنس",
+    "uploadPersonalPhoto": "ارفع صورتك الشخصية",
+    "selectProfessionalCategory": "اختر القسم المهني الرئيسي",
+    "selectProfession": "اختر المهنة",
+    "selectCountryService": "اختر الدولة التي يمكنك تقديم الخدمة بها",
+    "selectCityService": "اختر المدينة التي يمكنك تقديم الخدمة بها",
+    "nationality": "الجنسية",
+    "speakingLanguage": "اللغات التي تتحدث بها",
+    "writeService": "ادخل التخصص الخاص بك وتفاصيله إن لم تجدها في قائمة التخصصات...",
+    "email": "البريد الإلكتروني",
+    "invalidEmail": "البريد الإلكتروني غير صالح",
+    "maleTitle": "ذكر",
+    "femaleTitle": "انثى",
+    "takePhotoCamera": "التقاط صورة من الكاميرا",
+    "yourPhoto": "صورتك الشخصية",
+    "addProfilePicture": "يرجى إضافة صورة شخصية",
+    "chooseFromGallery": "اختيار صورة من المعرض",
+    "permessionCamera": "يرجى منح إذن الوصول إلى الكاميرا في إعدادات التطبيق",
+    "errorInCamera": "فشل في فتح الكاميرا. تأكد من أن الكاميرا تعمل بشكل صحيح",
+    "errorTakePhoto": "فشل في التقاط الصورة من الكاميرا:",
+    "galleryPermession": "يرجى منح إذن الوصول إلى المعرض في إعدادات التطبيق",
+    "errorGallery": "فشل في اختيار الصورة من المعرض:"
   },
   "next": "التالي",
   "save": "حفظ",
@@ -117,7 +139,14 @@ class CodegenLoader extends AssetLoader{
     "searchService": "ابحث باسم الخدمه ...",
     "serviceProviders": "مقدمي الخدمة",
     "serviceFavourite": "المفضلة"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "انضم إلينا",
+    "personalInformation": "البيانات الشخصية",
+    "professionalInformation": "البيانات المهنية"
+  },
+  "send": "إرسال",
+  "sendSuccessfully": "تم الإرسال بنجاح"
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -163,7 +192,29 @@ static const Map<String,dynamic> _en = {
     "currentPassword": "Current Password",
     "passwordCriteriaValidation": "The password must contain uppercase and lowercase letters, numbers, and special characters",
     "nameMaxValidation": "The username must not exceed 50 characters",
-    "verificationPhoneNumber": "Verify phone number"
+    "verificationPhoneNumber": "Verify phone number",
+    "gender": "Gender",
+    "uploadPersonalPhoto": "Upload your profile picture",
+    "selectProfessionalCategory": "Select the main professional category",
+    "selectProfession": "Select the profession",
+    "selectCountryService": "Select the country where you can provide the service",
+    "selectCityService": "Select the city where you can provide the service",
+    "nationality": "Nationality",
+    "speakingLanguage": "Languages you speak",
+    "writeService": "Enter your specialty and its details if you can’t find it in the list of specialties...",
+    "email": "Email",
+    "invalidEmail": "Invalid email address",
+    "maleTitle": "Male",
+    "femaleTitle": "Female",
+    "takePhotoCamera": "Capture photo from camera",
+    "yourPhoto": "Your profile picture",
+    "addProfilePicture": "Please add a profile picture",
+    "chooseFromGallery": "Choose image from gallery",
+    "permessionCamera": "Please grant camera access permission in the app settings",
+    "errorInCamera": "Failed to open the camera. Please make sure the camera is working properly",
+    "errorTakePhoto": "Failed to capture the photo from the camera:",
+    "galleryPermession": "Please grant gallery access permission in the app settings",
+    "errorGallery": "Failed to select the photo from the gallery:"
   },
   "next": "Next",
   "save": "Save",
@@ -222,7 +273,14 @@ static const Map<String,dynamic> _en = {
     "searchService": "Search by service name ...",
     "serviceProviders": "Service providers",
     "serviceFavourite": "Favorites"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "Join us",
+    "personalInformation": "Personal information",
+    "professionalInformation": "Professional information"
+  },
+  "send": "Send",
+  "sendSuccessfully": "Sent successfully"
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -268,7 +326,29 @@ static const Map<String,dynamic> _ur = {
     "currentPassword": "موجودہ پاس ورڈ",
     "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
     "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے",
-    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں"
+    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں",
+    "gender": "جنس",
+    "uploadPersonalPhoto": "اپنی پروفائل تصویر اپ لوڈ کریں",
+    "selectProfessionalCategory": "مرکزی پیشہ ورانہ زمرہ منتخب کریں",
+    "selectProfession": "پیشہ منتخب کریں",
+    "selectCountryService": "وہ ملک منتخب کریں جہاں آپ سروس فراہم کر سکتے ہیں",
+    "selectCityService": "وہ شہر منتخب کریں جہاں آپ سروس فراہم کر سکتے ہیں",
+    "nationality": "قومیت",
+    "speakingLanguage": "وہ زبانیں جو آپ بولتے ہیں",
+    "writeService": "اگر آپ کو اپنی مہارت کی فہرست میں نہیں ملتی تو اپنی مہارت اور اس کی تفصیلات درج کریں...",
+    "email": "ای میل",
+    "invalidEmail": "ای میل ایڈریس غلط ہے",
+    "maleTitle": "مرد",
+    "femaleTitle": "عورت",
+    "takePhotoCamera": "کیمرے سے تصویر لیں",
+    "yourPhoto": "آپ کی پروفائل تصویر",
+    "addProfilePicture": "براہ کرم پروفائل تصویر شامل کریں",
+    "chooseFromGallery": "گیلری سے تصویر منتخب کریںگیلری سے تصویر منتخب کریں",
+    "permessionCamera": "براہ کرم ایپ کی ترتیبات میں کیمرے تک رسائی کی اجازت دیں",
+    "errorInCamera": "کیمرہ کھولنے میں ناکامی۔ براہ کرم یقینی بنائیں کہ کیمرہ درست طریقے سے کام کر رہا ہے",
+    "errorTakePhoto": "کیمرے سے تصویر لینے میں ناکامی:",
+    "galleryPermession": "براہ کرم ایپ کی ترتیبات میں گیلری تک رسائی کی اجازت دیں",
+    "errorGallery": "گیلری سے تصویر منتخب کرنے میں ناکامی:"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -327,7 +407,14 @@ static const Map<String,dynamic> _ur = {
     "searchService": "سروس کے نام سے تلاش کریں ...",
     "serviceProviders": "سروس فراہم کرنے والے",
     "serviceFavourite": "پسندیدہ"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "ہمارے ساتھ شامل ہوں",
+    "personalInformation": "ذاتی معلومات",
+    "professionalInformation": "پیشہ ورانہ معلومات"
+  },
+  "send": "بھیجیں",
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

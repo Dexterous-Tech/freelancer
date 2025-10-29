@@ -51,7 +51,7 @@ class CustomHeader extends StatelessWidget {
         children: [
           verticalSpace(44),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
             child: Row(
               children: [
                 if (isBack) ...[

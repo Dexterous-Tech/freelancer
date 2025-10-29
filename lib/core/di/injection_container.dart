@@ -11,6 +11,7 @@ import 'package:freelancer/features/client/change_password/data/repo/change_pass
 import 'package:freelancer/features/client/change_password/presentation/manager/client_change_password_cubit.dart';
 import 'package:freelancer/features/client/edit_profile/data/repo/update_profile_repo.dart';
 import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/client/join_us/presentation/manager/join_us_cubit.dart';
 import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -85,4 +86,7 @@ Future<void> initializeDependencies() async {
   sl.registerFactory<ClientEditProfileCubit>(
     () => ClientEditProfileCubit(sl()),
   );
+
+  // join us
+  sl.registerFactory<JoinUsCubit>(() => JoinUsCubit());
 }

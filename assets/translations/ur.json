@@ -42,7 +42,29 @@
     "currentPassword": "موجودہ پاس ورڈ",
     "passwordCriteriaValidation": "پاس ورڈ میں بڑے اور چھوٹے حروف، نمبرز اور خاص علامات شامل ہونی چاہئیں",
     "nameMaxValidation": "صارف کا نام 50 حروف سے زیادہ نہیں ہونا چاہیے",
-    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں"
+    "verificationPhoneNumber": "فون نمبر کی تصدیق کریں",
+    "gender": "جنس",
+    "uploadPersonalPhoto": "اپنی پروفائل تصویر اپ لوڈ کریں",
+    "selectProfessionalCategory": "مرکزی پیشہ ورانہ زمرہ منتخب کریں",
+    "selectProfession": "پیشہ منتخب کریں",
+    "selectCountryService": "وہ ملک منتخب کریں جہاں آپ سروس فراہم کر سکتے ہیں",
+    "selectCityService": "وہ شہر منتخب کریں جہاں آپ سروس فراہم کر سکتے ہیں",
+    "nationality": "قومیت",
+    "speakingLanguage": "وہ زبانیں جو آپ بولتے ہیں",
+    "writeService": "اگر آپ کو اپنی مہارت کی فہرست میں نہیں ملتی تو اپنی مہارت اور اس کی تفصیلات درج کریں...",
+    "email": "ای میل",
+    "invalidEmail": "ای میل ایڈریس غلط ہے",
+    "maleTitle": "مرد",
+    "femaleTitle": "عورت",
+    "takePhotoCamera": "کیمرے سے تصویر لیں",
+    "yourPhoto": "آپ کی پروفائل تصویر",
+    "addProfilePicture": "براہ کرم پروفائل تصویر شامل کریں",
+    "chooseFromGallery": "گیلری سے تصویر منتخب کریںگیلری سے تصویر منتخب کریں",
+    "permessionCamera": "براہ کرم ایپ کی ترتیبات میں کیمرے تک رسائی کی اجازت دیں",
+    "errorInCamera": "کیمرہ کھولنے میں ناکامی۔ براہ کرم یقینی بنائیں کہ کیمرہ درست طریقے سے کام کر رہا ہے",
+    "errorTakePhoto": "کیمرے سے تصویر لینے میں ناکامی:",
+    "galleryPermession": "براہ کرم ایپ کی ترتیبات میں گیلری تک رسائی کی اجازت دیں",
+    "errorGallery": "گیلری سے تصویر منتخب کرنے میں ناکامی:"
   },
   "next": "اگلا",
   "save": "محفوظ کریں",
@@ -101,5 +123,12 @@
     "searchService": "سروس کے نام سے تلاش کریں ...",
     "serviceProviders": "سروس فراہم کرنے والے",
     "serviceFavourite": "پسندیدہ"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "ہمارے ساتھ شامل ہوں",
+    "personalInformation": "ذاتی معلومات",
+    "professionalInformation": "پیشہ ورانہ معلومات"
+  },
+  "send": "بھیجیں",
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
 }
