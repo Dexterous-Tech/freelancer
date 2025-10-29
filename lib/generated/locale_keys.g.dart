@@ -95,5 +95,9 @@ abstract class  LocaleKeys {
   static const dioException_sendTimeout = 'dioException.sendTimeout';
   static const dioException_unknownError = 'dioException.unknownError';
   static const dioException = 'dioException';
+  static const services_searchService = 'services.searchService';
+  static const services_serviceProviders = 'services.serviceProviders';
+  static const services_serviceFavourite = 'services.serviceFavourite';
+  static const services = 'services';
 
 }

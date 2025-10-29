@@ -96,5 +96,10 @@
     "recivedTimeout": "Receive timeout in connection with the server",
     "sendTimeout": "Send timeout in connection with the server",
     "unknownError": "Something went wrong"
+  },
+  "services": {
+    "searchService": "Search by service name ...",
+    "serviceProviders": "Service providers",
+    "serviceFavourite": "Favorites"
   }
 }

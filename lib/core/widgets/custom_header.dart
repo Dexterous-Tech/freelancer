@@ -12,15 +12,20 @@ import '../theme/app_text_styles.dart';
 import '../theme/spacing.dart';
 
 class CustomHeader extends StatelessWidget {
-  const CustomHeader({super.key, required this.title, this.isBack = true});
+  const CustomHeader({
+    super.key,
+    required this.title,
+    this.isBack = true,
+    this.content,
+  });
 
   final String title;
   final bool isBack;
+  final Widget? content;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment(0, -3),
@@ -45,27 +50,33 @@ class CustomHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(44),
-          Row(
-            children: [
-              if (isBack) ...[
-                GestureDetector(
-                  onTap: () {
-                    context.pop();
-                  },
-                  child: Transform.rotate(
-                    angle: LocalizationService.isEnglish(context) ? math.pi : 0,
-                    child: SvgPicture.asset(
-                      AppImages.arrowRightBlackIcon,
-                      width: 24.w,
-                      height: 24.h,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Row(
+              children: [
+                if (isBack) ...[
+                  GestureDetector(
+                    onTap: () {
+                      context.pop();
+                    },
+                    child: Transform.rotate(
+                      angle: LocalizationService.isEnglish(context)
+                          ? math.pi
+                          : 0,
+                      child: SvgPicture.asset(
+                        AppImages.arrowRightBlackIcon,
+                        width: 24.w,
+                        height: 24.h,
+                      ),
                     ),
                   ),
-                ),
-                horizontalSpace(16),
+                  horizontalSpace(16),
+                ],
+                Text(title, style: AppTextStyles.font16JetMedium),
               ],
-              Text(title, style: AppTextStyles.font16JetMedium),
-            ],
+            ),
           ),
+          if (content != null) content!,
         ],
       ),
     );

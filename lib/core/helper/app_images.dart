@@ -81,6 +81,24 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}share_app.svg';
   static const String dropDownArrowIcon =
       '${AppConstants.svgIconsImagesPath}drop_down_arrow.svg';
+  static const String searchIcon =
+      '${AppConstants.svgIconsImagesPath}search.svg';
+  static const String categoryItemIcon =
+      '${AppConstants.svgIconsImagesPath}category_icon.svg';
+  static const String subCategoryItemIcon =
+      '${AppConstants.svgIconsImagesPath}sub_category_icon.svg';
+  static const String crownIcon =
+      '${AppConstants.svgIconsImagesPath}crown_icon.svg';
+  static const String favBorderIcon =
+      '${AppConstants.svgIconsImagesPath}fav_border.svg';
+  static const String favFilledIcon =
+      '${AppConstants.svgIconsImagesPath}fav_filled.svg';
+  static const String jobIcon =
+      '${AppConstants.svgIconsImagesPath}job_icon.svg';
+  static const String locationWhiteIcon =
+      '${AppConstants.svgIconsImagesPath}location_white_icon.svg';
+  static const String starBorderIcon =
+      '${AppConstants.svgIconsImagesPath}star_border.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
@@ -89,4 +107,6 @@ class AppImages {
   static const String fakeMapImage = '${AppConstants.imagesPath}map.jpg';
   static const String fakeMapHeaderImage =
       '${AppConstants.imagesPath}map_header.jpg';
+  static const String serviceProviderImage =
+      '${AppConstants.imagesPath}service_person.png';
 }

@@ -5,6 +5,7 @@ import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/shared/shared_preferences_helper.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:freelancer/features/client/profile/presentation/view/client_profile_screen.dart';
+import 'package:freelancer/features/client/services/presentation/view/services_screen.dart';
 import '../../../common/more/presentation/view/more_screen.dart';
 import 'widgets/main_home_bottom_navigation_bar.dart';
 
@@ -136,7 +137,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       case 1:
         return ClientProfileScreen(key: const ValueKey('profile'));
       case 2:
-        return Center(key: const ValueKey('services'), child: Text('Services'));
+        return ServicesScreen(key: const ValueKey('services'));
 
       case 3:
         return MoreScreen(key: const ValueKey('more'));

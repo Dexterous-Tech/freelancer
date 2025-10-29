@@ -9,6 +9,8 @@ import 'package:freelancer/features/auth/verification/presentation/view/verifica
 import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
 import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
+import 'package:freelancer/features/client/service_provider/presentation/view/service_provider_screen.dart';
+import 'package:freelancer/features/client/services_favourite/presentation/view/services_favourite_screen.dart';
 
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
@@ -26,9 +28,7 @@ class AppRouting {
           builder: (BuildContext context) => const SplashScreen(),
         );
       case AppRoutes.languageScreen:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => const OnBoardingScreen(),
-        );
+        return _animatedRoute(const OnBoardingScreen());
       case AppRoutes.loginScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => LoginScreen(),
@@ -52,13 +52,9 @@ class AppRouting {
         );
       case AppRoutes.mainHomeScreen:
         if (arguments is int) {
-          return MaterialPageRoute(
-            builder: (BuildContext context) => MainHomeScreen(index: arguments),
-          );
+          return _animatedRoute(MainHomeScreen(index: arguments));
         }
-        return MaterialPageRoute(
-          builder: (BuildContext context) => MainHomeScreen(),
-        );
+        return _animatedRoute(MainHomeScreen());
       case AppRoutes.verificationScreen:
         if (arguments is VerificationUpdateProfile) {
           return MaterialPageRoute(
@@ -93,11 +89,40 @@ class AppRouting {
         return MaterialPageRoute(
           builder: (BuildContext context) => const PrivacyPolicyScreen(),
         );
+      case AppRoutes.serviceProviderScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ServiceProviderScreen(),
+        );
+      case AppRoutes.serviceFavouriteScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ServicesFavouriteScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (BuildContext context) => const Scaffold(),
         );
     }
+  }
+
+  PageRouteBuilder _animatedRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionDuration: const Duration(milliseconds: 1000),
+      reverseTransitionDuration: const Duration(milliseconds: 700),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        // Soft cubic ease (starts slow, ends smooth)
+        final curved = CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOut,
+        );
+
+        // Fade from 0 → 1 softly
+        return FadeTransition(
+          opacity: Tween<double>(begin: 0.0, end: 1.0).animate(curved),
+          child: child,
+        );
+      },
+    );
   }
 
   /// Custom PageRouteBuilder using slide + fade transition

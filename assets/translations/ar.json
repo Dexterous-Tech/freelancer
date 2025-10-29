@@ -96,5 +96,10 @@
     "recivedTimeout": "انتهت مهلة الاستلام من الخادم",
     "sendTimeout": "انتهت مهلة الإرسال إلى الخادم",
     "unknownError": "حدث خطأ ما"
+  },
+  "services": {
+    "searchService": "ابحث باسم الخدمه ...",
+    "serviceProviders": "مقدمي الخدمة",
+    "serviceFavourite": "المفضلة"
   }
 }

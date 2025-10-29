@@ -123,4 +123,18 @@ class AppTextStyles {
     color: AppColors.white,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font12DarkBlueMedium = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.darkBlue,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
+
+  static TextStyle font14OuterSpaceSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.outerSpace,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }
