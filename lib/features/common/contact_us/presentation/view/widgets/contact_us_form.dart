@@ -10,6 +10,8 @@ import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.da
 import 'package:freelancer/features/common/contact_us/presentation/manager/contact_us_cubit.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
+import '../../../../../auth/widgets/custom_message_text_form_field.dart';
+
 class ContactUsForm extends StatelessWidget {
   const ContactUsForm({super.key});
 
@@ -63,33 +65,9 @@ class ContactUsForm extends StatelessWidget {
               labelText: LocaleKeys.authentication_phoneNumber.tr(),
             ),
             verticalSpace(8),
-            CustomTextFormField(
-              hintText: LocaleKeys.authentication_enterYourMessage.tr(),
+            CustomMessageTextFormField(
+              hint: LocaleKeys.authentication_enterYourMessage.tr(),
               controller: cubit.messageController,
-              maxLines: 3,
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(
-                  RegExp(
-                    r"[a-zA-Z0-9\u0600-\u06FF!@#$%^&*(),.?:{}|<>_\-+=\[\]\\;'/\s]",
-                  ),
-                ),
-              ],
-              validator: (value) {
-                final text = value?.trim() ?? '';
-
-                if (text.isEmpty) {
-                  return LocaleKeys.authentication_fieldRequired.tr();
-                }
-                if (text.length < 4) {
-                  return LocaleKeys.authentication_nameValidation
-                      .tr(); // غيّرها برسالة مناسبة مثل "الحد الأدنى 4 أحرف"
-                }
-                if (text.length > 500) {
-                  return LocaleKeys.authentication_nameMaxValidation
-                      .tr(); // غيّرها برسالة مثل "الحد الأقصى 500 حرف"
-                }
-                return null;
-              },
             ),
           ],
         ),

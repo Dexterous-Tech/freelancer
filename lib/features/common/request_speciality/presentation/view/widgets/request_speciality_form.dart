@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/forms/custom_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_email_text_form_field.dart';
+import 'package:freelancer/features/auth/widgets/custom_message_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_name_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';
 import 'package:freelancer/features/common/request_speciality/presentation/manager/request_speciality_cubit.dart';
@@ -63,31 +64,9 @@ class RequestSpecialityForm extends StatelessWidget {
               labelText: LocaleKeys.authentication_phoneNumber.tr(),
             ),
             verticalSpace(8),
-            CustomTextFormField(
-              hintText: LocaleKeys.authentication_enterYourMessage.tr(),
+            CustomMessageTextFormField(
+              hint: LocaleKeys.authentication_enterYourMessage.tr(),
               controller: cubit.messageController,
-              maxLines: 3,
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(
-                  RegExp(
-                    r"[a-zA-Z0-9\u0600-\u06FF!@#$%^&*(),.?:{}|<>_\-+=\[\]\\;'/\s]",
-                  ),
-                ),
-              ],
-              validator: (value) {
-                final text = value?.trim() ?? '';
-
-                if (text.isEmpty) {
-                  return LocaleKeys.authentication_fieldRequired.tr();
-                }
-                if (text.length < 4) {
-                  return LocaleKeys.authentication_nameValidation.tr();
-                }
-                if (text.length > 500) {
-                  return LocaleKeys.authentication_nameMaxValidation.tr();
-                }
-                return null;
-              },
             ),
           ],
         ),
