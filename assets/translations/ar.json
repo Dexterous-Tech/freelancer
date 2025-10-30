@@ -42,7 +42,31 @@
     "currentPassword": "كلمة المرور الحالية",
     "passwordCriteriaValidation": "كلمة المرور يجب أن تحتوي على حروف كبيرة وصغيرة وأرقام وعلامات خاصة",
     "nameMaxValidation": "يجب ألا يزيد اسم المستخدم عن 50 حرفًا",
-    "verificationPhoneNumber": "توثيق رقم الهاتف"
+    "verificationPhoneNumber": "توثيق رقم الهاتف",
+    "gender": "الجنس",
+    "uploadPersonalPhoto": "ارفع صورتك الشخصية",
+    "selectProfessionalCategory": "اختر القسم المهني الرئيسي",
+    "selectProfession": "اختر المهنة",
+    "selectCountryService": "اختر الدولة التي يمكنك تقديم الخدمة بها",
+    "selectCityService": "اختر المدينة التي يمكنك تقديم الخدمة بها",
+    "nationality": "الجنسية",
+    "speakingLanguage": "اللغات التي تتحدث بها",
+    "writeService": "ادخل التخصص الخاص بك وتفاصيله إن لم تجدها في قائمة التخصصات...",
+    "email": "البريد الإلكتروني",
+    "invalidEmail": "البريد الإلكتروني غير صالح",
+    "maleTitle": "ذكر",
+    "femaleTitle": "انثى",
+    "takePhotoCamera": "التقاط صورة من الكاميرا",
+    "yourPhoto": "صورتك الشخصية",
+    "addProfilePicture": "يرجى إضافة صورة شخصية",
+    "chooseFromGallery": "اختيار صورة من المعرض",
+    "permessionCamera": "يرجى منح إذن الوصول إلى الكاميرا في إعدادات التطبيق",
+    "errorInCamera": "فشل في فتح الكاميرا. تأكد من أن الكاميرا تعمل بشكل صحيح",
+    "errorTakePhoto": "فشل في التقاط الصورة من الكاميرا:",
+    "galleryPermession": "يرجى منح إذن الوصول إلى المعرض في إعدادات التطبيق",
+    "errorGallery": "فشل في اختيار الصورة من المعرض:",
+    "name": "الاسم",
+    "enterYourMessage": "ادخل رسالتك..."
   },
   "next": "التالي",
   "save": "حفظ",
@@ -101,5 +125,12 @@
     "searchService": "ابحث باسم الخدمه ...",
     "serviceProviders": "مقدمي الخدمة",
     "serviceFavourite": "المفضلة"
-  }
+  },
+  "joinUs": {
+    "joinUsTitle": "انضم إلينا",
+    "personalInformation": "البيانات الشخصية",
+    "professionalInformation": "البيانات المهنية"
+  },
+  "send": "إرسال",
+  "sendSuccessfully": "تم الإرسال بنجاح"
 }

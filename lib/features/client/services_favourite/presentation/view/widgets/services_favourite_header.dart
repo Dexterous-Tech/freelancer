@@ -15,11 +15,7 @@ class ServicesFavouriteHeader extends StatelessWidget {
       title: LocaleKeys.services_serviceFavourite.tr(),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          verticalSpace(24),
-          ServicesFavouriteCategoriesList(),
-          verticalSpace(24),
-        ],
+        children: [ServicesFavouriteCategoriesList(), verticalSpace(24)],
       ),
     );
   }

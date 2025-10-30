@@ -153,17 +153,18 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             OutlineInputBorder(
               borderRadius: borderRadius,
               borderSide: BorderSide(
-                // 👇 dynamic border color based on text content
-                color: _isNotEmpty
-                    ? AppColors.darkBlue
-                    : AppColors.philippineSilver,
+                color:
+                    widget.borderColor ??
+                    (_isNotEmpty
+                        ? AppColors.darkBlue
+                        : AppColors.philippineSilver),
               ),
             ),
         errorBorder:
             widget.errorBorder ??
             OutlineInputBorder(
               borderRadius: borderRadius,
-              borderSide: const BorderSide(color: Colors.red),
+              borderSide: BorderSide(color: widget.borderColor ?? Colors.red),
             ),
         focusedErrorBorder:
             widget.focusedErrorBorder ??

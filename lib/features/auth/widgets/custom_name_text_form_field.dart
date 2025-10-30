@@ -9,12 +9,18 @@ class CustomNameTextFormField extends StatelessWidget {
     required this.nameController,
     this.labelText,
     required this.validator,
+    this.borderColor,
+    this.errorStyle,
+    this.inputFormatters,
   });
 
   final String hint;
   final TextEditingController nameController;
   final String? labelText;
   final Function(String?) validator;
+  final Color? borderColor;
+  final TextStyle? errorStyle;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +29,18 @@ class CustomNameTextFormField extends StatelessWidget {
       keyboardType: TextInputType.name,
       hintText: hint,
       labelText: labelText,
-      errorStyle: TextStyle(height: 0),
+      errorStyle: errorStyle ?? TextStyle(height: 0),
       errorText: null,
-      inputFormatters: [
-        // ✅ Allow only English letters and spaces
-        FilteringTextInputFormatter.allow(
-          RegExp(r'[a-zA-Zء-ي\s]'),
-        ), // ✅ Limit length
-        LengthLimitingTextInputFormatter(50),
-      ],
+      borderColor: borderColor,
+      inputFormatters:
+          inputFormatters ??
+          [
+            // ✅ Allow only English letters and spaces
+            FilteringTextInputFormatter.allow(
+              RegExp(r'[a-zA-Zء-ي\s]'),
+            ), // ✅ Limit length
+            LengthLimitingTextInputFormatter(50),
+          ],
       validator: validator,
     );
   }

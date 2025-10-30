@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 
+import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/spacing.dart';
 import '../../../generated/locale_keys.g.dart';
 import 'custom_name_text_form_field.dart';
@@ -56,6 +57,7 @@ class _CustomFirstLastNameTextFormFieldState
                   setState(() => errorFirstMessage = result);
                   return null;
                 },
+                borderColor: errorFirstMessage != null ? AppColors.red : null,
               ),
             ),
             horizontalSpace(8),
@@ -68,6 +70,7 @@ class _CustomFirstLastNameTextFormFieldState
                   setState(() => errorSecondMessage = result);
                   return null;
                 },
+                borderColor: errorSecondMessage != null ? AppColors.red : null,
               ),
             ),
           ],

@@ -21,6 +21,7 @@ class CustomBottomButton extends StatelessWidget {
     this.buttonColor,
     this.buttonTextStyle,
     this.isLoading = false,
+    this.buttonWidget,
   });
 
   final String? textButton;
@@ -37,6 +38,7 @@ class CustomBottomButton extends StatelessWidget {
   final Color? buttonColor;
   final TextStyle? buttonTextStyle;
   final bool isLoading;
+  final Widget? buttonWidget;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -95,7 +97,7 @@ class CustomBottomButton extends StatelessWidget {
                           color: AppColors.yellow,
                         ),
                       )
-                    : null,
+                    : buttonWidget,
               ),
             ),
     );

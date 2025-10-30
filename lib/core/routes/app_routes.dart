@@ -14,4 +14,7 @@ class AppRoutes {
   static const String privacyPolicyScreen = '/privacyPolicyScreen';
   static const String serviceProviderScreen = '/serviceProviderScreen';
   static const String serviceFavouriteScreen = '/serviceFavouriteScreen';
+  static const String joinUsScreen = '/joinUsScreen';
+  static const String contactUsScreen = '/contactUsScreen';
+  static const String requestSpecialityScreen = '/requestSpecialityScreen';
 }
