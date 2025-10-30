@@ -67,6 +67,8 @@ abstract class  LocaleKeys {
   static const authentication_errorTakePhoto = 'authentication.errorTakePhoto';
   static const authentication_galleryPermession = 'authentication.galleryPermession';
   static const authentication_errorGallery = 'authentication.errorGallery';
+  static const authentication_name = 'authentication.name';
+  static const authentication_enterYourMessage = 'authentication.enterYourMessage';
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';

@@ -80,7 +80,9 @@ class CodegenLoader extends AssetLoader{
     "errorInCamera": "فشل في فتح الكاميرا. تأكد من أن الكاميرا تعمل بشكل صحيح",
     "errorTakePhoto": "فشل في التقاط الصورة من الكاميرا:",
     "galleryPermession": "يرجى منح إذن الوصول إلى المعرض في إعدادات التطبيق",
-    "errorGallery": "فشل في اختيار الصورة من المعرض:"
+    "errorGallery": "فشل في اختيار الصورة من المعرض:",
+    "name": "الاسم",
+    "enterYourMessage": "ادخل رسالتك..."
   },
   "next": "التالي",
   "save": "حفظ",
@@ -214,7 +216,9 @@ static const Map<String,dynamic> _en = {
     "errorInCamera": "Failed to open the camera. Please make sure the camera is working properly",
     "errorTakePhoto": "Failed to capture the photo from the camera:",
     "galleryPermession": "Please grant gallery access permission in the app settings",
-    "errorGallery": "Failed to select the photo from the gallery:"
+    "errorGallery": "Failed to select the photo from the gallery:",
+    "name": "Name",
+    "enterYourMessage": "Enter your message..."
   },
   "next": "Next",
   "save": "Save",
@@ -348,7 +352,9 @@ static const Map<String,dynamic> _ur = {
     "errorInCamera": "کیمرہ کھولنے میں ناکامی۔ براہ کرم یقینی بنائیں کہ کیمرہ درست طریقے سے کام کر رہا ہے",
     "errorTakePhoto": "کیمرے سے تصویر لینے میں ناکامی:",
     "galleryPermession": "براہ کرم ایپ کی ترتیبات میں گیلری تک رسائی کی اجازت دیں",
-    "errorGallery": "گیلری سے تصویر منتخب کرنے میں ناکامی:"
+    "errorGallery": "گیلری سے تصویر منتخب کرنے میں ناکامی:",
+    "name": "نام",
+    "enterYourMessage": "اپنا پیغام درج کریں..."
   },
   "next": "اگلا",
   "save": "محفوظ کریں",

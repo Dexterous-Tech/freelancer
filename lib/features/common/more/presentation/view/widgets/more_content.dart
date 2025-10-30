@@ -41,9 +41,14 @@ class MoreContent extends StatelessWidget {
               leading: language(context),
             ),
           ),
-          ProfileContentItem(
-            icon: AppImages.contactUsIcon,
-            title: LocaleKeys.more_contactus.tr(),
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(AppRoutes.contactUsScreen);
+            },
+            child: ProfileContentItem(
+              icon: AppImages.contactUsIcon,
+              title: LocaleKeys.more_contactus.tr(),
+            ),
           ),
           GestureDetector(
             onTap: () {
@@ -54,9 +59,14 @@ class MoreContent extends StatelessWidget {
               title: LocaleKeys.more_aboutUS.tr(),
             ),
           ),
-          ProfileContentItem(
-            icon: AppImages.requestSpecialityIcon,
-            title: LocaleKeys.more_requestSpeciality.tr(),
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(AppRoutes.requestSpecialityScreen);
+            },
+            child: ProfileContentItem(
+              icon: AppImages.requestSpecialityIcon,
+              title: LocaleKeys.more_requestSpeciality.tr(),
+            ),
           ),
           GestureDetector(
             onTap: () {

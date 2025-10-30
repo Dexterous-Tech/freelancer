@@ -64,7 +64,9 @@
     "errorInCamera": "Failed to open the camera. Please make sure the camera is working properly",
     "errorTakePhoto": "Failed to capture the photo from the camera:",
     "galleryPermession": "Please grant gallery access permission in the app settings",
-    "errorGallery": "Failed to select the photo from the gallery:"
+    "errorGallery": "Failed to select the photo from the gallery:",
+    "name": "Name",
+    "enterYourMessage": "Enter your message..."
   },
   "next": "Next",
   "save": "Save",

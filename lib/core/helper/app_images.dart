@@ -103,6 +103,14 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}arrow_down_gray.svg';
   static const String uploadImageIcon =
       '${AppConstants.svgIconsImagesPath}upload_photo.svg';
+  static const String telegramIcon =
+      '${AppConstants.svgIconsImagesPath}telegram_icon.svg';
+  static const String twitterIcon =
+      '${AppConstants.svgIconsImagesPath}twitter_icon.svg';
+  static const String whatsappIcon =
+      '${AppConstants.svgIconsImagesPath}whatsapp_icon.svg';
+  static const String linkedInIcon =
+      '${AppConstants.svgIconsImagesPath}linkedin_icon.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

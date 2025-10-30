@@ -14,6 +14,7 @@ import 'package:freelancer/features/client/edit_profile/presentation/manager/cli
 import 'package:freelancer/features/client/join_us/presentation/manager/join_us_cubit.dart';
 import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
+import 'package:freelancer/features/common/contact_us/presentation/manager/contact_us_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/common/about_us/data/about_us_repo.dart';
@@ -24,6 +25,7 @@ import '../../features/auth/widgets/resend_code/data/repo/resend_code_repo.dart'
 import '../../features/auth/widgets/resend_code/manager/resend_code_cubit.dart';
 import '../../features/common/privacy_policy/data/privacy_policy_repo.dart';
 import '../../features/common/privacy_policy/presentation/manager/privacy_policy_cubit.dart';
+import '../../features/common/request_speciality/presentation/manager/request_speciality_cubit.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
 
@@ -89,4 +91,10 @@ Future<void> initializeDependencies() async {
 
   // join us
   sl.registerFactory<JoinUsCubit>(() => JoinUsCubit());
+
+  // contact us
+  sl.registerFactory<ContactUsCubit>(() => ContactUsCubit());
+
+  // request speciality
+  sl.registerFactory<RequestSpecialityCubit>(() => RequestSpecialityCubit());
 }

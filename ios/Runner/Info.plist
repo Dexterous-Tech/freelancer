@@ -47,6 +47,13 @@
     	<string>ar</string>
     	<string>ur</string>
     </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>https</string>
+        <string>http</string>
+        <string>whatsapp</string>
+        <string>tg</string>
+    </array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
