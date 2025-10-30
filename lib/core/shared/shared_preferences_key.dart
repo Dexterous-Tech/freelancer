@@ -4,4 +4,5 @@ class SharedPreferencesKey {
   static const String deviceToken = 'DEVICE_TOKEN_KEY';
   static const String isLogging = 'IS_LOGGING_KEY';
   static const String routeAfterLogin = 'ROUTE_AFTER_LOGIN_KEY';
+  static const String serviceProviderId = 'SERVICE_PROVIDER_ID_KEY';
 }

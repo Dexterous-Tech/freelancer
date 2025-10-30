@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/custom_bottom_button.dart';
 import 'package:freelancer/core/widgets/custom_header.dart';
-import 'package:freelancer/features/common/contact_us/presentation/view/widgets/contact_us_form.dart';
-import 'package:freelancer/features/common/contact_us/presentation/view/widgets/contact_us_social_media.dart';
 import 'package:freelancer/features/common/request_speciality/presentation/view/widgets/request_speciality_form.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 

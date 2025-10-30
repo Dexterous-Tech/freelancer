@@ -111,6 +111,27 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}whatsapp_icon.svg';
   static const String linkedInIcon =
       '${AppConstants.svgIconsImagesPath}linkedin_icon.svg';
+  static const String starBoldIcon =
+      '${AppConstants.svgIconsImagesPath}star_bold.svg';
+  static const String eyeGrayIcon =
+      '${AppConstants.svgIconsImagesPath}eye_gray.svg';
+  static const String mainLocationIcon =
+      '${AppConstants.svgIconsImagesPath}main_location.svg';
+  static const String currentLocationIcon =
+      '${AppConstants.svgIconsImagesPath}currentLocation.svg';
+  static const String phoneIcon = '${AppConstants.svgIconsImagesPath}phone.svg';
+  static const String facebookUnIcon =
+      '${AppConstants.svgIconsImagesPath}facebook_icon_un.svg';
+  static const String instagramUnIcon =
+      '${AppConstants.svgIconsImagesPath}instagram_icon_un.svg';
+  static const String snapchatUnIcon =
+      '${AppConstants.svgIconsImagesPath}snapchat_icon_un.svg';
+  static const String tiktokUnIcon =
+      '${AppConstants.svgIconsImagesPath}tiktok_icon_un.svg';
+  static const String twitterUnIcon =
+      '${AppConstants.svgIconsImagesPath}twitter_icon_un.svg';
+  static const String whatsappUnIcon =
+      '${AppConstants.svgIconsImagesPath}whatsapp_icon_un.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
@@ -121,4 +142,6 @@ class AppImages {
       '${AppConstants.imagesPath}map_header.jpg';
   static const String serviceProviderImage =
       '${AppConstants.imagesPath}service_person.png';
+  static const String mapServiceImage =
+      '${AppConstants.imagesPath}map_service.png';
 }

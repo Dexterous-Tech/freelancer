@@ -60,7 +60,19 @@ class LoginBody extends StatelessWidget {
             SharedPreferencesKey.routeAfterLogin,
           );
           if (route == AppRoutes.mainHomeScreen && context.mounted) {
-            await context.pushNamedAndRemoveUntil(route ?? '', arguments: 1);
+            await context.pushReplacementNamed(route ?? '', arguments: 1);
+            await SharedPreferencesHelper.remove(
+              SharedPreferencesKey.routeAfterLogin,
+            );
+          }
+          if (route == AppRoutes.serviceProviderDetailsScreen) {
+            final serviceId = await SharedPreferencesHelper.getSecuredString(
+              SharedPreferencesKey.serviceProviderId,
+            );
+            final id = int.parse(serviceId);
+            if (context.mounted) {
+              await context.pushReplacementNamed(route ?? '', arguments: id);
+            }
             await SharedPreferencesHelper.remove(
               SharedPreferencesKey.routeAfterLogin,
             );

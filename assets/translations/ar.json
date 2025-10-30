@@ -124,7 +124,14 @@
   "services": {
     "searchService": "ابحث باسم الخدمه ...",
     "serviceProviders": "مقدمي الخدمة",
-    "serviceFavourite": "المفضلة"
+    "serviceFavourite": "المفضلة",
+    "serviceProviderDetails": "مقدم الخدمة",
+    "mainAddress": "العنوان الأساسي",
+    "currentLocation": "الموقع الحالي",
+    "languages": "اللغات",
+    "aboutTechnical": "نبذة عن الفني",
+    "socialMedia": "وسائل التواصل الاجتماعي",
+    "contactTechnical": "التواصل مع الفني"
   },
   "joinUs": {
     "joinUsTitle": "انضم إلينا",
