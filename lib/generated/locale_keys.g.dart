@@ -45,6 +45,30 @@ abstract class  LocaleKeys {
   static const authentication_passwordCriteriaValidation = 'authentication.passwordCriteriaValidation';
   static const authentication_nameMaxValidation = 'authentication.nameMaxValidation';
   static const authentication_verificationPhoneNumber = 'authentication.verificationPhoneNumber';
+  static const authentication_gender = 'authentication.gender';
+  static const authentication_uploadPersonalPhoto = 'authentication.uploadPersonalPhoto';
+  static const authentication_selectProfessionalCategory = 'authentication.selectProfessionalCategory';
+  static const authentication_selectProfession = 'authentication.selectProfession';
+  static const authentication_selectCountryService = 'authentication.selectCountryService';
+  static const authentication_selectCityService = 'authentication.selectCityService';
+  static const authentication_nationality = 'authentication.nationality';
+  static const authentication_speakingLanguage = 'authentication.speakingLanguage';
+  static const authentication_writeService = 'authentication.writeService';
+  static const authentication_email = 'authentication.email';
+  static const authentication_invalidEmail = 'authentication.invalidEmail';
+  static const authentication_maleTitle = 'authentication.maleTitle';
+  static const authentication_femaleTitle = 'authentication.femaleTitle';
+  static const authentication_takePhotoCamera = 'authentication.takePhotoCamera';
+  static const authentication_yourPhoto = 'authentication.yourPhoto';
+  static const authentication_addProfilePicture = 'authentication.addProfilePicture';
+  static const authentication_chooseFromGallery = 'authentication.chooseFromGallery';
+  static const authentication_permessionCamera = 'authentication.permessionCamera';
+  static const authentication_errorInCamera = 'authentication.errorInCamera';
+  static const authentication_errorTakePhoto = 'authentication.errorTakePhoto';
+  static const authentication_galleryPermession = 'authentication.galleryPermession';
+  static const authentication_errorGallery = 'authentication.errorGallery';
+  static const authentication_name = 'authentication.name';
+  static const authentication_enterYourMessage = 'authentication.enterYourMessage';
   static const authentication = 'authentication';
   static const next = 'next';
   static const save = 'save';
@@ -99,5 +123,11 @@ abstract class  LocaleKeys {
   static const services_serviceProviders = 'services.serviceProviders';
   static const services_serviceFavourite = 'services.serviceFavourite';
   static const services = 'services';
+  static const joinUs_joinUsTitle = 'joinUs.joinUsTitle';
+  static const joinUs_personalInformation = 'joinUs.personalInformation';
+  static const joinUs_professionalInformation = 'joinUs.professionalInformation';
+  static const joinUs = 'joinUs';
+  static const send = 'send';
+  static const sendSuccessfully = 'sendSuccessfully';
 
 }

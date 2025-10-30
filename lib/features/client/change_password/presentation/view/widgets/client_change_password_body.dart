@@ -5,7 +5,7 @@ import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import 'package:freelancer/core/widgets/custom_header.dart';
-import 'success_bottom_sheet/success_bottom_sheet.dart';
+import '../../../../../../core/widgets/bottom_sheet/success_bottom_sheet.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 import '../../../../../../core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../manager/client_change_password_cubit.dart';

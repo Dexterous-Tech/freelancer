@@ -68,10 +68,15 @@ class ProfileContent extends StatelessWidget {
               icon: AppImages.heartIcon,
               title: LocaleKeys.profile_fav.tr(),
             ),
-            ProfileContentItem(
-              icon: AppImages.joinServiceIcon,
-              title: LocaleKeys.profile_joinService.tr(),
-              isDivider: false,
+            GestureDetector(
+              onTap: () {
+                context.pushNamed(AppRoutes.joinUsScreen);
+              },
+              child: ProfileContentItem(
+                icon: AppImages.joinServiceIcon,
+                title: LocaleKeys.profile_joinService.tr(),
+                isDivider: false,
+              ),
             ),
             verticalSpace(52),
             Text(

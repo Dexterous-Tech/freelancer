@@ -47,9 +47,33 @@
     	<string>ar</string>
     	<string>ur</string>
     </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>https</string>
+        <string>http</string>
+        <string>whatsapp</string>
+        <string>tg</string>
+    </array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Camera and Photo Library Permissions -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to camera to take photos for your profile and services.</string>
+	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to select images for your profile and services.</string>
+	
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to microphone to record videos with sound.</string>
+	
+	<!-- File Access Permissions -->
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>This app needs access to documents to upload files.</string>
+	
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>This app needs access to downloads to upload files.</string>
 </dict>
 </plist>

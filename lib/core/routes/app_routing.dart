@@ -8,9 +8,12 @@ import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.
 import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
 import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
 import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/client/join_us/presentation/view/join_us_screen.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
 import 'package:freelancer/features/client/service_provider/presentation/view/service_provider_screen.dart';
 import 'package:freelancer/features/client/services_favourite/presentation/view/services_favourite_screen.dart';
+import 'package:freelancer/features/common/contact_us/presentation/view/contact_us_screen.dart';
+import 'package:freelancer/features/common/request_speciality/presentation/view/request_speciality_screen.dart';
 
 import '../../features/client/edit_profile/presentation/view/client_edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
@@ -96,6 +99,18 @@ class AppRouting {
       case AppRoutes.serviceFavouriteScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const ServicesFavouriteScreen(),
+        );
+      case AppRoutes.joinUsScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const JoinUsScreen(),
+        );
+      case AppRoutes.contactUsScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ContactUsScreen(),
+        );
+      case AppRoutes.requestSpecialityScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const RequestSpecialityScreen(),
         );
       default:
         return MaterialPageRoute(
