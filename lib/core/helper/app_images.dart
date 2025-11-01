@@ -144,6 +144,7 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}folders.svg';
   static const String addIcon =
       '${AppConstants.svgIconsImagesPath}add_icon.svg';
+  static const String closeIcon = '${AppConstants.svgIconsImagesPath}close.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
@@ -159,4 +160,6 @@ class AppImages {
   static const String wavingHandImage =
       '${AppConstants.imagesPath}waving_hand.png';
   static const String fakeMap2Image = '${AppConstants.imagesPath}fake_map.png';
+  static const String fakePhotoImage =
+      '${AppConstants.imagesPath}fake_photo.png';
 }

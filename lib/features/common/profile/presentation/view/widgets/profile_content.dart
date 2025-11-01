@@ -82,7 +82,7 @@ class ProfileContent extends StatelessWidget {
 
                 final isTechnical = snapshot.data ?? false;
 
-                if (!isTechnical) {
+                if (isTechnical) {
                   // technical view
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,10 +108,15 @@ class ProfileContent extends StatelessWidget {
                           },
                         ),
                       ),
-                      ProfileContentItem(
-                        icon: AppImages.foldersIcon,
-                        title: LocaleKeys.profile_folders.tr(),
-                        isDivider: false,
+                      GestureDetector(
+                        onTap: () {
+                          context.pushNamed(AppRoutes.foldersScreen);
+                        },
+                        child: ProfileContentItem(
+                          icon: AppImages.foldersIcon,
+                          title: LocaleKeys.profile_folders.tr(),
+                          isDivider: false,
+                        ),
                       ),
                     ],
                   );

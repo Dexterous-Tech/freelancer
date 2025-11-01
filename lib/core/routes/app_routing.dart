@@ -16,6 +16,7 @@ import 'package:freelancer/features/client/services_favourite/presentation/view/
 import 'package:freelancer/features/common/contact_us/presentation/view/contact_us_screen.dart';
 import 'package:freelancer/features/common/request_speciality/presentation/view/request_speciality_screen.dart';
 import 'package:freelancer/features/technical/address_details/presentation/view/address_details_screen.dart';
+import 'package:freelancer/features/technical/folders/presentation/view/folders_screen.dart';
 
 import '../../features/common/edit_profile/presentation/view/edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
@@ -122,6 +123,10 @@ class AppRouting {
       case AppRoutes.addressDetailsScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const AddressDetailsScreen(),
+        );
+      case AppRoutes.foldersScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const FoldersScreen(),
         );
       default:
         return MaterialPageRoute(

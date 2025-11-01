@@ -112,7 +112,9 @@
     "city": "City",
     "street": "Street / District",
     "placeDetails": "Place details...",
-    "placeInMap": "Your location on the map"
+    "placeInMap": "Your location on the map",
+    "photos": "Photos",
+    "aboutYou": "About you"
   },
   "back": "Back",
   "more": {

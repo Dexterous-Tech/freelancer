@@ -128,7 +128,9 @@ class CodegenLoader extends AssetLoader{
     "city": "المدينة",
     "street": "الشارع / الحي",
     "placeDetails": "تفاصيل المكان...",
-    "placeInMap": "مركزك على الخريطة"
+    "placeInMap": "مركزك على الخريطة",
+    "photos": "الصور",
+    "aboutYou": "نبذة عنك"
   },
   "back": "العودة",
   "more": {
@@ -294,7 +296,9 @@ static const Map<String,dynamic> _en = {
     "city": "City",
     "street": "Street / District",
     "placeDetails": "Place details...",
-    "placeInMap": "Your location on the map"
+    "placeInMap": "Your location on the map",
+    "photos": "Photos",
+    "aboutYou": "About you"
   },
   "back": "Back",
   "more": {
@@ -460,7 +464,9 @@ static const Map<String,dynamic> _ur = {
     "city": "شہر",
     "street": "گلی / علاقہ",
     "placeDetails": "جگہ کی تفصیلات...",
-    "placeInMap": "نقشے پر آپ کا مقام"
+    "placeInMap": "نقشے پر آپ کا مقام",
+    "photos": "تصاویر",
+    "aboutYou": "آپ کے بارے میں"
   },
   "back": "واپس جائیں",
   "more": {

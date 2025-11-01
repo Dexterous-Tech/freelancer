@@ -10,14 +10,17 @@ class CustomMessageTextFormField extends StatelessWidget {
     super.key,
     required this.hint,
     required this.controller,
+    this.labelText,
   });
 
   final String hint;
+  final String? labelText;
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
       hintText: hint,
+      labelText: labelText,
       controller: controller,
       maxLines: 3,
       inputFormatters: [
