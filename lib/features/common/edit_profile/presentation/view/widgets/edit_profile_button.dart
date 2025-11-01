@@ -4,30 +4,30 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/widgets/custom_bottom_button.dart';
 import '../../../../../../generated/locale_keys.g.dart';
-import '../../manager/client_edit_profile_cubit.dart';
+import '../../manager/edit_profile_cubit.dart';
 
-class ClientEditProfileButton extends StatelessWidget {
-  const ClientEditProfileButton({super.key});
+class EditProfileButton extends StatelessWidget {
+  const EditProfileButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ClientEditProfileCubit, ClientEditProfileState>(
+    return BlocBuilder<EditProfileCubit, EditProfileState>(
       buildWhen: (context, state) =>
-          state is ClientEditProfileLoading ||
-          state is ClientEditProfileSuccess ||
-          state is ClientEditProfileFailure,
+          state is EditProfileLoading ||
+          state is EditProfileSuccess ||
+          state is EditProfileFailure,
       builder: (context, state) {
         return SizedBox(
           width: double.infinity,
           child: CustomBottomButton(
             textButton: LocaleKeys.save.tr(),
             onPressed: () {
-              final cubit = ClientEditProfileCubit.get(context);
+              final cubit = EditProfileCubit.get(context);
               if (cubit.formKey.currentState!.validate()) {
                 cubit.updateProfile();
               }
             },
-            isLoading: state is ClientEditProfileLoading,
+            isLoading: state is EditProfileLoading,
           ),
         );
       },

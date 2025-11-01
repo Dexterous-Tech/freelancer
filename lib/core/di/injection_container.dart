@@ -10,7 +10,7 @@ import 'package:freelancer/features/auth/verification/presentation/manager/verif
 import 'package:freelancer/features/common/change_password/data/repo/change_password_repo.dart';
 import 'package:freelancer/features/common/change_password/presentation/manager/change_password_cubit.dart';
 import 'package:freelancer/features/common/edit_profile/data/repo/update_profile_repo.dart';
-import 'package:freelancer/features/common/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'package:freelancer/features/client/join_us/presentation/manager/join_us_cubit.dart';
 import 'package:freelancer/features/common/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/common/profile/presentation/manager/profile_cubit.dart';
@@ -83,9 +83,7 @@ Future<void> initializeDependencies() async {
 
   // update profile
   sl.registerLazySingleton<UpdateProfileRepo>(() => UpdateProfileRepo(sl()));
-  sl.registerFactory<ClientEditProfileCubit>(
-    () => ClientEditProfileCubit(sl()),
-  );
+  sl.registerFactory<EditProfileCubit>(() => EditProfileCubit(sl()));
 
   // join us
   sl.registerFactory<JoinUsCubit>(() => JoinUsCubit());

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/widgets/dialog/show_custom_snack_bar.dart';
-import 'package:freelancer/features/common/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import '../../../../../../../core/di/injection_container.dart';
 import '../../../../../../../core/routes/app_routes.dart';
 import '../../../../../../../core/theme/app_colors.dart';
@@ -31,8 +31,8 @@ class _PasswordDeleteAccountBottomSheetState
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: sl<ClientEditProfileCubit>(),
-      child: BlocConsumer<ClientEditProfileCubit, ClientEditProfileState>(
+      value: sl<EditProfileCubit>(),
+      child: BlocConsumer<EditProfileCubit, EditProfileState>(
         listenWhen: (context, state) =>
             state is ProfileDeleteAccountLoading ||
             state is ProfileDeleteAccountFailure ||
@@ -58,7 +58,7 @@ class _PasswordDeleteAccountBottomSheetState
           }
         },
         builder: (context, state) {
-          final cubit = ClientEditProfileCubit.get(context);
+          final cubit = EditProfileCubit.get(context);
           return SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Form(

@@ -16,7 +16,7 @@ import 'package:freelancer/features/client/services_favourite/presentation/view/
 import 'package:freelancer/features/common/contact_us/presentation/view/contact_us_screen.dart';
 import 'package:freelancer/features/common/request_speciality/presentation/view/request_speciality_screen.dart';
 
-import '../../features/common/edit_profile/presentation/view/client_edit_profile_screen.dart';
+import '../../features/common/edit_profile/presentation/view/edit_profile_screen.dart';
 import '../../features/common/about_us/presentation/view/about_us_screen.dart';
 import '../../features/common/on_boarding/presentation/view/on_boarding_screen.dart';
 import '../../features/common/privacy_policy/presentation/view/privacy_policy_screen.dart';
@@ -77,7 +77,7 @@ class AppRouting {
         }
       case AppRoutes.clientEditProfileScreen:
         return MaterialPageRoute(
-          builder: (BuildContext context) => ClientEditProfileScreen(
+          builder: (BuildContext context) => EditProfileScreen(
             profileDataModel: arguments as ProfileDataModel,
           ),
         );

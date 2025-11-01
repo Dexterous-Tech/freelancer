@@ -9,8 +9,8 @@ import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/widgets/bottom_sheet/correct_bottom_sheet.dart';
 import 'package:freelancer/core/widgets/custom_header.dart';
 import '../../../../../common/profile/data/models/profile_models.dart';
-import 'client_edit_profile_button.dart';
-import 'client_edit_profile_form.dart';
+import 'edit_profile_button.dart';
+import 'edit_profile_form.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 import '../../../../../../core/helper/functions.dart';
@@ -18,10 +18,10 @@ import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
-import '../../manager/client_edit_profile_cubit.dart';
+import '../../manager/edit_profile_cubit.dart';
 
-class ClientEditProfileBody extends StatelessWidget {
-  const ClientEditProfileBody({super.key, required this.profileDataModel});
+class EditProfileBody extends StatelessWidget {
+  const EditProfileBody({super.key, required this.profileDataModel});
 
   final ProfileDataModel profileDataModel;
 
@@ -30,20 +30,20 @@ class ClientEditProfileBody extends StatelessWidget {
     final name = '${profileDataModel.firstName} ${profileDataModel.lastName}';
     final initials = getInitials(name);
 
-    return BlocListener<ClientEditProfileCubit, ClientEditProfileState>(
+    return BlocListener<EditProfileCubit, EditProfileState>(
       listenWhen: (context, state) =>
-          state is ClientEditProfileLoading ||
-          state is ClientEditProfileSuccess ||
-          state is ClientEditProfileFailure,
+          state is EditProfileLoading ||
+          state is EditProfileSuccess ||
+          state is EditProfileFailure,
       listener: (context, state) {
-        if (state is ClientEditProfileFailure) {
+        if (state is EditProfileFailure) {
           openBottomSheet(
             context: context,
             bottomSheetContent: ErrorBottomSheet(error: state.error),
           );
         }
-        if (state is ClientEditProfileSuccess) {
-          final cubit = ClientEditProfileCubit.get(context);
+        if (state is EditProfileSuccess) {
+          final cubit = EditProfileCubit.get(context);
           if (state.profileResponseModel.data?.needVerification == 1) {
             openBottomSheet(
               context: context,
@@ -134,11 +134,9 @@ class ClientEditProfileBody extends StatelessWidget {
                             ),
                           ),
                           verticalSpace(32),
-                          ClientEditProfileForm(
-                            profileDataModel: profileDataModel,
-                          ),
+                          EditProfileForm(profileDataModel: profileDataModel),
                           Expanded(child: verticalSpace(50)),
-                          ClientEditProfileButton(),
+                          EditProfileButton(),
                         ],
                       ),
                     ),

@@ -9,7 +9,7 @@ import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';
-import 'package:freelancer/features/common/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
@@ -18,21 +18,21 @@ import '../../../../../common/profile/data/models/profile_models.dart';
 import '../../../../../common/widgets/profile_content_item.dart';
 import 'bottom_sheet/delete_account_bottom_sheet.dart';
 
-class ClientEditProfileForm extends StatefulWidget {
-  const ClientEditProfileForm({super.key, required this.profileDataModel});
+class EditProfileForm extends StatefulWidget {
+  const EditProfileForm({super.key, required this.profileDataModel});
 
   final ProfileDataModel profileDataModel;
   @override
-  State<ClientEditProfileForm> createState() => _ClientEditProfileFormState();
+  State<EditProfileForm> createState() => _EditProfileFormState();
 }
 
-class _ClientEditProfileFormState extends State<ClientEditProfileForm> {
+class _EditProfileFormState extends State<EditProfileForm> {
   late ProfileDataModel currentProfile;
   @override
   void initState() {
     super.initState();
     currentProfile = widget.profileDataModel;
-    final cubit = ClientEditProfileCubit.get(context);
+    final cubit = EditProfileCubit.get(context);
     cubit.firstNameController.text = currentProfile.firstName;
     cubit.lastNameController.text = currentProfile.lastName;
     cubit.countryCodeController.text = currentProfile.countryCode;
@@ -41,7 +41,7 @@ class _ClientEditProfileFormState extends State<ClientEditProfileForm> {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = ClientEditProfileCubit.get(context);
+    final cubit = EditProfileCubit.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Form(

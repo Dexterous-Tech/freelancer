@@ -7,15 +7,14 @@ import 'package:freelancer/features/common/profile/data/models/profile_models.da
 import '../../../../../core/shared/shared_preferences_helper.dart';
 import '../../../../auth/data/models/auth_action_response_model.dart';
 
-part 'client_edit_profile_state.dart';
+part 'edit_profile_state.dart';
 
-class ClientEditProfileCubit extends Cubit<ClientEditProfileState> {
-  ClientEditProfileCubit(this.updateProfileRepo)
-    : super(ClientEditProfileInitial());
+class EditProfileCubit extends Cubit<EditProfileState> {
+  EditProfileCubit(this.updateProfileRepo) : super(EditProfileInitial());
 
   final UpdateProfileRepo updateProfileRepo;
 
-  static ClientEditProfileCubit get(context) => BlocProvider.of(context);
+  static EditProfileCubit get(context) => BlocProvider.of(context);
 
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -25,7 +24,7 @@ class ClientEditProfileCubit extends Cubit<ClientEditProfileState> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   void updateProfile() async {
-    emit(ClientEditProfileLoading());
+    emit(EditProfileLoading());
     final response = await updateProfileRepo.updateProfile(
       UpdateProfileRequestBodyModel(
         firstName: firstNameController.text,
@@ -36,8 +35,8 @@ class ClientEditProfileCubit extends Cubit<ClientEditProfileState> {
     );
 
     response.fold(
-      (ifLeft) => emit(ClientEditProfileFailure(ifLeft.displayMessage)),
-      (ifRight) => emit(ClientEditProfileSuccess(ifRight)),
+      (ifLeft) => emit(EditProfileFailure(ifLeft.displayMessage)),
+      (ifRight) => emit(EditProfileSuccess(ifRight)),
     );
   }
 
