@@ -112,7 +112,25 @@ class CodegenLoader extends AssetLoader{
     "sureDelete": "هل أنت متأكد من رغبتك في حذف الحساب؟",
     "sureLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
     "enterPasswordTitle": "ادخل كلمة المرور",
-    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
+    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب",
+    "reviewAccountSubTitle": "جارٍ مراجعة طلبك للانضمام إلينا، سيتم إرسال إشعار عند الانتهاء",
+    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك",
+    "addressDetails": "تفاصيل العنوان",
+    "currentLocation": "الموقع الحالي",
+    "folders": "المرفقات",
+    "sureChangeLocationQu": "هل أنت متأكد من رغبتك في تفعيل الموقع الحالي؟",
+    "changeCurrentLocationSubtitle": "عند الضغط على “نعم, أرغب” سيتمكن العملاء من رؤية موقعك اللحظي على الخريطة",
+    "yesWant": "نعم، أرغب",
+    "addSocialMedia": "إضافة حسابات التواصل الاجتماعي",
+    "socialMediaTitle": "حسابات التواصل الاجتماعي",
+    "socialMediaSubtitle": "قم بإضافة حسابات التواصل الاجتماعي لك",
+    "addSocialMediaLink": "قم بإضافة رابط الحساب الخاص بك",
+    "city": "المدينة",
+    "street": "الشارع / الحي",
+    "placeDetails": "تفاصيل المكان...",
+    "placeInMap": "مركزك على الخريطة",
+    "photos": "الصور",
+    "aboutYou": "نبذة عنك"
   },
   "back": "العودة",
   "more": {
@@ -155,7 +173,14 @@ class CodegenLoader extends AssetLoader{
     "professionalInformation": "البيانات المهنية"
   },
   "send": "إرسال",
-  "sendSuccessfully": "تم الإرسال بنجاح"
+  "sendSuccessfully": "تم الإرسال بنجاح",
+  "technical": {
+    "welcomeBack": "مرحبا بعودتك",
+    "askBadge": "طلب بادج",
+    "statistics": "إحصائيات",
+    "numberViews": "عدد مرات المشاهدة",
+    "reviews": "التقييمات"
+  }
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -255,7 +280,25 @@ static const Map<String,dynamic> _en = {
     "sureDelete": "Are you sure you want to delete the account?",
     "sureLogout": "Are you sure you want to log out?",
     "enterPasswordTitle": "Enter Password",
-    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion",
+    "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts",
+    "addressDetails": "Address details",
+    "currentLocation": "Current location",
+    "folders": "Attachments",
+    "sureChangeLocationQu": "Are you sure you want to enable the current location?",
+    "changeCurrentLocationSubtitle": "By clicking “Yes, I want”, customers will be able to see your live location on the map",
+    "yesWant": "Yes, I want",
+    "addSocialMedia": "Add social media accounts",
+    "socialMediaTitle": "Social media accounts",
+    "socialMediaSubtitle": "Add your social media accounts",
+    "addSocialMediaLink": "Add your account link",
+    "city": "City",
+    "street": "Street / District",
+    "placeDetails": "Place details...",
+    "placeInMap": "Your location on the map",
+    "photos": "Photos",
+    "aboutYou": "About you"
   },
   "back": "Back",
   "more": {
@@ -298,7 +341,14 @@ static const Map<String,dynamic> _en = {
     "professionalInformation": "Professional information"
   },
   "send": "Send",
-  "sendSuccessfully": "Sent successfully"
+  "sendSuccessfully": "Sent successfully",
+  "technical": {
+    "welcomeBack": "Welcome back",
+    "askBadge": "Badge request",
+    "statistics": "Statistics",
+    "numberViews": "Number of views",
+    "reviews": "Reviews"
+  }
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -398,7 +448,25 @@ static const Map<String,dynamic> _ur = {
     "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
     "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
     "enterPasswordTitle": "پاس ورڈ درج کریں",
-    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں",
+    "reviewAccountSubTitle": "آپ کی شمولیت کی درخواست کا جائزہ لیا جا رہا ہے، مکمل ہونے پر آپ کو اطلاع دی جائے گی",
+    "alreadyHaveAccount": "آپ کا پہلے سے ہی ٹیکنیشن اکاؤنٹ موجود ہے، آپ اپنے اکاؤنٹس کے درمیان سوئچ کر سکتے ہیں",
+    "addressDetails": "پتے کی تفصیلات",
+    "currentLocation": "موجودہ مقام",
+    "folders": "منسلکات",
+    "sureChangeLocationQu": "کیا آپ واقعی موجودہ مقام کو فعال کرنا چاہتے ہیں؟",
+    "changeCurrentLocationSubtitle": "\"ہاں، میں چاہتا ہوں\" پر کلک کرنے سے صارفین نقشے پر آپ کا موجودہ مقام دیکھ سکیں گے",
+    "yesWant": "ہاں، میں چاہتا ہوں",
+    "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
+    "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
+    "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں",
+    "city": "شہر",
+    "street": "گلی / علاقہ",
+    "placeDetails": "جگہ کی تفصیلات...",
+    "placeInMap": "نقشے پر آپ کا مقام",
+    "photos": "تصاویر",
+    "aboutYou": "آپ کے بارے میں"
   },
   "back": "واپس جائیں",
   "more": {
@@ -441,7 +509,14 @@ static const Map<String,dynamic> _ur = {
     "professionalInformation": "پیشہ ورانہ معلومات"
   },
   "send": "بھیجیں",
-  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا",
+  "technical": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "askBadge": "بیج کی درخواست",
+    "statistics": "اعداد و شمار",
+    "numberViews": "دیکھنے کی تعداد",
+    "reviews": "جائزے"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }

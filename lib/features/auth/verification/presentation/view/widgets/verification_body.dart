@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/features/auth/widgets/auth_body.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 import '../../../../login/data/models/forget_password_model.dart';
 import 'verification_form.dart';

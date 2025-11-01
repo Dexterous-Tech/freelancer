@@ -97,6 +97,24 @@ abstract class  LocaleKeys {
   static const profile_sureLogout = 'profile.sureLogout';
   static const profile_enterPasswordTitle = 'profile.enterPasswordTitle';
   static const profile_enterPasswordSubtitle = 'profile.enterPasswordSubtitle';
+  static const profile_reviewAccountSubTitle = 'profile.reviewAccountSubTitle';
+  static const profile_alreadyHaveAccount = 'profile.alreadyHaveAccount';
+  static const profile_addressDetails = 'profile.addressDetails';
+  static const profile_currentLocation = 'profile.currentLocation';
+  static const profile_folders = 'profile.folders';
+  static const profile_sureChangeLocationQu = 'profile.sureChangeLocationQu';
+  static const profile_changeCurrentLocationSubtitle = 'profile.changeCurrentLocationSubtitle';
+  static const profile_yesWant = 'profile.yesWant';
+  static const profile_addSocialMedia = 'profile.addSocialMedia';
+  static const profile_socialMediaTitle = 'profile.socialMediaTitle';
+  static const profile_socialMediaSubtitle = 'profile.socialMediaSubtitle';
+  static const profile_addSocialMediaLink = 'profile.addSocialMediaLink';
+  static const profile_city = 'profile.city';
+  static const profile_street = 'profile.street';
+  static const profile_placeDetails = 'profile.placeDetails';
+  static const profile_placeInMap = 'profile.placeInMap';
+  static const profile_photos = 'profile.photos';
+  static const profile_aboutYou = 'profile.aboutYou';
   static const profile = 'profile';
   static const back = 'back';
   static const more_shareApp = 'more.shareApp';
@@ -136,5 +154,11 @@ abstract class  LocaleKeys {
   static const joinUs = 'joinUs';
   static const send = 'send';
   static const sendSuccessfully = 'sendSuccessfully';
+  static const technical_welcomeBack = 'technical.welcomeBack';
+  static const technical_askBadge = 'technical.askBadge';
+  static const technical_statistics = 'technical.statistics';
+  static const technical_numberViews = 'technical.numberViews';
+  static const technical_reviews = 'technical.reviews';
+  static const technical = 'technical';
 
 }

@@ -19,4 +19,6 @@ class AppRoutes {
   static const String requestSpecialityScreen = '/requestSpecialityScreen';
   static const String serviceProviderDetailsScreen =
       '/serviceProviderDetailsScreen';
+  static const String addressDetailsScreen = '/addressDetailsScreen';
+  static const String foldersScreen = '/foldersScreen';
 }

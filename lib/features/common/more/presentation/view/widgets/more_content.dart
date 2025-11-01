@@ -11,7 +11,7 @@ import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/font_weight_helper.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import '../../../../../../generated/locale_keys.g.dart';
-import '../../../../../client/widgets/profile_content_item.dart';
+import '../../../../widgets/profile_content_item.dart';
 import 'change_language/change_language_bottom_sheet.dart';
 
 class MoreContent extends StatelessWidget {

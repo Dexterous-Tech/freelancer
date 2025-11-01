@@ -132,6 +132,19 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}twitter_icon_un.svg';
   static const String whatsappUnIcon =
       '${AppConstants.svgIconsImagesPath}whatsapp_icon_un.svg';
+  static const String joinUsIcon =
+      '${AppConstants.svgIconsImagesPath}join_us_icon.svg';
+  static const String notificationIcon =
+      '${AppConstants.svgIconsImagesPath}notification-bing.svg';
+  static const String redEyeIcon =
+      '${AppConstants.svgIconsImagesPath}red_eye.svg';
+  static const String lavenderStarIcon =
+      '${AppConstants.svgIconsImagesPath}lavender_star.svg';
+  static const String foldersIcon =
+      '${AppConstants.svgIconsImagesPath}folders.svg';
+  static const String addIcon =
+      '${AppConstants.svgIconsImagesPath}add_icon.svg';
+  static const String closeIcon = '${AppConstants.svgIconsImagesPath}close.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
@@ -144,4 +157,9 @@ class AppImages {
       '${AppConstants.imagesPath}service_person.png';
   static const String mapServiceImage =
       '${AppConstants.imagesPath}map_service.png';
+  static const String wavingHandImage =
+      '${AppConstants.imagesPath}waving_hand.png';
+  static const String fakeMap2Image = '${AppConstants.imagesPath}fake_map.png';
+  static const String fakePhotoImage =
+      '${AppConstants.imagesPath}fake_photo.png';
 }

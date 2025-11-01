@@ -7,14 +7,16 @@ import 'package:freelancer/features/auth/signup/data/repo/signup_repo.dart';
 import 'package:freelancer/features/auth/signup/presentation/manager/signup_cubit.dart';
 import 'package:freelancer/features/auth/verification/data/repo/verification_repo.dart';
 import 'package:freelancer/features/auth/verification/presentation/manager/verification_cubit.dart';
-import 'package:freelancer/features/client/change_password/data/repo/change_password_repo.dart';
-import 'package:freelancer/features/client/change_password/presentation/manager/client_change_password_cubit.dart';
-import 'package:freelancer/features/client/edit_profile/data/repo/update_profile_repo.dart';
-import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/change_password/data/repo/change_password_repo.dart';
+import 'package:freelancer/features/common/change_password/presentation/manager/change_password_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/data/repo/update_profile_repo.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/edit_profile_cubit.dart';
 import 'package:freelancer/features/client/join_us/presentation/manager/join_us_cubit.dart';
-import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
-import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
+import 'package:freelancer/features/common/profile/data/repo/profile_repo.dart';
+import 'package:freelancer/features/common/profile/presentation/manager/profile_cubit.dart';
 import 'package:freelancer/features/common/contact_us/presentation/manager/contact_us_cubit.dart';
+import 'package:freelancer/features/technical/address_details/presentation/manager/address_details_cubit.dart';
+import 'package:freelancer/features/technical/folders/presentation/manager/folders_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/common/about_us/data/about_us_repo.dart';
@@ -79,15 +81,11 @@ Future<void> initializeDependencies() async {
 
   // change password
   sl.registerLazySingleton<ChangePasswordRepo>(() => ChangePasswordRepo(sl()));
-  sl.registerFactory<ClientChangePasswordCubit>(
-    () => ClientChangePasswordCubit(sl()),
-  );
+  sl.registerFactory<ChangePasswordCubit>(() => ChangePasswordCubit(sl()));
 
   // update profile
   sl.registerLazySingleton<UpdateProfileRepo>(() => UpdateProfileRepo(sl()));
-  sl.registerFactory<ClientEditProfileCubit>(
-    () => ClientEditProfileCubit(sl()),
-  );
+  sl.registerFactory<EditProfileCubit>(() => EditProfileCubit(sl()));
 
   // join us
   sl.registerFactory<JoinUsCubit>(() => JoinUsCubit());
@@ -97,4 +95,10 @@ Future<void> initializeDependencies() async {
 
   // request speciality
   sl.registerFactory<RequestSpecialityCubit>(() => RequestSpecialityCubit());
+
+  // address details
+  sl.registerFactory<AddressDetailsCubit>(() => AddressDetailsCubit());
+
+  // address details
+  sl.registerFactory<FoldersCubit>(() => FoldersCubit());
 }

@@ -96,7 +96,25 @@
     "sureDelete": "Are you sure you want to delete the account?",
     "sureLogout": "Are you sure you want to log out?",
     "enterPasswordTitle": "Enter Password",
-    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion",
+    "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts",
+    "addressDetails": "Address details",
+    "currentLocation": "Current location",
+    "folders": "Attachments",
+    "sureChangeLocationQu": "Are you sure you want to enable the current location?",
+    "changeCurrentLocationSubtitle": "By clicking “Yes, I want”, customers will be able to see your live location on the map",
+    "yesWant": "Yes, I want",
+    "addSocialMedia": "Add social media accounts",
+    "socialMediaTitle": "Social media accounts",
+    "socialMediaSubtitle": "Add your social media accounts",
+    "addSocialMediaLink": "Add your account link",
+    "city": "City",
+    "street": "Street / District",
+    "placeDetails": "Place details...",
+    "placeInMap": "Your location on the map",
+    "photos": "Photos",
+    "aboutYou": "About you"
   },
   "back": "Back",
   "more": {
@@ -139,5 +157,12 @@
     "professionalInformation": "Professional information"
   },
   "send": "Send",
-  "sendSuccessfully": "Sent successfully"
+  "sendSuccessfully": "Sent successfully",
+  "technical": {
+    "welcomeBack": "Welcome back",
+    "askBadge": "Badge request",
+    "statistics": "Statistics",
+    "numberViews": "Number of views",
+    "reviews": "Reviews"
+  }
 }

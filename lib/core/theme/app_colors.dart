@@ -27,4 +27,13 @@ class AppColors {
   static const Color floralWhite = Color(0xffFFFCEC);
   static const Color graniteGray = Color(0xff616161);
   static const Color vividGamboge = Color(0xffFF9500);
+  static const Color blackOlive = Color(0xff3E3E3E);
+  static const Color sonicSilver = Color(0xff797979);
+  static const Color nyanza = Color(0xffD9FFD6);
+  static const Color japaneseLaurel = Color(0xff2D883E);
+  static const Color papayaWhip = Color(0xffFFF2D6);
+  static const Color gamboge = Color(0xffe58c0e);
+  static const Color linen = Color(0xffFFEBEB);
+  static const Color mistyRose = Color(0xffF8E6E6);
+  static const Color lavender = Color(0xffEAE8FB);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
 
 import '../../../../../core/di/injection_container.dart';
 import '../../../login/data/models/forget_password_model.dart';

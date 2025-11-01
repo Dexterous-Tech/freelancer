@@ -10,9 +10,16 @@ import 'package:freelancer/core/widgets/custom_bottom_button.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 class SuccessBottomSheet extends StatelessWidget {
-  const SuccessBottomSheet({super.key, this.onPressed});
+  const SuccessBottomSheet({
+    super.key,
+    this.onPressed,
+    this.subTitle,
+    this.textButton,
+  });
 
   final void Function()? onPressed;
+  final String? subTitle;
+  final String? textButton;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,7 +50,7 @@ class SuccessBottomSheet extends StatelessWidget {
               ),
               verticalSpace(8),
               Text(
-                LocaleKeys.profile_passwordChangesSuccessfully.tr(),
+                subTitle ?? LocaleKeys.profile_passwordChangesSuccessfully.tr(),
                 style: AppTextStyles.font14OuterSpaceMedium,
               ),
               verticalSpace(18),
@@ -59,7 +66,7 @@ class SuccessBottomSheet extends StatelessWidget {
           ),
         ),
         CustomBottomButton(
-          textButton: LocaleKeys.save.tr(),
+          textButton: textButton ?? LocaleKeys.save.tr(),
           onPressed: onPressed,
         ),
       ],

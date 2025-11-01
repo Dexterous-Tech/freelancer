@@ -5,4 +5,5 @@ class SharedPreferencesKey {
   static const String isLogging = 'IS_LOGGING_KEY';
   static const String routeAfterLogin = 'ROUTE_AFTER_LOGIN_KEY';
   static const String serviceProviderId = 'SERVICE_PROVIDER_ID_KEY';
+  static const String isTechnical = 'IS_TECHNICAL_KEY';
 }

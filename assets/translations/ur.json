@@ -96,7 +96,25 @@
     "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
     "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
     "enterPasswordTitle": "پاس ورڈ درج کریں",
-    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں",
+    "reviewAccountSubTitle": "آپ کی شمولیت کی درخواست کا جائزہ لیا جا رہا ہے، مکمل ہونے پر آپ کو اطلاع دی جائے گی",
+    "alreadyHaveAccount": "آپ کا پہلے سے ہی ٹیکنیشن اکاؤنٹ موجود ہے، آپ اپنے اکاؤنٹس کے درمیان سوئچ کر سکتے ہیں",
+    "addressDetails": "پتے کی تفصیلات",
+    "currentLocation": "موجودہ مقام",
+    "folders": "منسلکات",
+    "sureChangeLocationQu": "کیا آپ واقعی موجودہ مقام کو فعال کرنا چاہتے ہیں؟",
+    "changeCurrentLocationSubtitle": "\"ہاں، میں چاہتا ہوں\" پر کلک کرنے سے صارفین نقشے پر آپ کا موجودہ مقام دیکھ سکیں گے",
+    "yesWant": "ہاں، میں چاہتا ہوں",
+    "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
+    "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
+    "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں",
+    "city": "شہر",
+    "street": "گلی / علاقہ",
+    "placeDetails": "جگہ کی تفصیلات...",
+    "placeInMap": "نقشے پر آپ کا مقام",
+    "photos": "تصاویر",
+    "aboutYou": "آپ کے بارے میں"
   },
   "back": "واپس جائیں",
   "more": {
@@ -139,5 +157,12 @@
     "professionalInformation": "پیشہ ورانہ معلومات"
   },
   "send": "بھیجیں",
-  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا",
+  "technical": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "askBadge": "بیج کی درخواست",
+    "statistics": "اعداد و شمار",
+    "numberViews": "دیکھنے کی تعداد",
+    "reviews": "جائزے"
+  }
 }
