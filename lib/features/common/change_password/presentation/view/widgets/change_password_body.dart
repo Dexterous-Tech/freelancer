@@ -8,28 +8,28 @@ import 'package:freelancer/core/widgets/custom_header.dart';
 import '../../../../../../core/widgets/bottom_sheet/success_bottom_sheet.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 import '../../../../../../core/widgets/bottom_sheet/error_bottom_sheet.dart';
-import '../../manager/client_change_password_cubit.dart';
-import 'client_change_password_button.dart';
-import 'client_change_password_form.dart';
+import '../../manager/change_password_cubit.dart';
+import 'change_password_button.dart';
+import 'change_password_form.dart';
 
-class ClientChangePasswordBody extends StatelessWidget {
-  const ClientChangePasswordBody({super.key});
+class ChangePasswordBody extends StatelessWidget {
+  const ChangePasswordBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ClientChangePasswordCubit, ClientChangePasswordState>(
+    return BlocListener<ChangePasswordCubit, ChangePasswordState>(
       listenWhen: (context, state) =>
-          state is ClientChangePasswordFailure ||
-          state is ClientChangePasswordSuccess ||
-          state is ClientChangePasswordLoading,
+          state is ChangePasswordFailure ||
+          state is ChangePasswordSuccess ||
+          state is ChangePasswordLoading,
       listener: (context, state) {
-        if (state is ClientChangePasswordFailure) {
+        if (state is ChangePasswordFailure) {
           openBottomSheet(
             context: context,
             bottomSheetContent: ErrorBottomSheet(error: state.error),
           );
         }
-        if (state is ClientChangePasswordSuccess) {
+        if (state is ChangePasswordSuccess) {
           openBottomSheet(
             context: context,
             bottomSheetContent: SuccessBottomSheet(
@@ -47,9 +47,9 @@ class ClientChangePasswordBody extends StatelessWidget {
         children: [
           CustomHeader(title: LocaleKeys.profile_editPasswordTitle.tr()),
           verticalSpace(24),
-          Expanded(child: ClientChangePasswordForm()),
+          Expanded(child: ChangePasswordForm()),
           // Expanded(child: verticalSpace(16)),
-          ClientChangePasswordButton(),
+          ChangePasswordButton(),
         ],
       ),
     );

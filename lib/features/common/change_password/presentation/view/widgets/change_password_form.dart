@@ -1,27 +1,26 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../manager/client_change_password_cubit.dart';
+import '../../manager/change_password_cubit.dart';
 
 import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../generated/locale_keys.g.dart';
 import '../../../../../auth/widgets/custom_password_text_form_field.dart';
 
-class ClientChangePasswordForm extends StatefulWidget {
-  const ClientChangePasswordForm({super.key});
+class ChangePasswordForm extends StatefulWidget {
+  const ChangePasswordForm({super.key});
 
   @override
-  State<ClientChangePasswordForm> createState() =>
-      _ClientChangePasswordFormState();
+  State<ChangePasswordForm> createState() => _ChangePasswordFormState();
 }
 
-class _ClientChangePasswordFormState extends State<ClientChangePasswordForm> {
+class _ChangePasswordFormState extends State<ChangePasswordForm> {
   bool currentPassword = true;
   bool newPassword = true;
   bool confirmPassword = true;
   @override
   Widget build(BuildContext context) {
-    final cubit = ClientChangePasswordCubit.get(context);
+    final cubit = ChangePasswordCubit.get(context);
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(

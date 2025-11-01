@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/features/auth/data/models/auth_action_response_model.dart';
-import 'package:freelancer/features/client/change_password/data/models/change_password_model.dart';
-import 'package:freelancer/features/client/change_password/data/repo/change_password_repo.dart';
 
-part 'client_change_password_state.dart';
+import '../../data/models/change_password_model.dart';
+import '../../data/repo/change_password_repo.dart';
 
-class ClientChangePasswordCubit extends Cubit<ClientChangePasswordState> {
-  ClientChangePasswordCubit(this.changePasswordRepo)
-    : super(ClientChangePasswordInitial());
+part 'change_password_state.dart';
+
+class ChangePasswordCubit extends Cubit<ChangePasswordState> {
+  ChangePasswordCubit(this.changePasswordRepo) : super(ChangePasswordInitial());
 
   final ChangePasswordRepo changePasswordRepo;
-  static ClientChangePasswordCubit get(context) => BlocProvider.of(context);
+  static ChangePasswordCubit get(context) => BlocProvider.of(context);
 
   TextEditingController currentPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
@@ -20,7 +20,7 @@ class ClientChangePasswordCubit extends Cubit<ClientChangePasswordState> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   void changePassword() async {
-    emit(ClientChangePasswordLoading());
+    emit(ChangePasswordLoading());
     final response = await changePasswordRepo.changePassword(
       ChangePasswordRequestBodyModel(
         oldPassword: currentPasswordController.text,
@@ -30,8 +30,8 @@ class ClientChangePasswordCubit extends Cubit<ClientChangePasswordState> {
     );
 
     response.fold(
-      (error) => emit(ClientChangePasswordFailure(error.displayMessage)),
-      (success) => emit(ClientChangePasswordSuccess(success)),
+      (error) => emit(ChangePasswordFailure(error.displayMessage)),
+      (success) => emit(ChangePasswordSuccess(success)),
     );
   }
 }

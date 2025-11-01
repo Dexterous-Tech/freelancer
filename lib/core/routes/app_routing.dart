@@ -6,7 +6,7 @@ import 'package:freelancer/features/auth/login/presentation/view/login_screen.da
 import 'package:freelancer/features/auth/new_password_screen/presentation/view/new_password_screen.dart';
 import 'package:freelancer/features/auth/signup/presentation/view/signup_screen.dart';
 import 'package:freelancer/features/auth/verification/presentation/view/verification_screen.dart';
-import 'package:freelancer/features/client/change_password/presentation/view/client_change_password_screen.dart';
+import 'package:freelancer/features/common/change_password/presentation/view/change_password_screen.dart';
 import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
 import 'package:freelancer/features/client/join_us/presentation/view/join_us_screen.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
@@ -83,7 +83,7 @@ class AppRouting {
         );
       case AppRoutes.clientChangePasswordScreen:
         return MaterialPageRoute(
-          builder: (BuildContext context) => const ClientChangePasswordScreen(),
+          builder: (BuildContext context) => const ChangePasswordScreen(),
         );
       case AppRoutes.aboutUsScreen:
         return MaterialPageRoute(

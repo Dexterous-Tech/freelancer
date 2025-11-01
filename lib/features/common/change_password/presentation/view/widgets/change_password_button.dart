@@ -4,20 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/widgets/custom_bottom_button.dart';
 import '../../../../../../generated/locale_keys.g.dart';
-import '../../manager/client_change_password_cubit.dart';
+import '../../manager/change_password_cubit.dart';
 
-class ClientChangePasswordButton extends StatelessWidget {
-  const ClientChangePasswordButton({super.key});
+class ChangePasswordButton extends StatelessWidget {
+  const ChangePasswordButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ClientChangePasswordCubit, ClientChangePasswordState>(
+    return BlocBuilder<ChangePasswordCubit, ChangePasswordState>(
       builder: (context, state) {
-        final cubit = ClientChangePasswordCubit.get(context);
+        final cubit = ChangePasswordCubit.get(context);
         return SizedBox(
           width: double.infinity,
           child: CustomBottomButton(
-            isLoading: state is ClientChangePasswordLoading,
+            isLoading: state is ChangePasswordLoading,
             textButton: LocaleKeys.save.tr(),
             onPressed: () {
               if (cubit.formKey.currentState!.validate()) {
