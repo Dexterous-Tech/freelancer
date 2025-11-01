@@ -108,7 +108,11 @@
     "addSocialMedia": "Add social media accounts",
     "socialMediaTitle": "Social media accounts",
     "socialMediaSubtitle": "Add your social media accounts",
-    "addSocialMediaLink": "Add your account link"
+    "addSocialMediaLink": "Add your account link",
+    "city": "City",
+    "street": "Street / District",
+    "placeDetails": "Place details...",
+    "placeInMap": "Your location on the map"
   },
   "back": "Back",
   "more": {

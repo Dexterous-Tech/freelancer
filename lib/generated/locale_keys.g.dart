@@ -109,6 +109,10 @@ abstract class  LocaleKeys {
   static const profile_socialMediaTitle = 'profile.socialMediaTitle';
   static const profile_socialMediaSubtitle = 'profile.socialMediaSubtitle';
   static const profile_addSocialMediaLink = 'profile.addSocialMediaLink';
+  static const profile_city = 'profile.city';
+  static const profile_street = 'profile.street';
+  static const profile_placeDetails = 'profile.placeDetails';
+  static const profile_placeInMap = 'profile.placeInMap';
   static const profile = 'profile';
   static const back = 'back';
   static const more_shareApp = 'more.shareApp';

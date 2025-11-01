@@ -82,14 +82,19 @@ class ProfileContent extends StatelessWidget {
 
                 final isTechnical = snapshot.data ?? false;
 
-                if (isTechnical) {
+                if (!isTechnical) {
                   // technical view
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ProfileContentItem(
-                        icon: AppImages.locationIcon,
-                        title: LocaleKeys.profile_addressDetails.tr(),
+                      GestureDetector(
+                        onTap: () {
+                          context.pushNamed(AppRoutes.addressDetailsScreen);
+                        },
+                        child: ProfileContentItem(
+                          icon: AppImages.locationIcon,
+                          title: LocaleKeys.profile_addressDetails.tr(),
+                        ),
                       ),
                       ProfileContentItem(
                         icon: AppImages.currentLocationIcon,

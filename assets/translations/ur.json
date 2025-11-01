@@ -108,7 +108,11 @@
     "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
     "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
     "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
-    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں"
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں",
+    "city": "شہر",
+    "street": "گلی / علاقہ",
+    "placeDetails": "جگہ کی تفصیلات...",
+    "placeInMap": "نقشے پر آپ کا مقام"
   },
   "back": "واپس جائیں",
   "more": {

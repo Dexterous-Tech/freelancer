@@ -158,4 +158,5 @@ class AppImages {
       '${AppConstants.imagesPath}map_service.png';
   static const String wavingHandImage =
       '${AppConstants.imagesPath}waving_hand.png';
+  static const String fakeMap2Image = '${AppConstants.imagesPath}fake_map.png';
 }

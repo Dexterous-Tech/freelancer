@@ -124,7 +124,11 @@ class CodegenLoader extends AssetLoader{
     "addSocialMedia": "إضافة حسابات التواصل الاجتماعي",
     "socialMediaTitle": "حسابات التواصل الاجتماعي",
     "socialMediaSubtitle": "قم بإضافة حسابات التواصل الاجتماعي لك",
-    "addSocialMediaLink": "قم بإضافة رابط الحساب الخاص بك"
+    "addSocialMediaLink": "قم بإضافة رابط الحساب الخاص بك",
+    "city": "المدينة",
+    "street": "الشارع / الحي",
+    "placeDetails": "تفاصيل المكان...",
+    "placeInMap": "مركزك على الخريطة"
   },
   "back": "العودة",
   "more": {
@@ -286,7 +290,11 @@ static const Map<String,dynamic> _en = {
     "addSocialMedia": "Add social media accounts",
     "socialMediaTitle": "Social media accounts",
     "socialMediaSubtitle": "Add your social media accounts",
-    "addSocialMediaLink": "Add your account link"
+    "addSocialMediaLink": "Add your account link",
+    "city": "City",
+    "street": "Street / District",
+    "placeDetails": "Place details...",
+    "placeInMap": "Your location on the map"
   },
   "back": "Back",
   "more": {
@@ -448,7 +456,11 @@ static const Map<String,dynamic> _ur = {
     "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
     "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
     "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
-    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں"
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں",
+    "city": "شہر",
+    "street": "گلی / علاقہ",
+    "placeDetails": "جگہ کی تفصیلات...",
+    "placeInMap": "نقشے پر آپ کا مقام"
   },
   "back": "واپس جائیں",
   "more": {

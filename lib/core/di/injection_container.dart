@@ -15,6 +15,7 @@ import 'package:freelancer/features/client/join_us/presentation/manager/join_us_
 import 'package:freelancer/features/common/profile/data/repo/profile_repo.dart';
 import 'package:freelancer/features/common/profile/presentation/manager/profile_cubit.dart';
 import 'package:freelancer/features/common/contact_us/presentation/manager/contact_us_cubit.dart';
+import 'package:freelancer/features/technical/address_details/presentation/manager/address_details_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/common/about_us/data/about_us_repo.dart';
@@ -93,4 +94,7 @@ Future<void> initializeDependencies() async {
 
   // request speciality
   sl.registerFactory<RequestSpecialityCubit>(() => RequestSpecialityCubit());
+
+  // address details
+  sl.registerFactory<AddressDetailsCubit>(() => AddressDetailsCubit());
 }
