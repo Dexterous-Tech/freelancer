@@ -105,6 +105,10 @@ abstract class  LocaleKeys {
   static const profile_sureChangeLocationQu = 'profile.sureChangeLocationQu';
   static const profile_changeCurrentLocationSubtitle = 'profile.changeCurrentLocationSubtitle';
   static const profile_yesWant = 'profile.yesWant';
+  static const profile_addSocialMedia = 'profile.addSocialMedia';
+  static const profile_socialMediaTitle = 'profile.socialMediaTitle';
+  static const profile_socialMediaSubtitle = 'profile.socialMediaSubtitle';
+  static const profile_addSocialMediaLink = 'profile.addSocialMediaLink';
   static const profile = 'profile';
   static const back = 'back';
   static const more_shareApp = 'more.shareApp';

@@ -104,7 +104,11 @@
     "folders": "المرفقات",
     "sureChangeLocationQu": "هل أنت متأكد من رغبتك في تفعيل الموقع الحالي؟",
     "changeCurrentLocationSubtitle": "عند الضغط على “نعم, أرغب” سيتمكن العملاء من رؤية موقعك اللحظي على الخريطة",
-    "yesWant": "نعم، أرغب"
+    "yesWant": "نعم، أرغب",
+    "addSocialMedia": "إضافة حسابات التواصل الاجتماعي",
+    "socialMediaTitle": "حسابات التواصل الاجتماعي",
+    "socialMediaSubtitle": "قم بإضافة حسابات التواصل الاجتماعي لك",
+    "addSocialMediaLink": "قم بإضافة رابط الحساب الخاص بك"
   },
   "back": "العودة",
   "more": {

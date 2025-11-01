@@ -104,7 +104,11 @@
     "folders": "منسلکات",
     "sureChangeLocationQu": "کیا آپ واقعی موجودہ مقام کو فعال کرنا چاہتے ہیں؟",
     "changeCurrentLocationSubtitle": "\"ہاں، میں چاہتا ہوں\" پر کلک کرنے سے صارفین نقشے پر آپ کا موجودہ مقام دیکھ سکیں گے",
-    "yesWant": "ہاں، میں چاہتا ہوں"
+    "yesWant": "ہاں، میں چاہتا ہوں",
+    "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
+    "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
+    "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں"
   },
   "back": "واپس جائیں",
   "more": {

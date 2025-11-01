@@ -85,6 +85,7 @@ class ProfileContent extends StatelessWidget {
                 if (isTechnical) {
                   // technical view
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProfileContentItem(
                         icon: AppImages.locationIcon,
@@ -112,6 +113,7 @@ class ProfileContent extends StatelessWidget {
                 } else {
                   // client view
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProfileContentItem(
                         icon: AppImages.heartIcon,

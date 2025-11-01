@@ -120,7 +120,11 @@ class CodegenLoader extends AssetLoader{
     "folders": "المرفقات",
     "sureChangeLocationQu": "هل أنت متأكد من رغبتك في تفعيل الموقع الحالي؟",
     "changeCurrentLocationSubtitle": "عند الضغط على “نعم, أرغب” سيتمكن العملاء من رؤية موقعك اللحظي على الخريطة",
-    "yesWant": "نعم، أرغب"
+    "yesWant": "نعم، أرغب",
+    "addSocialMedia": "إضافة حسابات التواصل الاجتماعي",
+    "socialMediaTitle": "حسابات التواصل الاجتماعي",
+    "socialMediaSubtitle": "قم بإضافة حسابات التواصل الاجتماعي لك",
+    "addSocialMediaLink": "قم بإضافة رابط الحساب الخاص بك"
   },
   "back": "العودة",
   "more": {
@@ -278,7 +282,11 @@ static const Map<String,dynamic> _en = {
     "folders": "Attachments",
     "sureChangeLocationQu": "Are you sure you want to enable the current location?",
     "changeCurrentLocationSubtitle": "By clicking “Yes, I want”, customers will be able to see your live location on the map",
-    "yesWant": "Yes, I want"
+    "yesWant": "Yes, I want",
+    "addSocialMedia": "Add social media accounts",
+    "socialMediaTitle": "Social media accounts",
+    "socialMediaSubtitle": "Add your social media accounts",
+    "addSocialMediaLink": "Add your account link"
   },
   "back": "Back",
   "more": {
@@ -436,7 +444,11 @@ static const Map<String,dynamic> _ur = {
     "folders": "منسلکات",
     "sureChangeLocationQu": "کیا آپ واقعی موجودہ مقام کو فعال کرنا چاہتے ہیں؟",
     "changeCurrentLocationSubtitle": "\"ہاں، میں چاہتا ہوں\" پر کلک کرنے سے صارفین نقشے پر آپ کا موجودہ مقام دیکھ سکیں گے",
-    "yesWant": "ہاں، میں چاہتا ہوں"
+    "yesWant": "ہاں، میں چاہتا ہوں",
+    "addSocialMedia": "سوشل میڈیا اکاؤنٹس شامل کریں",
+    "socialMediaTitle": "سوشل میڈیا اکاؤنٹس",
+    "socialMediaSubtitle": "اپنے سوشل میڈیا اکاؤنٹس شامل کریں",
+    "addSocialMediaLink": "اپنا اکاؤنٹ لنک شامل کریں"
   },
   "back": "واپس جائیں",
   "more": {

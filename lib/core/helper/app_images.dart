@@ -142,6 +142,8 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}lavender_star.svg';
   static const String foldersIcon =
       '${AppConstants.svgIconsImagesPath}folders.svg';
+  static const String addIcon =
+      '${AppConstants.svgIconsImagesPath}add_icon.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

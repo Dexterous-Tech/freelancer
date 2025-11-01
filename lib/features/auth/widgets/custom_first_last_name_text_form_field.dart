@@ -13,10 +13,14 @@ class CustomFirstLastNameTextFormField extends StatefulWidget {
     super.key,
     required this.firstNameController,
     required this.secondNameController,
+    this.labelTextFirst,
+    this.labelTextSecond,
   });
 
   final TextEditingController firstNameController;
   final TextEditingController secondNameController;
+  final String? labelTextFirst;
+  final String? labelTextSecond;
   @override
   State<CustomFirstLastNameTextFormField> createState() =>
       _CustomFirstLastNameTextFormFieldState();
@@ -58,6 +62,7 @@ class _CustomFirstLastNameTextFormFieldState
                   return null;
                 },
                 borderColor: errorFirstMessage != null ? AppColors.red : null,
+                labelText: widget.labelTextFirst,
               ),
             ),
             horizontalSpace(8),
@@ -71,6 +76,7 @@ class _CustomFirstLastNameTextFormFieldState
                   return null;
                 },
                 borderColor: errorSecondMessage != null ? AppColors.red : null,
+                labelText: widget.labelTextSecond,
               ),
             ),
           ],

@@ -20,6 +20,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   TextEditingController lastNameController = TextEditingController();
   TextEditingController countryCodeController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController languagesController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -65,4 +67,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       emit(ProfileDeleteAccountSuccess(r));
     });
   }
+
+  // social media
+  TextEditingController socialMediaTypeController = TextEditingController();
+  TextEditingController socialMediaLinkController = TextEditingController();
 }
