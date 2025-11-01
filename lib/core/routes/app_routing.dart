@@ -11,6 +11,7 @@ import 'package:freelancer/features/client/edit_profile/data/models/update_profi
 import 'package:freelancer/features/client/join_us/presentation/view/join_us_screen.dart';
 import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
 import 'package:freelancer/features/client/service_provider/presentation/view/service_provider_screen.dart';
+import 'package:freelancer/features/client/service_provider_details/presentation/view/service_provider_details_screen.dart';
 import 'package:freelancer/features/client/services_favourite/presentation/view/services_favourite_screen.dart';
 import 'package:freelancer/features/common/contact_us/presentation/view/contact_us_screen.dart';
 import 'package:freelancer/features/common/request_speciality/presentation/view/request_speciality_screen.dart';
@@ -111,6 +112,11 @@ class AppRouting {
       case AppRoutes.requestSpecialityScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const RequestSpecialityScreen(),
+        );
+      case AppRoutes.serviceProviderDetailsScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) =>
+              ServiceProviderDetailsScreen(id: arguments as int),
         );
       default:
         return MaterialPageRoute(

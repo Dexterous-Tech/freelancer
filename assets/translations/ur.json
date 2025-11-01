@@ -124,7 +124,14 @@
   "services": {
     "searchService": "سروس کے نام سے تلاش کریں ...",
     "serviceProviders": "سروس فراہم کرنے والے",
-    "serviceFavourite": "پسندیدہ"
+    "serviceFavourite": "پسندیدہ",
+    "serviceProviderDetails": "سروس فراہم کنندہ",
+    "mainAddress": "مرکزی پتہ",
+    "currentLocation": "موجودہ مقام",
+    "languages": "زبانیں",
+    "aboutTechnical": "ٹیکنیشن کے بارے میں",
+    "socialMedia": "سوشل میڈیا",
+    "contactTechnical": "ٹیکنیشن سے رابطہ کریں"
   },
   "joinUs": {
     "joinUsTitle": "ہمارے ساتھ شامل ہوں",

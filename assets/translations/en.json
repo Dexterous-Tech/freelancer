@@ -124,7 +124,14 @@
   "services": {
     "searchService": "Search by service name ...",
     "serviceProviders": "Service providers",
-    "serviceFavourite": "Favorites"
+    "serviceFavourite": "Favorites",
+    "serviceProviderDetails": "Service provider",
+    "mainAddress": "Main address",
+    "currentLocation": "Current location",
+    "languages": "Languages",
+    "aboutTechnical": "About the technician",
+    "socialMedia": "Social Media",
+    "contactTechnical": "Contact the technician"
   },
   "joinUs": {
     "joinUsTitle": "Join us",

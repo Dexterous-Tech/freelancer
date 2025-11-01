@@ -122,6 +122,13 @@ abstract class  LocaleKeys {
   static const services_searchService = 'services.searchService';
   static const services_serviceProviders = 'services.serviceProviders';
   static const services_serviceFavourite = 'services.serviceFavourite';
+  static const services_serviceProviderDetails = 'services.serviceProviderDetails';
+  static const services_mainAddress = 'services.mainAddress';
+  static const services_currentLocation = 'services.currentLocation';
+  static const services_languages = 'services.languages';
+  static const services_aboutTechnical = 'services.aboutTechnical';
+  static const services_socialMedia = 'services.socialMedia';
+  static const services_contactTechnical = 'services.contactTechnical';
   static const services = 'services';
   static const joinUs_joinUsTitle = 'joinUs.joinUsTitle';
   static const joinUs_personalInformation = 'joinUs.personalInformation';

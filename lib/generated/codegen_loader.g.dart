@@ -140,7 +140,14 @@ class CodegenLoader extends AssetLoader{
   "services": {
     "searchService": "ابحث باسم الخدمه ...",
     "serviceProviders": "مقدمي الخدمة",
-    "serviceFavourite": "المفضلة"
+    "serviceFavourite": "المفضلة",
+    "serviceProviderDetails": "مقدم الخدمة",
+    "mainAddress": "العنوان الأساسي",
+    "currentLocation": "الموقع الحالي",
+    "languages": "اللغات",
+    "aboutTechnical": "نبذة عن الفني",
+    "socialMedia": "وسائل التواصل الاجتماعي",
+    "contactTechnical": "التواصل مع الفني"
   },
   "joinUs": {
     "joinUsTitle": "انضم إلينا",
@@ -276,7 +283,14 @@ static const Map<String,dynamic> _en = {
   "services": {
     "searchService": "Search by service name ...",
     "serviceProviders": "Service providers",
-    "serviceFavourite": "Favorites"
+    "serviceFavourite": "Favorites",
+    "serviceProviderDetails": "Service provider",
+    "mainAddress": "Main address",
+    "currentLocation": "Current location",
+    "languages": "Languages",
+    "aboutTechnical": "About the technician",
+    "socialMedia": "Social Media",
+    "contactTechnical": "Contact the technician"
   },
   "joinUs": {
     "joinUsTitle": "Join us",
@@ -412,7 +426,14 @@ static const Map<String,dynamic> _ur = {
   "services": {
     "searchService": "سروس کے نام سے تلاش کریں ...",
     "serviceProviders": "سروس فراہم کرنے والے",
-    "serviceFavourite": "پسندیدہ"
+    "serviceFavourite": "پسندیدہ",
+    "serviceProviderDetails": "سروس فراہم کنندہ",
+    "mainAddress": "مرکزی پتہ",
+    "currentLocation": "موجودہ مقام",
+    "languages": "زبانیں",
+    "aboutTechnical": "ٹیکنیشن کے بارے میں",
+    "socialMedia": "سوشل میڈیا",
+    "contactTechnical": "ٹیکنیشن سے رابطہ کریں"
   },
   "joinUs": {
     "joinUsTitle": "ہمارے ساتھ شامل ہوں",

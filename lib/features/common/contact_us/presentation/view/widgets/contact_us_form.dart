@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/theme/spacing.dart';
-import 'package:freelancer/core/widgets/forms/custom_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_email_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_name_text_form_field.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';

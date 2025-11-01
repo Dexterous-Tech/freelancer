@@ -17,4 +17,6 @@ class AppRoutes {
   static const String joinUsScreen = '/joinUsScreen';
   static const String contactUsScreen = '/contactUsScreen';
   static const String requestSpecialityScreen = '/requestSpecialityScreen';
+  static const String serviceProviderDetailsScreen =
+      '/serviceProviderDetailsScreen';
 }
