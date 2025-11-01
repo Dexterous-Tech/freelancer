@@ -132,6 +132,8 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}twitter_icon_un.svg';
   static const String whatsappUnIcon =
       '${AppConstants.svgIconsImagesPath}whatsapp_icon_un.svg';
+  static const String joinUsIcon =
+      '${AppConstants.svgIconsImagesPath}join_us_icon.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';

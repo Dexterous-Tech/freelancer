@@ -13,9 +13,18 @@ import '../../../../../../../generated/locale_keys.g.dart';
 import '../../../../data/models/profile_models.dart';
 
 class SwitchAccountBottomSheet extends StatelessWidget {
-  const SwitchAccountBottomSheet({super.key, required this.profileDataModel});
+  const SwitchAccountBottomSheet({
+    super.key,
+    this.profileDataModel,
+    this.isSwitch = true,
+    this.title,
+    this.subTitle,
+  });
 
-  final ProfileDataModel profileDataModel;
+  final ProfileDataModel? profileDataModel;
+  final String? title;
+  final String? subTitle;
+  final bool isSwitch;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,28 +34,35 @@ class SwitchAccountBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            LocaleKeys.profile_switchAccount.tr(),
+            title ?? LocaleKeys.profile_switchAccount.tr(),
             style: AppTextStyles.font20YellowMedium.copyWith(
               color: AppColors.jet,
             ),
           ),
           verticalSpace(8),
           Text(
-            LocaleKeys.profile_easySwitch.tr(),
+            subTitle ?? LocaleKeys.profile_easySwitch.tr(),
             style: AppTextStyles.font14GrayMedium.copyWith(
               color: AppColors.davyGrey,
             ),
           ),
           verticalSpace(30),
-          accountItem(
-            isSelected: true,
-            name: '${profileDataModel.firstName} ${profileDataModel.lastName}',
-          ),
-          // accountItem(
-          //   isSelected: false,
-          //   name: 'El-sayed Ramadan',
-          //   image: AppImages.personImage,
-          // ),
+          if (isSwitch) ...[
+            accountItem(
+              isSelected: true,
+              name:
+                  '${profileDataModel?.firstName} ${profileDataModel?.lastName}',
+            ),
+          ] else ...[
+            Center(
+              child: SvgPicture.asset(
+                AppImages.joinUsIcon,
+                width: 88.w,
+                height: 88.h,
+              ),
+            ),
+            verticalSpace(48),
+          ],
         ],
       ),
     );

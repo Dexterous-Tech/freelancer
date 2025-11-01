@@ -96,7 +96,9 @@
     "sureDelete": "Are you sure you want to delete the account?",
     "sureLogout": "Are you sure you want to log out?",
     "enterPasswordTitle": "Enter Password",
-    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion",
+    "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts"
   },
   "back": "Back",
   "more": {

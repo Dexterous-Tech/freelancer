@@ -112,7 +112,9 @@ class CodegenLoader extends AssetLoader{
     "sureDelete": "هل أنت متأكد من رغبتك في حذف الحساب؟",
     "sureLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
     "enterPasswordTitle": "ادخل كلمة المرور",
-    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب"
+    "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب",
+    "reviewAccountSubTitle": "جارٍ مراجعة طلبك للانضمام إلينا، سيتم إرسال إشعار عند الانتهاء",
+    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك"
   },
   "back": "العودة",
   "more": {
@@ -255,7 +257,9 @@ static const Map<String,dynamic> _en = {
     "sureDelete": "Are you sure you want to delete the account?",
     "sureLogout": "Are you sure you want to log out?",
     "enterPasswordTitle": "Enter Password",
-    "enterPasswordSubtitle": "Enter your password to confirm account deletion"
+    "enterPasswordSubtitle": "Enter your password to confirm account deletion",
+    "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts"
   },
   "back": "Back",
   "more": {
@@ -398,7 +402,9 @@ static const Map<String,dynamic> _ur = {
     "sureDelete": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
     "sureLogout": "کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟",
     "enterPasswordTitle": "پاس ورڈ درج کریں",
-    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں"
+    "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں",
+    "reviewAccountSubTitle": "آپ کی شمولیت کی درخواست کا جائزہ لیا جا رہا ہے، مکمل ہونے پر آپ کو اطلاع دی جائے گی",
+    "alreadyHaveAccount": "آپ کا پہلے سے ہی ٹیکنیشن اکاؤنٹ موجود ہے، آپ اپنے اکاؤنٹس کے درمیان سوئچ کر سکتے ہیں"
   },
   "back": "واپس جائیں",
   "more": {

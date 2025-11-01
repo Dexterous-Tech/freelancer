@@ -97,6 +97,8 @@ abstract class  LocaleKeys {
   static const profile_sureLogout = 'profile.sureLogout';
   static const profile_enterPasswordTitle = 'profile.enterPasswordTitle';
   static const profile_enterPasswordSubtitle = 'profile.enterPasswordSubtitle';
+  static const profile_reviewAccountSubTitle = 'profile.reviewAccountSubTitle';
+  static const profile_alreadyHaveAccount = 'profile.alreadyHaveAccount';
   static const profile = 'profile';
   static const back = 'back';
   static const more_shareApp = 'more.shareApp';

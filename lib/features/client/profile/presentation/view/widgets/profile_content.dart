@@ -68,15 +68,41 @@ class ProfileContent extends StatelessWidget {
               icon: AppImages.heartIcon,
               title: LocaleKeys.profile_fav.tr(),
             ),
-            GestureDetector(
-              onTap: () {
-                context.pushNamed(AppRoutes.joinUsScreen);
+            BlocBuilder<ProfileCubit, ProfileState>(
+              buildWhen: (context, state) =>
+                  state is ProfileGetProfileSuccess ||
+                  state is ProfileGetProfileFailure ||
+                  state is ProfileGetProfileLoading,
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () {
+                    // if (state is ProfileGetProfileSuccess) {
+                    //   openBottomSheet(
+                    //     context: context,
+                    //     bottomSheetContent: SwitchAccountBottomSheet(
+                    //       title: LocaleKeys.joinUs_joinUsTitle.tr(),
+                    //       subTitle: LocaleKeys.profile_alreadyHaveAccount.tr(),
+                    //       profileDataModel: state.profileResponseModel.data!,
+                    //     ),
+                    //   );
+                    // }
+                    context.pushNamed(AppRoutes.joinUsScreen);
+                    // openBottomSheet(
+                    //   context: context,
+                    //   bottomSheetContent: SwitchAccountBottomSheet(
+                    //     isSwitch: false,
+                    //     title: LocaleKeys.joinUs_joinUsTitle.tr(),
+                    //     subTitle: LocaleKeys.profile_reviewAccountSubTitle.tr(),
+                    //   ),
+                    // );
+                  },
+                  child: ProfileContentItem(
+                    icon: AppImages.joinServiceIcon,
+                    title: LocaleKeys.profile_joinService.tr(),
+                    isDivider: false,
+                  ),
+                );
               },
-              child: ProfileContentItem(
-                icon: AppImages.joinServiceIcon,
-                title: LocaleKeys.profile_joinService.tr(),
-                isDivider: false,
-              ),
             ),
             verticalSpace(52),
             Text(
