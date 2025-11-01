@@ -138,5 +138,11 @@ abstract class  LocaleKeys {
   static const joinUs = 'joinUs';
   static const send = 'send';
   static const sendSuccessfully = 'sendSuccessfully';
+  static const technical_welcomeBack = 'technical.welcomeBack';
+  static const technical_askBadge = 'technical.askBadge';
+  static const technical_statistics = 'technical.statistics';
+  static const technical_numberViews = 'technical.numberViews';
+  static const technical_reviews = 'technical.reviews';
+  static const technical = 'technical';
 
 }

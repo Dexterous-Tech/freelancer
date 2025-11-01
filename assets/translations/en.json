@@ -141,5 +141,12 @@
     "professionalInformation": "Professional information"
   },
   "send": "Send",
-  "sendSuccessfully": "Sent successfully"
+  "sendSuccessfully": "Sent successfully",
+  "technical": {
+    "welcomeBack": "Welcome back",
+    "askBadge": "Badge request",
+    "statistics": "Statistics",
+    "numberViews": "Number of views",
+    "reviews": "Reviews"
+  }
 }

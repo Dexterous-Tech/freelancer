@@ -134,6 +134,12 @@ class AppImages {
       '${AppConstants.svgIconsImagesPath}whatsapp_icon_un.svg';
   static const String joinUsIcon =
       '${AppConstants.svgIconsImagesPath}join_us_icon.svg';
+  static const String notificationIcon =
+      '${AppConstants.svgIconsImagesPath}notification-bing.svg';
+  static const String redEyeIcon =
+      '${AppConstants.svgIconsImagesPath}red_eye.svg';
+  static const String lavenderStarIcon =
+      '${AppConstants.svgIconsImagesPath}lavender_star.svg';
 
   // images
   static const String successImage = '${AppConstants.imagesPath}success.png';
@@ -146,4 +152,6 @@ class AppImages {
       '${AppConstants.imagesPath}service_person.png';
   static const String mapServiceImage =
       '${AppConstants.imagesPath}map_service.png';
+  static const String wavingHandImage =
+      '${AppConstants.imagesPath}waving_hand.png';
 }

@@ -6,6 +6,7 @@ import 'package:freelancer/core/shared/shared_preferences_helper.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
 import 'package:freelancer/features/client/profile/presentation/view/client_profile_screen.dart';
 import 'package:freelancer/features/client/services/presentation/view/services_screen.dart';
+import 'package:freelancer/features/technical/home/presentation/view/technical_home_screen.dart';
 import '../../../common/more/presentation/view/more_screen.dart';
 import 'widgets/main_home_bottom_navigation_bar.dart';
 
@@ -118,22 +119,23 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   Widget _getBodyForTab(int index) {
     switch (index) {
       case 0:
-        return Container(
-          key: const ValueKey('home'),
-          decoration: BoxDecoration(),
-          child: Column(
-            children: [
-              Image.asset(AppImages.fakeMapHeaderImage),
-              Expanded(
-                child: Image.asset(
-                  AppImages.fakeMapImage,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
-          ),
-        );
+        return TechnicalHomeScreen(key: const ValueKey('home'));
+      // return Container(
+      //   key: const ValueKey('home'),
+      //   decoration: BoxDecoration(),
+      //   child: Column(
+      //     children: [
+      //       Image.asset(AppImages.fakeMapHeaderImage),
+      //       Expanded(
+      //         child: Image.asset(
+      //           AppImages.fakeMapImage,
+      //           width: double.infinity,
+      //           fit: BoxFit.cover,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // );
       case 1:
         return ClientProfileScreen(key: const ValueKey('profile'));
       case 2:

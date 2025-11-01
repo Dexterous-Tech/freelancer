@@ -137,4 +137,11 @@ class AppTextStyles {
     color: AppColors.outerSpace,
     fontFamily: FontFamilyHelper.iBMPlexSansArabic,
   );
+
+  static TextStyle font20BlackOliveRegular = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.blackOlive,
+    fontFamily: FontFamilyHelper.iBMPlexSansArabic,
+  );
 }

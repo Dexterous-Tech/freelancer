@@ -141,5 +141,12 @@
     "professionalInformation": "البيانات المهنية"
   },
   "send": "إرسال",
-  "sendSuccessfully": "تم الإرسال بنجاح"
+  "sendSuccessfully": "تم الإرسال بنجاح",
+  "technical": {
+    "welcomeBack": "مرحبا بعودتك",
+    "askBadge": "طلب بادج",
+    "statistics": "إحصائيات",
+    "numberViews": "عدد مرات المشاهدة",
+    "reviews": "التقييمات"
+  }
 }

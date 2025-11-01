@@ -141,5 +141,12 @@
     "professionalInformation": "پیشہ ورانہ معلومات"
   },
   "send": "بھیجیں",
-  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا",
+  "technical": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "askBadge": "بیج کی درخواست",
+    "statistics": "اعداد و شمار",
+    "numberViews": "دیکھنے کی تعداد",
+    "reviews": "جائزے"
+  }
 }

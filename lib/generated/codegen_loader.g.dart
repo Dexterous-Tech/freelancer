@@ -157,7 +157,14 @@ class CodegenLoader extends AssetLoader{
     "professionalInformation": "البيانات المهنية"
   },
   "send": "إرسال",
-  "sendSuccessfully": "تم الإرسال بنجاح"
+  "sendSuccessfully": "تم الإرسال بنجاح",
+  "technical": {
+    "welcomeBack": "مرحبا بعودتك",
+    "askBadge": "طلب بادج",
+    "statistics": "إحصائيات",
+    "numberViews": "عدد مرات المشاهدة",
+    "reviews": "التقييمات"
+  }
 };
 static const Map<String,dynamic> _en = {
   "on_boarding": {
@@ -302,7 +309,14 @@ static const Map<String,dynamic> _en = {
     "professionalInformation": "Professional information"
   },
   "send": "Send",
-  "sendSuccessfully": "Sent successfully"
+  "sendSuccessfully": "Sent successfully",
+  "technical": {
+    "welcomeBack": "Welcome back",
+    "askBadge": "Badge request",
+    "statistics": "Statistics",
+    "numberViews": "Number of views",
+    "reviews": "Reviews"
+  }
 };
 static const Map<String,dynamic> _ur = {
   "on_boarding": {
@@ -447,7 +461,14 @@ static const Map<String,dynamic> _ur = {
     "professionalInformation": "پیشہ ورانہ معلومات"
   },
   "send": "بھیجیں",
-  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا"
+  "sendSuccessfully": "کامیابی کے ساتھ بھیج دیا گیا",
+  "technical": {
+    "welcomeBack": "واپسی پر خوش آمدید",
+    "askBadge": "بیج کی درخواست",
+    "statistics": "اعداد و شمار",
+    "numberViews": "دیکھنے کی تعداد",
+    "reviews": "جائزے"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en, "ur": _ur};
 }
