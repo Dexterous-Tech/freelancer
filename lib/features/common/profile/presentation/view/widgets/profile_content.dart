@@ -2,6 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelancer/core/shared/shared_preferences_helper.dart';
+import 'package:freelancer/core/shared/shared_preferences_key.dart';
+import 'package:freelancer/features/common/profile/presentation/view/widgets/bottom_sheets/current_location_bottom_sheet.dart';
+import 'package:freelancer/features/common/profile/presentation/view/widgets/profile_custom_switch.dart';
 import '../../../../../../core/helper/app_images.dart';
 import '../../../../../../core/helper/extensions.dart';
 import '../../../../../../core/routes/app_routes.dart';
@@ -16,6 +20,14 @@ import '../../../../../../generated/locale_keys.g.dart';
 
 class ProfileContent extends StatelessWidget {
   const ProfileContent({super.key});
+
+  Future<bool> isTechnical() async {
+    final isTechnical = await SharedPreferencesHelper.getBool(
+      SharedPreferencesKey.isTechnical,
+    );
+
+    return isTechnical ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,50 +72,75 @@ class ProfileContent extends StatelessWidget {
                 );
               },
             ),
-            ProfileContentItem(
-              icon: AppImages.locationIcon,
-              title: LocaleKeys.profile_location.tr(),
-            ),
-            ProfileContentItem(
-              icon: AppImages.heartIcon,
-              title: LocaleKeys.profile_fav.tr(),
-            ),
-            BlocBuilder<ProfileCubit, ProfileState>(
-              buildWhen: (context, state) =>
-                  state is ProfileGetProfileSuccess ||
-                  state is ProfileGetProfileFailure ||
-                  state is ProfileGetProfileLoading,
-              builder: (context, state) {
-                return GestureDetector(
-                  onTap: () {
-                    // if (state is ProfileGetProfileSuccess) {
-                    //   openBottomSheet(
-                    //     context: context,
-                    //     bottomSheetContent: SwitchAccountBottomSheet(
-                    //       title: LocaleKeys.joinUs_joinUsTitle.tr(),
-                    //       subTitle: LocaleKeys.profile_alreadyHaveAccount.tr(),
-                    //       profileDataModel: state.profileResponseModel.data!,
-                    //     ),
-                    //   );
-                    // }
-                    context.pushNamed(AppRoutes.joinUsScreen);
-                    // openBottomSheet(
-                    //   context: context,
-                    //   bottomSheetContent: SwitchAccountBottomSheet(
-                    //     isSwitch: false,
-                    //     title: LocaleKeys.joinUs_joinUsTitle.tr(),
-                    //     subTitle: LocaleKeys.profile_reviewAccountSubTitle.tr(),
-                    //   ),
-                    // );
-                  },
-                  child: ProfileContentItem(
-                    icon: AppImages.joinServiceIcon,
-                    title: LocaleKeys.profile_joinService.tr(),
-                    isDivider: false,
-                  ),
-                );
+            FutureBuilder<bool>(
+              future: isTechnical(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  // while loading, show a placeholder or spinner
+                  return const SizedBox.shrink();
+                }
+
+                final isTechnical = snapshot.data ?? false;
+
+                if (isTechnical) {
+                  // technical view
+                  return Column(
+                    children: [
+                      ProfileContentItem(
+                        icon: AppImages.locationIcon,
+                        title: LocaleKeys.profile_addressDetails.tr(),
+                      ),
+                      ProfileContentItem(
+                        icon: AppImages.currentLocationIcon,
+                        title: LocaleKeys.profile_currentLocation.tr(),
+                        leading: ProfileCustomSwitch(
+                          onChanged: (value) {
+                            openBottomSheet(
+                              context: context,
+                              bottomSheetContent: CurrentLocationBottomSheet(),
+                            );
+                          },
+                        ),
+                      ),
+                      ProfileContentItem(
+                        icon: AppImages.foldersIcon,
+                        title: LocaleKeys.profile_folders.tr(),
+                        isDivider: false,
+                      ),
+                    ],
+                  );
+                } else {
+                  // client view
+                  return Column(
+                    children: [
+                      ProfileContentItem(
+                        icon: AppImages.heartIcon,
+                        title: LocaleKeys.profile_fav.tr(),
+                      ),
+                      BlocBuilder<ProfileCubit, ProfileState>(
+                        buildWhen: (context, state) =>
+                            state is ProfileGetProfileSuccess ||
+                            state is ProfileGetProfileFailure ||
+                            state is ProfileGetProfileLoading,
+                        builder: (context, state) {
+                          return GestureDetector(
+                            onTap: () {
+                              context.pushNamed(AppRoutes.joinUsScreen);
+                            },
+                            child: ProfileContentItem(
+                              icon: AppImages.joinServiceIcon,
+                              title: LocaleKeys.profile_joinService.tr(),
+                              isDivider: false,
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                }
               },
             ),
+
             verticalSpace(52),
             Text(
               LocaleKeys.profile_exitApp.tr(),

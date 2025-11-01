@@ -98,7 +98,13 @@
     "enterPasswordTitle": "Enter Password",
     "enterPasswordSubtitle": "Enter your password to confirm account deletion",
     "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
-    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts"
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts",
+    "addressDetails": "Address details",
+    "currentLocation": "Current location",
+    "folders": "Attachments",
+    "sureChangeLocationQu": "Are you sure you want to enable the current location?",
+    "changeCurrentLocationSubtitle": "By clicking “Yes, I want”, customers will be able to see your live location on the map",
+    "yesWant": "Yes, I want"
   },
   "back": "Back",
   "more": {

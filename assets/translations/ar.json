@@ -98,7 +98,13 @@
     "enterPasswordTitle": "ادخل كلمة المرور",
     "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب",
     "reviewAccountSubTitle": "جارٍ مراجعة طلبك للانضمام إلينا، سيتم إرسال إشعار عند الانتهاء",
-    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك"
+    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك",
+    "addressDetails": "تفاصيل العنوان",
+    "currentLocation": "الموقع الحالي",
+    "folders": "المرفقات",
+    "sureChangeLocationQu": "هل أنت متأكد من رغبتك في تفعيل الموقع الحالي؟",
+    "changeCurrentLocationSubtitle": "عند الضغط على “نعم, أرغب” سيتمكن العملاء من رؤية موقعك اللحظي على الخريطة",
+    "yesWant": "نعم، أرغب"
   },
   "back": "العودة",
   "more": {

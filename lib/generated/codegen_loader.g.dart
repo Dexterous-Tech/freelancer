@@ -114,7 +114,13 @@ class CodegenLoader extends AssetLoader{
     "enterPasswordTitle": "ادخل كلمة المرور",
     "enterPasswordSubtitle": "قم بإدخال كلمة المرور لتأكيد حذف الحساب",
     "reviewAccountSubTitle": "جارٍ مراجعة طلبك للانضمام إلينا، سيتم إرسال إشعار عند الانتهاء",
-    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك"
+    "alreadyHaveAccount": "لديك حساب فني بالفعل، يمكنك التبديل بين حساباتك",
+    "addressDetails": "تفاصيل العنوان",
+    "currentLocation": "الموقع الحالي",
+    "folders": "المرفقات",
+    "sureChangeLocationQu": "هل أنت متأكد من رغبتك في تفعيل الموقع الحالي؟",
+    "changeCurrentLocationSubtitle": "عند الضغط على “نعم, أرغب” سيتمكن العملاء من رؤية موقعك اللحظي على الخريطة",
+    "yesWant": "نعم، أرغب"
   },
   "back": "العودة",
   "more": {
@@ -266,7 +272,13 @@ static const Map<String,dynamic> _en = {
     "enterPasswordTitle": "Enter Password",
     "enterPasswordSubtitle": "Enter your password to confirm account deletion",
     "reviewAccountSubTitle": "Your request to join us is under review. You will be notified once it’s completed",
-    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts"
+    "alreadyHaveAccount": "You already have a technician account. You can switch between your accounts",
+    "addressDetails": "Address details",
+    "currentLocation": "Current location",
+    "folders": "Attachments",
+    "sureChangeLocationQu": "Are you sure you want to enable the current location?",
+    "changeCurrentLocationSubtitle": "By clicking “Yes, I want”, customers will be able to see your live location on the map",
+    "yesWant": "Yes, I want"
   },
   "back": "Back",
   "more": {
@@ -418,7 +430,13 @@ static const Map<String,dynamic> _ur = {
     "enterPasswordTitle": "پاس ورڈ درج کریں",
     "enterPasswordSubtitle": "اکاؤنٹ حذف کی تصدیق کے لیے اپنا پاس ورڈ درج کریں",
     "reviewAccountSubTitle": "آپ کی شمولیت کی درخواست کا جائزہ لیا جا رہا ہے، مکمل ہونے پر آپ کو اطلاع دی جائے گی",
-    "alreadyHaveAccount": "آپ کا پہلے سے ہی ٹیکنیشن اکاؤنٹ موجود ہے، آپ اپنے اکاؤنٹس کے درمیان سوئچ کر سکتے ہیں"
+    "alreadyHaveAccount": "آپ کا پہلے سے ہی ٹیکنیشن اکاؤنٹ موجود ہے، آپ اپنے اکاؤنٹس کے درمیان سوئچ کر سکتے ہیں",
+    "addressDetails": "پتے کی تفصیلات",
+    "currentLocation": "موجودہ مقام",
+    "folders": "منسلکات",
+    "sureChangeLocationQu": "کیا آپ واقعی موجودہ مقام کو فعال کرنا چاہتے ہیں؟",
+    "changeCurrentLocationSubtitle": "\"ہاں، میں چاہتا ہوں\" پر کلک کرنے سے صارفین نقشے پر آپ کا موجودہ مقام دیکھ سکیں گے",
+    "yesWant": "ہاں، میں چاہتا ہوں"
   },
   "back": "واپس جائیں",
   "more": {

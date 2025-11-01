@@ -99,6 +99,12 @@ abstract class  LocaleKeys {
   static const profile_enterPasswordSubtitle = 'profile.enterPasswordSubtitle';
   static const profile_reviewAccountSubTitle = 'profile.reviewAccountSubTitle';
   static const profile_alreadyHaveAccount = 'profile.alreadyHaveAccount';
+  static const profile_addressDetails = 'profile.addressDetails';
+  static const profile_currentLocation = 'profile.currentLocation';
+  static const profile_folders = 'profile.folders';
+  static const profile_sureChangeLocationQu = 'profile.sureChangeLocationQu';
+  static const profile_changeCurrentLocationSubtitle = 'profile.changeCurrentLocationSubtitle';
+  static const profile_yesWant = 'profile.yesWant';
   static const profile = 'profile';
   static const back = 'back';
   static const more_shareApp = 'more.shareApp';

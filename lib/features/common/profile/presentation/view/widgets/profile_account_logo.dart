@@ -7,6 +7,8 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../../core/helper/app_images.dart';
 import '../../../../../../core/helper/functions.dart';
+import '../../../../../../core/shared/shared_preferences_helper.dart';
+import '../../../../../../core/shared/shared_preferences_key.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/font_weight_helper.dart';
@@ -27,6 +29,14 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
   void initState() {
     super.initState();
     ProfileCubit.get(context).getProfile();
+  }
+
+  Future<bool> isTechnical() async {
+    final isTechnical = await SharedPreferencesHelper.getBool(
+      SharedPreferencesKey.isTechnical,
+    );
+
+    return isTechnical ?? false;
   }
 
   @override
@@ -81,16 +91,37 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
                 ),
                 horizontalSpace(8),
                 Expanded(
-                  child: Text(
-                    name,
-                    style: AppTextStyles.font18YellowRegular.copyWith(
-                      color: AppColors.jet,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: AppTextStyles.font18YellowRegular.copyWith(
+                          color: AppColors.jet,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      verticalSpace(8),
+                      FutureBuilder<bool>(
+                        future: isTechnical(),
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            // while loading, show a placeholder or spinner
+                            return const SizedBox.shrink();
+                          }
+
+                          final isTechnical = snapshot.data ?? false;
+                          if (isTechnical) {
+                            return FittedBox(child: jobItem());
+                          } else {
+                            return const SizedBox.shrink();
+                          }
+                        },
+                      ),
+                    ],
                   ),
                 ),
-                // Expanded(child: horizontalSpace(10)),
                 horizontalSpace(12),
                 SvgPicture.asset(
                   AppImages.arrowDownIcon,
@@ -115,6 +146,29 @@ class _ProfileAccountLogoState extends State<ProfileAccountLogo> {
           child: const SizedBox.shrink(),
         );
       },
+    );
+  }
+
+  Widget jobItem() {
+    return Container(
+      height: 26.h,
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20).r,
+        color: AppColors.cultured,
+      ),
+      child: Row(
+        children: [
+          SvgPicture.asset(AppImages.jobIcon, width: 16.w, height: 16.h),
+          horizontalSpace(4),
+          Text(
+            'سباك صحي',
+            style: AppTextStyles.font12DarkBlueMedium.copyWith(
+              color: AppColors.outerSpace,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
