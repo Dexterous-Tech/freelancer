@@ -6,7 +6,7 @@ import 'package:freelancer/core/networking/api_error_model.dart';
 import 'package:freelancer/core/networking/api_services.dart';
 
 import '../../../../auth/data/models/auth_action_response_model.dart';
-import '../../../profile/data/models/profile_models.dart';
+import '../../../../common/profile/data/models/profile_models.dart';
 import '../models/update_profile_model.dart';
 
 class UpdateProfileRepo {

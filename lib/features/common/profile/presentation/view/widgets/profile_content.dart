@@ -8,10 +8,10 @@ import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/theme/spacing.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
+import '../../../../widgets/profile_content_item.dart';
 import '../../manager/profile_cubit.dart';
 import 'bottom_sheets/logout_bottom_sheet.dart';
 import 'profile_account_logo.dart';
-import '../../../../widgets/profile_content_item.dart';
 import '../../../../../../generated/locale_keys.g.dart';
 
 class ProfileContent extends StatelessWidget {

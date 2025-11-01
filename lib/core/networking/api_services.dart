@@ -5,11 +5,11 @@ import 'package:freelancer/features/auth/login/data/models/forget_password_model
 import 'package:freelancer/features/auth/new_password_screen/data/models/new_password_model.dart';
 import 'package:freelancer/features/auth/signup/data/models/signup_models.dart';
 import 'package:freelancer/features/common/change_password/data/models/change_password_model.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../features/auth/data/models/auth_action_response_model.dart';
 import '../../features/auth/login/data/models/login_models.dart';
-import '../../features/client/profile/data/models/profile_models.dart';
+import '../../features/common/profile/data/models/profile_models.dart';
 import 'api_constants.dart';
 part 'api_services.g.dart';
 

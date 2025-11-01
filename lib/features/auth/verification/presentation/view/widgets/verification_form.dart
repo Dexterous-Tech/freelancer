@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/spacing.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
 import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/widgets/bottom_sheet/correct_bottom_sheet.dart';

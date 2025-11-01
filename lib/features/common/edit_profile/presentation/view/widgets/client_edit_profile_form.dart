@@ -9,13 +9,13 @@ import 'package:freelancer/core/theme/app_colors.dart';
 import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/features/auth/widgets/custom_phone_text_form_field.dart';
-import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
 
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
 import '../../../../../auth/widgets/custom_first_last_name_text_form_field.dart';
-import '../../../../profile/data/models/profile_models.dart';
-import '../../../../widgets/profile_content_item.dart';
+import '../../../../../common/profile/data/models/profile_models.dart';
+import '../../../../../common/widgets/profile_content_item.dart';
 import 'bottom_sheet/delete_account_bottom_sheet.dart';
 
 class ClientEditProfileForm extends StatefulWidget {

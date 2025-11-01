@@ -4,10 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/theme/spacing.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
 import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/widgets/bottom_sheet/correct_bottom_sheet.dart';
 import 'package:freelancer/core/widgets/custom_header.dart';
+import '../../../../../common/profile/data/models/profile_models.dart';
 import 'client_edit_profile_button.dart';
 import 'client_edit_profile_form.dart';
 import 'package:freelancer/generated/locale_keys.g.dart';
@@ -17,7 +18,6 @@ import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../core/theme/app_text_styles.dart';
 import '../../../../../../core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import '../../../../../../core/widgets/bottom_sheet/open_bottom_sheet.dart';
-import '../../../../profile/data/models/profile_models.dart';
 import '../../manager/client_edit_profile_cubit.dart';
 
 class ClientEditProfileBody extends StatelessWidget {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/open_bottom_sheet.dart';
-import 'package:freelancer/features/client/edit_profile/presentation/view/widgets/bottom_sheet/password_delete_account_bottom_sheet.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/view/widgets/bottom_sheet/password_delete_account_bottom_sheet.dart';
 
 import '../../../../../../../core/theme/app_colors.dart';
 import '../../../../../../../core/theme/app_text_styles.dart';

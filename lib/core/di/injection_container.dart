@@ -9,11 +9,11 @@ import 'package:freelancer/features/auth/verification/data/repo/verification_rep
 import 'package:freelancer/features/auth/verification/presentation/manager/verification_cubit.dart';
 import 'package:freelancer/features/common/change_password/data/repo/change_password_repo.dart';
 import 'package:freelancer/features/common/change_password/presentation/manager/change_password_cubit.dart';
-import 'package:freelancer/features/client/edit_profile/data/repo/update_profile_repo.dart';
-import 'package:freelancer/features/client/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
+import 'package:freelancer/features/common/edit_profile/data/repo/update_profile_repo.dart';
+import 'package:freelancer/features/common/edit_profile/presentation/manager/client_edit_profile_cubit.dart';
 import 'package:freelancer/features/client/join_us/presentation/manager/join_us_cubit.dart';
-import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
-import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
+import 'package:freelancer/features/common/profile/data/repo/profile_repo.dart';
+import 'package:freelancer/features/common/profile/presentation/manager/profile_cubit.dart';
 import 'package:freelancer/features/common/contact_us/presentation/manager/contact_us_cubit.dart';
 import 'package:get_it/get_it.dart';
 

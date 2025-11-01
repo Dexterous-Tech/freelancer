@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freelancer/core/shared/shared_preferences_helper.dart';
 import 'package:freelancer/features/auth/data/models/auth_action_response_model.dart';
-import 'package:freelancer/features/client/profile/data/repo/profile_repo.dart';
+import 'package:freelancer/features/common/profile/data/repo/profile_repo.dart';
 
 import '../../data/models/profile_models.dart';
 

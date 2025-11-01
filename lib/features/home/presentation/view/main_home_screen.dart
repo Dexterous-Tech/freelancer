@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:freelancer/core/helper/app_images.dart';
 import 'package:freelancer/core/helper/extensions.dart';
 import 'package:freelancer/core/routes/app_routes.dart';
 import 'package:freelancer/core/shared/shared_preferences_helper.dart';
 import 'package:freelancer/core/shared/shared_preferences_key.dart';
-import 'package:freelancer/features/client/profile/presentation/view/client_profile_screen.dart';
+import 'package:freelancer/features/common/profile/presentation/view/client_profile_screen.dart';
 import 'package:freelancer/features/client/services/presentation/view/services_screen.dart';
 import 'package:freelancer/features/technical/home/presentation/view/technical_home_screen.dart';
 import '../../../common/more/presentation/view/more_screen.dart';

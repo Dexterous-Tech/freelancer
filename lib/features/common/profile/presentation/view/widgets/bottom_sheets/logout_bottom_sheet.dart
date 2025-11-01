@@ -9,7 +9,7 @@ import 'package:freelancer/core/theme/app_text_styles.dart';
 import 'package:freelancer/core/theme/spacing.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/error_bottom_sheet.dart';
 import 'package:freelancer/core/widgets/bottom_sheet/open_bottom_sheet.dart';
-import 'package:freelancer/features/client/profile/presentation/manager/profile_cubit.dart';
+import 'package:freelancer/features/common/profile/presentation/manager/profile_cubit.dart';
 
 import '../../../../../../../core/di/injection_container.dart';
 import '../../../../../../../core/widgets/custom_bottom_button.dart';

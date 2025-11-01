@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/di/injection_container.dart';
-import '../../../profile/data/models/profile_models.dart';
+import '../../../../common/profile/data/models/profile_models.dart';
 import '../manager/client_edit_profile_cubit.dart';
 import 'widgets/client_edit_profile_body.dart';
 

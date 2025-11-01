@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freelancer/features/client/edit_profile/data/models/update_profile_model.dart';
-import 'package:freelancer/features/client/edit_profile/data/repo/update_profile_repo.dart';
-import 'package:freelancer/features/client/profile/data/models/profile_models.dart';
+import 'package:freelancer/features/common/edit_profile/data/models/update_profile_model.dart';
+import 'package:freelancer/features/common/edit_profile/data/repo/update_profile_repo.dart';
+import 'package:freelancer/features/common/profile/data/models/profile_models.dart';
 
 import '../../../../../core/shared/shared_preferences_helper.dart';
 import '../../../../auth/data/models/auth_action_response_model.dart';
